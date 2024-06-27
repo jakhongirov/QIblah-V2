@@ -1,0 +1,74 @@
+[
+	{
+		"backgrounColor": "FFFDE6",
+		"id": 1,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_1.png",
+		"lang": "cyrillic",
+		"name": "Тонгги зикрлар",
+		"tartibRaqami": 1,
+		"textColor": "575435"
+	},
+	{
+		"backgrounColor": "E8E7F2",
+		"id": 2,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_2.png",
+		"lang": "cyrillic",
+		"name": "Кечки зикрлар",
+		"tartibRaqami": 2,
+		"textColor": "4F4D69"
+	},
+	{
+		"backgrounColor": "E7F2EF",
+		"id": 3,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_3.png",
+		"lang": "cyrillic",
+		"name": "Аллоҳдан сўраш",
+		"tartibRaqami": 3,
+		"textColor": "264F60"
+	},
+	{
+		"backgrounColor": "FFECE9",
+		"id": 4,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_4.png",
+		"lang": "cyrillic",
+		"name": "Каракли дуолар",
+		"tartibRaqami": 4,
+		"textColor": "6C5652"
+	},
+	{
+		"backgrounColor": "FFFDE6",
+		"id": 5,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_1.png",
+		"lang": "uzbek",
+		"name": "Tonggi zikrlar",
+		"tartibRaqami": 1,
+		"textColor": "575435"
+	},
+	{
+		"backgrounColor": "E8E7F2",
+		"id": 6,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_2.png",
+		"lang": "uzbek",
+		"name": "Kechki zikrlar",
+		"tartibRaqami": 2,
+		"textColor": "4F4D69"
+	},
+	{
+		"backgrounColor": "E7F2EF",
+		"id": 7,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_3.png",
+		"lang": "uzbek",
+		"name": "Аllohdan soʼrash",
+		"tartibRaqami": 3,
+		"textColor": "264F60"
+	},
+	{
+		"backgrounColor": "FFECE9",
+		"id": 8,
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_4.png",
+		"lang": "uzbek",
+		"name": "Karakli duolar",
+		"tartibRaqami": 4,
+		"textColor": "6C5652"
+	}
+]
