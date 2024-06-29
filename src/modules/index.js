@@ -370,7 +370,7 @@ router
   .get('/users/premium/list', AUTH, users.GET_PREMIUM_USERS)
   .get('/user/:id', users.GET_ID)
   .get('/user/token/:token', users.GET_TOKEN)
-  .post('/user/phone', users.GET_BY_PHONE)
+  .post('/user/search', users.GET_SEARCH)
   .post('/user/register', users.REGISTER_USER)
   .post('/user/register/temporaryuser', users.TEMPORARY_USER)
   .post('/user/login/:contact', users.LOGIN_USER)

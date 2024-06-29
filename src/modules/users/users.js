@@ -198,18 +198,18 @@ module.exports = {
       }
    },
 
-   GET_BY_PHONE: async (req, res) => {
+   GET_SEARCH: async (req, res) => {
       try {
-         const { phone_number } = req.body
+         const { phone_number, user_name } = req.body
 
-         if (phone_number) {
-            const foundByPhoneNumber = await model.foundByPhoneNumber(phone_number)
+         if (phone_number || user_name) {
+            const userSearch = await model.userSearch(phone_number, user_name)
 
-            if (foundByPhoneNumber) {
+            if (userSearch) {
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: foundByPhoneNumber
+                  data: userSearch
                })
             } else {
                return res.status(404).json({

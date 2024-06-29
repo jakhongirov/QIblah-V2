@@ -160,14 +160,22 @@ const foundUserByToken = (token) => {
 
    return fetch(QUERY, token)
 }
-const foundByPhoneNumber = (phone_number) => {
+const userSearch = (phone_number, user_name) => {
    const QUERY = `
       SELECT
          *
       FROM
          users
       WHERE
-         user_phone_number ilike '%${phone_number}%';
+      ${
+         phone_number && user_name ? (
+            `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%' `
+         ) : phone_number ? (
+            `user_phone_number ilike '%${phone_number}%'`
+         ): user_name ? (
+            `user_name ilike '%${user_name}%'`
+         ) : ""
+      };
    `;
 
    return fetchALL(QUERY)
@@ -751,7 +759,7 @@ module.exports = {
    getUserPremiumList,
    checkUserById,
    foundUserByToken,
-   foundByPhoneNumber,
+   userSearch,
    checkUserEmail,
    checkUserPhoneNumber,
    checkUserMethod,
