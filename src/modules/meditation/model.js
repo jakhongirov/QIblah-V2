@@ -117,7 +117,7 @@ const itemsListAdmin = (limit, page) => {
       FROM
          meditation_item
       ORDER BY
-         item_name
+         item_id DESC
       LIMIT ${limit}
       OFFSET ${Number((page - 1) * limit)};
    `;
@@ -131,7 +131,9 @@ const itemsListByCategory = (category_id) => {
       FROM
          meditation_item
       WHERE
-         category_id = $1;
+         category_id = $1
+      ORDER BY
+         item_name;
    `;
 
    return fetchALL(QUERY, category_id)
