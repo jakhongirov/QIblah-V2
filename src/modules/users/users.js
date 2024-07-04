@@ -263,8 +263,7 @@ module.exports = {
          const checkUserEmail = await model.checkUserEmail(user_email);
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number);
 
-         console.log(user_phone_number);
-         console.log(checkUserPhoneNumber);
+         console.log(user_phone_number)
 
          if (checkUserEmail || checkUserPhoneNumber) {
             return res.status(302).json({
