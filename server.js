@@ -51,24 +51,24 @@ bot.on('message', async (msg) => {
          user = foundUser;
 
          if (foundUser) {
-            const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
+            const content = `Assalomu alaykum, ${foundUser.user_name}\nЗдравствуйте, ${foundUser.user_name}`;
             console.log(`User found: ${foundUser.user_name}`);
 
             bot.sendMessage(chatId, content, {
                reply_markup: {
                   inline_keyboard: [
-                     [{ text: 'Uzbek', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
+                     [{ text: 'O\'zbekcha', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
                   ]
                }
             });
          } else {
-            const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
+            const content = `Assalomu alaykum, ${username}, Siz ro'yxatdan o'ta olmadiz. Qayta urinib ko\'ring.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться, Повторите попытку `;
             console.log(`User not found with parameter: ${parameter}`);
 
             bot.sendMessage(chatId, content, {
                reply_markup: {
                   keyboard: [
-                     [{ text: "Uzbek" }, { text: "Русский" }]
+                     [{ text: "O\'zbekcha" }, { text: "Русский" }]
                   ],
                   resize_keyboard: true
                }
@@ -88,32 +88,32 @@ const handleTextMessages = async (msg) => {
 
    console.log(`Handling text message: ${text} (Chat ID: ${chatId})`);
 
-   if (text === "Uzbek") {
+   if (text === "O'zbekcha") {
       bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
          reply_markup: {
-            keyboard: [[{ text: "Savol berish" }]],
+            keyboard: [[{ text: "Murojaat qilish" }]],
             resize_keyboard: true
          }
       });
    } else if (text === 'Русский') {
       bot.sendMessage(chatId, 'Напишите свой вопрос. Мы обязательно вам ответим!', {
          reply_markup: {
-            keyboard: [[{ text: "Задайте вопрос" }]],
+            keyboard: [[{ text: "Задавать вопрос" }]],
             resize_keyboard: true
          }
       });
-   } else if (text === 'Savol berish' || text === 'Задайте вопрос') {
-      const languagePrompt = text === 'Savol berish' ? 'Savol:' : 'Вопрос:';
+   } else if (text === 'Murojaat qilish' || text === 'Задавать вопрос') {
+      const languagePrompt = text === 'Murojaat qilish' ? 'Marhamat, murojaatingizni yozing:' : 'Пожалуйста, напишите ваш запрос:';
       bot.sendMessage(chatId, languagePrompt, {
          reply_markup: { force_reply: true }
       }).then((payload) => {
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
             bot.removeListener(replyListenerId);
             if (msg.text) {
-               const content = text === 'Savol berish' ? `Savol: ${msg.text}` : `Вопрос: ${msg.text}`;
+               const content = text === 'Murojaat qilish' ? `Savol: ${msg.text}` : `Вопрос: ${msg.text}`;
                await model.addMessage(msg.chat.id, msg.date);
                bot.sendMessage(process.env.CHAT_ID, content);
-               bot.sendMessage(chatId, text === 'Savol berish' ? "Sizga tez orada javob berishadi." : "Они скоро вам ответят", {
+               bot.sendMessage(chatId, text === 'Murojaat qilish' ? "Tashakkur, tez orada sizga javob qaytaramiz!" : "Спасибо, мы скоро свяжемся с вами!", {
                   reply_markup: {
                      keyboard: [[{ text: text }]],
                      resize_keyboard: true
