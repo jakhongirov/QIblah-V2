@@ -117,7 +117,7 @@ const itemsListAdmin = (limit, page) => {
       FROM
          meditation_item
       ORDER BY
-         item_id DESC
+         item_name
       LIMIT ${limit}
       OFFSET ${Number((page - 1) * limit)};
    `;
