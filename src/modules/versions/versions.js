@@ -269,7 +269,8 @@ module.exports = {
             names_99_version,
             audios_version,
             meditation_votes,
-            meditation_categories
+            meditation_categories,
+            meditation_item
          } = req.body
 
          const addVersion = await model.addVersion(
@@ -277,7 +278,8 @@ module.exports = {
             names_99_version,
             audios_version,
             meditation_votes,
-            meditation_categories
+            meditation_categories,
+            meditation_item
          )
 
          if (addVersion) {
@@ -310,7 +312,8 @@ module.exports = {
             names_99_version,
             audios_version,
             meditation_votes,
-            meditation_categories
+            meditation_categories,
+            meditation_item
          } = req.body
 
          const updateVersion = await model.updateVersion(
@@ -319,7 +322,8 @@ module.exports = {
             names_99_version,
             audios_version,
             meditation_votes,
-            meditation_categories
+            meditation_categories,
+            meditation_item
          )
 
          if (updateVersion) {
@@ -371,5 +375,3 @@ module.exports = {
       }
    }
 }
-
-

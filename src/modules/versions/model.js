@@ -285,7 +285,8 @@ const addVersion = (
    names_99_version,
    audios_version,
    meditation_votes,
-   meditation_categories
+   meditation_categories,
+   meditation_item
 ) => {
    const QUERY = `
       INSERT INTO
@@ -294,13 +295,15 @@ const addVersion = (
             names_99_version,
             audios_version,
             meditation_votes,
-            meditation_categories
+            meditation_categories,
+            meditation_item
          ) VALUES (
             $1,
             $2,
             $3,
             $4,
-            $5
+            $5,
+            $6
          ) RETURNING *;
    `;
 
@@ -310,7 +313,8 @@ const addVersion = (
       names_99_version,
       audios_version,
       meditation_votes,
-      meditation_categories
+      meditation_categories,
+      meditation_item
    )
 }
 const updateVersion = (
@@ -319,7 +323,8 @@ const updateVersion = (
    names_99_version,
    audios_version,
    meditation_votes,
-   meditation_categories
+   meditation_categories,
+   meditation_item
 ) => {
    const QUERY = `
       UPDATE
@@ -329,7 +334,8 @@ const updateVersion = (
          names_99_version = $3,
          audios_version = $4,
          meditation_votes = $5,
-         meditation_categories = $6
+         meditation_categories = $6,
+         meditation_item = $7
       WHERE
          version_id = $1
       RETURNING *;
@@ -342,7 +348,8 @@ const updateVersion = (
       names_99_version,
       audios_version,
       meditation_votes,
-      meditation_categories
+      meditation_categories,
+
    )
 }
 const deleteVersion = (version_id) => {
