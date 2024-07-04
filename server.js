@@ -40,53 +40,50 @@ bot.on('message', async (msg) => {
    const text = msg.text;
    const username = msg.from.first_name;
 
-   console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
-
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
-      const parameter = text.split(' ')[1];
-      console.log(`Extracted parameter: ${parameter}`);
-
-      try {
-         const foundUser = await model.foundUser(parameter);
-         user = foundUser;
-
-         if (foundUser) {
-            const content = `Assalomu alaykum, ${foundUser.user_name}\nЗдравствуйте, ${foundUser.user_name}`;
-            console.log(`User found: ${foundUser.user_name}`);
-
-            bot.sendMessage(chatId, content, {
-               reply_markup: {
-                  inline_keyboard: [
-                     [{ text: 'O\'zbekcha', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
-                  ]
-               }
-            });
-         } else {
-            const content = `Assalomu alaykum, ${username}, Siz ro'yxatdan o'ta olmadiz. Qayta urinib ko\'ring.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться, Повторите попытку `;
-            console.log(`User not found with parameter: ${parameter}`);
-
-            bot.sendMessage(chatId, content, {
-               reply_markup: {
-                  keyboard: [
-                     [{ text: "O\'zbekcha" }, { text: "Русский" }]
-                  ],
-                  resize_keyboard: true
-               }
-            });
-         }
-      } catch (error) {
-         console.error(`Error fetching user: ${error.message}`);
-      }
+      await handleStartCommand(msg, chatId, text, username);
    } else {
-      handleTextMessages(msg);
+      await handleTextMessages(msg);
    }
 });
+
+const handleStartCommand = async (msg, chatId, text, username) => {
+   const parameter = text.split(' ')[1];
+
+   try {
+      const foundUser = await model.foundUser(parameter);
+      user = foundUser;
+
+      if (foundUser) {
+         const content = `Assalomu alaykum, ${foundUser.user_name}\nЗдравствуйте, ${foundUser.user_name}`;
+
+         bot.sendMessage(chatId, content, {
+            reply_markup: {
+               inline_keyboard: [
+                  [{ text: 'O\'zbekcha', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
+               ]
+            }
+         });
+      } else {
+         const content = `Assalomu alaykum, ${username}, Siz ro'yxatdan o'ta olmadiz. Qayta urinib ko'ring.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться, Повторите попытку `;
+
+         bot.sendMessage(chatId, content, {
+            reply_markup: {
+               keyboard: [
+                  [{ text: "O\'zbekcha" }, { text: "Русский" }]
+               ],
+               resize_keyboard: true
+            }
+         });
+      }
+   } catch (error) {
+      console.error(`Error fetching user: ${error.message}`);
+   }
+};
 
 const handleTextMessages = async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
-
-   console.log(`Handling text message: ${text} (Chat ID: ${chatId})`);
 
    if (text === "O'zbekcha") {
       bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
@@ -130,31 +127,35 @@ bot.on('callback_query', async (msg) => {
    const data = msg.data;
 
    if (data === 'uz' || data === 'ru') {
-      const languageText = data === 'uz' ? `${user.user_name}, kontaktingizni yuboring` : `${user.user_name}, отправьте свой контакт`;
-      const buttonText = data === 'uz' ? 'Kontaktni yuborish' : 'Отправить контакт';
-
-      bot.sendMessage(chatId, languageText, {
-         reply_markup: {
-            keyboard: [[{ text: buttonText, request_contact: true, one_time_keyboard: true }]],
-            resize_keyboard: true
-         }
-      }).then(() => {
-         const replyListenerId = bot.on('contact', async (msg) => {
-            bot.removeListener(replyListenerId);
-            if (msg.contact) {
-               let phoneNumber = msg.contact.phone_number;
-               if (!phoneNumber.startsWith('+')) {
-                  phoneNumber = `+${phoneNumber}`;
-               }
-               const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
-               if (updatedUserPhone) {
-                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
-               }
-            }
-         });
-      });
+      await handleLanguageSelection(chatId, data);
    }
 });
+
+const handleLanguageSelection = async (chatId, language) => {
+   const languageText = language === 'uz' ? `${user.user_name}, kontaktingizni yuboring` : `${user.user_name}, отправьте свой контакт`;
+   const buttonText = language === 'uz' ? 'Kontaktni yuborish' : 'Отправить контакт';
+
+   bot.sendMessage(chatId, languageText, {
+      reply_markup: {
+         keyboard: [[{ text: buttonText, request_contact: true, one_time_keyboard: true }]],
+         resize_keyboard: true
+      }
+   }).then(() => {
+      const replyListenerId = bot.on('contact', async (msg) => {
+         bot.removeListener(replyListenerId);
+         if (msg.contact) {
+            let phoneNumber = msg.contact.phone_number;
+            if (!phoneNumber.startsWith('+')) {
+               phoneNumber = `+${phoneNumber}`;
+            }
+            const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
+            if (updatedUserPhone) {
+               bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+            }
+         }
+      });
+   });
+};
 
 bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {
