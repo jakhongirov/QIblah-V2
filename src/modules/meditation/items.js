@@ -58,13 +58,15 @@ module.exports = {
          const { category_id } = req.query
 
          if (category_id) {
+            const versionCategory = await model.versionCategory()
             const itemsListByCategory = await model.itemsListByCategory(category_id)
 
             if (itemsListByCategory?.length > 0) {
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: itemsListByCategory
+                  data: itemsListByCategory,
+                  version: versionCategory?.meditation_item
                })
             } else {
                return res.status(404).json({
