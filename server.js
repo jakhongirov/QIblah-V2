@@ -40,9 +40,6 @@ bot.on('message', async (msg) => {
    const text = msg.text;
    const username = msg.from.first_name;
 
-
-   console.log(msg)
-
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       await handleStartCommand(msg, chatId, text, username);
    } else if (text == '/start') {
@@ -126,7 +123,7 @@ bot.on("message", (msg) => {
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
             bot.removeListener(replyListenerId);
             if (msg.text) {
-               const content = text === 'Murojaat qilish' ? `Savol: ${msg.text}` : `Вопрос: ${msg.text}`;
+               const content = text === 'Murojaat qilish' ? `Savol: ${msg.text}\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? msg.from?.username : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? msg.from?.id : ""}` : `Вопрос: ${msg.text}\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? msg.from?.username : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? msg.from?.id : ""}`;
                await model.addMessage(msg.chat.id, msg.date);
                bot.sendMessage(process.env.CHAT_ID, content);
                bot.sendMessage(chatId, text === 'Murojaat qilish' ? "Tashakkur, tez orada sizga javob qaytaramiz!" : "Спасибо, мы скоро свяжемся с вами!", {
@@ -165,7 +162,7 @@ const handleLanguageSelection = async (chatId, language) => {
          if (msg.contact) {
             let phoneNumber = msg.contact.phone_number;
             if (!phoneNumber.startsWith('+')) {
-               phoneNumber = `+${phoneNumber}`;
+               phoneNumber = `+ ${phoneNumber} `;
             }
             const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
             if (updatedUserPhone) {
