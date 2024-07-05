@@ -214,7 +214,7 @@ const options = {
       },
       servers: [
          {
-            url: "https://server.qiblah.app/api/v1",
+            url: "https://srvr.qiblah.app/api/v1",
          },
       ],
    },
