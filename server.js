@@ -40,6 +40,9 @@ bot.on('message', async (msg) => {
    const text = msg.text;
    const username = msg.from.first_name;
 
+
+   console.log(msg)
+
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       await handleStartCommand(msg, chatId, text, username);
    } else if (text == '/start') {
