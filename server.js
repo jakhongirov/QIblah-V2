@@ -42,8 +42,24 @@ bot.on('message', async (msg) => {
 
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       await handleStartCommand(msg, chatId, text, username);
-   } else {
-      await handleTextMessages(msg);
+   } else if (text == '/start') {
+      const content = `Assalomu alaykum, ${foundUser.user_name}\nЗдравствуйте, ${foundUser.user_name}`;
+
+      bot.sendMessage(chatId, content, {
+         reply_markup: {
+            keyboard: [
+               [
+                  {
+                     text: "O\'zbekcha"
+                  },
+                  {
+                     text: "Русский"
+                  },
+               ]
+            ],
+            resize_keyboard: true
+         }
+      });
    }
 });
 
@@ -81,7 +97,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
    }
 };
 
-const handleTextMessages = async (msg) => {
+bot.on("message", (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
 
@@ -120,7 +136,7 @@ const handleTextMessages = async (msg) => {
          });
       });
    }
-};
+});
 
 bot.on('callback_query', async (msg) => {
    const chatId = msg.message.chat.id;
@@ -150,7 +166,14 @@ const handleLanguageSelection = async (chatId, language) => {
             }
             const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
             if (updatedUserPhone) {
-               bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+               bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
+                  reply_markup: {
+                     keyboard: [
+                        [{ text: `${language == 'uz' ? "Murojaat qilish" : "Задавать вопрос"}` }]
+                     ],
+                     resize_keyboard: true
+                  }
+               });
             }
          }
       });
