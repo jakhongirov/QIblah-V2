@@ -102,14 +102,14 @@ bot.on("message", (msg) => {
    const text = msg.text;
 
    if (text === "O'zbekcha") {
-      bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
+      bot.sendMessage(chatId, 'Iltimos, kerakli menyuni tanlang:', {
          reply_markup: {
             keyboard: [[{ text: "Murojaat qilish" }]],
             resize_keyboard: true
          }
       });
    } else if (text === 'Русский') {
-      bot.sendMessage(chatId, 'Напишите свой вопрос. Мы обязательно вам ответим!', {
+      bot.sendMessage(chatId, 'Пожалуйста, выберите необходимое меню:', {
          reply_markup: {
             keyboard: [[{ text: "Задавать вопрос" }]],
             resize_keyboard: true
