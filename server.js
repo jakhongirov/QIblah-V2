@@ -43,7 +43,7 @@ bot.on('message', async (msg) => {
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       await handleStartCommand(msg, chatId, text, username);
    } else if (text == '/start') {
-      const content = `Assalomu alaykum, ${foundUser.user_name}\nЗдравствуйте, ${foundUser.user_name}`;
+      const content = `Assalomu alaykum, ${username}\nЗдравствуйте, ${username}`;
 
       bot.sendMessage(chatId, content, {
          reply_markup: {
