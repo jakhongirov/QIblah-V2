@@ -259,9 +259,9 @@ module.exports = {
             location_status,
             user_address_name
          } = req.body;
-         const checkUserEmail = await model.checkUserEmail(user_email.trim());
+         const checkUserEmail = await model.checkUserEmail(user_email?.trim());
          const cleanedValue = user_phone_number.replace(/\s+/g, '');
-         const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue.trim());
+         const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue?.trim());
 
          console.log(cleanedValue)
 
