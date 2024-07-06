@@ -162,7 +162,7 @@ const handleLanguageSelection = async (chatId, language) => {
          if (msg.contact) {
             let phoneNumber = msg.contact.phone_number;
             if (!phoneNumber.startsWith('+')) {
-               phoneNumber = `+ ${phoneNumber} `;
+               phoneNumber = `+${phoneNumber}`;
             }
             const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
             if (updatedUserPhone) {
