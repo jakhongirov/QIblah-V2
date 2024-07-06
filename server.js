@@ -209,7 +209,7 @@ bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {
       const date = msg.reply_to_message.date;
       const foundMsg = await model.foundMsg(date);
-      bot.sendMessage(foundMsg.chat_id, `Javob: ${msg.text}`).catch((error) => {
+      bot.sendMessage(foundMsg?.chat_id, `Javob: ${msg.text}`).catch((error) => {
          if (error.response && error.response.statusCode === 403) {
             bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
          } else {
