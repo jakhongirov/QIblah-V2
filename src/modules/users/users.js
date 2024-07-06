@@ -399,11 +399,7 @@ module.exports = {
             const checkUserEmail = await model.checkUserEmail(user_email)
 
             if (checkUserEmail) {
-               let validPass
-
-               if (checkUserEmail?.user_password) {
-                  await bcryptjs.compare(user_password, checkUserEmail?.user_password)
-               }
+               const validPass = checkUserPhoneNumber?.user_password ? await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password) : ""
 
                if (validPass) {
                   if (user_token) {
