@@ -153,12 +153,12 @@ const handleLanguageSelection = async (chatId, language) => {
 
    bot.sendMessage(chatId, languageText, {
       reply_markup: {
-         keyboard: [[{ text: buttonText, request_contact: true, one_time_keyboard: true }]],
-         resize_keyboard: true
+         keyboard: [[{ text: buttonText, request_contact: true }]],
+         resize_keyboard: true,
+         one_time_keyboard: true
       }
    }).then(() => {
-      const replyListenerId = bot.on('contact', async (msg) => {
-         bot.removeListener(replyListenerId);
+      const contactHandler = async (msg) => {
          if (msg.contact) {
             let phoneNumber = msg.contact.phone_number;
             if (!phoneNumber.startsWith('+')) {
@@ -169,16 +169,20 @@ const handleLanguageSelection = async (chatId, language) => {
                bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
                   reply_markup: {
                      keyboard: [
-                        [{ text: `${language == 'uz' ? "Murojaat qilish" : "Задавать вопрос"}` }]
+                        [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
                      ],
                      resize_keyboard: true
                   }
                });
+               bot.off('contact', contactHandler); // Remove the listener after processing
             }
          }
-      });
+      };
+
+      bot.on('contact', contactHandler);
    });
 };
+
 
 bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {
