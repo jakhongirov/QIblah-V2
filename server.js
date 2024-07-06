@@ -43,7 +43,7 @@ bot.on('message', async (msg) => {
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       await handleStartCommand(msg, chatId, text, username);
    } else if (text == '/start') {
-      const content = `Assalomu alaykum, ${username}, iltimos, tilni tanlang 🔽\nЗдравствуйте, ${username}, пожалуйста, выберите язык 🔽`;
+      const content = `Assalomu alaykum, ${username}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${username}, пожалуйста выберите язык бота:`;
 
       bot.sendMessage(chatId, content, {
          reply_markup: {
@@ -72,7 +72,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
       user["parameter"] = parameter;
 
       if (foundUser) {
-         const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos, tilni tanlang 🔽\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста, выберите язык 🔽`;
+         const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста выберите язык бота:`;
 
          bot.sendMessage(chatId, content, {
             reply_markup: {
