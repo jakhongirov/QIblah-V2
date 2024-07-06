@@ -259,11 +259,11 @@ module.exports = {
             location_status,
             user_address_name
          } = req.body;
+         const checkUserEmail = await model.checkUserEmail(user_email.trim());
+         const cleanedValue = user_phone_number.replace(/\s+/g, '');
+         const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue.trim());
 
-         const checkUserEmail = await model.checkUserEmail(user_email);
-         const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number);
-
-         console.log(user_phone_number)
+         console.log(cleanedValue)
 
          if (checkUserEmail || checkUserPhoneNumber) {
             return res.status(302).json({
@@ -273,7 +273,7 @@ module.exports = {
          } else {
             const pass_hash = await bcryptjs.hash(user_password, 10);
             const registerUser = await model.registerUser(
-               user_phone_number,
+               cleanedValue,
                user_email,
                pass_hash,
                user_name,
@@ -396,16 +396,16 @@ module.exports = {
                user_token,
                user_app_version
             } = req.body
-            const checkUserEmial = await model.checkUserEmial(user_email)
+            const checkUserEmail = await model.checkUserEmail(user_email)
 
-            if (checkUserEmial) {
-               const validPass = await bcryptjs.compare(user_password, checkUserEmial?.user_password)
+            if (checkUserEmail) {
+               const validPass = await bcryptjs.compare(user_password, checkUserEmail?.user_password)
 
                if (validPass) {
                   if (user_token) {
-                     const addToken = await model.addToken(checkUserEmial?.user_id, user_token, user_app_version)
+                     const addToken = await model.addToken(checkUserEmail?.user_id, user_token, user_app_version)
 
-                     const token = await new JWT({ id: checkUserEmial?.user_id }).sign()
+                     const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
                      return res.status(200).json({
                         status: 200,
                         message: "Success",
@@ -438,7 +438,8 @@ module.exports = {
                user_token,
                user_app_version
             } = req.body
-            const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
+            const cleanedValue = user_phone_number.replace(/\s+/g, '');
+            const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue)
 
             if (checkUserPhoneNumber) {
                const validPass = await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password)
