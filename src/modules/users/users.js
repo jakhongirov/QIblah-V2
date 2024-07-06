@@ -200,10 +200,10 @@ module.exports = {
 
    GET_SEARCH: async (req, res) => {
       try {
-         const { phone_number, user_name } = req.body
+         const { phone_number, user_name, user_gender } = req.body
 
-         if (phone_number || user_name) {
-            const userSearch = await model.userSearch(phone_number, user_name)
+         if (phone_number || user_name || user_gender) {
+            const userSearch = await model.userSearch(phone_number, user_name, user_gender)
 
             if (userSearch) {
                return res.status(200).json({

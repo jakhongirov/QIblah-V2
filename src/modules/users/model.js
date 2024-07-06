@@ -160,7 +160,7 @@ const foundUserByToken = (token) => {
 
    return fetch(QUERY, token)
 }
-const userSearch = (phone_number, user_name) => {
+const userSearch = (phone_number, user_name, user_gender) => {
    const QUERY = `
       SELECT
          *
@@ -168,12 +168,16 @@ const userSearch = (phone_number, user_name) => {
          users
       WHERE
       ${
-         phone_number && user_name ? (
-            `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%' `
+         phone_number && user_name && user_gender ? (
+            `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%' and user_gender ilike '%${user_gender}%'`
+         ) : phone_number && user_name ? (
+            `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%'`
          ) : phone_number ? (
             `user_phone_number ilike '%${phone_number}%'`
          ): user_name ? (
             `user_name ilike '%${user_name}%'`
+         ) : user_gender ? (
+            `user_gender ilike '%${user_gender}%'`
          ) : ""
       };
    `;
