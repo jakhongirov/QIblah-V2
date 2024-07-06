@@ -12,6 +12,42 @@ const foundUser = (token) => {
 
    return fetch(QUERY, token)
 }
+const checkUser = (phoneNumber) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users
+      WHERE
+         user_phone_number = $1;
+   `;
+
+   return fetch(QUERY, phoneNumber)
+}
+const addToken = (user_id, parameter) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_token = array_append(user_token, $2)
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id, parameter)
+}
+const deleteOldUser = (user_id) => {
+   const QUERY = `
+      DELETE FROM
+         users
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id)
+}
 const updatedUserPhone = (id, phone_number) => {
    const QUERY = `
       UPDATE
@@ -50,11 +86,14 @@ const foundMsg = (date) => {
          message_dete = $1;
    `;
 
-   return fetch(QUERY,date)
+   return fetch(QUERY, date)
 }
 
 module.exports = {
    foundUser,
+   checkUser,
+   addToken,
+   deleteOldUser,
    updatedUserPhone,
    addMessage,
    foundMsg

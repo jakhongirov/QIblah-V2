@@ -65,6 +65,7 @@ bot.on('message', async (msg) => {
 
 const handleStartCommand = async (msg, chatId, text, username) => {
    const parameter = text.split(' ')[1];
+   user["parameter"] = parameter;
 
    try {
       const foundUser = await model.foundUser(parameter);
@@ -164,18 +165,38 @@ const handleLanguageSelection = async (chatId, language) => {
             if (!phoneNumber.startsWith('+')) {
                phoneNumber = `+${phoneNumber}`;
             }
-            const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
-            if (updatedUserPhone) {
-               bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
-                  reply_markup: {
-                     keyboard: [
-                        [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
-                     ],
-                     resize_keyboard: true
-                  }
-               });
-               bot.off('contact', contactHandler); // Remove the listener after processing
+            const checkUser = await model.checkUser(phoneNumber)
+
+            if (checkUser) {
+               const addToken = await model.addToken(checkUser.user_id, user?.parameter)
+
+               if (addToken) {
+                  await model.deleteOldUser(user.user_id)
+                  bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
+                     reply_markup: {
+                        keyboard: [
+                           [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                        ],
+                        resize_keyboard: true
+                     }
+                  });
+                  bot.off('contact', contactHandler);
+               }
+            } else {
+               const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
+               if (updatedUserPhone) {
+                  bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
+                     reply_markup: {
+                        keyboard: [
+                           [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                        ],
+                        resize_keyboard: true
+                     }
+                  });
+                  bot.off('contact', contactHandler); // Remove the listener after processing
+               }
             }
+
          }
       };
 
