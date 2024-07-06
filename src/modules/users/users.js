@@ -446,11 +446,9 @@ module.exports = {
             const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue)
 
             if (checkUserPhoneNumber) {
-               console.log(checkUserPhoneNumber)
-               const validPass = await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password)
+               const validPass = checkUserPhoneNumber?.user_password ? await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password) : ""
 
                if (validPass) {
-
                   if (user_token) {
                      const addToken = await model.addToken(checkUserPhoneNumber?.user_id, user_token, user_app_version)
                      const token = await new JWT({ id: checkUserPhoneNumber?.user_id }).sign()
@@ -469,7 +467,7 @@ module.exports = {
                } else {
                   return res.status(401).json({
                      status: 401,
-                     message: "Invalid password"
+                     message: "Invalid password or you do not have"
                   })
                }
 
