@@ -173,7 +173,13 @@ bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {
       const date = msg.reply_to_message.date;
       const foundMsg = await model.foundMsg(date);
-      bot.sendMessage(foundMsg.chat_id, `Javob: ${msg.text}`);
+      bot.sendMessage(foundMsg.chat_id, `Javob: ${msg.text}`).catch((error) => {
+         if (error.response && error.response.statusCode === 403) {
+            bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
+         } else {
+            console.error('Error sending message:', error.message);
+         }
+      });;
    }
 });
 
@@ -182,7 +188,7 @@ bot.onText(/\/reply/, (msg) => {
    const repliedMessageId = msg.reply_to_message.message_id;
    bot.sendMessage(chatId, 'Replying to the bot message', {
       reply_to_message_id: repliedMessageId
-   });
+   })
 });
 
 
