@@ -65,11 +65,11 @@ bot.on('message', async (msg) => {
 
 const handleStartCommand = async (msg, chatId, text, username) => {
    const parameter = text.split(' ')[1];
-   user["parameter"] = parameter;
-
+   
    try {
       const foundUser = await model.foundUser(parameter);
       user = foundUser;
+      user["parameter"] = parameter;
 
       if (foundUser) {
          const content = `Assalomu alaykum, ${foundUser.user_name}\nЗдравствуйте, ${foundUser.user_name}`;
