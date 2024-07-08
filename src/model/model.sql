@@ -142,6 +142,7 @@ CREATE TABLE zikrs (
    zikr_title text,
    zikr_description text,
    zikr_info text,
+   zikr boolean DEFAULT true,
    zikr_daily_count int,
    zikr_audio_link text,
    zikr_audio_name text,

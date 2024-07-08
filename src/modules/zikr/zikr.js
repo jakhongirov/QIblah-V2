@@ -130,7 +130,8 @@ module.exports = {
             zikr_description,
             zikr_daily_count,
             category_id,
-            zikr_info
+            zikr_info,
+            zikr,
          } = req.body
          const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
          const audioName = uploadPhoto?.filename;
@@ -142,7 +143,8 @@ module.exports = {
             category_id,
             audioUrl,
             audioName,
-            zikr_info
+            zikr_info,
+            zikr
          )
 
          if (addZikr) {
@@ -176,7 +178,8 @@ module.exports = {
             zikr_description,
             zikr_daily_count,
             category_id,
-            zikr_info
+            zikr_info,
+            zikr
          } = req.body
          const foundZikr = await model.foundZikr(zikr_id)
          let audioUrl = '';
@@ -204,7 +207,8 @@ module.exports = {
                category_id,
                audioUrl,
                audioName,
-               zikr_info
+               zikr_info,
+               zikr
             )
 
             if (editZikr) {

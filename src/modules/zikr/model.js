@@ -53,7 +53,8 @@ const addZikr = (
    category_id,
    audioUrl,
    audioName,
-   zikr_info
+   zikr_info,
+   zikr
 ) => {
    const QUERY = `
       INSERT INTO
@@ -64,7 +65,8 @@ const addZikr = (
             category_id,
             zikr_audio_link,
             zikr_audio_name,
-            zikr_info
+            zikr_info,
+            zikr
          ) VALUES (
             $1,
             $2,
@@ -72,7 +74,8 @@ const addZikr = (
             $4,
             $5,
             $6,
-            $7
+            $7,
+            $8
          ) RETURNING *;
    `;
 
@@ -84,7 +87,8 @@ const addZikr = (
       category_id,
       audioUrl,
       audioName,
-      zikr_info
+      zikr_info,
+      zikr
    )
 }
 const editZikr = (
@@ -95,7 +99,8 @@ const editZikr = (
    category_id,
    audioUrl,
    audioName,
-   zikr_info
+   zikr_info,
+   zikr
 ) => {
    const QUERY = `
       UPDATE
@@ -107,7 +112,8 @@ const editZikr = (
          category_id = $5,
          zikr_audio_link = $6,
          zikr_audio_name = $7,
-         zikr_info = $8
+         zikr_info = $8,
+         zikr = $9
       WHERE
          zikr_id = $1
       RETURNING *;
@@ -122,7 +128,8 @@ const editZikr = (
       category_id,
       audioUrl,
       audioName,
-      zikr_info
+      zikr_info,
+      zikr
    )
 }
 const deleteZikr = (zikr_id) => {
