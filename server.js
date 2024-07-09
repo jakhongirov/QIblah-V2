@@ -12,6 +12,7 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
 const TelegramBot = require('node-telegram-bot-api')
+const bcryptjs = require('bcryptjs')
 const model = require('./model')
 
 const publicFolderPath = path.join(__dirname, 'public');
@@ -105,14 +106,14 @@ bot.on("message", (msg) => {
    if (text === "O'zbekcha") {
       bot.sendMessage(chatId, 'Iltimos, kerakli menyuni tanlang:', {
          reply_markup: {
-            keyboard: [[{ text: "Murojaat qilish" }]],
+            keyboard: [[{ text: "Murojaat qilish" }, { text: "Parolni tiklash" }]],
             resize_keyboard: true
          }
       });
    } else if (text === 'Русский') {
       bot.sendMessage(chatId, 'Пожалуйста, выберите необходимое меню:', {
          reply_markup: {
-            keyboard: [[{ text: "Задавать вопрос" }]],
+            keyboard: [[{ text: "Задавать вопрос" }, { text: "Восстановление пароля" }]],
             resize_keyboard: true
          }
       });
@@ -136,6 +137,64 @@ bot.on("message", (msg) => {
             }
          });
       });
+   } else if (text == "Parolni tiklash" || text == "Восстановление пароля") {
+      const languagePrompt = text === 'Parolni tiklash' ? 'Iltimos, kontaktingizni yuboring:' : 'Пожалуйста, пришлите ваш контакт:';
+      const buttonText = text === 'Parolni tiklash' ? 'Kontaktni yuborish' : 'Отправить контакт';
+      bot.sendMessage(chatId, languagePrompt, {
+         reply_markup: {
+            keyboard: [[{ text: buttonText, request_contact: true }]],
+            resize_keyboard: true,
+            one_time_keyboard: true
+         }
+      }).then(() => {
+         const changePassword = async (msg) => {
+            if (msg.contact) {
+               let phoneNumber = msg.contact.phone_number;
+               if (!phoneNumber.startsWith('+')) {
+                  phoneNumber = `+${phoneNumber}`;
+               }
+               const checkUser = await model.checkUser(phoneNumber)
+
+               if (checkUser) {
+                  const languagePrompt = text === 'Parolni tiklash' ? 'Yangi parolingizni yozing' : 'Введите новый пароль';
+                  bot.sendMessage(msg.chat.id, languagePrompt, {
+                     reply_markup: { force_reply: true }
+                  }).then(payload => {
+                     const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async msg => {
+                        bot.removeListener(replyListenerId);
+                        if (msg.text) {
+                           const pass_hash = await bcryptjs.hash(msg.text, 10);
+                           const updatedUserPassword = await model.updatedUserPassword(checkUser?.user_id, pass_hash)
+
+                           if (updatedUserPassword) {
+                              const content = text === 'Parolni tiklash' ? `${checkUser?.user_name}, parolingiz muvaffaqiyatli o'zgartirildi.` : `${checkUser?.user_name}, Ваш пароль был успешно изменен.`
+                              bot.sendMessage(msg.chat.id, content, {
+                                 reply_markup: {
+                                    keyboard: [[{ text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                                    resize_keyboard: true
+                                 }
+                              })
+                           }
+                        }
+                     })
+                  })
+
+                  bot.off('contact', changePassword)
+               } else {
+                  const content = text === 'Parolni tiklash' ? `Foydalanuvchi topilmadi` : "Пользователь не найден"
+                  bot.sendMessage(msg.chat.id, content, {
+                     reply_markup: {
+                        keyboard: [[{ text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                        resize_keyboard: true
+                     }
+                  })
+                  bot.off('contact', changePassword)
+               }
+            }
+         }
+
+         bot.on('contact', changePassword);
+      })
    }
 });
 
@@ -203,7 +262,6 @@ const handleLanguageSelection = async (chatId, language) => {
       bot.on('contact', contactHandler);
    });
 };
-
 
 bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {

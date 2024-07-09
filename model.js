@@ -24,7 +24,7 @@ const checkUser = (phoneNumber) => {
 
    return fetch(QUERY, phoneNumber)
 }
-const addToken = (user_id, parameter) => {
+const addToken = (id, token) => {
    const QUERY = `
       UPDATE
          users
@@ -35,9 +35,9 @@ const addToken = (user_id, parameter) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, parameter)
+   return fetch(QUERY, id, token)
 }
-const deleteOldUser = (user_id) => {
+const deleteUser = (id) => {
    const QUERY = `
       DELETE FROM
          users
@@ -46,15 +46,14 @@ const deleteOldUser = (user_id) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id)
+   return fetch(QUERY, id)
 }
 const updatedUserPhone = (id, phone_number) => {
    const QUERY = `
       UPDATE
          users
       SET
-         user_phone_number = $2,
-         user_signin_method = 'withTelegram'
+         user_phone_number = $2
       WHERE
          user_id = $1
       RETURNING *;
@@ -62,6 +61,19 @@ const updatedUserPhone = (id, phone_number) => {
 
    return fetch(QUERY, id, phone_number)
 }
+const updatedUserPassword = (user_id, pass_hash) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_password = $2
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id, pass_hash)
+};
 const addMessage = (chat_id, date) => {
    const QUERY = `
       INSERT INTO
@@ -93,8 +105,9 @@ module.exports = {
    foundUser,
    checkUser,
    addToken,
-   deleteOldUser,
+   deleteUser,
    updatedUserPhone,
+   updatedUserPassword,
    addMessage,
    foundMsg
 }
