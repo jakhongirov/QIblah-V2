@@ -17,12 +17,12 @@ const editUserPremium = (param2, timestamp, payment_type) => {
 }
 
 const addTransaction = (
-   click_trans_id,
-   amount,
-   param3,
-   param2,
-   merchant_trans_id,
-   error,
+   click_trans_id, 
+   amount, 
+   monthToAdd, 
+   param2, 
+   merchant_trans_id, 
+   error, 
    error_note
 ) => {
    const QUERY = `
@@ -48,12 +48,12 @@ const addTransaction = (
 
    return fetch(
       QUERY,
-      click_trans_id,
-      amount,
-      param2,
-      param3,
-      merchant_trans_id,
-      error,
+      click_trans_id, 
+      amount, 
+      monthToAdd, 
+      param2, 
+      merchant_trans_id, 
+      error, 
       error_note
    )
 }
