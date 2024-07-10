@@ -230,7 +230,7 @@ const handleLanguageSelection = async (chatId, language) => {
                const addToken = await model.addToken(checkUser.user_id, user?.parameter)
 
                if (addToken) {
-                  await model.deleteOldUser(user.user_id)
+                  await model.deleteUser(user.user_id)
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                      reply_markup: {
                         keyboard: [
