@@ -97,10 +97,11 @@ module.exports = {
             zikr_info_cyrillic,
             zikr_info_russian,
             zikr_info_english,
-            zikr_info_kazakh
+            zikr_info_kazakh,
+            audio_link
          } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const audioName = uploadPhoto?.filename;
+         const audioUrl = audio_link ? audio_link : `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
+         const audioName = audio_link ? null : uploadPhoto?.filename;
 
          const addPublicZikr = await model.addPublicZikr(
             zikr_title_uzbek,
@@ -168,6 +169,7 @@ module.exports = {
             zikr_info_russian,
             zikr_info_english,
             zikr_info_kazakh,
+            audio_link
          } = req.body
          const foundZikr = await model.foundZikr(zikr_id)
          let audioUrl = '';
@@ -180,6 +182,9 @@ module.exports = {
             }
             audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
             audioName = uploadPhoto?.filename;
+         } else if (audio_link) {
+            audioUrl = audio_link;
+            audioName = null;
          } else {
             audioUrl = foundZikr?.zikr_audio_link;
             audioName = foundZikr?.zikr_audio_name;
