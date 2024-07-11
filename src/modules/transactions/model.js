@@ -12,7 +12,7 @@ const getList = (limit, page, user_id) => {
          ) : ""
       }
       LIMIT  ${limit}
-      OFFSER ${Number((page - 1) * limit)};
+      OFFSET ${Number((page - 1) * limit)};
    `;
 
    return fetchALL(QUERY)
