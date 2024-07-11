@@ -88,9 +88,9 @@ module.exports = {
    ADD_AUDIO: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { author_id, sura_id, time } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const audioName = uploadPhoto?.filename;
+         const { author_id, sura_id, time, audio_link } = req.body
+         const audioUrl = audio_link ? audio_link : `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
+         const audioName = audio_link ? null : uploadPhoto?.filename;
 
          const addAudio = await model.addAudio(author_id, sura_id, JSON.parse(time), audioUrl, audioName)
 
@@ -119,7 +119,7 @@ module.exports = {
    UPDATE_AUDIO: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { audio_id, author_id, sura_id, time } = req.body
+         const { audio_id, author_id, sura_id, time, audio_link } = req.body
          const foundAudio = await model.foundAudio(audio_id)
          let audioUrl = '';
          let audioName = '';
@@ -132,6 +132,9 @@ module.exports = {
                }
                audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
                audioName = uploadPhoto?.filename;
+            } else if (audio_link) {
+               audioUrl = audio_link;
+               audioName = null;
             } else {
                audioUrl = foundAudio?.audio_link;
                audioName = foundAudio?.audio_name;

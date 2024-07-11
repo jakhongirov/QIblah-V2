@@ -30,6 +30,7 @@ const click = require('./click/click')
 const paymentCategories = require('./payment/payment')
 const paymentCheck = require('./payment/check')
 const uzum = require('./uzum/uzum')
+const transactions = require('./transactions/transactions')
 
 router
 
@@ -543,5 +544,8 @@ router
 
   // UZUM
   .post('/uzum/confirm', uzum.CONFIRM)
+
+  //Transactions
+  .get("/transactions", AUTH, transactions.GET)
 
 module.exports = router
