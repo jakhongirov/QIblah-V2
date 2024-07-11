@@ -394,7 +394,10 @@ module.exports = {
                user_email,
                user_password,
                user_token,
-               user_app_version
+               user_app_version,
+               premium,
+               premium_type,
+               premium_expires_date
             } = req.body
             const checkUserEmail = await model.checkUserEmail(user_email)
 
@@ -403,7 +406,7 @@ module.exports = {
 
                if (validPass) {
                   if (user_token) {
-                     const addToken = await model.addToken(checkUserEmail?.user_id, user_token, user_app_version)
+                     const addToken = await model.addToken(checkUserEmail?.user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
 
                      const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
                      return res.status(200).json({

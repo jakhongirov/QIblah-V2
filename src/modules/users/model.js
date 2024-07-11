@@ -167,18 +167,17 @@ const userSearch = (phone_number, user_name, user_gender) => {
       FROM
          users
       WHERE
-      ${
-         phone_number && user_name && user_gender ? (
-            `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%' and user_gender ilike '%${user_gender}%'`
-         ) : phone_number && user_name ? (
-            `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%'`
-         ) : phone_number ? (
-            `user_phone_number ilike '%${phone_number}%'`
-         ): user_name ? (
-            `user_name ilike '%${user_name}%'`
-         ) : user_gender ? (
-            `user_gender ilike '%${user_gender}%'`
-         ) : ""
+      ${phone_number && user_name && user_gender ? (
+         `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%' and user_gender ilike '%${user_gender}%'`
+      ) : phone_number && user_name ? (
+         `user_phone_number ilike '%${phone_number}%' and user_name ilike '%${user_name}%'`
+      ) : phone_number ? (
+         `user_phone_number ilike '%${phone_number}%'`
+      ) : user_name ? (
+         `user_name ilike '%${user_name}%'`
+      ) : user_gender ? (
+         `user_gender ilike '%${user_gender}%'`
+      ) : ""
       };
    `;
 
@@ -394,19 +393,22 @@ const createTemporaryUser = (
       user_address_name
    )
 }
-const addToken = (user_id, user_token, user_app_version) => {
+const addToken = (user_id, user_token, user_app_version, premium, premium_type, premium_expires_date) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_token = array_append(user_token, $2),
-         user_app_version = $3
+         user_app_version = $3,
+         user_premium = $4,
+         payment_type = $5,
+         user_premium_expires_at = $6
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, user_token, user_app_version)
+   return fetch(QUERY, user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
 }
 const editUserAvatar = (user_id, imageUrl, imageName) => {
    const QUERY = `
