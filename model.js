@@ -53,7 +53,8 @@ const updatedUserPhone = (id, phone_number) => {
       UPDATE
          users
       SET
-         user_phone_number = $2
+         user_phone_number = $2,
+         user_signin_method = 'withTelegram'
       WHERE
          user_id = $1
       RETURNING *;
