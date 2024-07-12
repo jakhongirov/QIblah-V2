@@ -266,6 +266,7 @@ const handleLanguageSelection = async (chatId, language) => {
 
 const processExistingUser = async (checkUser, chatId, phoneNumber, language) => {
    if (checkUser[chatId].user_premium) {
+      console.log(checkUser[chatId])
       const expirationDate = new Date(checkUser[chatId].user_premium_expires_at);
       const today = new Date();
       const isExpired = expirationDate < today;
@@ -286,6 +287,8 @@ const processExistingUser = async (checkUser, chatId, phoneNumber, language) => 
          }
       }
    } else if (user[chatId]?.user_premium) {
+      console.log(user[chatId])
+
       const expirationDate = new Date(user[chatId].user_premium_expires_at);
       const today = new Date();
       const isExpired = expirationDate < today;
@@ -306,6 +309,8 @@ const processExistingUser = async (checkUser, chatId, phoneNumber, language) => 
          }
       }
    } else {
+      console.log(checkUser[chatId])
+      
       const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId].user_premium, checkUser[chatId].payment_type, checkUser[chatId].user_premium_expires_at);
       if (addToken) {
          const deleteUser = await model.deleteUser(user[chatId].user_id);
