@@ -34,7 +34,7 @@ if (!fs.existsSync(imagesFolderPath)) {
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
-let user;
+let user = {};
 
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
@@ -66,7 +66,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
    try {
       const foundUser = await model.foundUser(parameter);
       user[chatId] = foundUser;
-      user[chatId]["parameter"] = parameter;
+      user[chatId]?.parameter = parameter;
 
       if (foundUser) {
          const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста выберите язык бота:`;
