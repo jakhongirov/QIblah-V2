@@ -66,7 +66,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
    try {
       const foundUser = await model.foundUser(parameter);
       user[chatId] = foundUser;
-      user[chatId]?.parameter = parameter;
+      user[chatId]?.["parameter"] = parameter;
 
       if (foundUser) {
          const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста выберите язык бота:`;
