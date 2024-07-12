@@ -319,7 +319,6 @@ const sendMessageAndCleanup = (chatId, language) => {
          resize_keyboard: true
       }
    });
-   bot.off('contact', contactHandler);
 };
 
 bot.on('message', async (msg) => {
