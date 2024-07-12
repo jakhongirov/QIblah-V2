@@ -244,7 +244,7 @@ const handleLanguageSelection = async (chatId, language) => {
             if (checkUser) {
                await processExistingUser(checkUser, chatId, phoneNumber, language);
             } else {
-               const updatedUserPhone = await model.updatedUserPhone(user[chatId].user_id, phoneNumber);
+               const updatedUserPhone = await model.updatedUserPhone(user[chatId]?.user_id, phoneNumber);
                if (updatedUserPhone) {
                   bot.sendMessage(chatId, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
                      reply_markup: {
