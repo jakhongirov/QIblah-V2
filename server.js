@@ -240,6 +240,7 @@ const handleLanguageSelection = async (chatId, language) => {
             }
             let checkUser = {}
             checkUser[chatId] = await model.checkUser(phoneNumber);
+            console.log(checkUser[chatId])
 
             if (checkUser[chatId]) {
                await processExistingUser(checkUser, chatId, phoneNumber, language);
