@@ -65,6 +65,11 @@ const handleStartCommand = async (msg, chatId, text, username) => {
 
    try {
       const foundUser = await model.foundUser(parameter);
+
+      if (!user[chatId]) {
+         user[chatId] = {};
+      }
+
       user[chatId] = foundUser;
       user[chatId]["parameter"] = parameter;
 
