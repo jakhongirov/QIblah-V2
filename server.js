@@ -273,13 +273,15 @@ const processExistingUser = async (checkUser, chatId, phoneNumber, language) => 
       if (isExpired) {
          const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, false, checkUser[chatId].payment_type, checkUser[chatId].user_premium_expires_at);
          if (addToken) {
-            await model.deleteUser(user[chatId].user_id);
+            const deleteUser = await model.deleteUser(user[chatId].user_id);
+            console.log(deleteUser)
             sendMessageAndCleanup(chatId, language);
          }
       } else {
          const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId].user_premium, checkUser[chatId].payment_type, checkUser[chatId].user_premium_expires_at);
          if (addToken) {
-            await model.deleteUser(user[chatId].user_id);
+            const deleteUser = await model.deleteUser(user[chatId].user_id);
+            console.log(deleteUser)
             sendMessageAndCleanup(chatId, language);
          }
       }
@@ -291,20 +293,23 @@ const processExistingUser = async (checkUser, chatId, phoneNumber, language) => 
       if (isExpired) {
          const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, false, user[chatId].payment_type, user[chatId].user_premium_expires_at);
          if (addToken) {
-            await model.deleteUser(user[chatId].user_id);
+            const deleteUser = await model.deleteUser(user[chatId].user_id);
+            console.log(deleteUser)
             sendMessageAndCleanup(chatId, language);
          }
       } else {
          const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, user[chatId].user_premium, user[chatId].payment_type, user[chatId].user_premium_expires_at);
          if (addToken) {
-            await model.deleteUser(user[chatId].user_id);
+            const deleteUser = await model.deleteUser(user[chatId].user_id);
+            console.log(deleteUser)
             sendMessageAndCleanup(chatId, language);
          }
       }
    } else {
       const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId].user_premium, checkUser[chatId].payment_type, checkUser[chatId].user_premium_expires_at);
       if (addToken) {
-         await model.deleteUser(user[chatId].user_id);
+         const deleteUser = await model.deleteUser(user[chatId].user_id);
+         console.log(deleteUser)
          sendMessageAndCleanup(chatId, language);
       }
    }
