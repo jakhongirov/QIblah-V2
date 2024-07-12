@@ -240,19 +240,89 @@ const handleLanguageSelection = async (chatId, language) => {
             const checkUser = await model.checkUser(phoneNumber)
 
             if (checkUser) {
-               const addToken = await model.addToken(checkUser.user_id, user?.parameter)
 
-               if (addToken) {
-                  await model.deleteUser(user.user_id)
-                  bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
-                     reply_markup: {
-                        keyboard: [
-                           [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
-                        ],
-                        resize_keyboard: true
+               if (checkUser?.user_premium) {
+                  const expirationDate = new Date(checkUser?.user_premium_expires_at);
+                  const today = new Date();
+                  const isExpired = expirationDate < today;
+
+                  if (isExpired) {
+                     const addToken = await model.addToken(checkUser.user_id, user?.parameter, false, checkUser?.payment_type, checkUser?.user_premium_expires_at)
+                     if (addToken) {
+                        await model.deleteUser(user.user_id)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
                      }
-                  });
-                  bot.off('contact', contactHandler);
+                  } else {
+                     const addToken = await model.addToken(checkUser.user_id, user?.parameter, checkUser?.user_premium, checkUser?.payment_type, checkUser?.user_premium_expires_at)
+                     if (addToken) {
+                        await model.deleteUser(user.user_id)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
+                     }
+                  }
+               } else if (user?.user_premium) {
+                  const expirationDate = new Date(user?.user_premium_expires_at);
+                  const today = new Date();
+                  const isExpired = expirationDate < today;
+
+                  if (isExpired) {
+                     const addToken = await model.addToken(checkUser.user_id, user?.parameter, false, user?.payment_type, user?.user_premium_expires_at)
+                     if (addToken) {
+                        await model.deleteUser(user.user_id)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
+                     }
+                  } else {
+                     const addToken = await model.addToken(checkUser.user_id, user?.parameter, user?.user_premium, user?.payment_type, user?.user_premium_expires_at)
+                     if (addToken) {
+                        await model.deleteUser(user.user_id)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
+                     }
+                  }
+               } else {
+                  const addToken = await model.addToken(checkUser.user_id, user?.parameter, checkUser?.user_premium, checkUser?.payment_type, checkUser?.user_premium_expires_at)
+                  if (addToken) {
+                     await model.deleteUser(user.user_id)
+                     bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                        reply_markup: {
+                           keyboard: [
+                              [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                           ],
+                           resize_keyboard: true
+                        }
+                     });
+                     bot.off('contact', contactHandler);
+                  }
                }
             } else {
                const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);

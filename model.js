@@ -24,18 +24,21 @@ const checkUser = (phoneNumber) => {
 
    return fetch(QUERY, phoneNumber)
 }
-const addToken = (id, token) => {
+const addToken = (user_id, token, user_premium, payment_type, user_premium_expires_at) => {
    const QUERY = `
       UPDATE
          users
       SET
-         user_token = array_append(user_token, $2)
+         user_token = array_append(user_token, $2),
+         user_premium = $3,
+         payment_type = $4,
+         user_premium_expires_at = $5
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, id, token)
+   return fetch(QUERY, user_id, token, user_premium, payment_type, user_premium_expires_at)
 }
 const deleteUser = (id) => {
    const QUERY = `
