@@ -263,7 +263,6 @@ module.exports = {
          const cleanedValue = user_phone_number.replace(/\s+/g, '');
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue?.trim());
 
-         console.log(cleanedValue)
 
          if (checkUserEmail || checkUserPhoneNumber) {
             return res.status(302).json({
@@ -627,37 +626,46 @@ module.exports = {
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
-            if (user_password) {
-               const pass_hash = await bcryptjs.hash(user_password, 10)
-               const editUser = await model.editUser(user_id, user_email, user_phone_number, pass_hash)
+            const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
 
-               if (editUser) {
-                  return res.status(200).json({
-                     status: 200,
-                     message: "Success",
-                     data: editUser
-                  })
-               } else {
-                  return res.status(400).json({
-                     status: 400,
-                     message: "Bad request"
-                  })
-               }
-
+            if (checkUserPhoneNumber) {
+               return res.status(302).json({
+                  status: 302,
+                  message: "User found"
+               });
             } else {
-               const editUser = await model.editUser(user_id, user_email, user_phone_number, checkUser?.user_password)
+               if (user_password) {
+                  const pass_hash = await bcryptjs.hash(user_password, 10)
+                  const editUser = await model.editUser(user_id, user_email, user_phone_number, pass_hash)
 
-               if (editUser) {
-                  return res.status(200).json({
-                     status: 200,
-                     message: "Success",
-                     data: editUser
-                  })
+                  if (editUser) {
+                     return res.status(200).json({
+                        status: 200,
+                        message: "Success",
+                        data: editUser
+                     })
+                  } else {
+                     return res.status(400).json({
+                        status: 400,
+                        message: "Bad request"
+                     })
+                  }
+
                } else {
-                  return res.status(400).json({
-                     status: 400,
-                     message: "Bad request"
-                  })
+                  const editUser = await model.editUser(user_id, user_email, user_phone_number, checkUser?.user_password)
+
+                  if (editUser) {
+                     return res.status(200).json({
+                        status: 200,
+                        message: "Success",
+                        data: editUser
+                     })
+                  } else {
+                     return res.status(400).json({
+                        status: 400,
+                        message: "Bad request"
+                     })
+                  }
                }
             }
          } else {
