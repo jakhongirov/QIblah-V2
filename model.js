@@ -40,8 +40,8 @@ const addToken = (
       UPDATE
          users
       SET
-   user_token = array_append(user_token, $2),
-         user_premium = $3,
+         user_token = array_append(user_token, $2),
+         user_premium = $3, 
          user_premium_expires_at = $4,
          payment_type = $5,
          user_country_code = $6,
