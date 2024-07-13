@@ -450,7 +450,8 @@ module.exports = {
                         foundUserByToken?.user_region,
                         foundUserByToken?.user_location,
                         foundUserByToken?.user_address_name,
-                        foundUserByToken?.user_location_status
+                        foundUserByToken?.user_location_status,
+                        foundUserByToken?.tracking
                      )
 
                      const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
@@ -507,7 +508,8 @@ module.exports = {
                         foundUserByToken?.user_region,
                         foundUserByToken?.user_location,
                         foundUserByToken?.user_address_name,
-                        foundUserByToken?.user_location_status
+                        foundUserByToken?.user_location_status,
+                        foundUserByToken?.tracking
                      )
                      const token = await new JWT({ id: checkUserPhoneNumber?.user_id }).sign()
                      await model.deleteUser(foundUserByToken?.user_id)
@@ -560,7 +562,8 @@ module.exports = {
                      foundUserByToken?.user_region,
                      foundUserByToken?.user_location,
                      foundUserByToken?.user_address_name,
-                     foundUserByToken?.user_location_status
+                     foundUserByToken?.user_location_status,
+                     foundUserByToken?.tracking
                   )
                   const token = await new JWT({ id: checkUserMethod?.user_id }).sign()
                   await model.deleteUser(foundUserByToken?.user_id)
