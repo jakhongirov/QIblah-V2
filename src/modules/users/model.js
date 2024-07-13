@@ -393,7 +393,19 @@ const createTemporaryUser = (
       user_address_name
    )
 }
-const addToken = (user_id, user_token, user_app_version, premium, premium_type, premium_expires_date) => {
+const addToken = (
+   user_id,
+   user_token,
+   user_app_version,
+   user_premium,
+   payment_type,
+   user_premium_expires_at,
+   user_country_code,
+   user_region,
+   user_location,
+   user_address_name,
+   user_location_status
+) => {
    const QUERY = `
       UPDATE
          users
@@ -402,13 +414,31 @@ const addToken = (user_id, user_token, user_app_version, premium, premium_type, 
          user_app_version = $3,
          user_premium = $4,
          payment_type = $5,
-         user_premium_expires_at = $6
+         user_premium_expires_at = $6,
+         user_country_code = $7,
+         user_region = $8,
+         user_location = $9,
+         user_address_name = $10,
+         user_location_status = $11
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
+   return fetch(
+      QUERY,
+      user_id,
+      user_token,
+      user_app_version,
+      user_premium,
+      payment_type,
+      user_premium_expires_at,
+      user_country_code,
+      user_region,
+      user_location,
+      user_address_name,
+      user_location_status
+   )
 }
 const editUserAvatar = (user_id, imageUrl, imageName) => {
    const QUERY = `

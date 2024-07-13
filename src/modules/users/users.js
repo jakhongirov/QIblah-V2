@@ -408,18 +408,28 @@ module.exports = {
                user_password,
                user_token,
                user_app_version,
-               premium,
-               premium_type,
-               premium_expires_date
             } = req.body
             const checkUserEmail = await model.checkUserEmail(user_email)
 
             if (checkUserEmail) {
-               const validPass = checkUserPhoneNumber?.user_password ? await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password) : ""
+               const foundUserByToken = await model.foundUserByToken(user_token)
+               const validPass = checkUserEmail?.user_password ? await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password) : ""
 
                if (validPass) {
                   if (user_token) {
-                     const addToken = await model.addToken(checkUserEmail?.user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
+                     const addToken = await model.addToken(
+                        checkUserEmail?.user_id,
+                        user_token,
+                        user_app_version,
+                        foundUserByToken?.user_premium,
+                        foundUserByToken?.payment_type,
+                        foundUserByToken?.user_premium_expires_at,
+                        foundUserByToken?.user_country_code,
+                        foundUserByToken?.user_region,
+                        foundUserByToken?.user_location,
+                        foundUserByToken?.user_address_name,
+                        foundUserByToken?.user_location_status
+                     )
 
                      const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
                      return res.status(200).json({
@@ -452,20 +462,30 @@ module.exports = {
                user_phone_number,
                user_password,
                user_token,
-               user_app_version,
-               premium,
-               premium_type,
-               premium_expires_date
+               user_app_version
             } = req.body
             const cleanedValue = user_phone_number.replace(/\s+/g, '');
             const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue)
 
             if (checkUserPhoneNumber) {
+               const foundUserByToken = await model.foundUserByToken(user_token)
                const validPass = checkUserPhoneNumber?.user_password ? await bcryptjs.compare(user_password, checkUserPhoneNumber?.user_password) : ""
 
                if (validPass) {
                   if (user_token) {
-                     const addToken = await model.addToken(checkUserPhoneNumber?.user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
+                     const addToken = await model.addToken(
+                        checkUserPhoneNumber?.user_id,
+                        user_token,
+                        user_app_version,
+                        foundUserByToken?.user_premium,
+                        foundUserByToken?.payment_type,
+                        foundUserByToken?.user_premium_expires_at,
+                        foundUserByToken?.user_country_code,
+                        foundUserByToken?.user_region,
+                        foundUserByToken?.user_location,
+                        foundUserByToken?.user_address_name,
+                        foundUserByToken?.user_location_status
+                     )
                      const token = await new JWT({ id: checkUserPhoneNumber?.user_id }).sign()
                      return res.status(200).json({
                         status: 200,
@@ -498,15 +518,26 @@ module.exports = {
                user_extra_auth_id,
                user_token,
                user_app_version,
-               premium,
-               premium_type,
-               premium_expires_date
             } = req.body
             const checkUserMethod = await model.checkUserMethod(user_signin_method, user_extra_auth_id)
 
             if (checkUserMethod) {
+               const foundUserByToken = await model.foundUserByToken(user_token)
+
                if (user_token) {
-                  const addToken = await model.addToken(checkUserMethod?.user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
+                  const addToken = await model.addToken(
+                     checkUserMethod?.user_id,
+                     user_token,
+                     user_app_version,
+                     foundUserByToken?.user_premium,
+                     foundUserByToken?.payment_type,
+                     foundUserByToken?.user_premium_expires_at,
+                     foundUserByToken?.user_country_code,
+                     foundUserByToken?.user_region,
+                     foundUserByToken?.user_location,
+                     foundUserByToken?.user_address_name,
+                     foundUserByToken?.user_location_status
+                  )
                   const token = await new JWT({ id: checkUserMethod?.user_id }).sign()
                   return res.status(200).json({
                      status: 200,
