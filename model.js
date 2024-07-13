@@ -42,8 +42,8 @@ const addToken = (
       SET
    user_token = array_append(user_token, $2),
          user_premium = $3,
-         payment_type = $4,
-         user_premium_expires_at = $5,
+         user_premium_expires_at = $4,
+         payment_type = $5,
          user_country_code = $6,
          user_region = $7,
          user_location = $8,
