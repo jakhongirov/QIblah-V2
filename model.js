@@ -24,21 +24,49 @@ const checkUser = (phoneNumber) => {
 
    return fetch(QUERY, phoneNumber)
 }
-const addToken = (user_id, token, user_premium, user_premium_expires_at, payment_type) => {
+const addToken = (
+   user_id,
+   parameter,
+   user_premium,
+   user_premium_expires_at,
+   payment_type,
+   user_country_code,
+   user_region,
+   user_location,
+   user_address_name,
+   user_location_status
+) => {
    const QUERY = `
       UPDATE
          users
       SET
-         user_token = array_append(user_token, $2),
+   user_token = array_append(user_token, $2),
          user_premium = $3,
-         user_premium_expires_at = $4,
-         payment_type = $5
+         payment_type = $4,
+         user_premium_expires_at = $5,
+         user_country_code = $6,
+         user_region = $7,
+         user_location = $8,
+         user_address_name = $9,
+         user_location_status = $10
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, token, user_premium, user_premium_expires_at, payment_type)
+   return fetch(
+      QUERY,
+      user_id,
+      parameter,
+      user_premium,
+      user_premium_expires_at,
+      payment_type,
+      user_country_code,
+      user_region,
+      user_location,
+      user_address_name,
+      user_location_status
+   )
 }
 const deleteUser = (id) => {
    const QUERY = `

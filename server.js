@@ -261,7 +261,18 @@ const handleLanguageSelection = async (chatId, language) => {
 
                   if (isExpired) {
                      console.log("The user's premium membership has expired.");
-                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, !checkUser[chatId]?.user_premium, checkUser[chatId]?.user_premium_expires_at, checkUser[chatId]?.payment_type)
+                     const addToken = await model.addToken(
+                        checkUser[chatId].user_id,
+                        user[chatId]?.parameter,
+                        !checkUser[chatId]?.user_premium,
+                        checkUser[chatId]?.user_premium_expires_at,
+                        checkUser[chatId]?.payment_type,
+                        user[chatId]?.user_country_code,
+                        user[chatId]?.user_region,
+                        user[chatId]?.user_location,
+                        user[chatId]?.user_address_name,
+                        user[chatId]?.user_location_status
+                     )
 
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
@@ -278,7 +289,18 @@ const handleLanguageSelection = async (chatId, language) => {
                      }
                   } else {
                      console.log("The user's premium membership is still valid.");
-                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId]?.user_premium, checkUser[chatId]?.user_premium_expires_at, checkUser[chatId]?.payment_type)
+                     const addToken = await model.addToken(
+                        checkUser[chatId].user_id,
+                        user[chatId]?.parameter,
+                        checkUser[chatId]?.user_premium,
+                        checkUser[chatId]?.user_premium_expires_at,
+                        checkUser[chatId]?.payment_type,
+                        user[chatId]?.user_country_code,
+                        user[chatId]?.user_region,
+                        user[chatId]?.user_location,
+                        user[chatId]?.user_address_name,
+                        user[chatId]?.user_location_status
+                     )
 
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
@@ -304,7 +326,18 @@ const handleLanguageSelection = async (chatId, language) => {
 
                   if (isExpired) {
                      console.log("The user's premium membership has expired.");
-                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, !user[chatId]?.user_premium, user[chatId]?.user_premium_expires_at, user[chatId]?.payment_type)
+                     const addToken = await model.addToken(
+                        checkUser[chatId].user_id,
+                        user[chatId]?.parameter,
+                        !user[chatId]?.user_premium,
+                        user[chatId]?.user_premium_expires_at,
+                        user[chatId]?.payment_type,
+                        user[chatId]?.user_country_code,
+                        user[chatId]?.user_region,
+                        user[chatId]?.user_location,
+                        user[chatId]?.user_address_name,
+                        user[chatId]?.user_location_status
+                     )
 
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
@@ -321,7 +354,18 @@ const handleLanguageSelection = async (chatId, language) => {
                      }
                   } else {
                      console.log("The user's premium membership is still valid.");
-                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, user[chatId]?.user_premium, user[chatId]?.user_premium_expires_at, user[chatId]?.payment_type)
+                     const addToken = await model.addToken(
+                        checkUser[chatId].user_id,
+                        user[chatId]?.parameter,
+                        user[chatId]?.user_premium,
+                        user[chatId]?.user_premium_expires_at,
+                        user[chatId]?.payment_type,
+                        user[chatId]?.user_country_code,
+                        user[chatId]?.user_region,
+                        user[chatId]?.user_location,
+                        user[chatId]?.user_address_name,
+                        user[chatId]?.user_location_status
+                     )
 
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
@@ -339,7 +383,18 @@ const handleLanguageSelection = async (chatId, language) => {
                   }
                } else {
                   console.log("users not premium")
-                  const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId]?.user_premium, checkUser[chatId]?.user_premium_expires_at, checkUser[chatId]?.payment_type)
+                  const addToken = await model.addToken(
+                     checkUser[chatId].user_id,
+                     user[chatId]?.parameter,
+                     user[chatId]?.user_premium,
+                     user[chatId]?.user_premium_expires_at,
+                     user[chatId]?.payment_type,
+                     user[chatId]?.user_country_code,
+                     user[chatId]?.user_region,
+                     user[chatId]?.user_location,
+                     user[chatId]?.user_address_name,
+                     user[chatId]?.user_location_status
+                  )
 
                   if (addToken) {
                      const deleteUser = await model.deleteUser(user[chatId].user_id)
