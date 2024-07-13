@@ -160,6 +160,19 @@ const foundUserByToken = (token) => {
 
    return fetch(QUERY, token)
 }
+const addTracking = (user_id, currentTime) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         tracking = array_append(tracking, $2)
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id, currentTime)
+}
 const userSearch = (phone_number, user_name, user_gender) => {
    const QUERY = `
       SELECT
@@ -795,6 +808,7 @@ module.exports = {
    getUserPremiumList,
    checkUserById,
    foundUserByToken,
+   addTracking,
    userSearch,
    checkUserEmail,
    checkUserPhoneNumber,

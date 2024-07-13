@@ -5,6 +5,18 @@ const bcryptjs = require('bcryptjs')
 const path = require('path')
 const FS = require('../../lib/fs/fs')
 
+function getCurrentTimeFormatted() {
+   const now = new Date();
+
+   const day = String(now.getDate()).padStart(2, '0');
+   const month = String(now.getMonth() + 1).padStart(2, '0'); // getMonth() returns months from 0 to 11
+   const year = now.getFullYear();
+   const hours = String(now.getHours()).padStart(2, '0');
+   const minutes = String(now.getMinutes()).padStart(2, '0');
+
+   return `${day}.${month}.${year} ${hours}:${minutes}`;
+}
+
 module.exports = {
    GET_ADMIN: async (req, res) => {
       try {
@@ -165,11 +177,21 @@ module.exports = {
    GET_TOKEN: async (req, res) => {
       try {
          const { token } = req.params
+         const { user_enter } = req.query
 
          if (token) {
             const foundUserByToken = await model.foundUserByToken(token)
 
+
             if (foundUserByToken) {
+
+               if (user_enter) {
+                  const currentTime = getCurrentTimeFormatted()
+                  const addTracking = await model.addTracking(foundUserByToken?.user_id, currentTime)
+
+                  return addTracking
+               }
+
                return res.status(200).json({
                   status: 200,
                   message: "Success",
