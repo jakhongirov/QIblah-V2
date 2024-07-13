@@ -180,6 +180,7 @@ module.exports = {
          const { user_enter } = req.query
 
          if (token) {
+            console.log(user_enter)
             const foundUserByToken = await model.foundUserByToken(token)
 
 
