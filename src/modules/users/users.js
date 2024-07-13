@@ -432,6 +432,7 @@ module.exports = {
                      )
 
                      const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
+                     await model.deleteUser(foundUserByToken?.user_id)
                      return res.status(200).json({
                         status: 200,
                         message: "Success",
@@ -487,6 +488,7 @@ module.exports = {
                         foundUserByToken?.user_location_status
                      )
                      const token = await new JWT({ id: checkUserPhoneNumber?.user_id }).sign()
+                     await model.deleteUser(foundUserByToken?.user_id)
                      return res.status(200).json({
                         status: 200,
                         message: "Success",
@@ -539,6 +541,7 @@ module.exports = {
                      foundUserByToken?.user_location_status
                   )
                   const token = await new JWT({ id: checkUserMethod?.user_id }).sign()
+                  await model.deleteUser(foundUserByToken?.user_id)
                   return res.status(200).json({
                      status: 200,
                      message: "Success",
