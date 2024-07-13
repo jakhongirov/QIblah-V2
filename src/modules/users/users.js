@@ -343,6 +343,7 @@ module.exports = {
          } = req.body
 
          const foundUserByToken = await model.foundUserByToken(user_token)
+         console.log(foundUserByToken)
 
          if (foundUserByToken) {
             const token = await new JWT({ id: foundUserByToken?.user_id }).sign()
