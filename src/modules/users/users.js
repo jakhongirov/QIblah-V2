@@ -439,7 +439,10 @@ module.exports = {
                user_phone_number,
                user_password,
                user_token,
-               user_app_version
+               user_app_version,
+               premium,
+               premium_type,
+               premium_expires_date
             } = req.body
             const cleanedValue = user_phone_number.replace(/\s+/g, '');
             const checkUserPhoneNumber = await model.checkUserPhoneNumber(cleanedValue)
@@ -449,7 +452,7 @@ module.exports = {
 
                if (validPass) {
                   if (user_token) {
-                     const addToken = await model.addToken(checkUserPhoneNumber?.user_id, user_token, user_app_version)
+                     const addToken = await model.addToken(checkUserPhoneNumber?.user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
                      const token = await new JWT({ id: checkUserPhoneNumber?.user_id }).sign()
                      return res.status(200).json({
                         status: 200,
@@ -477,12 +480,20 @@ module.exports = {
                })
             }
          } else if (contact == 'methods') {
-            const { user_signin_method, user_extra_auth_id, user_token, user_app_version } = req.body
+            const {
+               user_signin_method,
+               user_extra_auth_id,
+               user_token,
+               user_app_version,
+               premium,
+               premium_type,
+               premium_expires_date
+            } = req.body
             const checkUserMethod = await model.checkUserMethod(user_signin_method, user_extra_auth_id)
 
             if (checkUserMethod) {
                if (user_token) {
-                  const addToken = await model.addToken(checkUserMethod?.user_id, user_token, user_app_version)
+                  const addToken = await model.addToken(checkUserMethod?.user_id, user_token, user_app_version, premium, premium_type, premium_expires_date)
                   const token = await new JWT({ id: checkUserMethod?.user_id }).sign()
                   return res.status(200).json({
                      status: 200,
