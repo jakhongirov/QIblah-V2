@@ -264,7 +264,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        !checkUser[chatId]?.user_premium,
+                        false,
                         checkUser[chatId]?.user_premium_expires_at,
                         checkUser[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
@@ -279,9 +279,7 @@ const handleLanguageSelection = async (chatId, language) => {
                         console.log("delete", deleteUser)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
-                              keyboard: [
-                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
-                              ],
+                              keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
                               resize_keyboard: true
                            }
                         });
@@ -292,7 +290,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        checkUser[chatId]?.user_premium,
+                        true,
                         checkUser[chatId]?.user_premium_expires_at,
                         checkUser[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
@@ -307,9 +305,7 @@ const handleLanguageSelection = async (chatId, language) => {
                         console.log("delete", deleteUser)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
-                              keyboard: [
-                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
-                              ],
+                              keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
                               resize_keyboard: true
                            }
                         });
@@ -329,7 +325,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        !user[chatId]?.user_premium,
+                        false,
                         user[chatId]?.user_premium_expires_at,
                         user[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
@@ -344,9 +340,7 @@ const handleLanguageSelection = async (chatId, language) => {
                         console.log("delete", deleteUser)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
-                              keyboard: [
-                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]
-                              ],
+                              keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
                               resize_keyboard: true
                            }
                         });
@@ -357,7 +351,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        user[chatId]?.user_premium,
+                        true,
                         user[chatId]?.user_premium_expires_at,
                         user[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
