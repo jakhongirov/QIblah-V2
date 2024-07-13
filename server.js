@@ -260,11 +260,11 @@ const handleLanguageSelection = async (chatId, language) => {
                   const isExpired = expirationDate < today;
 
                   if (isExpired) {
-                     console.log("The user's premium membership has expired.");
+                     console.log("The check user's premium membership has expired.");
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        false,
+                        !checkUser[chatId]?.user_premium,
                         checkUser[chatId]?.user_premium_expires_at,
                         checkUser[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
@@ -286,11 +286,12 @@ const handleLanguageSelection = async (chatId, language) => {
                         bot.off('contact', contactHandler);
                      }
                   } else {
-                     console.log("The user's premium membership is still valid.");
+                     console.log("The check user's premium membership is still valid.");
+                     console.log(checkUser[chatId]?.user_premium)
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        true,
+                        checkUser[chatId]?.user_premium,
                         checkUser[chatId]?.user_premium_expires_at,
                         checkUser[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
@@ -303,6 +304,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
                         console.log("delete", deleteUser)
+                        console.log("add", addToken)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
                               keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
@@ -325,7 +327,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        false,
+                        !user[chatId]?.user_premium,
                         user[chatId]?.user_premium_expires_at,
                         user[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
@@ -351,7 +353,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      const addToken = await model.addToken(
                         checkUser[chatId].user_id,
                         user[chatId]?.parameter,
-                        true,
+                        user[chatId]?.user_premium,
                         user[chatId]?.user_premium_expires_at,
                         user[chatId]?.payment_type,
                         user[chatId]?.user_country_code,
