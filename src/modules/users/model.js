@@ -417,7 +417,8 @@ const addToken = (
    user_region,
    user_location,
    user_address_name,
-   user_location_status
+   user_location_status,
+   tracking
 ) => {
    const QUERY = `
       UPDATE
@@ -432,7 +433,8 @@ const addToken = (
          user_region = $8,
          user_location = $9,
          user_address_name = $10,
-         user_location_status = $11
+         user_location_status = $11,
+         tracking = array_append(tracking, $12)
       WHERE
          user_id = $1
       RETURNING *;

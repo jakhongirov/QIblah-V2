@@ -271,7 +271,8 @@ const handleLanguageSelection = async (chatId, language) => {
                         user[chatId]?.user_region,
                         user[chatId]?.user_location,
                         user[chatId]?.user_address_name,
-                        user[chatId]?.user_location_status
+                        user[chatId]?.user_location_status,
+                        user[chatId]?.tracking
                      )
 
                      if (addToken) {
@@ -298,7 +299,8 @@ const handleLanguageSelection = async (chatId, language) => {
                         user[chatId]?.user_region,
                         user[chatId]?.user_location,
                         user[chatId]?.user_address_name,
-                        user[chatId]?.user_location_status
+                        user[chatId]?.user_location_status,
+                        user[chatId]?.tracking
                      )
 
                      if (addToken) {
@@ -334,7 +336,8 @@ const handleLanguageSelection = async (chatId, language) => {
                         user[chatId]?.user_region,
                         user[chatId]?.user_location,
                         user[chatId]?.user_address_name,
-                        user[chatId]?.user_location_status
+                        user[chatId]?.user_location_status,
+                        user[chatId]?.tracking
                      )
 
                      if (addToken) {
@@ -360,7 +363,8 @@ const handleLanguageSelection = async (chatId, language) => {
                         user[chatId]?.user_region,
                         user[chatId]?.user_location,
                         user[chatId]?.user_address_name,
-                        user[chatId]?.user_location_status
+                        user[chatId]?.user_location_status,
+                        user[chatId]?.tracking
                      )
 
                      if (addToken) {
@@ -389,7 +393,8 @@ const handleLanguageSelection = async (chatId, language) => {
                      user[chatId]?.user_region,
                      user[chatId]?.user_location,
                      user[chatId]?.user_address_name,
-                     user[chatId]?.user_location_status
+                     user[chatId]?.user_location_status,
+                     user[chatId]?.tracking
                   )
 
                   if (addToken) {
