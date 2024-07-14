@@ -23,7 +23,8 @@ const addTransaction = (
    param2, 
    merchant_trans_id, 
    error, 
-   error_note
+   error_note,
+   token
 ) => {
    const QUERY = `
       INSERT INTO
@@ -34,7 +35,8 @@ const addTransaction = (
             user_id,
             merchant_id,
             error,
-            error_note
+            error_note,
+            user_token
          ) VALUES (
             $1,
             $2,
@@ -42,7 +44,8 @@ const addTransaction = (
             $4,
             $5,
             $6,
-            $7
+            $7,
+            $8
          ) RETURNING *;
    `;
 
@@ -54,7 +57,8 @@ const addTransaction = (
       param2, 
       merchant_trans_id, 
       error, 
-      error_note
+      error_note,
+      token
    )
 }
 const foundPayment = (text) => {

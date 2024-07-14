@@ -312,6 +312,7 @@ CREATE TABLE transactions (
    merchant_id text,
    error text,
    error_note text,
+   user_token text,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

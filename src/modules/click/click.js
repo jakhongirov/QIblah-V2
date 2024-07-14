@@ -38,8 +38,8 @@ module.exports = {
 
             const formattedDate = expiresDate.toISOString();
 
-            await model.editUserPremium(param2, formattedDate, "click")
-            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note)
+            const editUserPremium = await model.editUserPremium(param2, formattedDate, "click")
+            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, editUserPremium?.user_token[Number(editUserPremium?.user_token - 1)])
          }
 
          makeCode(4)
