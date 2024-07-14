@@ -34,7 +34,8 @@ const addToken = (
    user_region,
    user_location,
    user_address_name,
-   user_location_status
+   user_location_status,
+   tracking
 ) => {
    const QUERY = `
       UPDATE
@@ -48,7 +49,9 @@ const addToken = (
          user_region = $7,
          user_location = $8,
          user_address_name = $9,
-         user_location_status = $10
+         user_location_status = $10,
+         tracking = array_append(tracking, $11)
+
       WHERE
          user_id = $1
       RETURNING *;
@@ -65,7 +68,8 @@ const addToken = (
       user_region,
       user_location,
       user_address_name,
-      user_location_status
+      user_location_status,
+      tracking
    )
 }
 const deleteUser = (id) => {
@@ -79,19 +83,20 @@ const deleteUser = (id) => {
 
    return fetch(QUERY, id)
 }
-const updatedUserPhone = (id, phone_number) => {
+const updatedUserPhone = (id, phone_number, tracking) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_phone_number = $2,
-         user_signin_method = 'withTelegram'
+         user_signin_method = 'withTelegram',
+         tracking = array_append(tracking, $3)
       WHERE
          user_id = $1
       RETURNING *;
    `
 
-   return fetch(QUERY, id, phone_number)
+   return fetch(QUERY, id, phone_number, tracking)
 }
 const updatedUserPassword = (user_id, pass_hash) => {
    const QUERY = `

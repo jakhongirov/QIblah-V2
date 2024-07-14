@@ -349,7 +349,7 @@ const updateVersion = (
       audios_version,
       meditation_votes,
       meditation_categories,
-
+      meditation_item
    )
 }
 const deleteVersion = (version_id) => {
