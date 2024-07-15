@@ -7,14 +7,23 @@ const FS = require('../../lib/fs/fs')
 
 function getCurrentTimeFormatted() {
    const now = new Date();
+   const uzbekistanTime = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Tashkent',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+   }).format(now);
 
-   const day = String(now.getDate()).padStart(2, '0');
-   const month = String(now.getMonth() + 1).padStart(2, '0'); // getMonth() returns months from 0 to 11
-   const year = now.getFullYear();
-   const hours = String(now.getHours()).padStart(2, '0');
-   const minutes = String(now.getMinutes()).padStart(2, '0');
+   // Split the formatted date and time
+   const [date, time] = uzbekistanTime.split(', ');
 
-   return `${day}.${month}.${year} ${hours}:${minutes}`;
+   // Reformat date from dd/mm/yyyy to dd.mm.yyyy
+   const [day, month, year] = date.split('/');
+
+   return `${day}.${month}.${year} ${time}`;
 }
 
 module.exports = {
@@ -186,11 +195,19 @@ module.exports = {
 
             if (foundUserByToken) {
 
-               if (user_enter) {
-                  const currentTime = getCurrentTimeFormatted()
-                  const addTracking = await model.addTracking(foundUserByToken?.user_id, currentTime)
-
-                  return addTracking
+               if (user_enter === true) {
+                  const currentTime = getCurrentTimeFormatted();
+                  const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
+                  return addTracking;
+               } else if (!user_enter) {
+                  // user_enter is undefined, null, an empty string, or other falsy value
+                  // Perform your function or action for this case
+                  const currentTime = getCurrentTimeFormatted();
+                  const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
+                  return addTracking;
+               } else if (user_enter === false) {
+                  // Do not perform any action if user_enter is false
+                  return 'User enter is false, no action performed';
                }
 
                return res.status(200).json({
