@@ -24,11 +24,12 @@ module.exports = {
          } = req.body
 
          const authHeader = req.headers['authorization'];
+         const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
          console.log(req.body)
 
-         if (isBase64(authHeader)) {
-            let [username, password] = atob(authHeader).split(':');
+         if (isBase64(base64Credentials)) {
+            let [username, password] = atob(base64Credentials).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
                const time = Date.now();
@@ -89,11 +90,12 @@ module.exports = {
          } = req.body
 
          const authHeader = req.headers['authorization'];
+         const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
          console.log(req.body)
 
-         if (isBase64(authHeader)) {
-            let [username, password] = atob(authHeader).split(':');
+         if (isBase64(base64Credentials)) {
+            let [username, password] = atob(base64Credentials).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
                const time = Date.now();
@@ -154,11 +156,12 @@ module.exports = {
             errorCode
          } = req.body
          const authHeader = req.headers['authorization'];
+         const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
          console.log(req.body)
 
-         if (isBase64(authHeader)) {
-            let [username, password] = atob(authHeader).split(':');
+         if (isBase64(base64Credentials)) {
+            let [username, password] = atob(base64Credentials).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
                const time = Date.now();
@@ -212,11 +215,12 @@ module.exports = {
             errorCode
          } = req.body
          const authHeader = req.headers['authorization'];
+         const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
          console.log(req.body)
 
-         if (isBase64(authHeader)) {
-            let [username, password] = atob(authHeader).split(':');
+         if (isBase64(base64Credentials)) {
+            let [username, password] = atob(base64Credentials).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
                const time = Date.now();
@@ -271,11 +275,12 @@ module.exports = {
          } = req.body
 
          const authHeader = req.headers['authorization'];
+         const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
          console.log(req.body)
 
-         if (isBase64(authHeader)) {
-            let [username, password] = atob(authHeader).split(':');
+         if (isBase64(base64Credentials)) {
+            let [username, password] = atob(base64Credentials).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
                const time = Date.now();
