@@ -420,6 +420,11 @@ const addToken = (
    user_location_status,
    tracking
 ) => {
+   // Handle null tracking by setting it to an empty array
+   if (tracking == null) {
+      tracking = [];
+   }
+
    const QUERY = `
       UPDATE
          users
@@ -454,7 +459,7 @@ const addToken = (
       user_address_name,
       user_location_status,
       tracking
-   )
+   );
 }
 const editUserAvatar = (user_id, imageUrl, imageName) => {
    const QUERY = `

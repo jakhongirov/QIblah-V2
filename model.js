@@ -37,6 +37,11 @@ const addToken = (
    user_location_status,
    tracking
 ) => {
+
+   if (tracking == null) {
+      tracking = [];
+   }
+
    const QUERY = `
       UPDATE
          users
