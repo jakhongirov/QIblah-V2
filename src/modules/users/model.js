@@ -452,7 +452,8 @@ const addToken = (
       user_region,
       user_location,
       user_address_name,
-      user_location_status
+      user_location_status,
+      tracking
    )
 }
 const editUserAvatar = (user_id, imageUrl, imageName) => {

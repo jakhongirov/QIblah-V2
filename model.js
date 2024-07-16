@@ -51,7 +51,6 @@ const addToken = (
          user_address_name = $9,
          user_location_status = $10,
          tracking = array_append(tracking, $11)
-
       WHERE
          user_id = $1
       RETURNING *;
