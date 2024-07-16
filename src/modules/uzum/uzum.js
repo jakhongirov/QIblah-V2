@@ -11,12 +11,54 @@ module.exports = {
          const {
             serviceId,
             timestamp,
-            params
+            params,
+            errorCode
          } = req.body
 
-         return res.status(200).json({
+         const authHeader = req.headers['authorization'];
+         console.log(authHeader)
+         console.log(req.body)
 
-         })
+         if (authHeader) {
+            let [username, password] = atob(authHeader).split(':');
+
+            if (username == "+998998887123" || password == "a12345") {
+               const time = Date.now();
+               console.log(time);
+
+
+               if (errorCode == 10007) {
+                  return res.status(400).json({
+                     serviceId: serviceId,
+                     timestamp: time,
+                     status: "FAILED",
+                     errorCode: "10007"
+                  })
+               } else {
+                  return res.status(200).json({
+                     serviceId: serviceId,
+                     timestamp: time,
+                     status: "OK",
+                     data: {
+                        account: {
+                           value: params?.account
+                        }
+                     }
+                  })
+               }
+
+
+            } else {
+               return res.status(401).json({
+                  status: 401
+               })
+            }
+
+         } else {
+            res.status(401).json({
+               status: 401
+            })
+         }
 
       } catch (error) {
          console.log(error);
@@ -34,8 +76,55 @@ module.exports = {
             timestamp,
             transId,
             params,
-            amount
+            amount,
+            errorCode
          } = req.body
+
+         const authHeader = req.headers['authorization'];
+         console.log(authHeader)
+         console.log(req.body)
+
+         if (authHeader) {
+            let [username, password] = atob(authHeader).split(':');
+
+            if (username == "+998998887123" || password == "a12345") {
+               const time = Date.now();
+               console.log(time);
+
+               if (errorCode == 10013) {
+
+                  return res.status(400).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "FAILED",
+                     transTime: time,
+                     errorCode: "10013"
+                  })
+               } else {
+                  return res.status(200).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "CREATED",
+                     transTime: time,
+                     data: {
+                        account: {
+                           value: params?.account
+                        }
+                     }
+                  })
+               }
+
+            } else {
+               return res.status(401).json({
+                  status: 401
+               })
+            }
+
+         } else {
+            res.status(401).json({
+               status: 401
+            })
+         }
 
       } catch (error) {
          console.log(error);
@@ -53,7 +142,8 @@ module.exports = {
             timestamp,
             transId,
             paymentSource,
-            tariff
+            tariff,
+            errorCode
          } = req.body
          const authHeader = req.headers['authorization'];
          console.log(authHeader)
@@ -63,15 +153,26 @@ module.exports = {
             let [username, password] = atob(authHeader).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
-               const confirmTime = Date.now();
-               console.log(confirmTime);
-               res.status(200).json({
-                  serviceId: serviceId,
-                  transId: transId,
-                  status: "CONFIRMED",
-                  confirmTime: confirmTime,
-                  amount: 5000
-               })
+               const time = Date.now();
+               console.log(time);
+
+               if (errorCode == 10014) {
+                  return res.status(400).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "FAILED",
+                     confirmTime: time,
+                     errorCode: "10014"
+                  })
+               } else {
+                  return res.status(200).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "CONFIRMED",
+                     confirmTime: time,
+                     amount: 5000
+                  })
+               }
 
             } else {
                res.status(401).json({
@@ -99,8 +200,49 @@ module.exports = {
          const {
             serviceId,
             timestamp,
-            transId
+            transId,
+            errorCode
          } = req.body
+         const authHeader = req.headers['authorization'];
+         console.log(authHeader)
+         console.log(req.body)
+
+         if (authHeader) {
+            let [username, password] = atob(authHeader).split(':');
+
+            if (username == "+998998887123" || password == "a12345") {
+               const time = Date.now();
+               console.log(time);
+
+               if (errorCode == 10017) {
+                  return res.status(400).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "FAILED",
+                     reverseTime: time,
+                     errorCode: "10017"
+                  })
+               } else {
+                  return res.status(200).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "REVERSED",
+                     reverseTime: time,
+                     amount: 5000
+                  })
+               }
+
+            } else {
+               res.status(401).json({
+                  status: 401
+               })
+            }
+
+         } else {
+            res.status(401).json({
+               status: 401
+            })
+         }
 
       } catch (error) {
          console.log(error);
@@ -116,8 +258,54 @@ module.exports = {
          const {
             serviceId,
             timestamp,
-            transId
+            transId,
+            errorCode
          } = req.body
+
+         const authHeader = req.headers['authorization'];
+         console.log(authHeader)
+         console.log(req.body)
+
+         if (authHeader) {
+            let [username, password] = atob(authHeader).split(':');
+
+            if (username == "+998998887123" || password == "a12345") {
+               const time = Date.now();
+               console.log(time);
+
+               if (errorCode == 10014) {
+                  return res.status(400).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "FAILED",
+                     transTime: time,
+                     confirmTime: time,
+                     reverseTime: null,
+                     errorCode: "10014"
+                  })
+               } else {
+                  return res.status(200).json({
+                     serviceId: serviceId,
+                     transId: transId,
+                     status: "CONFIRMED",
+                     transTime: time,
+                     confirmTime: time,
+                     reverseTime: null,
+                     amount: 5000
+                  })
+               }
+
+            } else {
+               res.status(401).json({
+                  status: 401
+               })
+            }
+
+         } else {
+            res.status(401).json({
+               status: 401
+            })
+         }
 
       } catch (error) {
          console.log(error);

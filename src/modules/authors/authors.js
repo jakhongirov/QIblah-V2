@@ -33,10 +33,10 @@ module.exports = {
    ADD_AUTHOR: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { author_name } = req.body
+         const { author_name, photo_link } = req.body
 
-         const imgUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const imgName = uploadPhoto?.filename;
+         const imgUrl = photo_link ? photo_link : `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
+         const imgName = photo_link ? null : uploadPhoto?.filename;
 
          const addAuthor = await model.addAuthor(author_name, imgUrl, imgName)
 
@@ -65,7 +65,7 @@ module.exports = {
    UPDATE_AUTHOR: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { author_id, author_name } = req.body
+         const { author_id, author_name, photo_link } = req.body
          const foundAuthor = await model.foundAuthor(author_id)
 
          if (foundAuthor) {
@@ -79,6 +79,9 @@ module.exports = {
                }
                imgUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
                imgName = uploadPhoto?.filename;
+            } else if (photo_link) {
+               imgUrl = photo_link;
+               imgName = null;
             } else {
                imgUrl = foundAuthor?.author_image_url;
                imgName = foundAuthor?.author_image_name;

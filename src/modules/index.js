@@ -543,7 +543,11 @@ router
   .get('/payment/check/:user_id', paymentCheck.GET)
 
   // UZUM
+  .post('/uzum/check', uzum.CHECK)
   .post('/uzum/confirm', uzum.CONFIRM)
+  .post('/uzum/create', uzum.CREATE)
+  .post('/uzum/reverse', uzum.REVERSE)
+  .post('/uzum/status', uzum.STATUS)
 
   //Transactions
   .get("/transactions", AUTH, transactions.GET)
