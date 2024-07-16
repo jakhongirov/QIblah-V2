@@ -49,8 +49,14 @@ module.exports = {
                      timestamp: time,
                      status: "OK",
                      data: {
-                        account: {
-                           value: params?.account
+                        id: {
+                           value: params?.id
+                        },
+                        tarif: {
+                           value: params?.tarif
+                        },
+                        ilova: {
+                           value: params?.ilova
                         }
                      }
                   })
@@ -117,10 +123,17 @@ module.exports = {
                      status: "CREATED",
                      transTime: time,
                      data: {
-                        account: {
-                           value: params?.account
+                        id: {
+                           value: params?.id
+                        },
+                        tarif: {
+                           value: params?.tarif
+                        },
+                        ilova: {
+                           value: params?.ilova
                         }
-                     }
+                     },
+                     amount: amount
                   })
                }
 
@@ -181,6 +194,17 @@ module.exports = {
                      transId: transId,
                      status: "CONFIRMED",
                      confirmTime: time,
+                     data: {
+                        id: {
+                           value: params?.id
+                        },
+                        tarif: {
+                           value: params?.tarif
+                        },
+                        ilova: {
+                           value: params?.ilova
+                        }
+                     },
                      amount: 5000
                   })
                }
@@ -240,6 +264,17 @@ module.exports = {
                      transId: transId,
                      status: "REVERSED",
                      reverseTime: time,
+                     data: {
+                        id: {
+                           value: params?.id
+                        },
+                        tarif: {
+                           value: params?.tarif
+                        },
+                        ilova: {
+                           value: params?.ilova
+                        }
+                     },
                      amount: 5000
                   })
                }
@@ -304,6 +339,17 @@ module.exports = {
                      transTime: time,
                      confirmTime: time,
                      reverseTime: null,
+                     data: {
+                        id: {
+                           value: params?.id
+                        },
+                        tarif: {
+                           value: params?.tarif
+                        },
+                        ilova: {
+                           value: params?.ilova
+                        }
+                     },
                      amount: 5000
                   })
                }
