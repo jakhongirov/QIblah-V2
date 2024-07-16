@@ -194,17 +194,6 @@ module.exports = {
                      transId: transId,
                      status: "CONFIRMED",
                      confirmTime: time,
-                     data: {
-                        id: {
-                           value: params?.id
-                        },
-                        tarif: {
-                           value: params?.tarif
-                        },
-                        ilova: {
-                           value: params?.ilova
-                        }
-                     },
                      amount: 5000
                   })
                }
@@ -264,17 +253,6 @@ module.exports = {
                      transId: transId,
                      status: "REVERSED",
                      reverseTime: time,
-                     data: {
-                        id: {
-                           value: params?.id
-                        },
-                        tarif: {
-                           value: params?.tarif
-                        },
-                        ilova: {
-                           value: params?.ilova
-                        }
-                     },
                      amount: 5000
                   })
                }
@@ -338,19 +316,7 @@ module.exports = {
                      status: "CONFIRMED",
                      transTime: time,
                      confirmTime: time,
-                     reverseTime: null,
-                     data: {
-                        id: {
-                           value: params?.id
-                        },
-                        tarif: {
-                           value: params?.tarif
-                        },
-                        ilova: {
-                           value: params?.ilova
-                        }
-                     },
-                     amount: 5000
+                     reverseTime: null
                   })
                }
 
