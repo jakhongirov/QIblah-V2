@@ -5,6 +5,14 @@ const model = require('./model')
 // Encode the string to Base64
 // let encodedString = btoa(stringToEncode);
 
+function isBase64(str) {
+   try {
+      return btoa(atob(str)) === str;
+   } catch (err) {
+      return false;
+   }
+}
+
 module.exports = {
    CHECK: async (req, res) => {
       try {
@@ -19,7 +27,7 @@ module.exports = {
          console.log(authHeader)
          console.log(req.body)
 
-         if (authHeader) {
+         if (isBase64(authHeader)) {
             let [username, password] = atob(authHeader).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
@@ -84,7 +92,7 @@ module.exports = {
          console.log(authHeader)
          console.log(req.body)
 
-         if (authHeader) {
+         if (isBase64(authHeader)) {
             let [username, password] = atob(authHeader).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
@@ -149,7 +157,7 @@ module.exports = {
          console.log(authHeader)
          console.log(req.body)
 
-         if (authHeader) {
+         if (isBase64(authHeader)) {
             let [username, password] = atob(authHeader).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
@@ -207,7 +215,7 @@ module.exports = {
          console.log(authHeader)
          console.log(req.body)
 
-         if (authHeader) {
+         if (isBase64(authHeader)) {
             let [username, password] = atob(authHeader).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
@@ -266,7 +274,7 @@ module.exports = {
          console.log(authHeader)
          console.log(req.body)
 
-         if (authHeader) {
+         if (isBase64(authHeader)) {
             let [username, password] = atob(authHeader).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
