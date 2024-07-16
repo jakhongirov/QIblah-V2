@@ -199,15 +199,12 @@ module.exports = {
                   const currentTime = getCurrentTimeFormatted();
                   const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
                   return addTracking;
-               } else if (!user_enter) {
-                  // user_enter is undefined, null, an empty string, or other falsy value
-                  // Perform your function or action for this case
+               } else if (user_enter === false) {
+                  return 'User enter is false, no action performed';
+               } else {
                   const currentTime = getCurrentTimeFormatted();
                   const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
                   return addTracking;
-               } else if (user_enter === false) {
-                  // Do not perform any action if user_enter is false
-                  return 'User enter is false, no action performed';
                }
 
                return res.status(200).json({
