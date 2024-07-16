@@ -198,13 +198,13 @@ module.exports = {
                if (user_enter === true) {
                   const currentTime = getCurrentTimeFormatted();
                   const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
-                  return addTracking;
+                  addTracking;
                } else if (user_enter === false) {
-                  return 'User enter is false, no action performed';
+                  'User enter is false, no action performed';
                } else {
                   const currentTime = getCurrentTimeFormatted();
                   const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
-                  return addTracking;
+                  addTracking;
                }
 
                return res.status(200).json({
