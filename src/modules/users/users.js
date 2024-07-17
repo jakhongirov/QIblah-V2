@@ -147,7 +147,7 @@ module.exports = {
       }
    },
 
-   GET_ID: async (req, res) => {
+   GET_ID_ADMIN: async (req, res) => {
       try {
          const { id } = req.params
 
@@ -155,6 +155,51 @@ module.exports = {
             const foundUser = await model.checkUserById(id)
 
             if (foundUser) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: foundUser
+               })
+            } else {
+               return res.status(404).json({
+                  status: 404,
+                  message: "Not found"
+               })
+            }
+
+         } else {
+            return res.status(400).json({
+               status: 400,
+               message: "Must write user id"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
+   GET_ID: async (req, res) => {
+      try {
+         const { id } = req.params
+         const { user_enter } = req.query
+
+         if (id) {
+            const foundUser = await model.checkUserById(id)
+
+            if (foundUser) {
+               if (user_enter === false) {
+                  'User enter is false, no action performed';
+               } else {
+                  const currentTime = getCurrentTimeFormatted();
+                  const addTracking = await model.addTracking(foundUser.user_id, currentTime);
+                  addTracking;
+               }
+
                return res.status(200).json({
                   status: 200,
                   message: "Success",
@@ -194,12 +239,8 @@ module.exports = {
 
 
             if (foundUserByToken) {
-
-               if (user_enter === true) {
-                  const currentTime = getCurrentTimeFormatted();
-                  const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
-                  addTracking;
-               } else if (user_enter === false) {
+               
+               if (user_enter === false) {
                   'User enter is false, no action performed';
                } else {
                   const currentTime = getCurrentTimeFormatted();

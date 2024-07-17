@@ -369,6 +369,7 @@ router
   .get('/users/count', AUTH, users.GET_USER_COUNT)
   .get('/users/premium/list', AUTH, users.GET_PREMIUM_USERS)
   .get('/user/:id', users.GET_ID)
+  .get('/user/admin/:id', users.GET_ID_ADMIN)
   .get('/user/token/:token', users.GET_TOKEN)
   .post('/user/search', users.GET_SEARCH)
   .post('/user/register', users.REGISTER_USER)
