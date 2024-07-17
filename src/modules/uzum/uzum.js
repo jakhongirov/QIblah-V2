@@ -44,7 +44,7 @@ module.exports = {
                      errorCode: "10007"
                   })
                } else {
-                  const addParams = await model.addParams(params?.id, params?.tarif, params?.ilova, transId)
+                  
                   return res.status(200).json({
                      serviceId: serviceId,
                      timestamp: time,
