@@ -365,8 +365,6 @@ router
 */
 
   .get('/users/list', AUTH, users.GET_ADMIN)
-
-
   .get('/users/count', AUTH, users.GET_USER_COUNT)
   .get('/users/premium/list', AUTH, users.GET_PREMIUM_USERS)
   .get('/user/:id', users.GET_ID)
@@ -377,6 +375,7 @@ router
   .post('/user/login/:contact', users.LOGIN_USER)
   .put('/user/edit/avatar/:user_id', AUTH, FileUpload.single("photo"), users.EDIT_USER_AVATAR)
   .put('/user/edit/contact', AUTH, users.EDIT_USER_CONTACT)
+  .put('/user/edit/password', AUTH, users.EDIT_USER_PASSWORD)
   .put('/user/edit/name', AUTH, users.EDIT_USER_NAME)
   .put('/user/edit/location', AUTH, users.EDIT_USER_LOCATION)
   .put('/user/edit/phone-details', AUTH, users.EDIT_USER_PHONE_DETAILS)

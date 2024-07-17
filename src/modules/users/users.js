@@ -724,6 +724,66 @@ module.exports = {
       }
    },
 
+   EDIT_USER_PASSWORD: async (req, res) => {
+      try {
+         const {
+            user_id,
+            user_email,
+            user_phone_number,
+            user_password
+         } = req.body
+         const checkUser = await model.checkUserById(user_id)
+
+         if (checkUser) {
+            if (user_password) {
+               const pass_hash = await bcryptjs.hash(user_password, 10)
+               const editUser = await model.editUser(user_id, user_email, user_phone_number, pass_hash)
+
+               if (editUser) {
+                  return res.status(200).json({
+                     status: 200,
+                     message: "Success",
+                     data: editUser
+                  })
+               } else {
+                  return res.status(400).json({
+                     status: 400,
+                     message: "Bad request"
+                  })
+               }
+
+            } else {
+               const editUser = await model.editUser(user_id, user_email, user_phone_number, checkUser?.user_password)
+
+               if (editUser) {
+                  return res.status(200).json({
+                     status: 200,
+                     message: "Success",
+                     data: editUser
+                  })
+               } else {
+                  return res.status(400).json({
+                     status: 400,
+                     message: "Bad request"
+                  })
+               }
+            }
+         } else {
+            return res.status(404).json({
+               status: 404,
+               message: "User not found"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    EDIT_USER_NAME: async (req, res) => {
       try {
          const { user_id, user_name, user_gender, user_phone_number } = req.body
