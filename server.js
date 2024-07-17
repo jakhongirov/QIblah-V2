@@ -216,7 +216,7 @@ bot.on("message", async (msg) => {
 
          bot.on('contact', changePassword);
       })
-   } else if (msg.chat.type !== 'group') {
+   } else if (msg.chat.type !== 'group' && !text.startsWith('/start')) {
       let content;
       if (msg.text) {
          content = `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
