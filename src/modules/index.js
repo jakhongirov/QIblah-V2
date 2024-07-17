@@ -31,6 +31,7 @@ const paymentCategories = require('./payment/payment')
 const paymentCheck = require('./payment/check')
 const uzum = require('./uzum/uzum')
 const transactions = require('./transactions/transactions')
+const payme = require('../modules/payme/payme')
 
 router
 
@@ -550,5 +551,9 @@ router
 
   //Transactions
   .get("/transactions", AUTH, transactions.GET)
+
+  // PAYME
+  .post('/payme', payme.CREATE)
+  .post('/payme/payment', payme.PAYMENT)
 
 module.exports = router
