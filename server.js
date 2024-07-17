@@ -443,7 +443,7 @@ const handleLanguageSelection = async (chatId, language) => {
                //    });
                //    bot.off('contact', contactHandler);
                // }
-            } else if (msg.chat.type !== 'group') {
+            } else if (msg.chat.type !== 'group' && !msg.reply_to_message) {
                const updatedUserPhone = await model.updatedUserPhone(user[chatId].user_id, phoneNumber, user[chatId]?.tracking);
                if (updatedUserPhone) {
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
