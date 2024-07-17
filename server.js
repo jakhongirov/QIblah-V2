@@ -107,7 +107,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
    }
 };
 
-bot.on("message", (msg) => {
+bot.on("message", async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
 
@@ -216,6 +216,23 @@ bot.on("message", (msg) => {
 
          bot.on('contact', changePassword);
       })
+   } else {
+      let content;
+      if (msg.text) {
+         content = `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
+         await bot.sendMessage(process.env.CHAT_ID, content);
+      } else if (msg.photo) {
+         const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
+         const caption = msg.caption ? msg.caption : '';
+         content = `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}`
+         await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
+      } else if (msg.sticker) {
+         const fileId = msg.sticker.file_id;
+         content = `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`
+         await bot.sendSticker(process.env.CHAT_ID, fileId);
+      }
+
+      await model.addMessage(msg.chat.id, msg.date);
    }
 });
 
