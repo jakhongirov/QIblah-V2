@@ -44,7 +44,7 @@ module.exports = {
                      errorCode: "10007"
                   })
                } else {
-                  
+
                   return res.status(200).json({
                      serviceId: serviceId,
                      timestamp: time,
@@ -118,6 +118,37 @@ module.exports = {
                      errorCode: "10013"
                   })
                } else {
+                  const foundPayment = await model.foundPayment(params?.tarif);
+                  const today = new Date();
+                  const expiresDate = new Date(today);
+                  const monthToAdd = Number(foundPayment?.month);
+                  let targetMonth = today.getMonth() + monthToAdd;
+                  let targetYear = today.getFullYear();
+
+                  while (targetMonth > 11) {
+                     targetMonth -= 12;
+                     targetYear++;
+                  }
+
+                  expiresDate.setFullYear(targetYear, targetMonth, 1);
+                  const maxDaysInTargetMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
+                  expiresDate.setDate(Math.min(today.getDate(), maxDaysInTargetMonth));
+
+                  if (expiresDate < today) {
+                     expiresDate.setMonth(expiresDate.getMonth() + 1);
+                     expiresDate.setDate(0); // Set to the last day of the previous month
+                  }
+
+                  const formattedDate = expiresDate.toISOString();
+                  const editUserPremium = await model.editUserPremium(params?.id, formattedDate, "uzum")
+                  await model.addTransId(
+                     editUserPremium?.user_id,
+                     editUserPremium?.user_token[editUserPremium?.user_token?.length - 1],
+                     transId,
+                     monthToAdd,
+                     amount,
+                  )
+
                   return res.status(200).json({
                      serviceId: serviceId,
                      transId: transId,

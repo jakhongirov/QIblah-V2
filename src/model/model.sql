@@ -316,6 +316,16 @@ CREATE TABLE transactions (
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE uzum (
+   id bigserial PRiMARY KEY,
+   user_id int,
+   user_token text,
+   trans_id text,
+   expires_month int,
+   amount int,
+   transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE payment_categories (
    category_id bigserial PRiMARY key,
    category_name text,
