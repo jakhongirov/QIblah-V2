@@ -15,7 +15,7 @@ module.exports = {
                   message: "Success",
                   data: {
                      click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}`,
-                     uzum: ""
+                     uzum: `https://www.uzumbank.uz/open-service?serviceId=498617211&ilova=Qiblah&id=${foundUser?.user_id}`
                   }
                })
             } else {
