@@ -216,7 +216,7 @@ bot.on("message", async (msg) => {
 
          bot.on('contact', changePassword);
       })
-   } else if (msg.chat.type !== 'group' && !text.startsWith('/start')) {
+   } else if (msg.chat.type !== 'group' && !text?.startsWith('/start')) {
       let content;
       if (msg.text) {
          content = `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
@@ -444,7 +444,7 @@ const handleLanguageSelection = async (chatId, language) => {
                //    bot.off('contact', contactHandler);
                // }
             } else {
-               const updatedUserPhone = await model.updatedUserPhone(user[chatId].user_id, phoneNumber, user[chatId]?.tracking);
+               const updatedUserPhone = await model.updatedUserPhone(user[chatId]?.user_id, phoneNumber, user[chatId]?.tracking);
                if (updatedUserPhone) {
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
                      reply_markup: {
