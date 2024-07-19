@@ -16,7 +16,7 @@ const fetch = async (SQL, ...params) => {
   try {
     const {
       rows: [row],
-    } = await client.query(SQL, params.length ? params : null);
+    } = await client.query(SQL, params.length ? params : []);
     return row;
   } finally {
     client.release();
@@ -26,7 +26,7 @@ const fetch = async (SQL, ...params) => {
 const fetchALL = async (SQL, ...params) => {
   const client = await pool.connect();
   try {
-    const { rows } = await client.query(SQL, params.length ? params : null);
+    const { rows } = await client.query(SQL, params.length ? params : []);
     return rows;
   } finally {
     client.release();
