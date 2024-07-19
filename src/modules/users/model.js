@@ -148,7 +148,8 @@ const checkUserById = (id) => {
 
    return fetch(QUERY, id)
 }
-const foundUserByToken = (token) => {
+const foundUserByToken = (user_token) => {
+   console.log("query", user_token)
    const QUERY = `
       SELECT
          *
@@ -158,7 +159,7 @@ const foundUserByToken = (token) => {
          $1 = ANY (user_token);
    `;
 
-   return fetch(QUERY, token)
+   return fetch(QUERY, user_token)
 }
 const addTracking = (user_id, currentTime) => {
    const QUERY = `
