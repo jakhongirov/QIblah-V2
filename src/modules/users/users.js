@@ -75,8 +75,6 @@ module.exports = {
          const userLocationStatus3 = await model.userLocationStatus3()
          const userPremium = await model.userPremium()
 
-         console
-
          if (userCount && userCountMale && userCountFemale) {
             return res.status(200).json({
                status: 200,
@@ -234,9 +232,7 @@ module.exports = {
          const { user_enter } = req.query
 
          if (token) {
-            console.log(user_enter)
             const foundUserByToken = await model.foundUserByToken(token)
-
 
             if (foundUserByToken) {
 
