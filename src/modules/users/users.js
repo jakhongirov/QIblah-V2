@@ -415,52 +415,52 @@ module.exports = {
             user_address_name
          } = req.body;
 
-         const foundUser = await model.foundUserByToken(user_token?.trim());
-         console.log('Found user by token:', foundUser, user_token);
+         // const foundUser = await model.foundUserByToken(user_token?.trim());
+         // console.log('Found user by token:', foundUser, user_token);
 
-         if (foundUser) {
-            const token = await new JWT({ id: foundUser.user_id }).sign();
+         // if (foundUser) {
+         //    const token = await new JWT({ id: foundUser.user_id }).sign();
+         //    return res.status(200).json({
+         //       status: 200,
+         //       message: "Success",
+         //       data: foundUser,
+         //       token: token
+         //    });
+         // } else {
+         const createTemporaryUser = await model.createTemporaryUser(
+            user_name,
+            user_gender,
+            user_country_code,
+            user_region,
+            user_location,
+            user_app_lang,
+            user_phone_model,
+            user_phone_lang,
+            user_os,
+            user_os_version,
+            user_token,
+            user_app_version,
+            notification_id,
+            notification,
+            location_status === 'null' || location_status === null ? 0 : location_status,
+            user_address_name
+         );
+
+         if (createTemporaryUser) {
+            const token = await new JWT({ id: createTemporaryUser.user_id }).sign();
             return res.status(200).json({
                status: 200,
                message: "Success",
-               data: foundUser,
+               data: createTemporaryUser,
                token: token
             });
          } else {
-            const createTemporaryUser = await model.createTemporaryUser(
-               user_name,
-               user_gender,
-               user_country_code,
-               user_region,
-               user_location,
-               user_app_lang,
-               user_phone_model,
-               user_phone_lang,
-               user_os,
-               user_os_version,
-               user_token,
-               user_app_version,
-               notification_id,
-               notification,
-               location_status === 'null' || location_status === null ? 0 : location_status,
-               user_address_name
-            );
-
-            if (createTemporaryUser) {
-               const token = await new JWT({ id: createTemporaryUser.user_id }).sign();
-               return res.status(200).json({
-                  status: 200,
-                  message: "Success",
-                  data: createTemporaryUser,
-                  token: token
-               });
-            } else {
-               return res.status(400).json({
-                  status: 400,
-                  message: "Bad request"
-               });
-            }
+            return res.status(400).json({
+               status: 400,
+               message: "Bad request"
+            });
          }
+         // }
       } catch (error) {
          console.log(error);
          res.status(500).json({

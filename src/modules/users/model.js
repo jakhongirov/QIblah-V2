@@ -330,7 +330,7 @@ const registerUser = (
       user_address_name
    )
 }
-const createTemporaryUser = (
+const createTemporaryUser = async (
    user_name,
    user_gender,
    user_country_code,
@@ -348,7 +348,12 @@ const createTemporaryUser = (
    location_status,
    user_address_name
 ) => {
-   const QUERY = `
+   const foundUser = await foundUserByToken(user_token)
+
+   if (foundUser) {
+      return foundUser
+   } else {
+      const QUERY = `
       INSERT INTO
          users (
             user_name,
@@ -387,25 +392,26 @@ const createTemporaryUser = (
          ) RETURNING *;
    `;
 
-   return fetch(
-      QUERY,
-      user_name,
-      user_gender,
-      user_country_code,
-      user_region,
-      user_location,
-      user_app_lang,
-      user_phone_model,
-      user_phone_lang,
-      user_os,
-      user_os_version,
-      user_token,
-      user_app_version,
-      notification_id,
-      notification,
-      location_status,
-      user_address_name
-   )
+      return await fetch(
+         QUERY,
+         user_name,
+         user_gender,
+         user_country_code,
+         user_region,
+         user_location,
+         user_app_lang,
+         user_phone_model,
+         user_phone_lang,
+         user_os,
+         user_os_version,
+         user_token,
+         user_app_version,
+         notification_id,
+         notification,
+         location_status,
+         user_address_name
+      )
+   }
 }
 const addToken = (
    user_id,
