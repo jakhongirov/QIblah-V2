@@ -159,7 +159,7 @@ const foundUserByToken = async (user_token) => {
        $1 = ANY (user_token);
    `;
 
-   return await fetch(QUERY, [user_token]);
+   return await fetch(QUERY, user_token);
 }
 const addTracking = (user_id, currentTime) => {
    const QUERY = `
