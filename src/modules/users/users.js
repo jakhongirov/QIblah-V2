@@ -239,7 +239,7 @@ module.exports = {
 
 
             if (foundUserByToken) {
-               
+
                if (user_enter === false) {
                   'User enter is false, no action performed';
                } else {
@@ -417,19 +417,19 @@ module.exports = {
             notification,
             location_status,
             user_address_name
-         } = req.body
+         } = req.body;
 
-         const foundUserByToken = await model.foundUserByToken(user_token)
-         console.log(foundUserByToken)
+         const foundUserByToken = await model.foundUserByToken(user_token);
+         console.log(foundUserByToken);
 
          if (foundUserByToken) {
-            const token = await new JWT({ id: foundUserByToken?.user_id }).sign()
+            const token = await new JWT({ id: foundUserByToken.user_id }).sign();
             return res.status(200).json({
                status: 200,
                message: "Success",
                data: foundUserByToken,
                token: token
-            })
+            });
          } else {
             const createTemporaryUser = await model.createTemporaryUser(
                user_name,
@@ -446,32 +446,31 @@ module.exports = {
                user_app_version,
                notification_id,
                notification,
-               location_status == 'null' || location_status == null ? 0 : location_status,
+               location_status === 'null' || location_status === null ? 0 : location_status,
                user_address_name
-            )
+            );
 
             if (createTemporaryUser) {
-               const token = await new JWT({ id: createTemporaryUser?.user_id }).sign()
+               const token = await new JWT({ id: createTemporaryUser.user_id }).sign();
                return res.status(200).json({
                   status: 200,
                   message: "Success",
                   data: createTemporaryUser,
                   token: token
-               })
+               });
             } else {
                return res.status(400).json({
                   status: 400,
                   message: "Bad request"
-               })
+               });
             }
          }
-
       } catch (error) {
          console.log(error);
          res.status(500).json({
             status: 500,
-            message: "Interval Server Error"
-         })
+            message: "Internal Server Error"
+         });
       }
    },
 
