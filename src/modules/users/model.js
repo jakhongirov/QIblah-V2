@@ -156,13 +156,11 @@ const foundUserByToken = async (user_token) => {
      FROM
        users
      WHERE
-       user_token @> ARRAY[$1];
+       $1 = ANY (user_token);
    `;
-   
-   console.log("Executing query:", QUERY, "with parameter:", user_token);
-   
-   return await fetch(QUERY, user_token);
- } 
+
+   return await fetch(QUERY, [user_token]);
+}
 const addTracking = (user_id, currentTime) => {
    const QUERY = `
       UPDATE
