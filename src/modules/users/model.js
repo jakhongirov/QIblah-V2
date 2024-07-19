@@ -148,19 +148,20 @@ const checkUserById = (id) => {
 
    return fetch(QUERY, id)
 }
-const foundUserByToken = (user_token) => {
-   console.log("query", user_token)
+const foundUserByToken = async (user_token) => {
+   console.log("query", user_token);
    const QUERY = `
-      SELECT
-         *
-      FROM
-         users
-      WHERE
-         $1 = ANY (user_token);
+     SELECT
+       *
+     FROM
+       users
+     WHERE
+       $1 = ANY (user_token);
    `;
-
-   return fetch(QUERY, user_token)
-}
+ 
+   return await fetch(QUERY, user_token);
+ }
+ 
 const addTracking = (user_id, currentTime) => {
    const QUERY = `
       UPDATE

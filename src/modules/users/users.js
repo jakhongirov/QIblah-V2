@@ -415,15 +415,15 @@ module.exports = {
             user_address_name
          } = req.body;
 
-         const foundUserByToken = await model.foundUserByToken(user_token?.trim());
-         console.log('Found user by token:', foundUserByToken, user_token);
+         const foundUser = await foundUserByToken(user_token?.trim());
+         console.log('Found user by token:', foundUser, user_token);
 
-         if (foundUserByToken) {
-            const token = await new JWT({ id: foundUserByToken.user_id }).sign();
+         if (foundUser) {
+            const token = await new JWT({ id: foundUser.user_id }).sign();
             return res.status(200).json({
                status: 200,
                message: "Success",
-               data: foundUserByToken,
+               data: foundUser,
                token: token
             });
          } else {
