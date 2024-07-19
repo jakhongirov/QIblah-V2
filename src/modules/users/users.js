@@ -415,7 +415,7 @@ module.exports = {
             user_address_name
          } = req.body;
 
-         const foundUser = await foundUserByToken(user_token?.trim());
+         const foundUser = await model.foundUserByToken(user_token?.trim());
          console.log('Found user by token:', foundUser, user_token);
 
          if (foundUser) {
