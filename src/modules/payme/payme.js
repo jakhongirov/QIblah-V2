@@ -8,7 +8,7 @@ module.exports = {
 
          if (method == "CheckPerformTransaction") {
             console.log("CheckPerformTransaction", req.body)
-            const foundUser = await model.foundUser(params?.account?.id)
+            const foundUser = await model.foundUser(params?.account?.user_id)
             const foundPayment = await model.foundPayment(params?.account?.tarif)
 
             if (foundPayment && foundUser) {
@@ -79,7 +79,7 @@ module.exports = {
             }
 
             const newTransaction = await model.addTransaction(
-               params?.account?.id,
+               params?.account?.user_id,
                params?.account?.tarif,
                1,
                amount,
