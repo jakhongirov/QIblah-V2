@@ -3,6 +3,7 @@ const router = express.Router()
 
 //Middlawares
 const { AUTH } = require('../middleware/auth')
+const { PAYME_CHECK_TOKEN, PAYME_ERROR } = require('../middleware/payme')
 const FileUpload = require('../middleware/multer')
 
 // files
@@ -554,6 +555,6 @@ router
   .get("/transactions", AUTH, transactions.GET)
 
   // PAYME
-  .post('/payme', payme.PAYMENT)
+  .post('/payme', PAYME_CHECK_TOKEN, payme.PAYMENT)
 
 module.exports = router
