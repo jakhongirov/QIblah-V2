@@ -326,6 +326,20 @@ CREATE TABLE uzum (
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE payme (
+   id bigserial PRiMARY KEY,
+   user_id int,
+   payment text,
+   state int DEFAULT 0,
+   amount int,
+   create_time int,
+   perform_time int,
+   cancel_time int,
+   transaction text,
+   reason int,
+   transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE payment_categories (
    category_id bigserial PRiMARY key,
    category_name text,
