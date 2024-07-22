@@ -555,6 +555,6 @@ router
   .get("/transactions", AUTH, transactions.GET)
 
   // PAYME
-  .post('/payme', PAYME_CHECK_TOKEN, payme.PAYMENT)
+  .post('/payme', payme.PAYMENT)
 
 module.exports = router
