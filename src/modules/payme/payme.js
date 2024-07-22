@@ -19,7 +19,7 @@ module.exports = {
                })
             } else {
                return res.json({
-                  result: {
+                  error: {
                      name: "UserNotFound",
                      code: -31099,
                      message: {
@@ -41,7 +41,7 @@ module.exports = {
             if (transaction) {
                if (transaction.state !== 1) {
                   return res.json({
-                     result: {
+                     error: {
                         name: "CantDoOperation",
                         code: -31008,
                         message: {
@@ -58,7 +58,7 @@ module.exports = {
                if (!expirationTime) {
                   await model.updateTransaction(params.id, -1, 4,);
                   return res.json({
-                     result: {
+                     error: {
                         name: "CantDoOperation",
                         code: -31008,
                         message: {
@@ -100,7 +100,7 @@ module.exports = {
                })
             } else {
                return res.json({
-                  result: {
+                  error: {
                      name: "UserNotFound",
                      code: -31099,
                      message: {
@@ -119,7 +119,7 @@ module.exports = {
             const transaction = await model.foundTransaction(params.id);
             if (!transaction) {
                return res.json({
-                  result: {
+                  error: {
                      name: "TransactionNotFound",
                      code: -31003,
                      message: {
@@ -134,7 +134,7 @@ module.exports = {
             if (transaction.state !== 1) {
                if (transaction.state !== 2) {
                   return res.json({
-                     result: {
+                     error: {
                         name: "CantDoOperation",
                         code: -31008,
                         message: {
@@ -166,7 +166,7 @@ module.exports = {
                );
 
                return res.json({
-                  result: {
+                  error: {
                      name: "CantDoOperation",
                      code: -31008,
                      message: {
@@ -224,7 +224,7 @@ module.exports = {
             const transaction = await model.foundTransaction(params.id);
             if (!transaction) {
                return res.json({
-                  result: {
+                  error: {
                      name: "TransactionNotFound",
                      code: -31003,
                      message: {
@@ -261,7 +261,7 @@ module.exports = {
             const transaction = await model.foundTransaction(params.id);
             if (!transaction) {
                return res.json({
-                  result: {
+                  error: {
                      name: "TransactionNotFound",
                      code: -31003,
                      message: {
