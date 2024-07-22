@@ -98,7 +98,8 @@ module.exports = {
                   result: {
                      transaction: newTransaction.id,
                      state: 1,
-                     create_time: Number(currentTime),
+                     create_time: Number(newTransaction.create_time),
+                     receivers: null
                   }
                })
             } else {
