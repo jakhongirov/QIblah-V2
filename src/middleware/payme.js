@@ -9,7 +9,7 @@ module.exports = {
          const token = authHeader && authHeader.split(" ")[1];
          if (!token) {
             return res.json({
-               result: {
+               error: {
                   name: "InvalidAuthorization",
                   code: -32504,
                   message: {
@@ -25,7 +25,7 @@ module.exports = {
 
          if (!data.includes(process.env.PAYME_KEY)) {
             return res.json({
-               result: {
+               error: {
                   name: "InvalidAuthorization",
                   code: -32504,
                   message: {
