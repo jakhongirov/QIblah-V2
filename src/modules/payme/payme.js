@@ -284,9 +284,9 @@ module.exports = {
 
             return res.status(200).json({
                result: {
-                  create_time: transaction.create_time ? Number(transaction.create_time) : null,
-                  perform_time: transaction.perform_time ? Number(transaction.perform_time) : null,
-                  cancel_time: transaction.cancel_time ? Number(transaction.cancel_time) : null,
+                  create_time: transaction.create_time ? Number(transaction.create_time) : 0,
+                  perform_time: transaction.perform_time ? Number(transaction.perform_time) : 0,
+                  cancel_time: transaction.cancel_time ? Number(transaction.cancel_time) : 0,
                   transaction: transaction.id,
                   state: transaction.state,
                   reason: transaction.reason,

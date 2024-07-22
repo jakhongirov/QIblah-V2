@@ -17,7 +17,8 @@ module.exports = {
                      ru: "Авторизация недействительна",
                      en: "Authorization invalid",
                   },
-               }
+               },
+               id: id
             })
          };
 
@@ -36,7 +37,8 @@ module.exports = {
                      ru: "Авторизация недействительна",
                      en: "Authorization invalid",
                   },
-               }
+               },
+               id: id
             })
          }
 
