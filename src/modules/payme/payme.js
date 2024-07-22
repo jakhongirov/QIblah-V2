@@ -27,7 +27,8 @@ module.exports = {
                         ru: "Мы не нашли вашу учетную запись",
                         en: "We couldn't find your account",
                      }
-                  }
+                  },
+                  id: id
                })
             }
          } else if (method == "CreateTransaction") {
@@ -49,7 +50,8 @@ module.exports = {
                            ru: "Мы не можем сделать операцию",
                            en: "We can't do operation",
                         }
-                     }
+                     },
+                     id: id
                   });
                }
 
@@ -65,8 +67,9 @@ module.exports = {
                            uz: "Biz operatsiyani bajara olmaymiz",
                            ru: "Мы не можем сделать операцию",
                            en: "We can't do operation",
-                        }
-                     }
+                        },
+                     },
+                     id: id
                   });
                }
 
@@ -108,7 +111,8 @@ module.exports = {
                         ru: "Мы не нашли вашу учетную запись",
                         en: "We couldn't find your account",
                      }
-                  }
+                  },
+                  id: id
                })
             }
 
@@ -127,7 +131,8 @@ module.exports = {
                         ru: "Транзакция не найдена",
                         en: "Transaction not found",
                      }
-                  }
+                  },
+                  id: id
                })
             }
 
@@ -142,7 +147,8 @@ module.exports = {
                            ru: "Мы не можем сделать операцию",
                            en: "We can't do operation",
                         }
-                     }
+                     },
+                     id: id
                   })
                }
 
@@ -174,7 +180,8 @@ module.exports = {
                         ru: "Мы не можем сделать операцию",
                         en: "We can't do operation",
                      }
-                  }
+                  },
+                  id: id
                })
             }
 
@@ -232,7 +239,8 @@ module.exports = {
                         ru: "Транзакция не найдена",
                         en: "Transaction not found",
                      }
-                  }
+                  },
+                  id: id
                })
             }
 
@@ -269,7 +277,8 @@ module.exports = {
                         ru: "Транзакция не найдена",
                         en: "Transaction not found",
                      },
-                  }
+                  },
+                  id: id
                });
             }
 
