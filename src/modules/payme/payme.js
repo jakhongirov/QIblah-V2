@@ -87,6 +87,8 @@ module.exports = {
                params?.time,
             );
 
+            console.log(newTransaction)
+
             return res.json({
                result: {
                   transaction: newTransaction.transaction,
