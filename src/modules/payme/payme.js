@@ -71,7 +71,7 @@ module.exports = {
 
                return res.json({
                   result: {
-                     create_time: transaction.create_time,
+                     create_time: Number(transaction.create_time),
                      transaction: transaction.transaction,
                      state: 1,
                   }
@@ -93,7 +93,7 @@ module.exports = {
                result: {
                   transaction: newTransaction.transaction,
                   state: 1,
-                  create_time: newTransaction.create_time,
+                  create_time: Number(newTransaction.create_time),
                }
             })
 
@@ -134,14 +134,14 @@ module.exports = {
 
                return res.json({
                   result: {
-                     perform_time: transaction.perform_time,
+                     perform_time: Number(transaction.perform_time),
                      transaction: transaction.transaction,
                      state: 2,
                   }
                });
             }
 
-            const expirationTime = (currentTime - transaction.create_time) / 60000 < 12;
+            const expirationTime = (currentTime - Number(transaction.create_time)) / 60000 < 12;
 
             if (!expirationTime) {
                await model.updateTransactionPerform(
@@ -197,7 +197,7 @@ module.exports = {
             if (editUserPremium) {
                return res.json({
                   result: {
-                     perform_time: currentTime,
+                     perform_time: Number(currentTime),
                      transaction: transaction.transaction,
                      state: 2,
                   }
@@ -235,7 +235,7 @@ module.exports = {
 
             return res.json({
                result: {
-                  cancel_time: transaction.cancel_time || currentTime,
+                  cancel_time: Number(transaction.cancel_time) || Number(currentTime),
                   transaction: transaction.id,
                   state: -Math.abs(transaction.state),
                }
@@ -261,9 +261,9 @@ module.exports = {
 
             return res.status(200).json({
                result: {
-                  create_time: transaction.create_time,
-                  perform_time: transaction.perform_time,
-                  cancel_time: transaction.cancel_time,
+                  create_time: transaction.create_time ? Number(transaction.create_time) : null,
+                  perform_time: transaction.perform_time ? Number(transaction.perform_time) : null,
+                  cancel_time: transaction.cancel_time ? Number(transaction.cancel_time) : null,
                   transaction: transaction.transaction,
                   state: transaction.state,
                   reason: transaction.reason,
