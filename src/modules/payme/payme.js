@@ -98,7 +98,7 @@ module.exports = {
                   result: {
                      transaction: newTransaction.id,
                      state: 1,
-                     create_time: Number(newTransaction.create_time),
+                     create_time: Number(currentTime),
                   }
                })
             } else {

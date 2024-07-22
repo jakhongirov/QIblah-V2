@@ -332,9 +332,9 @@ CREATE TABLE payme (
    payment text,
    state int DEFAULT 0,
    amount int,
-   create_time int DEFAULT 0,
-   perform_time int DEFAULT 0,
-   cancel_time int DEFAULT 0,
+   create_time bigint DEFAULT 0,
+   perform_time bigint DEFAULT 0,
+   cancel_time bigint DEFAULT 0,
    transaction text,
    reason int,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
