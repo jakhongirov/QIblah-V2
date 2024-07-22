@@ -23,7 +23,7 @@ module.exports = {
 
          const data = base64.decode(token);
 
-         if (!data.includes(process.env.PAYME_MERCHANT_KEY)) {
+         if (!data.includes(process.env.PAYME_KEY)) {
             return res.json({
                result: {
                   name: "InvalidAuthorization",
