@@ -21,7 +21,7 @@ module.exports = {
                return res.json({
                   result: {
                      name: "UserNotFound",
-                     code: -31050,
+                     code: -31099,
                      message: {
                         uz: "Biz sizning hisobingizni topolmadik.",
                         ru: "Мы не нашли вашу учетную запись",
