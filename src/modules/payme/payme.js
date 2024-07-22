@@ -79,38 +79,38 @@ module.exports = {
                });
             }
 
-            if (foundUser) {
-               const newTransaction = await model.addTransaction(
-                  params?.account?.user_id,
-                  params?.account?.tarif,
-                  1,
-                  amount,
-                  params.id,
-                  params?.time,
-               );
+            // if (foundUser) {
+            const newTransaction = await model.addTransaction(
+               params?.account?.user_id,
+               params?.account?.tarif,
+               1,
+               amount,
+               params.id,
+               params?.time,
+            );
 
-               console.log(newTransaction)
+            console.log(newTransaction)
 
-               return res.json({
-                  result: {
-                     transaction: newTransaction.transaction,
-                     state: 1,
-                     create_time: Number(newTransaction.create_time),
-                  }
-               })
-            } else {
-               return res.json({
-                  error: {
-                     name: "UserNotFound",
-                     code: -31099,
-                     message: {
-                        uz: "Biz sizning hisobingizni topolmadik.",
-                        ru: "Мы не нашли вашу учетную запись",
-                        en: "We couldn't find your account",
-                     }
-                  }
-               })
-            }
+            return res.json({
+               result: {
+                  transaction: newTransaction.transaction,
+                  state: 1,
+                  create_time: Number(newTransaction.create_time),
+               }
+            })
+            // } else {
+            //    return res.json({
+            //       error: {
+            //          name: "UserNotFound",
+            //          code: -31099,
+            //          message: {
+            //             uz: "Biz sizning hisobingizni topolmadik.",
+            //             ru: "Мы не нашли вашу учетную запись",
+            //             en: "We couldn't find your account",
+            //          }
+            //       }
+            //    })
+            // }
 
          } else if (method == "PerformTransaction") {
             console.log("PerformTransaction", req.body)
