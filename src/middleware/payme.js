@@ -22,6 +22,9 @@ module.exports = {
          };
 
          const data = base64.decode(token);
+         console.log(data)
+         console.log(process.env.PAYME_KEY)
+         console.log(data.includes(process.env.PAYME_KEY))
 
          if (!data.includes(process.env.PAYME_KEY)) {
             return res.json({
