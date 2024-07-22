@@ -76,7 +76,7 @@ module.exports = {
                return res.json({
                   result: {
                      create_time: Number(transaction.create_time),
-                     transaction: transaction.transaction,
+                     transaction: transaction.id,
                      state: 1,
                   }
                });
