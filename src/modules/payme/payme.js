@@ -96,7 +96,7 @@ module.exports = {
 
                return res.json({
                   result: {
-                     transaction: newTransaction.transaction,
+                     transaction: newTransaction.id,
                      state: 1,
                      create_time: Number(newTransaction.create_time),
                   }
@@ -155,7 +155,7 @@ module.exports = {
                return res.json({
                   result: {
                      perform_time: Number(transaction.perform_time),
-                     transaction: transaction.transaction,
+                     transaction: transaction.id,
                      state: 2,
                   }
                });
@@ -219,7 +219,7 @@ module.exports = {
                return res.json({
                   result: {
                      perform_time: Number(currentTime),
-                     transaction: transaction.transaction,
+                     transaction: transaction.id,
                      state: 2,
                   }
                })
@@ -287,7 +287,7 @@ module.exports = {
                   create_time: transaction.create_time ? Number(transaction.create_time) : null,
                   perform_time: transaction.perform_time ? Number(transaction.perform_time) : null,
                   cancel_time: transaction.cancel_time ? Number(transaction.cancel_time) : null,
-                  transaction: transaction.transaction,
+                  transaction: transaction.id,
                   state: transaction.state,
                   reason: transaction.reason,
                }
