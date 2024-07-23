@@ -133,8 +133,8 @@ module.exports = {
             zikr_info,
             zikr,
          } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const audioName = uploadPhoto?.filename;
+         const audioUrl = uploadPhoto ? `${process.env.BACKEND_URL}/${uploadPhoto?.filename}` : null;
+         const audioName = uploadPhoto ? uploadPhoto?.filename : null;
 
          const addZikr = await model.addZikr(
             zikr_title,
