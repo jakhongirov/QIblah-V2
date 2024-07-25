@@ -1,4 +1,4 @@
-const { fetch } = require('../../lib/postgres')
+const { fetch, fetchALL } = require('../../lib/postgres')
 
 const foundUser = (user_id) => {
    const QUERY = `
@@ -149,7 +149,7 @@ const editUserPremium = (token, timestamp, payment_type) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, token, timestamp, payment_type)
+   return fetchALL(QUERY, token, timestamp, payment_type)
 }
 const updateTransactionState = (
    id,

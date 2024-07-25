@@ -37,7 +37,7 @@ const editUserPremium = (token, timestamp, payment_type) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, token, timestamp, payment_type)
+   return fetchALL(QUERY, token, timestamp, payment_type)
 }
 const addTransId = (
    user_id,
