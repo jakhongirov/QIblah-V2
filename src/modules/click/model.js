@@ -1,6 +1,18 @@
-const { fetch } = require('../../lib/postgres')
+const { fetch, fetchALL } = require('../../lib/postgres')
 
-const editUserPremium = (param2, timestamp, payment_type) => {
+const foundUser = async (id) => {
+   const QUERY = `
+     SELECT
+       *
+     FROM
+       users
+     WHERE
+       user_id = $1;
+   `;
+
+   return await fetch(QUERY, id);
+}
+const editUserPremium = (user_token, timestamp, payment_type) => {
    const QUERY = `
       UPDATE
          users
@@ -9,20 +21,20 @@ const editUserPremium = (param2, timestamp, payment_type) => {
          user_premium_expires_at = $2,
          payment_type = $3
       WHERE
-         user_id = $1
+         $1 = ANY (user_token) 
       RETURNING *;
    `;
 
-   return fetch(QUERY, param2, timestamp, payment_type)
+   return fetchALL(QUERY, user_token, timestamp, payment_type)
 }
 
 const addTransaction = (
-   click_trans_id, 
-   amount, 
-   monthToAdd, 
-   param2, 
-   merchant_trans_id, 
-   error, 
+   click_trans_id,
+   amount,
+   monthToAdd,
+   param2,
+   merchant_trans_id,
+   error,
    error_note,
    token
 ) => {
@@ -51,12 +63,12 @@ const addTransaction = (
 
    return fetch(
       QUERY,
-      click_trans_id, 
-      amount, 
-      monthToAdd, 
-      param2, 
-      merchant_trans_id, 
-      error, 
+      click_trans_id,
+      amount,
+      monthToAdd,
+      param2,
+      merchant_trans_id,
+      error,
       error_note,
       token
    )
@@ -75,6 +87,7 @@ const foundPayment = (text) => {
 }
 
 module.exports = {
+   foundUser,
    editUserPremium,
    addTransaction,
    foundPayment

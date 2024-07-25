@@ -140,10 +140,11 @@ module.exports = {
                   }
 
                   const formattedDate = expiresDate.toISOString();
-                  const editUserPremium = await model.editUserPremium(params?.id, formattedDate, "uzum")
+                  const foundUser = await model.foundUser(params.id)
+                  await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "uzum")
                   await model.addTransId(
-                     editUserPremium?.user_id,
-                     editUserPremium?.user_token[editUserPremium?.user_token?.length - 1],
+                     params.id,
+                     foundUser?.user_token[foundUser?.user_token?.length - 1],
                      transId,
                      monthToAdd,
                      amount,

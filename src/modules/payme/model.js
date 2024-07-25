@@ -136,7 +136,7 @@ const updateTransactionPaid = (
       currentTime
    )
 }
-const editUserPremium = (user_id, timestamp, payment_type) => {
+const editUserPremium = (token, timestamp, payment_type) => {
    const QUERY = `
       UPDATE
          users
@@ -145,11 +145,11 @@ const editUserPremium = (user_id, timestamp, payment_type) => {
          user_premium_expires_at = $2,
          payment_type = $3
       WHERE
-         user_id = $1
+         $1 = ANY (user_token)
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, timestamp, payment_type)
+   return fetch(QUERY, token, timestamp, payment_type)
 }
 const updateTransactionState = (
    id,

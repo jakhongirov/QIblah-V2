@@ -37,9 +37,9 @@ module.exports = {
             }
 
             const formattedDate = expiresDate.toISOString();
-
-            const editUserPremium = await model.editUserPremium(param2, formattedDate, "click")
-            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, editUserPremium?.user_token[Number(editUserPremium?.user_token?.length - 1)])
+            const foundUser = await model.foundUser(param2)
+            await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "click")
+            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)])
          }
 
          makeCode(4)
