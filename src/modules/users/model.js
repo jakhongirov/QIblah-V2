@@ -349,6 +349,7 @@ const createTemporaryUser = async (
    user_address_name
 ) => {
    const foundUser = await foundUserByToken(user_token)
+   console.log('found create', foundUser)
 
    if (foundUser) {
       return foundUser
