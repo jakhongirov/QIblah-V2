@@ -447,6 +447,7 @@ module.exports = {
          );
 
          if (createTemporaryUser) {
+            console.log("created", createTemporaryUser)
             const token = await new JWT({ id: createTemporaryUser.user_id }).sign();
             return res.status(200).json({
                status: 200,
