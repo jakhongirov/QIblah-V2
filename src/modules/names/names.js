@@ -74,7 +74,8 @@ module.exports = {
          const file = JSON.parse(data.read())
 
          for (const item of file) {
-            await model.addName(
+            await model.editName(
+               item?.id,
                item?.arabic,
                item?.uzTitle,
                item?.uzDescription,
@@ -85,14 +86,14 @@ module.exports = {
                item?.rusTitle,
                item?.rusDescription,
                item?.rusTranslate,
-               "",
-               "",
-               "",
+               item?.enTitle,
+               item?.enDescription,
+               item?.enTranslate,
                "",
                "",
                "",
                item?.link,
-               item?.link
+               item?.link?.split('/')[item?.link?.split('/').length - 1]
             );
          }
 
