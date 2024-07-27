@@ -1,44 +1,39 @@
+require('dotenv').config();
 const model = require('./model');
 const axios = require('axios');
 
 module.exports = {
    SEND: async (req, res) => {
       try {
-         const { use_id, title, message } = req.body;
-         const foundUser = await model.foundUser(use_id);
+         const { user_id, title, message } = req.body;
+         const foundUser = await model.foundUser(user_id);
 
          if (foundUser) {
-            axios.post('https://onesignal.com/api/v1/notifications', {
-               app_id: 'd0dd527d-8c4c-4936-bf4a-37e844b13a66',
+            const notification = {
+               app_id: process.env.ONESIGNAL_APP_ID,
                headings: { "en": title },
                contents: { "en": message },
                include_player_ids: [foundUser.user_notification_id]
-            }, {
-               headers: {
-                  "Content-Type": "application/json",
-                  "Authorization": "Basic NmQ2ODQxOGItMjg5Yi00ZDEwLWIzN2QtODc0MmY2ZDAwNzBj"
-               }
-            })
-               .then(response => {
-                  if (response.data.id) {
-                     return res.status(200).json({
-                        status: 200,
-                        message: "Sent"
-                     });
-                  } else {
-                     return res.status(400).json({
-                        status: 400,
-                        message: "Bad request"
-                     });
-                  }
-               })
-               .catch(error => {
-                  console.log(error);
-                  return res.status(500).json({
-                     status: 500,
-                     message: "Internal Server Error"
-                  });
+            };
+
+            const headers = {
+               "Content-Type": "application/json",
+               "Authorization": `Basic ${process.env.ONESIGNAL_API_KEY}`
+            };
+
+            const response = await axios.post('https://onesignal.com/api/v1/notifications', notification, { headers });
+
+            if (response.data.id) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Sent"
                });
+            } else {
+               return res.status(400).json({
+                  status: 400,
+                  message: "Bad request"
+               });
+            }
          } else {
             return res.status(404).json({
                status: 404,
@@ -48,7 +43,7 @@ module.exports = {
 
       } catch (error) {
          console.log(error);
-         res.status(500).json({
+         return res.status(500).json({
             status: 500,
             message: "Internal Server Error"
          });
