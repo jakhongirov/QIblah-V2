@@ -12,7 +12,7 @@ module.exports = {
             app_id: process.env.ONESIGNAL_APP_ID,
             headings: { "en": title },
             contents: { "en": message },
-            include_player_ids: [`${foundUser.user_notification_id ? foundUser.user_notification_id : notification_id ? notification_id : ""}`]
+            include_player_ids: [`${foundUser?.user_notification_id ? foundUser?.user_notification_id : notification_id ? notification_id : ""}`]
          };
 
          const headers = {
