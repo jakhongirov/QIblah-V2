@@ -559,6 +559,6 @@ router
   .post('/payme', PAYME_CHECK_TOKEN, payme.PAYMENT)
 
   // NOTIFICATION
-  .post('/send/notification', AUTH, notification.SEND)
+  // .post('/send/notification', AUTH, notification.SEND)
 
 module.exports = router
