@@ -151,12 +151,14 @@ const checkUserById = (id) => {
 const foundUserByToken = async (user_token) => {
    console.log("query", user_token);
    const QUERY = `
-     SELECT
+      SELECT
        *
-     FROM
-       users
-     WHERE
-       $1 = ANY (user_token);
+      FROM
+         users
+      WHERE
+         $1 = ANY (user_token)
+      ORDER BY
+         user_id DESC;
    `;
 
    return await fetch(QUERY, user_token);

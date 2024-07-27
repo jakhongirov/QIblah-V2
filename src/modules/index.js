@@ -387,6 +387,7 @@ router
   .put('/user/edit/premium', AUTH, users.EDIT_USER_PREMIUM)
   .put('/user/edit/applang', AUTH, users.CHANGE_LANG)
   .put('/user/edit/alldata', AUTH, users.EDIT_ALL_USER_DATE)
+  .put('/user/edit/alldata/token', AUTH, users.EDIT_ALL_USER_DATE_TOKEN)
   .delete('/user/delete', AUTH, users.DELETE_USER)
   .delete('/user/admin/delete', AUTH, users.DELETE_USER_ADMIN)
 

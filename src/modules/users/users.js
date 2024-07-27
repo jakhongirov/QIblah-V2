@@ -1218,6 +1218,135 @@ module.exports = {
       }
    },
 
+   EDIT_ALL_USER_DATE_TOKEN: async (req, res) => {
+      try {
+         const {
+            user_id,
+            user_name,
+            user_gender,
+            user_country_code,
+            user_region,
+            user_location,
+            user_app_lang,
+            user_phone_model,
+            user_phone_lang,
+            user_os,
+            user_os_version,
+            user_comment,
+            user_qazo,
+            verse_id,
+            read_verse,
+            name_count,
+            zikr_id,
+            zikr_count,
+            user_app_version,
+            user_address_name
+         } = req.body
+         const checkUserById = await model.checkUserById(user_id)
+         const foundUserStat = await model.foundUserStat(user_id)
+
+         if (checkUserById) {
+            const updateUserAllData = await model.updateUserAllData(
+               user_id,
+               user_name,
+               user_gender,
+               user_country_code,
+               user_region,
+               user_location,
+               user_app_lang,
+               user_phone_model,
+               user_phone_lang,
+               user_os,
+               user_os_version,
+               user_comment,
+               user_app_version,
+               user_address_name
+            )
+
+            if (foundUserStat) {
+               const editUserStats = await model.editUserStats(
+                  user_id,
+                  user_qazo,
+                  verse_id,
+                  read_verse,
+                  name_count,
+                  zikr_id,
+                  zikr_count
+               )
+
+               if (editUserStats && updateUserAllData) {
+                  for (const item of verse_id) {
+                     await model.updateVerseFavCount(item)
+                  }
+                  for (const item of zikr_id) {
+                     await model.updateZikrFavCount(item)
+                  }
+
+                  return res.status(200).json({
+                     status: 200,
+                     message: "Success",
+                     data: {
+                        user_stat: editUserStats,
+                        user_data: updateUserAllData
+                     }
+                  })
+               } else {
+                  return res.status(200).json({
+                     status: 400,
+                     message: "Bad request"
+                  })
+               }
+
+            } else {
+               const addUserStats = await model.addUserStats(
+                  user_id,
+                  user_qazo,
+                  verse_id,
+                  read_verse,
+                  name_count,
+                  zikr_id,
+                  zikr_count
+               )
+
+               if (addUserStats && updateUserAllData) {
+                  for (const item of verse_id) {
+                     await model.updateVerseFavCount(item)
+                  }
+                  for (const item of zikr_id) {
+                     await model.updateZikrFavCount(item)
+                  }
+
+                  return res.status(200).json({
+                     status: 200,
+                     message: "Success",
+                     data: {
+                        user_stat: addUserStats,
+                        user_data: updateUserAllData
+                     }
+                  })
+               } else {
+                  return res.status(400).json({
+                     status: 400,
+                     message: "Bad request"
+                  })
+               }
+            }
+         } else {
+            return res.status(404).json({
+               status: 404,
+               message: "User not found"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    DELETE_USER: async (req, res) => {
       try {
          const { user_id } = req.body
