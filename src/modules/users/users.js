@@ -244,6 +244,7 @@ module.exports = {
                   addTracking;
                }
 
+               console.log(foundUserByToken)
                return res.status(200).json({
                   status: 200,
                   message: "Success",
