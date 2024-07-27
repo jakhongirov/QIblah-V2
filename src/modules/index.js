@@ -33,7 +33,7 @@ const paymentCheck = require('./payment/check')
 const uzum = require('./uzum/uzum')
 const transactions = require('./transactions/transactions')
 const payme = require('./payme/payme')
-// const notification = require('./notification/notification')
+const notification = require('./notification/notification')
 
 router
 
@@ -559,6 +559,6 @@ router
   .post('/payme', PAYME_CHECK_TOKEN, payme.PAYMENT)
 
   // NOTIFICATION
-  // .post('/send/notification', AUTH, notification.SEND)
+  .post('/send/notification', AUTH, notification.SEND)
 
 module.exports = router
