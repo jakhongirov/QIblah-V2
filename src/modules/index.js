@@ -33,7 +33,7 @@ const paymentCheck = require('./payment/check')
 const uzum = require('./uzum/uzum')
 const transactions = require('./transactions/transactions')
 const payme = require('./payme/payme')
-const notification = require('./notification/notification')
+// const notification = require('./notification/notification')
 
 router
 
