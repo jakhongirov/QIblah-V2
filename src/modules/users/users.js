@@ -1221,7 +1221,7 @@ module.exports = {
    EDIT_ALL_USER_DATE_TOKEN: async (req, res) => {
       try {
          const {
-            user_id,
+            user_token,
             user_name,
             user_gender,
             user_country_code,
@@ -1242,12 +1242,12 @@ module.exports = {
             user_app_version,
             user_address_name
          } = req.body
-         const checkUserById = await model.checkUserById(user_id)
-         const foundUserStat = await model.foundUserStat(user_id)
+         const foundUserByToken = await model.foundUserByToken(user_token)
+         const foundUserStatToken = await model.foundUserStatToken(user_token)
 
-         if (checkUserById) {
-            const updateUserAllData = await model.updateUserAllData(
-               user_id,
+         if (foundUserByToken) {
+            const updateUserAllDataToken = await model.updateUserAllDataToken(
+               user_token,
                user_name,
                user_gender,
                user_country_code,
@@ -1263,9 +1263,9 @@ module.exports = {
                user_address_name
             )
 
-            if (foundUserStat) {
-               const editUserStats = await model.editUserStats(
-                  user_id,
+            if (foundUserStatToken) {
+               const editUserStatsToken = await model.editUserStatsToken(
+                  user_token,
                   user_qazo,
                   verse_id,
                   read_verse,
@@ -1274,7 +1274,7 @@ module.exports = {
                   zikr_count
                )
 
-               if (editUserStats && updateUserAllData) {
+               if (editUserStatsToken && updateUserAllDataToken) {
                   for (const item of verse_id) {
                      await model.updateVerseFavCount(item)
                   }
@@ -1286,8 +1286,8 @@ module.exports = {
                      status: 200,
                      message: "Success",
                      data: {
-                        user_stat: editUserStats,
-                        user_data: updateUserAllData
+                        user_stat: editUserStatsToken[0],
+                        user_data: updateUserAllDataToken[0]
                      }
                   })
                } else {
@@ -1298,8 +1298,8 @@ module.exports = {
                }
 
             } else {
-               const addUserStats = await model.addUserStats(
-                  user_id,
+               const addUserStatsToken = await model.addUserStatsToken(
+                  user_token,
                   user_qazo,
                   verse_id,
                   read_verse,
@@ -1308,7 +1308,7 @@ module.exports = {
                   zikr_count
                )
 
-               if (addUserStats && updateUserAllData) {
+               if (addUserStatsToken && updateUserAllDataToken) {
                   for (const item of verse_id) {
                      await model.updateVerseFavCount(item)
                   }
@@ -1320,8 +1320,8 @@ module.exports = {
                      status: 200,
                      message: "Success",
                      data: {
-                        user_stat: addUserStats,
-                        user_data: updateUserAllData
+                        user_stat: addUserStatsToken[0],
+                        user_data: updateUserAllDataToken[0]
                      }
                   })
                } else {

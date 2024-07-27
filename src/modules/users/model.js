@@ -151,14 +151,12 @@ const checkUserById = (id) => {
 const foundUserByToken = async (user_token) => {
    console.log("query", user_token);
    const QUERY = `
-      SELECT
+     SELECT
        *
-      FROM
-         users
-      WHERE
-         $1 = ANY (user_token)
-      ORDER BY
-         user_id DESC;
+     FROM
+       users
+     WHERE
+       $1 = ANY (user_token);
    `;
 
    return await fetch(QUERY, user_token);
@@ -686,6 +684,64 @@ const updateUserAllData = (
       user_address_name
    )
 }
+const updateUserAllDataToken = (
+   user_token,
+   user_name,
+   user_gender,
+   user_country_code,
+   user_region,
+   user_location,
+   user_app_lang,
+   user_phone_model,
+   user_phone_lang,
+   user_os,
+   user_os_version,
+   user_comment,
+   user_app_version,
+   user_address_name
+) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_name = $2,
+         user_gender = $3,
+         user_country_code = $4,
+         user_region = $5,
+         user_location = $6,
+         user_app_lang = $7,
+         user_phone_model = array_append(user_phone_model, $8),
+         user_phone_lang = array_append(user_phone_lang, $9),
+         user_os = array_append(user_os, $10),
+         user_os_version = array_append(user_os_version, $11),
+         user_comment = array_append(user_comment, $12),
+         user_app_version = $13,
+         user_address_name = $14
+      WHERE
+         $1 = ANY (user_token)
+      RETURNING *
+      ORDER BY
+         user_id DESC;
+   `;
+
+   return fetchALL(
+      QUERY,
+      user_token,
+      user_name,
+      user_gender,
+      user_country_code,
+      user_region,
+      user_location,
+      user_app_lang,
+      user_phone_model,
+      user_phone_lang,
+      user_os,
+      user_os_version,
+      user_comment,
+      user_app_version,
+      user_address_name
+   )
+}
 const foundUserStat = (user_id) => {
    const QUERY = `
       SELECT
@@ -697,6 +753,22 @@ const foundUserStat = (user_id) => {
    `;
 
    return fetch(QUERY, user_id)
+}
+const foundUserStatToken = (user_token) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users_stats a
+      INNER JOIN
+         users b
+      ON
+         a.user_id = b.user_id
+      WHERE
+         $1 = ANY (b.user_token);
+   `;
+
+   return fetch(QUERY, user_token)
 }
 const editUserStats = (
    user_id,
@@ -725,6 +797,46 @@ const editUserStats = (
    return fetch(
       QUERY,
       user_id,
+      user_qazo,
+      verse_id,
+      read_verse,
+      name_count,
+      zikr_id,
+      zikr_count
+   )
+}
+const editUserStatsToken = (
+   user_token,
+   user_qazo,
+   verse_id,
+   read_verse,
+   name_count,
+   zikr_id,
+   zikr_count
+) => {
+   const QUERY = `
+      UPDATE
+         users_stats
+      SET
+         user_qazo = $2,
+         verse_id = $3,
+         read_verse = $4,
+         name_count = $5,
+         zikr_id = $6,
+         zikr_count = $7
+      FROM
+         users
+      WHERE
+         users_stats.user_id = users.user_id
+         AND $1 = ANY (users.user_token)
+      RETURNING users_stats.* 
+      ORDER BY
+         users_stats.user_id DESC;
+   `;
+
+   return fetchALL(
+      QUERY,
+      user_token,
       user_qazo,
       verse_id,
       read_verse,
@@ -766,6 +878,57 @@ const addUserStats = (
    return fetch(
       QUERY,
       user_id,
+      user_qazo,
+      verse_id,
+      read_verse,
+      name_count,
+      zikr_id,
+      zikr_count
+   )
+}
+const addUserStatsToken = (
+   user_token,
+   user_qazo,
+   verse_id,
+   read_verse,
+   name_count,
+   zikr_id,
+   zikr_count
+) => {
+   const QUERY = `
+      WITH user_data AS (
+         SELECT user_id
+         FROM users
+         WHERE $1 = ANY (user_token)
+      )
+      INSERT INTO
+         users_stats (
+            user_id,
+            user_qazo,
+            verse_id,
+            read_verse,
+            name_count,
+            zikr_id,
+            zikr_count
+         )
+      SELECT
+         user_id,
+         $2,
+         $3,
+         $4,
+         $5,
+         $6,
+         $7
+      FROM
+         user_data
+      RETURNING * 
+      ORDER BY 
+         users_stats.user_id;
+   `;
+
+   return fetchALL(
+      QUERY,
+      user_token,
       user_qazo,
       verse_id,
       read_verse,
@@ -844,9 +1007,13 @@ module.exports = {
    editUserPremium,
    changeLang,
    updateUserAllData,
+   updateUserAllDataToken,
    foundUserStat,
+   foundUserStatToken,
    editUserStats,
+   editUserStatsToken,
    addUserStats,
+   addUserStatsToken,
    updateVerseFavCount,
    updateZikrFavCount,
    deleteUser
