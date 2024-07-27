@@ -21,7 +21,7 @@ module.exports = {
          };
 
          const response = await axios.post('https://onesignal.com/api/v1/notifications', notification, { headers });
-
+         console.log(response)
          if (response.data.id) {
             return res.status(200).json({
                status: 200,
