@@ -701,27 +701,30 @@ const updateUserAllDataToken = (
    user_address_name
 ) => {
    const QUERY = `
-      UPDATE
-         users
-      SET
-         user_name = $2,
-         user_gender = $3,
-         user_country_code = $4,
-         user_region = $5,
-         user_location = $6,
-         user_app_lang = $7,
-         user_phone_model = array_append(user_phone_model, $8),
-         user_phone_lang = array_append(user_phone_lang, $9),
-         user_os = array_append(user_os, $10),
-         user_os_version = array_append(user_os_version, $11),
-         user_comment = array_append(user_comment, $12),
-         user_app_version = $13,
-         user_address_name = $14
-      WHERE
-         $1 = ANY (user_token)
-      RETURNING *
-      ORDER BY
-         user_id DESC;
+      WITH updated_users AS (
+         UPDATE
+            users
+         SET
+            user_name = $2,
+            user_gender = $3,
+            user_country_code = $4,
+            user_region = $5,
+            user_location = $6,
+            user_app_lang = $7,
+            user_phone_model = array_append(user_phone_model, $8),
+            user_phone_lang = array_append(user_phone_lang, $9),
+            user_os = array_append(user_os, $10),
+            user_os_version = array_append(user_os_version, $11),
+            user_comment = array_append(user_comment, $12),
+            user_app_version = $13,
+            user_address_name = $14
+         WHERE
+            $1 = ANY (user_token)
+         RETURNING *
+      )
+      SELECT *
+      FROM updated_users
+      ORDER BY user_id DESC;
    `;
 
    return fetchALL(
@@ -740,7 +743,7 @@ const updateUserAllDataToken = (
       user_comment,
       user_app_version,
       user_address_name
-   )
+   );
 }
 const foundUserStat = (user_id) => {
    const QUERY = `
@@ -815,23 +818,26 @@ const editUserStatsToken = (
    zikr_count
 ) => {
    const QUERY = `
-      UPDATE
-         users_stats
-      SET
-         user_qazo = $2,
-         verse_id = $3,
-         read_verse = $4,
-         name_count = $5,
-         zikr_id = $6,
-         zikr_count = $7
-      FROM
-         users
-      WHERE
-         users_stats.user_id = users.user_id
-         AND $1 = ANY (users.user_token)
-      RETURNING users_stats.* 
-      ORDER BY
-         users_stats.user_id DESC;
+      WITH updated_stats AS (
+         UPDATE
+            users_stats
+         SET
+            user_qazo = $2,
+            verse_id = $3,
+            read_verse = $4,
+            name_count = $5,
+            zikr_id = $6,
+            zikr_count = $7
+         FROM
+            users
+         WHERE
+            users_stats.user_id = users.user_id
+            AND $1 = ANY (users.user_token)
+         RETURNING users_stats.*
+      )
+      SELECT *
+      FROM updated_stats
+      ORDER BY user_id DESC;
    `;
 
    return fetchALL(
@@ -843,8 +849,9 @@ const editUserStatsToken = (
       name_count,
       zikr_id,
       zikr_count
-   )
+   );
 }
+
 const addUserStats = (
    user_id,
    user_qazo,
@@ -900,9 +907,9 @@ const addUserStatsToken = (
          SELECT user_id
          FROM users
          WHERE $1 = ANY (user_token)
-      )
-      INSERT INTO
-         users_stats (
+      ),
+      inserted_data AS (
+         INSERT INTO users_stats (
             user_id,
             user_qazo,
             verse_id,
@@ -911,19 +918,20 @@ const addUserStatsToken = (
             zikr_id,
             zikr_count
          )
-      SELECT
-         user_id,
-         $2,
-         $3,
-         $4,
-         $5,
-         $6,
-         $7
-      FROM
-         user_data
-      RETURNING * 
-      ORDER BY 
-         users_stats.user_id;
+         SELECT
+            user_id,
+            $2,
+            $3,
+            $4,
+            $5,
+            $6,
+            $7
+         FROM user_data
+         RETURNING *
+      )
+      SELECT *
+      FROM inserted_data
+      ORDER BY user_id DESC;
    `;
 
    return fetchALL(
@@ -935,8 +943,9 @@ const addUserStatsToken = (
       name_count,
       zikr_id,
       zikr_count
-   )
+   );
 }
+
 const updateVerseFavCount = (item) => {
    const QUERY = `
       UPDATE
