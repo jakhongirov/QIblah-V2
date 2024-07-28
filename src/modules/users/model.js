@@ -977,7 +977,7 @@ const edituserBasic = (
          user_phone_lang = array_append(user_phone_lang, $2),
          user_app_lang = $3,
          user_app_version = $4,
-         user_notification_id = %5
+         user_notification_id = $5
       WHERE
          $1 = ANY (user_token)
       RETURNING *
