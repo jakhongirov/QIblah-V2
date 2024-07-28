@@ -963,6 +963,37 @@ const updateZikrFavCount = (item) => {
 
    return fetch(QUERY, item)
 }
+const edituserBasic = (
+   user_token,
+   user_phone_lang,
+   user_app_lang,
+   user_app_version,
+   user_notification_id
+) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_phone_lang = array_append(user_phone_lang, $2),
+         user_app_lang = $3,
+         user_app_version = $4,
+         user_notification_id = %5
+      WHERE
+         $1 = ANY (user_token)
+      RETURNING *
+      ORDER BY
+         user_id DESC;
+   `
+
+   return fetchALL(
+      QUERY,
+      user_token,
+      user_phone_lang,
+      user_app_lang,
+      user_app_version,
+      user_notification_id
+   )
+}
 const deleteUser = (user_id) => {
    const QUERY = `
       DELETE FROM
@@ -1016,5 +1047,6 @@ module.exports = {
    addUserStatsToken,
    updateVerseFavCount,
    updateZikrFavCount,
+   edituserBasic,
    deleteUser
 }

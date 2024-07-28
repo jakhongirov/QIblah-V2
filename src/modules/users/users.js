@@ -1347,6 +1347,55 @@ module.exports = {
       }
    },
 
+   EDIT_USER_BASIC: async (req, res) => {
+      try {
+         const {
+            user_token,
+            user_phone_lang,
+            user_app_lang,
+            user_app_version,
+            user_notification_id
+         } = req.body
+         const foundUserByToken = await model.foundUserByToken(user_token)
+
+         if (foundUserByToken) {
+            const edituserBasic = await model.edituserBasic(
+               user_token,
+               user_phone_lang,
+               user_app_lang,
+               user_app_version,
+               user_notification_id
+            )
+
+            if (edituserBasic) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: edituserBasic[0]
+               })
+            } else {
+               return res.status(400).json({
+                  status: 400,
+                  message: "Bad request"
+               })
+            }
+
+         } else {
+            return res.status(404).json({
+               status: 404,
+               message: "User not found"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    DELETE_USER: async (req, res) => {
       try {
          const { user_id } = req.body
