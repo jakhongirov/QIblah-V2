@@ -240,6 +240,43 @@ module.exports = {
       }
    },
 
+   EDIT_ZIKR_STATUS: async (req, res) => {
+      try {
+         const { zikr_id, zikr } = req.body
+         const foundZikr = await model.foundZikr(zikr_id)
+
+         if (foundZikr) {
+            const editZikrStatus = await model.editZikrStatus(zikr_id, zikr)
+
+            if (editZikrStatus) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: editZikrStatus
+               })
+            } else {
+               return res.status(400).json({
+                  status: 400,
+                  message: "Bad request"
+               })
+            }
+
+         } else {
+            return res.status(404).json({
+               status: 404,
+               message: "Not found"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    DElETE_ZIKR: async (req, res) => {
       try {
          const { zikr_id } = req.body

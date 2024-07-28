@@ -420,6 +420,7 @@ router
   .get('/zikr/file/add', AUTH, zikrs.ADD_FILE)
   .post('/zikr/add', AUTH, FileUpload.single("audio"), zikrs.ADD_ZIKR)
   .put('/zikr/edit', AUTH, FileUpload.single("audio"), zikrs.EDIT_ZIKR)
+  .put('/zikr/edit/status', AUTH, zikrs.EDIT_ZIKR_STATUS)
   .delete('/zikr/delete', AUTH, zikrs.DElETE_ZIKR)
 
   // PUBLIC ZIKRS API

@@ -132,6 +132,19 @@ const editZikr = (
       zikr
    )
 }
+const editZikrStatus = (zikr_id, zikr) => {
+   const QUERY = `
+      UPDATE
+         zikrs
+      SET
+         zikr = $2
+      WHERE
+         zikr_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, zikr_id, zikr)
+}
 const deleteZikr = (zikr_id) => {
    const QUERY = `
       DELETE FROM
@@ -151,5 +164,6 @@ module.exports = {
    foundZikr,
    addZikr,
    editZikr,
+   editZikrStatus,
    deleteZikr
 }
