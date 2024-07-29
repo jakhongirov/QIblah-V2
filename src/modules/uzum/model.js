@@ -1,4 +1,4 @@
-const { fetch } = require('../../lib/postgres')
+const { fetch, fetchALL } = require('../../lib/postgres')
 
 const foundUser = async (id) => {
    const QUERY = `
