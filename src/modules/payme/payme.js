@@ -215,7 +215,7 @@ module.exports = {
 
             const formattedDate = expiresDate.toISOString();
             const foundUser = await model.foundUser(transaction?.user_id)
-            await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "payme")
+            await model.editUserPremium(foundUser?.user_token[foundUser?.user_token?.length - 1], formattedDate, "payme")
 
             if (editUserPremium) {
                return res.json({
