@@ -83,7 +83,8 @@ module.exports = {
          const file = JSON.parse(data.read())
 
          for (const item of file) {
-            await model.addSura(
+            await model.editSura(
+               item?.id,
                item?.arabicName,
                item?.uzLatinName,
                item?.uzKirilName,

@@ -2,1255 +2,1255 @@
     {
         "arabicName": "الفاتحة",
         "count": 7,
-        "enName": "",
+        "enName": "Al-Fatiha - The Opening",
         "from": 1,
         "id": 1,
         "kzName": "",
-        "ruName": "Аль-Фатиха",
-        "uzKirilName": "Фотиҳа",
-        "uzLatinName": "Fotiha"
+        "ruName": "Аль-Фатиха - Открывающая книгу",
+        "uzKirilName": "Фотиҳа - Очувчи",
+        "uzLatinName": "Fotiha - Ochuvchi"
     },
     {
         "arabicName": "البقرة",
         "count": 286,
-        "enName": "",
+        "enName": "Al-Baqarah - The Cow",
         "from": 2,
         "id": 2,
         "kzName": "",
-        "ruName": "Аль-Бакара",
-        "uzKirilName": "Бақара",
-        "uzLatinName": "Baqara"
+        "ruName": "Аль-Бакара - Корова",
+        "uzKirilName": "Бақара - Сигир",
+        "uzLatinName": "Baqara - Sigir"
     },
     {
         "arabicName": "آل عمران",
         "count": 200,
-        "enName": "",
+        "enName": "Al-Imran - The Family of Imran",
         "from": 2,
         "id": 3,
         "kzName": "",
-        "ruName": "Али Имран",
-        "uzKirilName": "Оли Имрон",
-        "uzLatinName": "Oli Imron"
+        "ruName": "Али Имран - Семейство Имрана",
+        "uzKirilName": "Оли Имрон - Имрон оиласи",
+        "uzLatinName": "Oli Imron - Imron oilasi"
     },
     {
         "arabicName": "النساء",
         "count": 176,
-        "enName": "",
+        "enName": "An-Nisa - The Women",
         "from": 2,
         "id": 4,
         "kzName": "",
-        "ruName": "Ан-Ниса",
-        "uzKirilName": "Нисо",
-        "uzLatinName": "Niso"
+        "ruName": "Ан-Ниса - Женщина",
+        "uzKirilName": "Нисо - Аёллар",
+        "uzLatinName": "Niso - Аyollar"
     },
     {
         "arabicName": "المائدة",
         "count": 120,
-        "enName": "",
+        "enName": "Al-Maidah - The Table Spread",
         "from": 2,
         "id": 5,
         "kzName": "",
-        "ruName": "Аль-Маида",
-        "uzKirilName": "Моида",
-        "uzLatinName": "Moida"
+        "ruName": "Аль-Маида - Трапеза",
+        "uzKirilName": "Моида - Дастурхон",
+        "uzLatinName": "Moida - Dasturxon"
     },
     {
         "arabicName": "الأنعام",
         "count": 165,
-        "enName": "",
+        "enName": "Al-An'am - The Cattle",
         "from": 1,
         "id": 6,
         "kzName": "",
-        "ruName": "Аль-Анам",
-        "uzKirilName": "Анъом",
-        "uzLatinName": "An'om"
+        "ruName": "Аль-Анам - Скот",
+        "uzKirilName": "Анъом - Чорвалар",
+        "uzLatinName": "An'om - Chorvalar"
     },
     {
         "arabicName": "الأعراف",
         "count": 206,
-        "enName": "",
+        "enName": "Al-A'raf - The Heights",
         "from": 1,
         "id": 7,
         "kzName": "",
-        "ruName": "Аль-Араф",
-        "uzKirilName": "Аъроф",
-        "uzLatinName": "A'rof"
+        "ruName": "Аль-Араф - Ограды",
+        "uzKirilName": "Аъроф - Жаннат билан дўзахни ажратиб турадиган девор",
+        "uzLatinName": "A'rof - Jannat bilan doʼzaxni ajratib turadigan devor"
     },
     {
         "arabicName": "الأنفال",
         "count": 75,
-        "enName": "",
+        "enName": "Al-Anfal - The Spoil of War",
         "from": 2,
         "id": 8,
         "kzName": "",
-        "ruName": "Аль-Анфаль",
-        "uzKirilName": "Анфол",
-        "uzLatinName": "Anfol"
+        "ruName": "Аль-Анфаль - Трофеи",
+        "uzKirilName": "Анфол - Ўлжалар",
+        "uzLatinName": "Anfol - Oʼljalar"
     },
     {
         "arabicName": "التوبة",
         "count": 129,
-        "enName": "",
+        "enName": "At-Taubah - The Repentance",
         "from": 2,
         "id": 9,
         "kzName": "",
-        "ruName": "Ат-Тавба",
-        "uzKirilName": "Тавба",
-        "uzLatinName": "Tavba"
+        "ruName": "Ат-Тавба - Покаяние",
+        "uzKirilName": "Тавба - Тавба (истиғфор)",
+        "uzLatinName": "Tavba - Tavba (istigʼfor)"
     },
     {
         "arabicName": "يونس",
         "count": 109,
-        "enName": "",
+        "enName": "Yunus - Yunus or Jonah",
         "from": 1,
         "id": 10,
         "kzName": "",
-        "ruName": "Юнус",
-        "uzKirilName": "Юнус",
-        "uzLatinName": "Yunus"
+        "ruName": "Юнус - Иона",
+        "uzKirilName": "Юнус - Юнус алайҳиссалом",
+        "uzLatinName": "Yunus - Yunus alayhissalom"
     },
     {
         "arabicName": "هود",
         "count": 123,
-        "enName": "",
+        "enName": "Hud - Prophet Hud",
         "from": 1,
         "id": 11,
         "kzName": "",
-        "ruName": "Худ",
-        "uzKirilName": "Ҳуд",
-        "uzLatinName": "Hud"
+        "ruName": "Худ - Худ",
+        "uzKirilName": "Ҳуд - Ҳуд алайҳиссалом",
+        "uzLatinName": "Hud - Hud alayhissalom"
     },
     {
         "arabicName": "يوسف",
         "count": 111,
-        "enName": "",
+        "enName": "Yusuf - Prophet Joseph",
         "from": 1,
         "id": 12,
         "kzName": "",
-        "ruName": "Юсуф",
-        "uzKirilName": "Юсуф",
-        "uzLatinName": "Yusuf"
+        "ruName": "Юсуф - Иосиф",
+        "uzKirilName": "Юсуф - Юсуф алайҳиссалом",
+        "uzLatinName": "Yusuf - Yusuf alayhissalom"
     },
     {
         "arabicName": "الرعد",
         "count": 43,
-        "enName": "",
+        "enName": "Ar-Ra'd - Thunder",
         "from": 2,
         "id": 13,
         "kzName": "",
-        "ruName": "Ар-Раад",
-        "uzKirilName": "Раъд",
-        "uzLatinName": "Ra'd"
+        "ruName": "Ар-Раад - Гром",
+        "uzKirilName": "Раъд - Момақалдироқ",
+        "uzLatinName": "Ra'd - Momaqaldiroq"
     },
     {
         "arabicName": "إبراهيم",
         "count": 52,
-        "enName": "",
+        "enName": "Ibrahim - Abraham",
         "from": 1,
         "id": 14,
         "kzName": "",
-        "ruName": "Ибрахим",
-        "uzKirilName": "Иброҳим",
-        "uzLatinName": "Ibrohim"
+        "ruName": "Ибрахим - Авраам",
+        "uzKirilName": "Иброҳим - Иброҳим алайҳиссалом",
+        "uzLatinName": "Ibrohim - Ibrohim alayhissalom"
     },
     {
         "arabicName": "الحجر",
         "count": 99,
-        "enName": "",
+        "enName": "Al-Hijr - The Rocky Tract",
         "from": 1,
         "id": 15,
         "kzName": "",
-        "ruName": "Аль-Хиджр",
-        "uzKirilName": "Ҳижр",
-        "uzLatinName": "Hijr"
+        "ruName": "Аль-Хиджр - Хиджр",
+        "uzKirilName": "Ҳижр - Мадина ва Шом ортасидаги водий",
+        "uzLatinName": "Hijr - Madina va Shom ortasidagi vodiy"
     },
     {
         "arabicName": "النحل",
         "count": 128,
-        "enName": "",
+        "enName": "An-Nahl - The Bee",
         "from": 1,
         "id": 16,
         "kzName": "",
-        "ruName": "Ан-Нахль",
-        "uzKirilName": "Наҳл",
-        "uzLatinName": "Nahl"
+        "ruName": "Ан-Нахль - Пчёлы",
+        "uzKirilName": "Наҳл - Асалари",
+        "uzLatinName": "Nahl - Аsalari"
     },
     {
         "arabicName": "الإسراء",
         "count": 111,
-        "enName": "",
+        "enName": "Al-Isra - The Night Journey",
         "from": 1,
         "id": 17,
         "kzName": "",
-        "ruName": "Аль-Исра",
-        "uzKirilName": "Исро",
-        "uzLatinName": "Isro"
+        "ruName": "Аль-Исра - Ночной перенос",
+        "uzKirilName": "Исро - Тунги сайр",
+        "uzLatinName": "Isro - Tungi sayr"
     },
     {
         "arabicName": "الكهف",
         "count": 110,
-        "enName": "",
+        "enName": "Al-Kahf - The Cave",
         "from": 1,
         "id": 18,
         "kzName": "",
-        "ruName": "Аль-Кахф",
-        "uzKirilName": "Каҳф",
-        "uzLatinName": "Kahf"
+        "ruName": "Аль-Кахф - Пещера",
+        "uzKirilName": "Каҳф - Ғор",
+        "uzLatinName": "Kahf - Gʼor"
     },
     {
         "arabicName": "مريم",
         "count": 98,
-        "enName": "",
+        "enName": "Maryam - Mary",
         "from": 1,
         "id": 19,
         "kzName": "",
-        "ruName": "Марьям",
-        "uzKirilName": "Марям",
-        "uzLatinName": "Maryam"
+        "ruName": "Марьям - Мария",
+        "uzKirilName": "Марям - Марям розийаллоҳу анҳо",
+        "uzLatinName": "Maryam - Maryam roziyallohu anho"
     },
     {
         "arabicName": "طه",
         "count": 135,
-        "enName": "",
+        "enName": "Ta-Ha - Mystic Letters T.H.",
         "from": 1,
         "id": 20,
         "kzName": "",
-        "ruName": "Та Ха",
-        "uzKirilName": "Тоҳо",
-        "uzLatinName": "Toho"
+        "ruName": "Та Ха - Та Ха",
+        "uzKirilName": "Тоҳо - араб ҳарфлари номи",
+        "uzLatinName": "Toho - arab harflari nomi"
     },
     {
         "arabicName": "الأنبياء",
         "count": 112,
-        "enName": "",
+        "enName": "Al-Anbiya - The Prophets",
         "from": 1,
         "id": 21,
         "kzName": "",
-        "ruName": "Аль-Анбийа",
-        "uzKirilName": "Анбиё",
-        "uzLatinName": "Anbiyo"
+        "ruName": "Аль-Анбийа - Пророки",
+        "uzKirilName": "Анбиё - Пайғамбарлар",
+        "uzLatinName": "Anbiyo - Paygʼambarlar"
     },
     {
         "arabicName": "الحج",
         "count": 78,
-        "enName": "",
+        "enName": "Al-Hajj - The Pilgrimage",
         "from": 2,
         "id": 22,
         "kzName": "",
-        "ruName": "Аль-Хадж",
-        "uzKirilName": "Ҳаж",
-        "uzLatinName": "Haj"
+        "ruName": "Аль-Хадж - Паломничество",
+        "uzKirilName": "Ҳаж - Ҳаж",
+        "uzLatinName": "Haj - Haj"
     },
     {
         "arabicName": "المؤمنون",
         "count": 118,
-        "enName": "",
+        "enName": "Al-Mu'minun - The Believers",
         "from": 1,
         "id": 23,
         "kzName": "",
-        "ruName": "Аль-Муминун",
-        "uzKirilName": "Муъминун",
-        "uzLatinName": "Mu'minun"
+        "ruName": "Аль-Муминун - Верующие",
+        "uzKirilName": "Муъминун - Мўминлар",
+        "uzLatinName": "Mu'minun - Moʼminlar"
     },
     {
         "arabicName": "النور",
         "count": 64,
-        "enName": "",
+        "enName": "An-Nur - The Light",
         "from": 2,
         "id": 24,
         "kzName": "",
-        "ruName": "Ан-Нур",
-        "uzKirilName": "Нур",
-        "uzLatinName": "Nur"
+        "ruName": "Ан-Нур - Свет",
+        "uzKirilName": "Нур - Нур",
+        "uzLatinName": "Nur - Nur"
     },
     {
         "arabicName": "الفرقان",
         "count": 77,
-        "enName": "",
+        "enName": "Al-Furqan - The Criterion",
         "from": 1,
         "id": 25,
         "kzName": "",
-        "ruName": "Аль-Фуркан",
-        "uzKirilName": "Фурқон",
-        "uzLatinName": "Furqon"
+        "ruName": "Аль-Фуркан - Различение",
+        "uzKirilName": "Фурқон - Ҳақ билан ноҳақни ажратиб бергувчи",
+        "uzLatinName": "Furqon - Haq bilan nohaqni ajratib berguvchi"
     },
     {
         "arabicName": "الشعراء",
         "count": 227,
-        "enName": "",
+        "enName": "Ash-Shuara - The Poets",
         "from": 1,
         "id": 26,
         "kzName": "",
-        "ruName": "Аш-Шуара",
-        "uzKirilName": "Шуаро",
-        "uzLatinName": "Shuaro"
+        "ruName": "Аш-Шуара - Поэты",
+        "uzKirilName": "Шуаро - Шоирлар",
+        "uzLatinName": "Shuaro - Shoirlar"
     },
     {
         "arabicName": "النمل",
         "count": 93,
-        "enName": "",
+        "enName": "An-Naml - The Ant",
         "from": 1,
         "id": 27,
         "kzName": "",
-        "ruName": "Ан-Намль",
-        "uzKirilName": "Намл",
-        "uzLatinName": "Naml"
+        "ruName": "Ан-Намль - Муравьи",
+        "uzKirilName": "Намл - Чумоли",
+        "uzLatinName": "Naml - Chumoli"
     },
     {
         "arabicName": "القصص",
         "count": 88,
-        "enName": "",
+        "enName": "Al-Qasas - The Stories",
         "from": 1,
         "id": 28,
         "kzName": "",
-        "ruName": "Аль-Касас",
-        "uzKirilName": "Қосос",
-        "uzLatinName": "Qosos"
+        "ruName": "Аль-Касас - Рассказ",
+        "uzKirilName": "Қосос - Қисса",
+        "uzLatinName": "Qosos - Qissa"
     },
     {
         "arabicName": "العنكبوت",
         "count": 69,
-        "enName": "",
+        "enName": "Al-Ankabut - The Spider",
         "from": 1,
         "id": 29,
         "kzName": "",
-        "ruName": "Аль-Анкабут",
-        "uzKirilName": "Анкабут",
-        "uzLatinName": "Ankabut"
+        "ruName": "Аль-Анкабут - Паук",
+        "uzKirilName": "Анкабут - Ўргимчак",
+        "uzLatinName": "Ankabut - Oʼrgimchak"
     },
     {
         "arabicName": "الروم",
         "count": 60,
-        "enName": "",
+        "enName": "Ar-Rum - The Romans",
         "from": 1,
         "id": 30,
         "kzName": "",
-        "ruName": "Ар-Рум",
-        "uzKirilName": "Рум",
-        "uzLatinName": "Rum"
+        "ruName": "Ар-Рум - Римляне",
+        "uzKirilName": "Рум - Рум",
+        "uzLatinName": "Rum - Rum"
     },
     {
         "arabicName": "لقمان",
         "count": 34,
-        "enName": "",
+        "enName": "Luqman - Luqman",
         "from": 1,
         "id": 31,
         "kzName": "",
-        "ruName": "Лукман",
-        "uzKirilName": "Луқмон",
-        "uzLatinName": "Luqmon"
+        "ruName": "Лукман - Лукмaн",
+        "uzKirilName": "Луқмон - Луқмон",
+        "uzLatinName": "Luqmon - Luqmon"
     },
     {
         "arabicName": "السجدة",
         "count": 30,
-        "enName": "",
+        "enName": "As-Sajdah - The Prostration",
         "from": 1,
         "id": 32,
         "kzName": "",
-        "ruName": "Ас-Саджда",
-        "uzKirilName": "Сажда",
-        "uzLatinName": "Sajda"
+        "ruName": "Ас-Саджда - Земной поклон",
+        "uzKirilName": "Сажда - Сажда",
+        "uzLatinName": "Sajda - Sajda"
     },
     {
         "arabicName": "الأحزاب",
         "count": 73,
-        "enName": "",
+        "enName": "Al-Ahzab - The Combined Forces",
         "from": 2,
         "id": 33,
         "kzName": "",
-        "ruName": "Аль-Ахзаб",
-        "uzKirilName": "Аҳзоб",
-        "uzLatinName": "Ahzob"
+        "ruName": "Аль-Ахзаб - Союзники",
+        "uzKirilName": "Аҳзоб - Фирқалар",
+        "uzLatinName": "Ahzob - Firqalar"
     },
     {
         "arabicName": "سبأ",
         "count": 54,
-        "enName": "",
+        "enName": "Saba - Sheba",
         "from": 1,
         "id": 34,
         "kzName": "",
-        "ruName": "Саба",
-        "uzKirilName": "Сабаъ",
-        "uzLatinName": "Saba'"
+        "ruName": "Саба - Сава",
+        "uzKirilName": "Сабаъ - Сабаъ (қабила номи)",
+        "uzLatinName": "Saba' - Sabaʼ (qabila nomi)"
     },
     {
         "arabicName": "فاطر",
         "count": 45,
-        "enName": "",
+        "enName": "Fatir - Originator",
         "from": 1,
         "id": 35,
         "kzName": "",
-        "ruName": "Фатыр",
-        "uzKirilName": "Фотир",
-        "uzLatinName": "Fotir"
+        "ruName": "Фатыр - Творец",
+        "uzKirilName": "Фотир - Илк Яратгувчи",
+        "uzLatinName": "Fotir - Ilk Yaratguvchi"
     },
     {
         "arabicName": "يس",
         "count": 83,
-        "enName": "",
+        "enName": "Yaseen - Yaseen",
         "from": 1,
         "id": 36,
         "kzName": "",
-        "ruName": "Ясин",
-        "uzKirilName": "Ёсин",
-        "uzLatinName": "Yosin"
+        "ruName": "Ясин - Йа Син",
+        "uzKirilName": "Ёсин - араб ҳарфлари номи",
+        "uzLatinName": "Yosin - arab harflari nomi"
     },
     {
         "arabicName": "الصافات",
         "count": 182,
-        "enName": "",
+        "enName": "As-Saffat - Those who set the Ranks",
         "from": 1,
         "id": 37,
         "kzName": "",
-        "ruName": "Ас-Саффат",
-        "uzKirilName": "Соффаат",
-        "uzLatinName": "Soffaat"
+        "ruName": "Ас-Саффат - Выстроившиеся в ряды",
+        "uzKirilName": "Соффаат - Саф тортиб тургувчилар",
+        "uzLatinName": "Soffaat - Saf tortib turguvchilar"
     },
     {
         "arabicName": "ص",
         "count": 88,
-        "enName": "",
+        "enName": "Sad - The Letter 'Saad'",
         "from": 1,
         "id": 38,
         "kzName": "",
-        "ruName": "Сад",
-        "uzKirilName": "Сод",
-        "uzLatinName": "Sod"
+        "ruName": "Сад - Сад",
+        "uzKirilName": "Сод - араб ҳарфи номи",
+        "uzLatinName": "Sod - arab harfi nomi"
     },
     {
         "arabicName": "الزمر",
         "count": 75,
-        "enName": "",
+        "enName": "Az-Zumar - The Companies",
         "from": 1,
         "id": 39,
         "kzName": "",
-        "ruName": "Аз-Зумар",
-        "uzKirilName": "Зумар",
-        "uzLatinName": "Zumar"
+        "ruName": "Аз-Зумар - Толпы",
+        "uzKirilName": "Зумар - Гуруҳлар",
+        "uzLatinName": "Zumar - Guruhlar"
     },
     {
         "arabicName": "غافر",
         "count": 85,
-        "enName": "",
+        "enName": "Gafir - The Forgiver",
         "from": 1,
         "id": 40,
         "kzName": "",
-        "ruName": "Гафир",
-        "uzKirilName": "Ғофир",
-        "uzLatinName": "G‘ofir"
+        "ruName": "Гафир - Прощающий",
+        "uzKirilName": "Ғофир - Мағфират қилгувчи",
+        "uzLatinName": "G‘ofir - Magʼfirat qilguvchi"
     },
     {
         "arabicName": "فصلت",
         "count": 54,
-        "enName": "",
+        "enName": "Fussilat - Explained in Detail",
         "from": 1,
         "id": 41,
         "kzName": "",
-        "ruName": "Фуссилат",
-        "uzKirilName": "Фуссилат",
-        "uzLatinName": "Fussilat"
+        "ruName": "Фуссилат - Разъяснены",
+        "uzKirilName": "Фуссилат - Муфассал баён қилинган",
+        "uzLatinName": "Fussilat - Mufassal bayon qilingan"
     },
     {
         "arabicName": "الشورى",
         "count": 53,
-        "enName": "",
+        "enName": "Ash-Shura - Counsel",
         "from": 1,
         "id": 42,
         "kzName": "",
-        "ruName": "Аш-Шура",
-        "uzKirilName": "Шууро",
-        "uzLatinName": "Shuuro"
+        "ruName": "Аш-Шура - Совет",
+        "uzKirilName": "Шууро - Маслаҳат",
+        "uzLatinName": "Shuuro - Maslahat"
     },
     {
         "arabicName": "الزخرف",
         "count": 89,
-        "enName": "",
+        "enName": "Az-Zukhruf - The Ornaments of Gold",
         "from": 1,
         "id": 43,
         "kzName": "",
-        "ruName": "Аз-Зухруф",
-        "uzKirilName": "Зухруф",
-        "uzLatinName": "Zuxruf"
+        "ruName": "Аз-Зухруф - Украшения",
+        "uzKirilName": "Зухруф - Зеб-зийнат",
+        "uzLatinName": "Zuxruf - Zeb-ziynat"
     },
     {
         "arabicName": "الدخان",
         "count": 59,
-        "enName": "",
+        "enName": "Ad-Dukhan - The Smoke",
         "from": 1,
         "id": 44,
         "kzName": "",
-        "ruName": "Ад-Духан",
-        "uzKirilName": "Духон",
-        "uzLatinName": "Duxon"
+        "ruName": "Ад-Духан - Дым",
+        "uzKirilName": "Духон - Тутун",
+        "uzLatinName": "Duxon - Tutun"
     },
     {
         "arabicName": "الجاثية",
         "count": 37,
-        "enName": "",
+        "enName": "Al-Jasiyah - The Kneeling",
         "from": 1,
         "id": 45,
         "kzName": "",
-        "ruName": "Аль-Джасия",
-        "uzKirilName": "Жосия",
-        "uzLatinName": "Josiya"
+        "ruName": "Аль-Джасия - Коленопреклоненные",
+        "uzKirilName": "Жосия - Тиз чўкувчилар",
+        "uzLatinName": "Josiya - Tiz choʼkuvchilar"
     },
     {
         "arabicName": "الأحقاف",
         "count": 35,
-        "enName": "",
+        "enName": "Al-Ahqaf - The Sandhills",
         "from": 1,
         "id": 46,
         "kzName": "",
-        "ruName": "Аль-Ахкаф",
-        "uzKirilName": "Аҳқоф",
-        "uzLatinName": "Ahqof"
+        "ruName": "Аль-Ахкаф - Барханы",
+        "uzKirilName": "Аҳқоф - Қумтепалар",
+        "uzLatinName": "Ahqof - Qumtepalar"
     },
     {
         "arabicName": "محمد",
         "count": 38,
-        "enName": "",
+        "enName": "Muhammad - Muhammad",
         "from": 2,
         "id": 47,
         "kzName": "",
-        "ruName": "Мухаммад",
-        "uzKirilName": "Муҳаммад",
-        "uzLatinName": "Muhammad"
+        "ruName": "Мухаммад - Мухаммад",
+        "uzKirilName": "Муҳаммад - Муҳаммад соллаллоҳу алайҳи васаллам",
+        "uzLatinName": "Muhammad - Muhammad sollallohu alayhi vasallam"
     },
     {
         "arabicName": "الفتح",
         "count": 29,
-        "enName": "",
+        "enName": "Al-Fath - The Victory",
         "from": 2,
         "id": 48,
         "kzName": "",
-        "ruName": "Аль-Фатх",
-        "uzKirilName": "Фатҳ",
-        "uzLatinName": "Fath"
+        "ruName": "Аль-Фатх - Победа",
+        "uzKirilName": "Фатҳ - Ғалаба",
+        "uzLatinName": "Fath - Gʼalaba"
     },
     {
         "arabicName": "الحجرات",
         "count": 18,
-        "enName": "",
+        "enName": "Al-Hujurat - The Apartments",
         "from": 2,
         "id": 49,
         "kzName": "",
-        "ruName": "Аль-Худжурат",
-        "uzKirilName": "Ҳужурот",
-        "uzLatinName": "Hujurot"
+        "ruName": "Аль-Худжурат - Комнаты",
+        "uzKirilName": "Ҳужурот - Ҳужралар",
+        "uzLatinName": "Hujurot - Hujralar"
     },
     {
         "arabicName": "ق",
         "count": 45,
-        "enName": "",
+        "enName": "Qaf - Qaf",
         "from": 1,
         "id": 50,
         "kzName": "",
-        "ruName": "Каф",
-        "uzKirilName": "Қоф",
-        "uzLatinName": "Qof"
+        "ruName": "Каф - Каф",
+        "uzKirilName": "Қоф - араб ҳарфи номи",
+        "uzLatinName": "Qof - arab harfi nomi"
     },
     {
         "arabicName": "الذاريات",
         "count": 60,
-        "enName": "",
+        "enName": "Ad-Dhariyat - The Scatterers",
         "from": 1,
         "id": 51,
         "kzName": "",
-        "ruName": "Аз-Зарият",
-        "uzKirilName": "Зориёт",
-        "uzLatinName": "Zoriyot"
+        "ruName": "Аз-Зарият - Рассеивающие",
+        "uzKirilName": "Зориёт - Суриб кетувчи шамоллар",
+        "uzLatinName": "Zoriyot - Surib ketuvchi shamollar"
     },
     {
         "arabicName": "الطور",
         "count": 49,
-        "enName": "",
+        "enName": "At-Tur - The Mountain",
         "from": 1,
         "id": 52,
         "kzName": "",
-        "ruName": "Ат-Тур",
-        "uzKirilName": "Тур",
-        "uzLatinName": "Tur"
+        "ruName": "Ат-Тур - Гора",
+        "uzKirilName": "Тур - Тур тоғи",
+        "uzLatinName": "Tur - Tur togʼi"
     },
     {
         "arabicName": "النجم",
         "count": 62,
-        "enName": "",
+        "enName": "An-Najm - The Star",
         "from": 1,
         "id": 53,
         "kzName": "",
-        "ruName": "Ан-Наджм",
-        "uzKirilName": "Нажм",
-        "uzLatinName": "Najm"
+        "ruName": "Ан-Наджм - Звезда",
+        "uzKirilName": "Нажм - Юлдуз",
+        "uzLatinName": "Najm - Yulduz"
     },
     {
         "arabicName": "القمر",
         "count": 55,
-        "enName": "",
+        "enName": "Al-Qamar - The Moon",
         "from": 1,
         "id": 54,
         "kzName": "",
-        "ruName": "Аль-Камар",
-        "uzKirilName": "Қамар",
-        "uzLatinName": "Qamar"
+        "ruName": "Аль-Камар - Месяц",
+        "uzKirilName": "Қамар - Ой",
+        "uzLatinName": "Qamar - Oy"
     },
     {
         "arabicName": "الرحمن",
         "count": 78,
-        "enName": "",
+        "enName": "Ar-Rahman - The Most Gracious",
         "from": 2,
         "id": 55,
         "kzName": "",
-        "ruName": "Ар-Рахман",
-        "uzKirilName": "Ар-Роҳман",
-        "uzLatinName": "Ar-Rohman"
+        "ruName": "Ар-Рахман - Милостивый",
+        "uzKirilName": "Ар-Роҳман - Меҳрибон",
+        "uzLatinName": "Ar-Rohman - Mehribon"
     },
     {
         "arabicName": "الواقعة",
         "count": 96,
-        "enName": "",
+        "enName": "Al-Waqi'ah - The Event",
         "from": 1,
         "id": 56,
         "kzName": "",
-        "ruName": "Аль Вакиа",
-        "uzKirilName": "Воқиъа",
-        "uzLatinName": "Voqi'a"
+        "ruName": "Аль Вакиа - Событие",
+        "uzKirilName": "Воқиъа - Воқеа",
+        "uzLatinName": "Voqi'a - Voqea"
     },
     {
         "arabicName": "الحديد",
         "count": 29,
-        "enName": "",
+        "enName": "Al-Hadid - Iron",
         "from": 2,
         "id": 57,
         "kzName": "",
-        "ruName": "Аль-Хадид",
-        "uzKirilName": "Ҳадид",
-        "uzLatinName": "Hadid"
+        "ruName": "Аль-Хадид - Железо",
+        "uzKirilName": "Ҳадид - Темир",
+        "uzLatinName": "Hadid - Temir"
     },
     {
         "arabicName": "المجادلة",
         "count": 22,
-        "enName": "",
+        "enName": "Al-Mujadilah - The Pleading Woman",
         "from": 2,
         "id": 58,
         "kzName": "",
-        "ruName": "Аль-Муджадила",
-        "uzKirilName": "Мужодала",
-        "uzLatinName": "Mujodala"
+        "ruName": "Аль-Муджадила - Препирательство",
+        "uzKirilName": "Мужодала - Мунозара",
+        "uzLatinName": "Mujodala - Munozara"
     },
     {
         "arabicName": "الحشر",
         "count": 24,
-        "enName": "",
+        "enName": "Al-Hashr - The Banishment",
         "from": 2,
         "id": 59,
         "kzName": "",
-        "ruName": "Аль-Хашр",
-        "uzKirilName": "Ҳашр",
-        "uzLatinName": "Hashr"
+        "ruName": "Аль-Хашр - Сбор",
+        "uzKirilName": "Ҳашр - Жамлаб сургун қилиш",
+        "uzLatinName": "Hashr - Jamlab surgun qilish"
     },
     {
         "arabicName": "الممتحنة",
         "count": 13,
-        "enName": "",
+        "enName": "Al-Mumtahanah - The Woman Who Is Examined",
         "from": 2,
         "id": 60,
         "kzName": "",
-        "ruName": "Аль-Мумтахана",
-        "uzKirilName": "Мумтаҳана",
-        "uzLatinName": "Mumtahana"
+        "ruName": "Аль-Мумтахана - Испытуемая",
+        "uzKirilName": "Мумтаҳана - Имтиҳон қилингувчи аёл",
+        "uzLatinName": "Mumtahana - Imtihon qilinguvchi ayol"
     },
     {
         "arabicName": "الصف",
         "count": 14,
-        "enName": "",
+        "enName": "As-Saff -The Ranks",
         "from": 2,
         "id": 61,
         "kzName": "",
-        "ruName": "Ас-Сафф",
-        "uzKirilName": "Софф",
-        "uzLatinName": "Soff"
+        "ruName": "Ас-Сафф - Ряды",
+        "uzKirilName": "Софф - Саф, қатор",
+        "uzLatinName": "Soff - Saf, qator"
     },
     {
         "arabicName": "الجمعة",
         "count": 11,
-        "enName": "",
+        "enName": "Al-Jumu'ah - The Congregation",
         "from": 2,
         "id": 62,
         "kzName": "",
-        "ruName": "Аль-Джума",
-        "uzKirilName": "Жумуъа",
-        "uzLatinName": "Jumu'a"
+        "ruName": "Аль-Джума - Собрание",
+        "uzKirilName": "Жумуъа - Жума куни",
+        "uzLatinName": "Jumu'a - Juma kuni"
     },
     {
         "arabicName": "المنافقون",
         "count": 11,
-        "enName": "",
+        "enName": "Al-Munafiqoon - The Hypocrites",
         "from": 2,
         "id": 63,
         "kzName": "",
-        "ruName": "Аль-Мунафикун",
-        "uzKirilName": "Мунофиқун",
-        "uzLatinName": "Munofiqun"
+        "ruName": "Аль-Мунафикун - Лицемеры",
+        "uzKirilName": "Мунофиқун - Мунофиқлар",
+        "uzLatinName": "Munofiqun - Munofiqlar"
     },
     {
         "arabicName": "التغابن",
         "count": 18,
-        "enName": "",
+        "enName": "At-Taghabun - The Manifestation of Losses",
         "from": 2,
         "id": 64,
         "kzName": "",
-        "ruName": "Ат-Тагабун",
-        "uzKirilName": "Тағобун",
-        "uzLatinName": "Tag‘obun"
+        "ruName": "Ат-Тагабун - Взаимное обделение",
+        "uzKirilName": "Тағобун - Бир-бирини алдаш, зиён келтириш куни",
+        "uzLatinName": "Tag‘obun - Bir-birini aldash, ziyon keltirish kuni"
     },
     {
         "arabicName": "الطلاق",
         "count": 12,
-        "enName": "",
+        "enName": "At-Talaq - Divorce",
         "from": 2,
         "id": 65,
         "kzName": "",
-        "ruName": "Ат-Талак",
-        "uzKirilName": "Талоқ",
-        "uzLatinName": "Taloq"
+        "ruName": "Ат-Талак - Развод",
+        "uzKirilName": "Талоқ - Талоқ",
+        "uzLatinName": "Taloq - Taloq"
     },
     {
         "arabicName": "التحريم",
         "count": 12,
-        "enName": "",
+        "enName": "At-Tahrim - The Prohibition",
         "from": 2,
         "id": 66,
         "kzName": "",
-        "ruName": "Ат-Тахрим",
-        "uzKirilName": "Таҳрим",
-        "uzLatinName": "Tahrim"
+        "ruName": "Ат-Тахрим - Запрещение",
+        "uzKirilName": "Таҳрим - Ҳаром қилиб олиш",
+        "uzLatinName": "Tahrim - Harom qilib olish"
     },
     {
         "arabicName": "الملك",
         "count": 30,
-        "enName": "",
+        "enName": "Al-Mulk - The Kingdom",
         "from": 1,
         "id": 67,
         "kzName": "",
-        "ruName": "Аль-Мульк",
-        "uzKirilName": "Мулк",
-        "uzLatinName": "Mulk"
+        "ruName": "Аль-Мульк - Власть",
+        "uzKirilName": "Мулк - Бойлик",
+        "uzLatinName": "Mulk - Boylik"
     },
     {
         "arabicName": "القلم",
         "count": 52,
-        "enName": "",
+        "enName": "Al-Qalam - The Pen",
         "from": 1,
         "id": 68,
         "kzName": "",
-        "ruName": "Аль-Калям",
-        "uzKirilName": "Қалам",
-        "uzLatinName": "Qalam"
+        "ruName": "Аль-Калям - Письменная трость",
+        "uzKirilName": "Қалам - Қалам, ёзув асбоби",
+        "uzLatinName": "Qalam - Qalam, yozuv asbobi"
     },
     {
         "arabicName": "الحاقة",
         "count": 52,
-        "enName": "",
+        "enName": "Al-Haqqah - The Sure Truth",
         "from": 1,
         "id": 69,
         "kzName": "",
-        "ruName": "Аль-Хакка",
-        "uzKirilName": "Ҳаққо",
-        "uzLatinName": "Haqqo"
+        "ruName": "Аль-Хакка - Неминуемое",
+        "uzKirilName": "Ҳаққо - Аниқ рўй бергувчи",
+        "uzLatinName": "Haqqo - Аniq roʼy berguvchi"
     },
     {
         "arabicName": "المعارج",
         "count": 44,
-        "enName": "",
+        "enName": "Al-Ma'arij - The Ways of Ascent",
         "from": 1,
         "id": 70,
         "kzName": "",
-        "ruName": "Аль-Мааридж",
-        "uzKirilName": "Маъориж",
-        "uzLatinName": "Ma'orij"
+        "ruName": "Аль-Мааридж - Ступени",
+        "uzKirilName": "Маъориж - Осмон қаватлари",
+        "uzLatinName": "Ma'orij - Osmon qavatlari"
     },
     {
         "arabicName": "نوح",
         "count": 28,
-        "enName": "",
+        "enName": "Nuh - Prophet Noah",
         "from": 1,
         "id": 71,
         "kzName": "",
-        "ruName": "Нух",
-        "uzKirilName": "Нуҳ",
-        "uzLatinName": "Nuh"
+        "ruName": "Нух - Ной",
+        "uzKirilName": "Нуҳ - Нуҳ алайҳиссалом",
+        "uzLatinName": "Nuh - Nuh alayhissalom"
     },
     {
         "arabicName": "الجن",
         "count": 28,
-        "enName": "",
+        "enName": "Al-Jinn - Jinn",
         "from": 1,
         "id": 72,
         "kzName": "",
-        "ruName": "Аль-Джинн",
-        "uzKirilName": "Жин",
-        "uzLatinName": "Jin"
+        "ruName": "Аль-Джинн - Джинны",
+        "uzKirilName": "Жин - Жин",
+        "uzLatinName": "Jin - Jin"
     },
     {
         "arabicName": "المزمل",
         "count": 20,
-        "enName": "",
+        "enName": "Al-Muzzammil - The One Covering Himself",
         "from": 1,
         "id": 73,
         "kzName": "",
-        "ruName": "Аль-Муззаммиль",
-        "uzKirilName": "Муззаммил",
-        "uzLatinName": "Muzzammil"
+        "ruName": "Аль-Муззаммиль - Завернувшийся",
+        "uzKirilName": "Муззаммил - Кийимларига ўралиб олган зот",
+        "uzLatinName": "Muzzammil - Kiyimlariga oʼralib olgan zot"
     },
     {
         "arabicName": "المدثر",
         "count": 56,
-        "enName": "",
+        "enName": "Al-Muddaththir - The One Wrapping Himself Up",
         "from": 1,
         "id": 74,
         "kzName": "",
-        "ruName": "Аль-Муддассир",
-        "uzKirilName": "Муддассир",
-        "uzLatinName": "Muddassir"
+        "ruName": "Аль-Муддассир - Закутавшийся",
+        "uzKirilName": "Муддассир - Либосларига бурканиб олган зот",
+        "uzLatinName": "Muddassir - Liboslariga burkanib olgan zot"
     },
     {
         "arabicName": "القيامة",
         "count": 40,
-        "enName": "",
+        "enName": "Al-Qiyamah - The Resurrection",
         "from": 1,
         "id": 75,
         "kzName": "",
-        "ruName": "Аль-Кийама",
-        "uzKirilName": "Қиёмат",
-        "uzLatinName": "Qiyomat"
+        "ruName": "Аль-Кийама - Воскресение",
+        "uzKirilName": "Қиёмат - Қиёмат",
+        "uzLatinName": "Qiyomat - Qiyomat"
     },
     {
         "arabicName": "الإنسان",
         "count": 31,
-        "enName": "",
+        "enName": "Al-Insan - The Man",
         "from": 2,
         "id": 76,
         "kzName": "",
-        "ruName": "Аль-Инсан",
-        "uzKirilName": "Инсон",
-        "uzLatinName": "Inson"
+        "ruName": "Аль-Инсан - Человек",
+        "uzKirilName": "Инсон - Инсон",
+        "uzLatinName": "Inson - Inson"
     },
     {
         "arabicName": "المرسلات",
         "count": 50,
-        "enName": "",
+        "enName": "Al-Mursalaat - Those sent forth",
         "from": 1,
         "id": 77,
         "kzName": "",
-        "ruName": "Аль-Мурсалят",
-        "uzKirilName": "Мурсалот",
-        "uzLatinName": "Mursalot"
+        "ruName": "Аль-Мурсалят - Посылаемые",
+        "uzKirilName": "Мурсалот - Юборилган шамоллар",
+        "uzLatinName": "Mursalot - Yuborilgan shamollar"
     },
     {
         "arabicName": "النبأ",
         "count": 40,
-        "enName": "",
+        "enName": "An-Naba - The News",
         "from": 1,
         "id": 78,
         "kzName": "",
-        "ruName": "Ан-Наба",
-        "uzKirilName": "Набаъ",
-        "uzLatinName": "Naba'"
+        "ruName": "Ан-Наба - Весть",
+        "uzKirilName": "Набаъ - Хабар",
+        "uzLatinName": "Naba' - Xabar"
     },
     {
         "arabicName": "النازعات",
         "count": 46,
-        "enName": "",
+        "enName": "An-Naziat - Those Who Pull Out",
         "from": 1,
         "id": 79,
         "kzName": "",
-        "ruName": "Ан-Назиат",
-        "uzKirilName": "Нозиъот",
-        "uzLatinName": "Nozi'ot"
+        "ruName": "Ан-Назиат - Исторгающие",
+        "uzKirilName": "Нозиъот - Жон олгувчи фаришталар",
+        "uzLatinName": "Nozi'ot - Jon olguvchi farishtalar"
     },
     {
         "arabicName": "عبس",
         "count": 42,
-        "enName": "",
+        "enName": "Abasa - He Frowned",
         "from": 1,
         "id": 80,
         "kzName": "",
-        "ruName": "Абаса",
-        "uzKirilName": "Абаса",
-        "uzLatinName": "Abasa"
+        "ruName": "Абаса - Нахмурился",
+        "uzKirilName": "Абаса - Қошини чимирди, юзини буриштирди",
+        "uzLatinName": "Abasa - Qoshini chimirdi, yuzini burishtirdi"
     },
     {
         "arabicName": "التكوير",
         "count": 29,
-        "enName": "",
+        "enName": "At-Takwir - The Overthrowing",
         "from": 1,
         "id": 81,
         "kzName": "",
-        "ruName": "Ат-Таквир",
-        "uzKirilName": "Таквир",
-        "uzLatinName": "Takvir"
+        "ruName": "Ат-Таквир - Скручивание",
+        "uzKirilName": "Таквир - Ўралиш",
+        "uzLatinName": "Takvir - Oʼralish"
     },
     {
         "arabicName": "الانفطار",
         "count": 19,
-        "enName": "",
+        "enName": "Al-Infitaar - The Cleaving",
         "from": 1,
         "id": 82,
         "kzName": "",
-        "ruName": "Аль-Инфитар",
-        "uzKirilName": "Инфитор",
-        "uzLatinName": "Infitor"
+        "ruName": "Аль-Инфитар - Раскалывание",
+        "uzKirilName": "Инфитор - Ёрилиш",
+        "uzLatinName": "Infitor - Yorilish"
     },
     {
         "arabicName": "المطففون",
         "count": 36,
-        "enName": "",
+        "enName": "Al-Mutaffifin - The Defrauding",
         "from": 1,
         "id": 83,
         "kzName": "",
-        "ruName": "Аль-Мутаффифин",
-        "uzKirilName": "Мутоффифун",
-        "uzLatinName": "Mutoffifun"
+        "ruName": "Аль-Мутаффифин - Обвешивающие",
+        "uzKirilName": "Мутоффифун - Бошқаларнинг ҳаққидан уриб қолгувчилар",
+        "uzLatinName": "Mutoffifun - Boshqalarning haqqidan urib qolguvchilar"
     },
     {
         "arabicName": "الانشقاق",
         "count": 25,
-        "enName": "",
+        "enName": "Al-Inshiqaq - The Splitting Asunder",
         "from": 1,
         "id": 84,
         "kzName": "",
-        "ruName": "Аль-Иншикак",
-        "uzKirilName": "Иншиқоқ",
-        "uzLatinName": "Inshiqoq"
+        "ruName": "Аль-Иншикак - Раскалывание",
+        "uzKirilName": "Иншиқоқ - Ёрилиш",
+        "uzLatinName": "Inshiqoq - Yorilish"
     },
     {
         "arabicName": "البروج",
         "count": 22,
-        "enName": "",
+        "enName": "Al-Burooj - The Big Stars",
         "from": 1,
         "id": 85,
         "kzName": "",
-        "ruName": "Аль-Бурудж",
-        "uzKirilName": "Буруж",
-        "uzLatinName": "Buruj"
+        "ruName": "Аль-Бурудж - Созвездия зодиака",
+        "uzKirilName": "Буруж - Осмондаги буржлар",
+        "uzLatinName": "Buruj - Osmondagi burjlar"
     },
     {
         "arabicName": "الطارق",
         "count": 17,
-        "enName": "",
+        "enName": "At-Tariq - The Night Comer",
         "from": 1,
         "id": 86,
         "kzName": "",
-        "ruName": "Ат-Тарик",
-        "uzKirilName": "Ториқ",
-        "uzLatinName": "Toriq"
+        "ruName": "Ат-Тарик - Ночной путник",
+        "uzKirilName": "Ториқ - Тунги йўлчи",
+        "uzLatinName": "Toriq - Tungi yoʼlchi"
     },
     {
         "arabicName": "الأعلى",
         "count": 19,
-        "enName": "",
+        "enName": "Al-A'la - The Most High",
         "from": 1,
         "id": 87,
         "kzName": "",
-        "ruName": "Аль-Аля",
-        "uzKirilName": "Аълаа",
-        "uzLatinName": "A'laa"
+        "ruName": "Аль-Аля - Всевышний",
+        "uzKirilName": "Аълаа - Энг олий зот",
+        "uzLatinName": "A'laa - Eng oliy zot"
     },
     {
         "arabicName": "الغاشية",
         "count": 26,
-        "enName": "",
+        "enName": "Al-Ghaashiyah - The Overwhelming",
         "from": 1,
         "id": 88,
         "kzName": "",
-        "ruName": "Аль-Гашия",
-        "uzKirilName": "Ғошия",
-        "uzLatinName": "G‘oshiya"
+        "ruName": "Аль-Гашия - Покрывающее",
+        "uzKirilName": "Ғошия - Ўраб олгувчи",
+        "uzLatinName": "G‘oshiya - Oʼrab olguvchi"
     },
     {
         "arabicName": "الفجر",
         "count": 30,
-        "enName": "",
+        "enName": "Al-Fajr - The Dawn",
         "from": 1,
         "id": 89,
         "kzName": "",
-        "ruName": "Аль-Фаджр",
-        "uzKirilName": "Фажр",
-        "uzLatinName": "Fajr"
+        "ruName": "Аль-Фаджр - Заря",
+        "uzKirilName": "Фажр - Тонг",
+        "uzLatinName": "Fajr - Tong"
     },
     {
         "arabicName": "البلد",
         "count": 20,
-        "enName": "",
+        "enName": "Al-Balad - The City",
         "from": 1,
         "id": 90,
         "kzName": "",
-        "ruName": "Аль-Балад",
-        "uzKirilName": "Балад",
-        "uzLatinName": "Balad"
+        "ruName": "Аль-Балад - Город",
+        "uzKirilName": "Балад - Шаҳар",
+        "uzLatinName": "Balad - Shahar"
     },
     {
         "arabicName": "الشمس",
         "count": 15,
-        "enName": "",
+        "enName": "Ash-Shams - The Sun",
         "from": 1,
         "id": 91,
         "kzName": "",
-        "ruName": "Аш-Шамс",
-        "uzKirilName": "Шамс",
-        "uzLatinName": "Shams"
+        "ruName": "Аш-Шамс - Солнце",
+        "uzKirilName": "Шамс - Қуёш",
+        "uzLatinName": "Shams - Quyosh"
     },
     {
         "arabicName": "الليل",
         "count": 21,
-        "enName": "",
+        "enName": "Al-Lail - The Night",
         "from": 1,
         "id": 92,
         "kzName": "",
-        "ruName": "Аль-Лайл",
-        "uzKirilName": "Лайл",
-        "uzLatinName": "Layl"
+        "ruName": "Аль-Лайл - Ночь",
+        "uzKirilName": "Лайл - Кеча, тун",
+        "uzLatinName": "Layl - Kecha, tun"
     },
     {
         "arabicName": "الضحى",
         "count": 11,
-        "enName": "",
+        "enName": "Ad-Duha - The Early Hours",
         "from": 1,
         "id": 93,
         "kzName": "",
-        "ruName": "Ад-Духа",
-        "uzKirilName": "Зуҳо",
-        "uzLatinName": "Zuho"
+        "ruName": "Ад-Духа - Утро",
+        "uzKirilName": "Зуҳо - Чошгоҳ вақти",
+        "uzLatinName": "Zuho - Choshgoh vaqti"
     },
     {
         "arabicName": "الشرح",
         "count": 8,
-        "enName": "",
+        "enName": "Al-Inshirah - The Opening Up",
         "from": 1,
         "id": 94,
         "kzName": "",
-        "ruName": "Аш-Шарх",
-        "uzKirilName": "Шарҳ",
-        "uzLatinName": "Sharh"
+        "ruName": "Аш-Шарх - Раскрытие",
+        "uzKirilName": "Шарҳ - Очмоқ, кенг қилмоқ",
+        "uzLatinName": "Sharh - Ochmoq, keng qilmoq"
     },
     {
         "arabicName": "التين",
         "count": 8,
-        "enName": "",
+        "enName": "At-Tin - The Fig",
         "from": 1,
         "id": 95,
         "kzName": "",
-        "ruName": "Ат-Тин",
-        "uzKirilName": "Тийн",
-        "uzLatinName": "Tiyn"
+        "ruName": "Ат-Тин - Смоковница",
+        "uzKirilName": "Тийн - Анжир",
+        "uzLatinName": "Tiyn - Аnjir"
     },
     {
         "arabicName": "العلق",
         "count": 19,
-        "enName": "",
+        "enName": "Al-Alaq - The Clot",
         "from": 1,
         "id": 96,
         "kzName": "",
-        "ruName": "Аль-Алак",
-        "uzKirilName": "Алақ",
-        "uzLatinName": "Alaq"
+        "ruName": "Аль-Алак - Сгусток крови",
+        "uzKirilName": "Алақ - Лахта қон",
+        "uzLatinName": "Alaq - Laxta qon"
     },
     {
         "arabicName": "القدر",
         "count": 5,
-        "enName": "",
+        "enName": "Al-Qadr - The Majesty",
         "from": 1,
         "id": 97,
         "kzName": "",
-        "ruName": "Аль-Кадр",
-        "uzKirilName": "Қадр",
-        "uzLatinName": "Qadr"
+        "ruName": "Аль-Кадр - Предопределение",
+        "uzKirilName": "Қадр - Қадрли кеча",
+        "uzLatinName": "Qadr - Qadrli kecha"
     },
     {
         "arabicName": "البينة",
         "count": 8,
-        "enName": "",
+        "enName": "Al-Bayyinah - The Clear Evidence",
         "from": 2,
         "id": 98,
         "kzName": "",
-        "ruName": "Аль-Баййина",
-        "uzKirilName": "Баййина",
-        "uzLatinName": "Bayyina"
+        "ruName": "Аль-Баййина - Ясное знамение",
+        "uzKirilName": "Баййина - Аниқ ҳужжат",
+        "uzLatinName": "Bayyina - Аniq hujjat"
     },
     {
         "arabicName": "الزلزلة",
         "count": 8,
-        "enName": "",
+        "enName": "Az-Zalzalah - The Shaking",
         "from": 2,
         "id": 99,
         "kzName": "",
-        "ruName": "Аз-Залзала",
-        "uzKirilName": "Залзала",
-        "uzLatinName": "Zalzala"
+        "ruName": "Аз-Залзала - Сотрясение",
+        "uzKirilName": "Залзала - Зилзила",
+        "uzLatinName": "Zalzala - Zilzila"
     },
     {
         "arabicName": "العاديات",
         "count": 11,
-        "enName": "",
+        "enName": "Al-'Adiyat - The Assaulters",
         "from": 1,
         "id": 100,
         "kzName": "",
-        "ruName": "Аль-Адият",
-        "uzKirilName": "Адият",
-        "uzLatinName": "Adiyat"
+        "ruName": "Аль-Адият - Скачущие",
+        "uzKirilName": "Адият - Чопқир отлар",
+        "uzLatinName": "Adiyat - Chopqir otlar"
     },
     {
         "arabicName": "القارعة",
         "count": 11,
-        "enName": "",
+        "enName": "Al-Qari'ah - The Calamity",
         "from": 1,
         "id": 101,
         "kzName": "",
-        "ruName": "Аль-Кариа",
-        "uzKirilName": "Қориъа",
-        "uzLatinName": "Qori'a"
+        "ruName": "Аль-Кариа - Великое бедствие",
+        "uzKirilName": "Қориъа - Қалбларни қаттиқ қўрқитувчи, қиёмат",
+        "uzLatinName": "Qori'a - Qalblarni qattiq qoʼrqituvchi, qiyomat"
     },
     {
         "arabicName": "التكاثر",
         "count": 8,
-        "enName": "",
+        "enName": "At-Takathur - The Rivalry in World Increase",
         "from": 1,
         "id": 102,
         "kzName": "",
-        "ruName": "Ат-Такасур",
-        "uzKirilName": "Такаасур",
-        "uzLatinName": "Takaasur"
+        "ruName": "Ат-Такасур - Страсть к приумножению",
+        "uzKirilName": "Такаасур - Тўплаб, кўпайтиришга берилмоқ",
+        "uzLatinName": "Takaasur - Toʼplab, koʼpaytirishga berilmoq"
     },
     {
         "arabicName": "العصر",
         "count": 3,
-        "enName": "",
+        "enName": "Al-'Asr - The Time",
         "from": 1,
         "id": 103,
         "kzName": "",
-        "ruName": "Аль-Аср",
-        "uzKirilName": "Аср",
-        "uzLatinName": "Asr"
+        "ruName": "Аль-Аср - Предвечернее время",
+        "uzKirilName": "Аср - Аср намози вақти",
+        "uzLatinName": "Asr - Аsr namozi vaqti"
     },
     {
         "arabicName": "الهمزة",
         "count": 9,
-        "enName": "",
+        "enName": "Al-Humazah - The Slanderer",
         "from": 1,
         "id": 104,
         "kzName": "",
-        "ruName": "Аль-Хумаза",
-        "uzKirilName": "Ҳумаза",
-        "uzLatinName": "Humaza"
+        "ruName": "Аль-Хумаза - Хулитель",
+        "uzKirilName": "Ҳумаза - Бўҳтончи",
+        "uzLatinName": "Humaza - Boʼhtonchi"
     },
     {
         "arabicName": "الفيل",
         "count": 5,
-        "enName": "",
+        "enName": "Al-Fil - The Elephant",
         "from": 1,
         "id": 105,
         "kzName": "",
-        "ruName": "Аль-Филь",
-        "uzKirilName": "Фил",
-        "uzLatinName": "Fil"
+        "ruName": "Аль-Филь - Слон",
+        "uzKirilName": "Фил - Фил",
+        "uzLatinName": "Fil - Fil"
     },
     {
         "arabicName": "قريش",
         "count": 4,
-        "enName": "",
+        "enName": "Quraish - Quraish",
         "from": 1,
         "id": 106,
         "kzName": "",
-        "ruName": "Курайш",
-        "uzKirilName": "Қурайш",
-        "uzLatinName": "Quraysh"
+        "ruName": "Курайш - Курейшиты",
+        "uzKirilName": "Қурайш - Қурайш",
+        "uzLatinName": "Quraysh - Quraysh"
     },
     {
         "arabicName": "الماعون",
         "count": 7,
-        "enName": "",
+        "enName": "Al-Ma'un - Act of Kindness",
         "from": 1,
         "id": 107,
         "kzName": "",
-        "ruName": "Аль-Маун",
-        "uzKirilName": "Мааъуун",
-        "uzLatinName": "Maa'uun"
+        "ruName": "Аль-Маун - Мелочь",
+        "uzKirilName": "Мааъуун - Идиш-товоқ",
+        "uzLatinName": "Maa'uun - Idish-tovoq"
     },
     {
         "arabicName": "الكوثر",
         "count": 3,
-        "enName": "",
+        "enName": "Al-Kauthar - The Abundance of Good",
         "from": 1,
         "id": 108,
         "kzName": "",
-        "ruName": "Аль-Каусар",
-        "uzKirilName": "Кавсар",
-        "uzLatinName": "Kavsar"
+        "ruName": "Аль-Каусар - Изобилие",
+        "uzKirilName": "Кавсар - Кавсар",
+        "uzLatinName": "Kavsar - Kavsar"
     },
     {
         "arabicName": "الكافرون",
         "count": 6,
-        "enName": "",
+        "enName": "Al-Kafirun - The Disbelievers",
         "from": 1,
         "id": 109,
         "kzName": "",
-        "ruName": "Аль-Кафирун",
-        "uzKirilName": "Каафирун",
-        "uzLatinName": "Kaafirun"
+        "ruName": "Аль-Кафирун - Неверующие",
+        "uzKirilName": "Каафирун - Кофирлар",
+        "uzLatinName": "Kaafirun - Kofirlar"
     },
     {
         "arabicName": "النصر",
         "count": 3,
-        "enName": "",
+        "enName": "An-Nasr - The Help",
         "from": 2,
         "id": 110,
         "kzName": "",
-        "ruName": "Ан-Наср",
-        "uzKirilName": "Наср",
-        "uzLatinName": "Nasr"
+        "ruName": "Ан-Наср - Помощь",
+        "uzKirilName": "Наср - Ёрдам",
+        "uzLatinName": "Nasr - Yordam"
     },
     {
         "arabicName": "المسد",
         "count": 5,
-        "enName": "",
+        "enName": "Al-Masad - The Palm Fiber",
         "from": 1,
         "id": 111,
         "kzName": "",
-        "ruName": "Аль-Масад",
-        "uzKirilName": "Масад",
-        "uzLatinName": "Masad"
+        "ruName": "Аль-Масад - Пальмовые волокна",
+        "uzKirilName": "Масад - Пишиқ тола",
+        "uzLatinName": "Masad - Pishiq tola"
     },
     {
         "arabicName": "الإخلاص",
         "count": 4,
-        "enName": "",
+        "enName": "Al-Ikhlas - The Unity",
         "from": 1,
         "id": 112,
         "kzName": "",
-        "ruName": "Аль-Ихлас",
-        "uzKirilName": "Ихлос",
-        "uzLatinName": "Ixlos"
+        "ruName": "Аль-Ихлас - Очищение веры",
+        "uzKirilName": "Ихлос - Ихлос қилиш",
+        "uzLatinName": "Ixlos - Ixlos qilish"
     },
     {
         "arabicName": "الفلق",
         "count": 5,
-        "enName": "",
+        "enName": "Al-Falaq - The Dawn",
         "from": 1,
         "id": 113,
         "kzName": "",
-        "ruName": "Аль-Фаляк",
-        "uzKirilName": "Фалақ",
-        "uzLatinName": "Falaq"
+        "ruName": "Аль-Фаляк - Рассвет",
+        "uzKirilName": "Фалақ - Тонг",
+        "uzLatinName": "Falaq - Tong"
     },
     {
         "arabicName": "الناس",
         "count": 6,
-        "enName": "",
+        "enName": "An-Nas - Mankind",
         "from": 1,
         "id": 114,
         "kzName": "",
-        "ruName": "Ан-Нас",
-        "uzKirilName": "Нос",
-        "uzLatinName": "Nos"
+        "ruName": "Ан-Нас - Люди",
+        "uzKirilName": "Нос - Одамлар",
+        "uzLatinName": "Nos - Odamlar"
     }
 ]

@@ -158,7 +158,8 @@ module.exports = {
          console.log(file);
 
          for (const item of file) {
-            await model.addVerse(
+            await model.editVerse(
+               item?.id,
                item?.arabText,
                item?.uzText,
                item?.uzMeaning,
