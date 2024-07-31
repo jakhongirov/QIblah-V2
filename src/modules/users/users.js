@@ -1368,6 +1368,8 @@ module.exports = {
             )
 
             if (edituserBasic) {
+               const currentTime = getCurrentTimeFormatted();
+               await model.addTracking(edituserBasic[0].user_id, currentTime);
                return res.status(200).json({
                   status: 200,
                   message: "Success",
