@@ -45,9 +45,10 @@ module.exports = {
    ADD_VOTE: async (req, res) => {
       try {
          const uploadFile = req.files;
-         const { vote_name, vote_lang, suggested_item } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio[0]?.filename}`;
-         const audioName = uploadFile?.audio[0]?.filename;
+         const { vote_name, vote_lang, suggested_item, audio_link } = req.body
+         const audioUrl = audio_link ? audio_link : `${process.env.BACKEND_URL}/${uploadFile?.audio[0]?.filename}`;
+         const audioName = audio_link ? null : uploadFile?.audio[0]?.filename;
+
          const iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon[0]?.filename}`;
          const iconName = uploadFile?.icon[0]?.filename;
 
@@ -86,7 +87,7 @@ module.exports = {
    UPDATE_VOTE: async (req, res) => {
       try {
          const uploadFile = req.files;
-         const { vote_id, vote_name, vote_lang, suggested_item } = req.body
+         const { vote_id, vote_name, vote_lang, suggested_item, audio_link } = req.body
          const foundVote = await model.foundVote(vote_id)
          let audioUrl = '';
          let audioName = '';
@@ -101,6 +102,9 @@ module.exports = {
                }
                audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio[0]?.filename}`;
                audioName = uploadFile?.audio[0]?.filename;
+            } else if (audio_link) {
+               audioUrl = audio_link;
+               audioName = null;
             } else {
                audioUrl = foundVote?.vote_audio_url;
                audioName = foundVote?.vote_audio_name;
