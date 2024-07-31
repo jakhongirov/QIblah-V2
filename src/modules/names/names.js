@@ -131,10 +131,12 @@ module.exports = {
             name_translation_english,
             name_title_kazakh,
             name_description_kazakh,
-            name_translation_kazakh
+            name_translation_kazakh,
+            audio_link
          } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const audioName = uploadPhoto?.filename;
+         const audioUrl = audio_link ? audio_link : `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
+         const audioName = audio_link ? null : uploadPhoto?.filename;
+
 
          const addName = await model.addName(
             name_arabic,
@@ -199,7 +201,8 @@ module.exports = {
             name_translation_english,
             name_title_kazakh,
             name_description_kazakh,
-            name_translation_kazakh
+            name_translation_kazakh,
+            audio_link
          } = req.body
          const foundName = await model.foundName(name_id)
          let audioUrl = '';
@@ -212,6 +215,9 @@ module.exports = {
             }
             audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
             audioName = uploadPhoto?.filename;
+         } else if (audio_link) {
+            audioUrl = audio_link;
+            audioName = null;
          } else {
             audioUrl = foundName?.name_audio_link;
             audioName = foundName?.name_audio_name;
