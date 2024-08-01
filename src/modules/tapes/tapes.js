@@ -167,6 +167,8 @@ module.exports = {
             const foundNameRandom = await model.foundNameRandom(lang)
             const foundNewsRandom = await model.foundNewsRandom(lang)
 
+            console.log(foundDuaRandom)
+
             return res.status(200).json({
                status: 200,
                message: "Success",
