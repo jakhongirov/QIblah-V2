@@ -662,6 +662,7 @@ module.exports = {
    foundTape,
    foundTapeByDate,
    foundZikr,
+   foundDuaRandom,
    foundVerse,
    foundName,
    foundNews,
