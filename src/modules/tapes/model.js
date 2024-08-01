@@ -408,6 +408,25 @@ const foundZikrRandom = (lang) => {
 
    return fetch(QUERY, lang)
 }
+const foundDuaRandom = (lang) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         zikrs a
+      INNER JOIN
+         zikr_categories b
+      ON
+         a.category_id = b.category_id
+      WHERE
+         category_lang = $1 and zikr = false
+      ORDER BY
+         random()
+      LIMIT 1;
+   `;
+
+   return fetch(QUERY, lang)
+}
 const foundVerseRandom = (lang) => {
    if (lang == 'uzbek') {
       const QUERY = `

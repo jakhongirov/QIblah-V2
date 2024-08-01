@@ -162,7 +162,7 @@ module.exports = {
 
          } else {
             const foundZikrRandom = await model.foundZikrRandom(lang)
-            const foundDuaRandom = await model.foundZikrRandom(lang)
+            const foundDuaRandom = await model.foundDuaRandom(lang)
             const foundVerseRandom = await model.foundVerseRandom(lang)
             const foundNameRandom = await model.foundNameRandom(lang)
             const foundNewsRandom = await model.foundNewsRandom(lang)
