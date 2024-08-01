@@ -186,9 +186,9 @@ module.exports = {
          const foundZikr = await model.foundZikr(zikr_id)
          let audioUrl = '';
          let audioName = '';
+         console.log(req.body)
 
          if (foundZikr) {
-
             if (uploadPhoto) {
                if (foundZikr?.zikr_audio_name) {
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundZikr?.zikr_audio_name}`))
