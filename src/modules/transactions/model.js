@@ -11,6 +11,8 @@ const getList = (limit, page, user_id) => {
             `WHERE user_id = ${user_id}`
          ) : ""
       }
+      ORDER BY
+         id DESC
       LIMIT  ${limit}
       OFFSET ${Number((page - 1) * limit)};
    `;
