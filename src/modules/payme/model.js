@@ -56,7 +56,8 @@ const addTransaction = (
    state,
    amount,
    id,
-   time
+   time,
+   user_token
 ) => {
    const QUERY = `
       INSERT INTO
@@ -66,14 +67,16 @@ const addTransaction = (
             state,
             amount,
             transaction,
-            create_time
+            create_time,
+            user_token
          ) VALUES (
             $1,
             $2,
             $3,
             $4,
             $5,
-            $6
+            $6,
+            $7
          ) RETURNING *;
    `;
 
@@ -84,7 +87,8 @@ const addTransaction = (
       state,
       amount,
       id,
-      time
+      time,
+      user_token
    )
 };
 const updateTransactionPerform = (

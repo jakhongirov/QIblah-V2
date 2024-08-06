@@ -90,6 +90,7 @@ module.exports = {
                   amount,
                   params.id,
                   params?.time,
+                  foundUser?.user_token[foundUser?.user_token?.length - 1]
                );
 
                console.log(newTransaction)

@@ -329,6 +329,7 @@ CREATE TABLE uzum (
 CREATE TABLE payme (
    id bigserial PRiMARY KEY,
    user_id int,
+   user_token text,
    payment text,
    state int DEFAULT 0,
    amount int,
