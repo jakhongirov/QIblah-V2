@@ -16,6 +16,10 @@ module.exports = {
 
          if (error_note === 'Success') {
             const foundPayment = await model.foundPayment(param3);
+
+            console.log(req.body)
+            console.log(foundPayment)
+
             const today = new Date();
             const expiresDate = new Date(today);
             const monthToAdd = Number(foundPayment?.month);
