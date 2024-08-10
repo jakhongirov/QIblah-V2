@@ -1,4 +1,5 @@
 const model = require('./model')
+const iconv = require('iconv-lite');
 
 module.exports = {
    Prepare: async (req, res) => {
@@ -15,14 +16,22 @@ module.exports = {
          }
 
          if (error_note === 'Success') {
+            let rate = {}
             const foundPayment = await model.foundPayment(param3);
 
-            console.log(req.body)
-            console.log(foundPayment)
+            if (foundPayment) {
+               rate = foundPayment
+            } else {
+               const hexString = param3.replace(/%/g, '');
+               const buffer = Buffer.from(hexString, 'hex');
+               const decoded = iconv.decode(buffer, 'windows-1251');
+               const foundPayment = await model.foundPayment(decoded);
+               rate = foundPayment
+            }
 
             const today = new Date();
             const expiresDate = new Date(today);
-            const monthToAdd = Number(foundPayment?.month);
+            const monthToAdd = Number(rate?.month);
             let targetMonth = today.getMonth() + monthToAdd;
             let targetYear = today.getFullYear();
 
