@@ -295,6 +295,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
                         console.log("delete", deleteUser)
+                        await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
                               keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
@@ -324,6 +325,7 @@ const handleLanguageSelection = async (chatId, language) => {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
                         console.log("delete", deleteUser)
                         console.log("add", addToken)
+                        await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
                               keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
@@ -360,6 +362,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
                         console.log("delete", deleteUser)
+                        await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
                               keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
@@ -387,6 +390,7 @@ const handleLanguageSelection = async (chatId, language) => {
                      if (addToken) {
                         const deleteUser = await model.deleteUser(user[chatId].user_id)
                         console.log("delete", deleteUser)
+                        await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
                               keyboard: [
@@ -417,6 +421,7 @@ const handleLanguageSelection = async (chatId, language) => {
                   if (addToken) {
                      const deleteUser = await model.deleteUser(user[chatId].user_id)
                      console.log("delete", deleteUser)
+                     await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                      bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                         reply_markup: {
                            keyboard: [
@@ -446,6 +451,7 @@ const handleLanguageSelection = async (chatId, language) => {
             } else {
                const updatedUserPhone = await model.updatedUserPhone(user[chatId]?.user_id, phoneNumber, user[chatId]?.tracking);
                if (updatedUserPhone) {
+                  await model.addUserComment(user[chatId]?.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
                      reply_markup: {
                         keyboard: [

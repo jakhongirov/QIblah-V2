@@ -141,6 +141,19 @@ const foundMsg = (date) => {
 
    return fetch(QUERY, date)
 }
+const addUserComment = (id, text) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_comment = array_append(user_comment, $2)
+      WHERE
+         user_id = $1
+      RETURNIG *;
+   `;
+
+   return fetch(QUERY, id, text)
+}
 
 module.exports = {
    foundUser,
@@ -150,5 +163,6 @@ module.exports = {
    updatedUserPhone,
    updatedUserPassword,
    addMessage,
-   foundMsg
+   foundMsg,
+   addUserComment
 }
