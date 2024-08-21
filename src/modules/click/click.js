@@ -1,5 +1,7 @@
 const model = require('./model')
 const iconv = require('iconv-lite');
+const TelegramBot = require('node-telegram-bot-api')
+const bot = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
 
 module.exports = {
    Prepare: async (req, res) => {
@@ -49,24 +51,39 @@ module.exports = {
                expiresDate.setMonth(expiresDate.getMonth() + 1);
                expiresDate.setDate(0); // Set to the last day of the previous month
             }
-            const todayFormat = today.getDate().toString().padStart(2, '0') + '.' +
-               (today.getMonth() + 1).toString().padStart(2, '0') + '.' +
-               today.getFullYear() + ' ' +
-               today.getHours().toString().padStart(2, '0') + ':' +
-               today.getMinutes().toString().padStart(2, '0') + ':' +
-               today.getSeconds().toString().padStart(2, '0');
+            const options = {
+               year: 'numeric',
+               month: '2-digit',
+               day: '2-digit',
+               hour: '2-digit',
+               minute: '2-digit',
+               second: '2-digit',
+               timeZone: 'Asia/Tashkent'
+            };
+            const formatter = new Intl.DateTimeFormat('en-GB', options);
+            const formattedDate2 = formatter.format(today);
+
+            // Replace the format to match the required "DD.MM.YYYY HH:MM:SS" format
+            const [day, month, year] = formattedDate2.split(', ')[0].split('/');
+            const time = formattedDate2.split(', ')[1];
+            const finalFormat = `${day}.${month}.${year} ${time}`;
 
             const formattedDate = expiresDate.toISOString();
 
             tracking['tarif'] = rate?.category_name
             tracking['amount'] = rate?.amount
-            tracking['date'] = todayFormat
+            tracking['date'] = finalFormat
             tracking['expire_date'] = formattedDate
             tracking['type'] = "click"
 
             const foundUser = await model.foundUser(param2)
             await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "click", tracking)
             await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)])
+
+            bot.sendMessage(634041736,
+               `<strong>Click:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
+               { parse_mode: "HTML" }
+            );
          }
 
          makeCode(4)
