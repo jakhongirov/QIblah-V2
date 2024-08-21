@@ -232,7 +232,7 @@ module.exports = {
             tracking['expire_date'] = formattedDate
             tracking['type'] = "payme"
 
-            await model.editUserPremium(foundUser?.user_token[foundUser?.user_token?.length - 1], formattedDate, "payme", tracking)
+            const editUserPremium = await model.editUserPremium(foundUser?.user_token[foundUser?.user_token?.length - 1], formattedDate, "payme", tracking)
 
             if (editUserPremium) {
                return res.json({
