@@ -134,17 +134,18 @@ bot.on("message", async (msg) => {
             bot.removeReplyListener(replyListenerId);
 
             let content;
+            const foundUserByChatId = await model.foundUserByChatId(`chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
             if (msg.text) {
-               content = text === 'Murojaat qilish' ? `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Вопрос: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
+               content = text === 'Murojaat qilish' ? `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}` : `Вопрос: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}`;
                await bot.sendMessage(process.env.CHAT_ID, content);
             } else if (msg.photo) {
                const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
                const caption = msg.caption ? msg.caption : '';
-               content = text === 'Murojaat qilish' ? `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}` : `Фото отправлено:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nПодпись: ${caption}`;
+               content = text === 'Murojaat qilish' ? `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}\n\nIzoh: ${caption}` : `Фото отправлено:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}\n\nПодпись: ${caption}`;
                await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
             } else if (msg.sticker) {
                const fileId = msg.sticker.file_id;
-               content = text === 'Murojaat qilish' ? `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Стикер отправлен:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
+               content = text === 'Murojaat qilish' ? `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}` : `Стикер отправлен:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}`;
                await bot.sendSticker(process.env.CHAT_ID, fileId);
             }
 
@@ -218,17 +219,18 @@ bot.on("message", async (msg) => {
       })
    } else if (msg.chat.type !== 'group' && !text?.startsWith('/start')) {
       let content;
+      const foundUserByChatId = await model.foundUserByChatId(`chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
       if (msg.text) {
-         content = `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
+         content = `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}`;
          await bot.sendMessage(process.env.CHAT_ID, content);
       } else if (msg.photo) {
          const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
          const caption = msg.caption ? msg.caption : '';
-         content = `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}`
+         content = `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}\n\nIzoh: ${caption}`
          await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
       } else if (msg.sticker) {
          const fileId = msg.sticker.file_id;
-         content = `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`
+         content = `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id} ${foundUserByChatId ? `- user_id ${foundUserByChatId?.user_id}` : ''}` : ""}`
          await bot.sendSticker(process.env.CHAT_ID, fileId);
       }
 

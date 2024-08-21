@@ -154,6 +154,18 @@ const addUserComment = (id, text) => {
 
    return fetch(QUERY, id, text)
 }
+const foundUserByChatId = (chat_id) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users
+      WHERE
+         $1 = = ANY(user_comment);
+   `;
+
+   return fetch(QUERY, chat_id)
+}
 
 module.exports = {
    foundUser,
@@ -164,5 +176,6 @@ module.exports = {
    updatedUserPassword,
    addMessage,
    foundMsg,
-   addUserComment
+   addUserComment,
+   foundUserByChatId
 }
