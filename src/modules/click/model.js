@@ -12,20 +12,21 @@ const foundUser = async (id) => {
 
    return await fetch(QUERY, id);
 }
-const editUserPremium = (user_token, timestamp, payment_type) => {
+const editUserPremium = (user_token, timestamp, payment_type, tracking) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_premium = true,
          user_premium_expires_at = $2,
-         payment_type = $3
+         payment_type = $3,
+         payment_tracking = array_append(payment_tracking, $4)
       WHERE
          $1 = ANY (user_token) 
       RETURNING *;
    `;
 
-   return fetchALL(QUERY, user_token, timestamp, payment_type)
+   return fetchALL(QUERY, user_token, timestamp, payment_type, tracking)
 }
 
 const addTransaction = (

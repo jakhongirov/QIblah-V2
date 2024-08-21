@@ -140,8 +140,23 @@ module.exports = {
                   }
 
                   const formattedDate = expiresDate.toISOString();
+                  let tracking = {};
+
+                  const todayFormat = today.getDate().toString().padStart(2, '0') + '.' +
+                     (today.getMonth() + 1).toString().padStart(2, '0') + '.' +
+                     today.getFullYear() + ' ' +
+                     today.getHours().toString().padStart(2, '0') + ':' +
+                     today.getMinutes().toString().padStart(2, '0') + ':' +
+                     today.getSeconds().toString().padStart(2, '0');
+
+                  tracking['tarif'] = foundPayment?.category_name
+                  tracking['amount'] = foundPayment?.amount
+                  tracking['date'] = todayFormat
+                  tracking['expire_date'] = formattedDate
+                  tracking['type'] = "uzum"
+
                   const foundUser = await model.foundUser(params.id)
-                  await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "uzum")
+                  await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "uzum", tracking)
                   await model.addTransId(
                      params.id,
                      foundUser?.user_token[foundUser?.user_token?.length - 1],

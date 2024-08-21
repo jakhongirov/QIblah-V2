@@ -34,6 +34,7 @@ CREATE TABLE users (
    user_notification_id text,
    user_notification boolean DEFAULT false,
    payment_type text,
+   payment_tracking json [],
    tracking text [],
    user_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );

@@ -24,20 +24,21 @@ const foundPayment = (text) => {
 
    return fetch(QUERY)
 }
-const editUserPremium = (token, timestamp, payment_type) => {
+const editUserPremium = (token, timestamp, payment_type, tracking) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_premium = true,
          user_premium_expires_at = $2,
-         payment_type = $3
+         payment_type = $3,
+         payment_tracking = array_append(payment_tracking, $4)
       WHERE
          $1 = ANY (user_token)
       RETURNING *;
    `;
 
-   return fetchALL(QUERY, token, timestamp, payment_type)
+   return fetchALL(QUERY, token, timestamp, payment_type, tracking)
 }
 const addTransId = (
    user_id,

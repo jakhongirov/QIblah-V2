@@ -215,8 +215,24 @@ module.exports = {
             }
 
             const formattedDate = expiresDate.toISOString();
-            const foundUser = await model.foundUser(transaction?.user_id)
-            await model.editUserPremium(foundUser?.user_token[foundUser?.user_token?.length - 1], formattedDate, "payme")
+
+            const todayFormat = today.getDate().toString().padStart(2, '0') + '.' +
+               (today.getMonth() + 1).toString().padStart(2, '0') + '.' +
+               today.getFullYear() + ' ' +
+               today.getHours().toString().padStart(2, '0') + ':' +
+               today.getMinutes().toString().padStart(2, '0') + ':' +
+               today.getSeconds().toString().padStart(2, '0');
+
+            const foundUser = await model.foundUser(transaction?.user_id);
+            let tracking = {};
+
+            tracking['tarif'] = foundPayment?.category_name
+            tracking['amount'] = foundPayment?.amount
+            tracking['date'] = todayFormat
+            tracking['expire_date'] = formattedDate
+            tracking['type'] = "payme"
+
+            await model.editUserPremium(foundUser?.user_token[foundUser?.user_token?.length - 1], formattedDate, "payme", tracking)
 
             if (editUserPremium) {
                return res.json({
