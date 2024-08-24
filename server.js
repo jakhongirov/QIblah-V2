@@ -486,8 +486,9 @@ const handleLanguageSelection = async (chatId, language) => {
 bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {
       const date = msg.reply_to_message.date;
+      console('date', date)
       const foundMsg = await model.foundMsg(date);
-      console.log(foundMsg)
+      console.log("bot",foundMsg)
       bot.sendMessage(foundMsg?.chat_id, `Javob: ${msg.text}`).catch((error) => {
          if (error.response && error.response.statusCode === 403) {
             bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
