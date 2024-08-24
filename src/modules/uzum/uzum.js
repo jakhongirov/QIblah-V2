@@ -176,8 +176,8 @@ module.exports = {
                      amount,
                   )
 
-                  const bot = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
-                  bot.sendMessage(634041736,
+                  const botPremium = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
+                  botPremium.sendMessage(634041736,
                      `<strong>Uzum:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
                      { parse_mode: "HTML" }
                   );
@@ -355,14 +355,13 @@ module.exports = {
          const authHeader = req.headers['authorization'];
          const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
-         console.log(req.body)
+         console.log("uzum status", req.body)
 
          if (isBase64(base64Credentials)) {
             let [username, password] = atob(base64Credentials).split(':');
 
             if (username == "+998998887123" || password == "a12345") {
                const time = Date.now();
-               console.log(time);
 
                if (errorCode == 10014) {
                   return res.status(400).json({
