@@ -546,6 +546,10 @@ app.use('/files', express.static(path.resolve(__dirname, 'files')))
 app.use("/api/v1", router);
 const io = socket.initializeSocket(server);
 
+app.get('/snd', (req, res) => {
+   bot.sendMessage(1227004952, "Можете отправить чек платежа? Конечно можем вернуть вам деньги сейчас, только средства вернется вам завтра")
+})
+
 server.listen(PORT, () => {
    console.log(`Server running on port ${PORT}`);
 });
