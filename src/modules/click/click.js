@@ -1,7 +1,6 @@
 const model = require('./model')
 const iconv = require('iconv-lite');
-const TelegramBot = require('node-telegram-bot-api')
-const bot = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
+const bot = require('../../lib/bot')
 
 module.exports = {
    Prepare: async (req, res) => {
@@ -71,7 +70,7 @@ module.exports = {
             const formattedDate = expiresDate.toISOString();
 
             tracking['tarif'] = rate?.category_name
-            tracking['amount'] = rate?.amount
+            tracking['amount'] = amount
             tracking['date'] = finalFormat
             tracking['expire_date'] = formattedDate
             tracking['type'] = "click"

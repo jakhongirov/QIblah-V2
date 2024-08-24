@@ -1,7 +1,6 @@
 require('dotenv').config();
 const model = require('./model')
-const TelegramBot = require('node-telegram-bot-api')
-const bot = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
+const bot = require('../../lib/bot')
 
 module.exports = {
    PAYMENT: async (req, res) => {
@@ -239,7 +238,7 @@ module.exports = {
             let tracking = {};
 
             tracking['tarif'] = foundPayment?.category_name
-            tracking['amount'] = foundPayment?.amount
+            tracking['amount'] = transaction?.amount
             tracking['date'] = finalFormat
             tracking['expire_date'] = formattedDate
             tracking['type'] = "payme"
@@ -249,7 +248,7 @@ module.exports = {
             if (editUserPremium) {
 
                bot.sendMessage(634041736,
-                  `<strong>PayMe:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
+                  `<strong>PayMe:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
                   { parse_mode: "HTML" }
                );
 

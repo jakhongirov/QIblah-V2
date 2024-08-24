@@ -1,5 +1,5 @@
 const model = require('./model')
-const TelegramBot = require('node-telegram-bot-api')
+const bot = require('../../lib/bot')
 
 // let stringToEncode = "uzum:bank";
 
@@ -119,68 +119,16 @@ module.exports = {
                      errorCode: "10013"
                   })
                } else {
-                  const foundPayment = await model.foundPayment(params?.tarif);
-                  const today = new Date();
-                  const expiresDate = new Date(today);
-                  const monthToAdd = Number(foundPayment?.month);
-                  let targetMonth = today.getMonth() + monthToAdd;
-                  let targetYear = today.getFullYear();
-
-                  while (targetMonth > 11) {
-                     targetMonth -= 12;
-                     targetYear++;
-                  }
-
-                  expiresDate.setFullYear(targetYear, targetMonth, 1);
-                  const maxDaysInTargetMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
-                  expiresDate.setDate(Math.min(today.getDate(), maxDaysInTargetMonth));
-
-                  if (expiresDate < today) {
-                     expiresDate.setMonth(expiresDate.getMonth() + 1);
-                     expiresDate.setDate(0); // Set to the last day of the previous month
-                  }
-
-                  const formattedDate = expiresDate.toISOString();
-                  let tracking = {};
-
-                  const options = {
-                     year: 'numeric',
-                     month: '2-digit',
-                     day: '2-digit',
-                     hour: '2-digit',
-                     minute: '2-digit',
-                     second: '2-digit',
-                     timeZone: 'Asia/Tashkent'
-                  };
-                  const formatter = new Intl.DateTimeFormat('en-GB', options);
-                  const formattedDate2 = formatter.format(today);
-
-                  // Replace the format to match the required "DD.MM.YYYY HH:MM:SS" format
-                  const [day, month, year] = formattedDate2.split(', ')[0].split('/');
-                  const time = formattedDate2.split(', ')[1];
-                  const finalFormat = `${day}.${month}.${year} ${time}`;
-
-                  tracking['tarif'] = foundPayment?.category_name
-                  tracking['amount'] = foundPayment?.amount
-                  tracking['date'] = finalFormat
-                  tracking['expire_date'] = formattedDate
-                  tracking['type'] = "uzum"
-
                   const foundUser = await model.foundUser(params.id)
-                  await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "uzum", tracking)
                   await model.addTransId(
                      params.id,
                      foundUser?.user_token[foundUser?.user_token?.length - 1],
                      transId,
                      monthToAdd,
                      amount,
+                     params.tarif,
+                     "created"
                   )
-
-                  const botPremium = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
-                  botPremium.sendMessage(634041736,
-                     `<strong>Uzum:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
-                     { parse_mode: "HTML" }
-                  );
 
                   return res.status(200).json({
                      serviceId: serviceId,
@@ -254,12 +202,68 @@ module.exports = {
                      errorCode: "10014"
                   })
                } else {
+                  const foundTrans = await model.foundTrans(transId)
+                  const foundPayment = await model.foundPayment(foundTrans?.tarif);
+                  const today = new Date();
+                  const expiresDate = new Date(today);
+                  const monthToAdd = Number(foundPayment?.month);
+                  let targetMonth = today.getMonth() + monthToAdd;
+                  let targetYear = today.getFullYear();
+
+                  while (targetMonth > 11) {
+                     targetMonth -= 12;
+                     targetYear++;
+                  }
+
+                  expiresDate.setFullYear(targetYear, targetMonth, 1);
+                  const maxDaysInTargetMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
+                  expiresDate.setDate(Math.min(today.getDate(), maxDaysInTargetMonth));
+
+                  if (expiresDate < today) {
+                     expiresDate.setMonth(expiresDate.getMonth() + 1);
+                     expiresDate.setDate(0); // Set to the last day of the previous month
+                  }
+
+                  const formattedDate = expiresDate.toISOString();
+                  let tracking = {};
+
+                  const options = {
+                     year: 'numeric',
+                     month: '2-digit',
+                     day: '2-digit',
+                     hour: '2-digit',
+                     minute: '2-digit',
+                     second: '2-digit',
+                     timeZone: 'Asia/Tashkent'
+                  };
+                  const formatter = new Intl.DateTimeFormat('en-GB', options);
+                  const formattedDate2 = formatter.format(today);
+
+                  // Replace the format to match the required "DD.MM.YYYY HH:MM:SS" format
+                  const [day, month, year] = formattedDate2.split(', ')[0].split('/');
+                  const time = formattedDate2.split(', ')[1];
+                  const finalFormat = `${day}.${month}.${year} ${time}`;
+
+                  tracking['tarif'] = foundPayment?.category_name
+                  tracking['amount'] = foundTrans?.amount
+                  tracking['date'] = finalFormat
+                  tracking['expire_date'] = formattedDate
+                  tracking['type'] = "uzum"
+
+                  const foundUser = await model.foundUser(foundTrans?.user_id)
+                  await model.editUserPremium(foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], formattedDate, "uzum", tracking)
+                  await model.editTrans(foundTrans.id, "paid")
+
+                  bot.sendMessage(634041736,
+                     `<strong>Uzum:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
+                     { parse_mode: "HTML" }
+                  );
+
                   return res.status(200).json({
                      serviceId: serviceId,
                      transId: transId,
                      status: "CONFIRMED",
                      confirmTime: time,
-                     // amount: 5000
                   })
                }
 
@@ -318,7 +322,6 @@ module.exports = {
                      transId: transId,
                      status: "REVERSED",
                      reverseTime: time,
-                     // amount: 5000
                   })
                }
 

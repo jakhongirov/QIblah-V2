@@ -324,6 +324,8 @@ CREATE TABLE uzum (
    trans_id text,
    expires_month int,
    amount int,
+   tarif text,
+   status text,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

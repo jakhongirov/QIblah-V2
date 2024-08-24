@@ -45,7 +45,9 @@ const addTransId = (
    user_token,
    transId,
    monthToAdd,
-   amount
+   amount,
+   tarif,
+   status
 ) => {
    const QUERY = `
       INSERT INTO
@@ -54,13 +56,17 @@ const addTransId = (
             user_token,
             trans_id,
             expires_month,
-            amount
+            amount,
+            tarif,
+            status
          ) VALUES (
             $1,
             $2,
             $3,
             $4,
-            $5 
+            $5,
+            $6,
+            $7
          ) RETURNING *;
    `;
 
@@ -70,13 +76,42 @@ const addTransId = (
       user_token,
       transId,
       monthToAdd,
-      amount
+      amount,
+      tarif,
+      status
    )
+}
+const foundTrans = (transId) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         uzum
+      WHERE
+         trans_id = $1
+   `;
+
+   return fetch(QUERY, transId)
+}
+const editTrans = (id, status) => {
+   const QUERY = `
+      UPDATE
+         uzum
+      SET
+         satatus = $2
+      WHERE
+         id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, id, status)
 }
 
 module.exports = {
    foundUser,
    foundPayment,
    editUserPremium,
-   addTransId
+   addTransId,
+   foundTrans,
+   editTrans
 }
