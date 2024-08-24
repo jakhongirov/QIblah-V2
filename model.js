@@ -161,7 +161,7 @@ const foundUserByChatId = (chat_id) => {
       FROM
          users
       WHERE
-         $1 = = ANY(user_comment);
+         $1 = ANY(user_comment);
    `;
 
    return fetch(QUERY, chat_id)
