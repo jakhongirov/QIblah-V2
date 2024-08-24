@@ -238,11 +238,13 @@ module.exports = {
 
             if (foundUserByToken) {
 
-               if (user_enter === false) {
+               if (user_enter == false || user_enter == "false") {
+                  console.log('Not add', user_enter)
                   'User enter is false, no action performed';
                } else {
                   const currentTime = getCurrentTimeFormatted();
-                  const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
+                  const addTracking = await model.addTracking(foundUser.user_id, currentTime);
+                  console.log('add', user_enter)
                   addTracking;
                }
 
