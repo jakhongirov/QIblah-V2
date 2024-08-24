@@ -150,7 +150,7 @@ bot.on("message", async (msg) => {
             }
 
             await model.addMessage(msg.chat.id, msg.date);
-
+            
             bot.sendMessage(chatId, text === 'Murojaat qilish' ? "Tashakkur, tez orada sizga javob qaytaramiz!" : "Спасибо, мы скоро свяжемся с вами!", {
                reply_markup: {
                   keyboard: [[{ text: text == 'Murojaat qilish' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Murojaat qilish' ? "Parolni tiklash" : "Восстановление пароля" }]],
