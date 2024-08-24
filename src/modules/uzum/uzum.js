@@ -1,6 +1,5 @@
 const model = require('./model')
 const TelegramBot = require('node-telegram-bot-api')
-const bot = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
 
 // let stringToEncode = "uzum:bank";
 
@@ -101,7 +100,7 @@ module.exports = {
          const authHeader = req.headers['authorization'];
          const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
-         console.log(req.body)
+         console.log("created", req.body)
 
          if (isBase64(base64Credentials)) {
             let [username, password] = atob(base64Credentials).split(':');
@@ -177,6 +176,7 @@ module.exports = {
                      amount,
                   )
 
+                  const bot = new TelegramBot(process.env.BOT_TOKEN_PAYMENT, { polling: true });
                   bot.sendMessage(634041736,
                      `<strong>Uzum:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
                      { parse_mode: "HTML" }
@@ -236,7 +236,7 @@ module.exports = {
          const authHeader = req.headers['authorization'];
          const base64Credentials = authHeader.replace(/^Basic\s+/, '');
          console.log(authHeader)
-         console.log(req.body)
+         console.log("confirm", req.body)
 
          if (isBase64(base64Credentials)) {
             let [username, password] = atob(base64Credentials).split(':');
