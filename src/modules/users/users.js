@@ -238,7 +238,9 @@ module.exports = {
 
             if (foundUserByToken) {
 
-               if (user_enter == false || user_enter == "false") {
+               console.log(user_enter)
+
+               if (user_enter === "false") {
                   console.log('Not add', user_enter)
                   'User enter is false, no action performed';
                } else {
