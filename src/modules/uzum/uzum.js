@@ -257,7 +257,7 @@ module.exports = {
                   await model.editTrans(foundTrans.id, "paid")
 
                   bot.sendMessage(634041736,
-                     `<strong>Uzum:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${amount}\nDate: ${finalFormat}`,
+                     `<strong>Uzum:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${foundTrans?.amount}\nDate: ${finalFormat}`,
                      { parse_mode: "HTML" }
                   );
 
