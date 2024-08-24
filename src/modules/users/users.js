@@ -190,7 +190,7 @@ module.exports = {
             const foundUser = await model.checkUserById(id)
 
             if (foundUser) {
-               if (user_enter == false) {
+               if (user_enter == false || user_enter == "false") {
                   'User enter is false, no action performed';
                } else {
                   const currentTime = getCurrentTimeFormatted();
