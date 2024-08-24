@@ -245,7 +245,7 @@ module.exports = {
                   'User enter is false, no action performed';
                } else {
                   const currentTime = getCurrentTimeFormatted();
-                  const addTracking = await model.addTracking(foundUser.user_id, currentTime);
+                  const addTracking = await model.addTracking(foundUserByToken.user_id, currentTime);
                   console.log('add', user_enter)
                   addTracking;
                }
