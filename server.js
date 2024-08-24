@@ -174,7 +174,13 @@ bot.on("message", async (msg) => {
                let phoneNumber = msg.contact.phone_number;
 
                if (msg.contact.user_id !== msg.from.id) {
-                  return bot.sendMessage(msg.chat.id, "Kontakt noto'g'ri")
+                  return bot.sendMessage(msg.chat.id, "Kontakt noto'g'ri", {
+                     reply_markup: {
+                        keyboard: [[{ text: buttonText, request_contact: true }]],
+                        resize_keyboard: true,
+                        one_time_keyboard: true
+                     }
+                  })
                }
 
                if (!phoneNumber.startsWith('+')) {
