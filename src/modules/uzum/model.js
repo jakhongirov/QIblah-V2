@@ -98,7 +98,7 @@ const editTrans = (id, status) => {
       UPDATE
          uzum
       SET
-         satatus = $2
+         status = $2
       WHERE
          id = $1
       RETURNING *;
