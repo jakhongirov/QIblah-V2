@@ -120,6 +120,8 @@ module.exports = {
                   })
                } else {
                   const foundUser = await model.foundUser(params.id)
+                  const foundPayment = await model.foundPayment(params?.tarif);
+                  const monthToAdd = Number(foundPayment?.month);
                   await model.addTransId(
                      params.id,
                      foundUser?.user_token[foundUser?.user_token?.length - 1],
