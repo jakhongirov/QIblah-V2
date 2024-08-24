@@ -172,6 +172,11 @@ bot.on("message", async (msg) => {
          const changePassword = async (msg) => {
             if (msg.contact) {
                let phoneNumber = msg.contact.phone_number;
+
+               if (msg.contact.user_id !== msg.from.id) {
+                  return bot.sendMessage(msg.chat.id, "Kontakt noto'g'ri")
+               }
+
                if (!phoneNumber.startsWith('+')) {
                   phoneNumber = `+${phoneNumber}`;
                }
