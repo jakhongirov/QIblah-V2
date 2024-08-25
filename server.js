@@ -491,13 +491,48 @@ bot.on('message', async (msg) => {
       console.log('date', date)
       const foundMsg = await model.foundMsg(date);
       console.log("bot", foundMsg)
-      bot.sendMessage(foundMsg?.chat_id, `Javob: ${msg.text}`).catch((error) => {
-         if (error.response && error.response.statusCode === 403) {
-            bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
-         } else {
-            console.error('Error sending message:', error.message);
-         }
-      });
+
+
+      let content;
+      // const foundUserByChatId = await model.foundUserByChatId(`chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
+      if (msg.text) {
+         content = `${msg.text}`;
+         await bot.sendMessage(foundMsg?.chat_id, content).catch((error) => {
+            if (error.response && error.response.statusCode === 403) {
+               bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
+            } else {
+               console.error('Error sending message:', error.message);
+            }
+         });
+      } else if (msg.photo) {
+         const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
+         const caption = msg.caption ? msg.caption : '';
+         content = `${caption}`
+         await bot.sendPhoto(foundMsg?.chat_id, fileId, { caption: content }).catch((error) => {
+            if (error.response && error.response.statusCode === 403) {
+               bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
+            } else {
+               console.error('Error sending message:', error.message);
+            }
+         });;
+      } else if (msg.sticker) {
+         const fileId = msg.sticker.file_id;
+         await bot.sendSticker(foundMsg?.chat_id, fileId).catch((error) => {
+            if (error.response && error.response.statusCode === 403) {
+               bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
+            } else {
+               console.error('Error sending message:', error.message);
+            }
+         });;
+      }
+
+      // bot.sendMessage(foundMsg?.chat_id, `Javob: ${msg.text}`).catch((error) => {
+      //    if (error.response && error.response.statusCode === 403) {
+      //       bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
+      //    } else {
+      //       console.error('Error sending message:', error.message);
+      //    }
+      // });
    }
 });
 
