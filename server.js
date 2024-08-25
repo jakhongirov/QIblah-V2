@@ -137,19 +137,19 @@ bot.on("message", async (msg) => {
             // const foundUserByChatId = await model.foundUserByChatId(`chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
             if (msg.text) {
                content = text === 'Murojaat qilish' ? `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Вопрос: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
-               await bot.sendMessage(process.env.CHAT_ID, content);
                await model.addMessage(msg.chat.id, msg.date);
+               await bot.sendMessage(process.env.CHAT_ID, content);
             } else if (msg.photo) {
                const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
                const caption = msg.caption ? msg.caption : '';
                content = text === 'Murojaat qilish' ? `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}` : `Фото отправлено:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nПодпись: ${caption}`;
-               await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
                await model.addMessage(msg.chat.id, msg.date);
+               await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
             } else if (msg.sticker) {
                const fileId = msg.sticker.file_id;
                content = text === 'Murojaat qilish' ? `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Стикер отправлен:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
-               await bot.sendSticker(process.env.CHAT_ID, fileId);
                await model.addMessage(msg.chat.id, msg.date);
+               await bot.sendSticker(process.env.CHAT_ID, fileId);
             }
 
             bot.sendMessage(chatId, text === 'Murojaat qilish' ? "Tashakkur, tez orada sizga javob qaytaramiz!" : "Спасибо, мы скоро свяжемся с вами!", {
@@ -234,19 +234,19 @@ bot.on("message", async (msg) => {
       // const foundUserByChatId = await model.foundUserByChatId(`chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
       if (msg.text) {
          content = `Savol: ${msg.text}\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
-         await bot.sendMessage(process.env.CHAT_ID, content);
          await model.addMessage(msg.chat.id, msg.date);
+         await bot.sendMessage(process.env.CHAT_ID, content);
       } else if (msg.photo) {
          const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
          const caption = msg.caption ? msg.caption : '';
          content = `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}`
-         await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
          await model.addMessage(msg.chat.id, msg.date);
+         await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
       } else if (msg.sticker) {
          const fileId = msg.sticker.file_id;
          content = `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`
-         await bot.sendSticker(process.env.CHAT_ID, fileId);
          await model.addMessage(msg.chat.id, msg.date);
+         await bot.sendSticker(process.env.CHAT_ID, fileId);
       }
    }
 });
@@ -492,9 +492,7 @@ bot.on('message', async (msg) => {
       const foundMsg = await model.foundMsg(date);
       console.log("bot", foundMsg)
 
-
       let content;
-      // const foundUserByChatId = await model.foundUserByChatId(`chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
       if (msg.text) {
          content = `${msg.text}`;
          await bot.sendMessage(foundMsg?.chat_id, content).catch((error) => {
