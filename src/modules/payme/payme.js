@@ -239,6 +239,7 @@ module.exports = {
 
             tracking['tarif'] = foundPayment?.category_name
             tracking['amount'] = transaction?.amount
+            tracking['trans_id'] = transaction?.transaction
             tracking['date'] = finalFormat
             tracking['expire_date'] = formattedDate
             tracking['type'] = "payme"
@@ -248,7 +249,7 @@ module.exports = {
             if (editUserPremium) {
 
                bot.sendMessage(634041736,
-                  `<strong>PayMe:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nTarif: ${foundPayment?.category_name}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
+                  `<strong>PayMe:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nUser id: ${transaction?.user_id}\nTarif: ${foundPayment?.category_name}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
                   { parse_mode: "HTML" }
                );
 

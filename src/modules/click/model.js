@@ -37,7 +37,9 @@ const addTransaction = (
    merchant_trans_id,
    error,
    error_note,
-   token
+   token,
+   tarif,
+   status
 ) => {
    const QUERY = `
       INSERT INTO
@@ -49,7 +51,9 @@ const addTransaction = (
             merchant_id,
             error,
             error_note,
-            user_token
+            user_token,
+            tarif,
+            status
          ) VALUES (
             $1,
             $2,
@@ -58,7 +62,9 @@ const addTransaction = (
             $5,
             $6,
             $7,
-            $8
+            $8,
+            $9,
+            $10
          ) RETURNING *;
    `;
 
@@ -71,7 +77,9 @@ const addTransaction = (
       merchant_trans_id,
       error,
       error_note,
-      token
+      token,
+      tarif,
+      status
    )
 }
 const foundPayment = (text) => {
@@ -86,10 +94,37 @@ const foundPayment = (text) => {
 
    return fetch(QUERY)
 }
+const foundTrans = (click_trans_id) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         transactions
+      WHERE
+         click_id = $1;
+   `;
+
+   return fetch(QUERY, click_trans_id)
+}
+const editTrans = (click_trans_id, status) => {
+   const QUERY = `
+      UPDATE
+         transactions
+      SET
+         status = $2
+      WHERE
+         click_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, click_trans_id, status)
+}
 
 module.exports = {
    foundUser,
    editUserPremium,
    addTransaction,
-   foundPayment
+   foundPayment,
+   foundTrans,
+   editTrans
 }

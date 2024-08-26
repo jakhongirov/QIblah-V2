@@ -309,11 +309,13 @@ CREATE TABLE transactions (
    click_id text,
    amount text,
    expires_month int,
+   tarif text,
    user_id int,
    merchant_id text,
    error text,
    error_note text,
    user_token text,
+   status text,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
