@@ -8,6 +8,8 @@ module.exports = {
          const { click_trans_id, amount, param2, param3, merchant_trans_id, error, error_note } = req.body
          let code = '';
 
+         console.log("click pr", req.body)
+
          const makeCode = (length) => {
             let characters = '0123456789';
             let charactersLength = characters.length;
@@ -57,6 +59,8 @@ module.exports = {
    Complete: async (req, res) => {
       try {
          const { click_trans_id, merchant_trans_id, error, error_note } = req.body
+
+         console.log("click cp", req.body)
 
          if (error_note === 'Success') {
             let rate = {}
