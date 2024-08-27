@@ -34,7 +34,7 @@ module.exports = {
             }
 
             const monthToAdd = Number(rate?.month);
-            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], param3, "prepare")
+            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], rate?.category_name, "prepare")
          }
 
          makeCode(4)
