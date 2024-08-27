@@ -71,7 +71,7 @@ module.exports = {
             if (foundPayment) {
                rate = foundPayment
             } else {
-               const hexString = param3.replace(/%/g, '');
+               const hexString = foundTrans?.tarif?.replace(/%/g, '');
                const buffer = Buffer.from(hexString, 'hex');
                const decoded = iconv.decode(buffer, 'windows-1251');
                const foundPayment = await model.foundPayment(decoded);
