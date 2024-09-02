@@ -525,6 +525,7 @@ router
 
   // ADDITIONAL VOTES
   .get('/additional/votes', additionalVotes.GET)
+  .get('/additional/votes/dowload', additionalVotes.DOWNLOAD)
   .post('/additional/vote/add', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.ADD_VOTE)
   .put('/additional/vote/edit', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.UPDATE_VOTE)
   .delete('/additional/vote/delete', AUTH, additionalVotes.DELETE_VOTE)
