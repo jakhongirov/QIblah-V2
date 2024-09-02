@@ -137,6 +137,21 @@ module.exports = {
       }
    },
 
+   DOWNLOAD: async (req, res) => {
+      try {
+         const data = await model.download()
+
+         res.setHeader('Content-Disposition', 'attachment; filename=my_table_data.json');
+         res.setHeader('Content-Type', 'application/json');
+
+         // Send JSON data as file download
+         res.send(JSON.stringify(data, null, 2));
+      } catch (error) {
+         console.error('Error fetching data:', error);
+         res.status(500).send('Error fetching data');
+      }
+   },
+
    ADD_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;

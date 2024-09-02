@@ -512,6 +512,7 @@ router
 
   // MEDITATION CATEGORIES
   .get('/meditation/categories', meditationCategories.GET)
+  .get('/meditation/categories/dowload', meditationCategories.DOWNLOAD)
   .post('/meditation/category/add', AUTH, meditationCategories.ADD_CATEGORY)
   .put('/meditation/category/edit', AUTH, meditationCategories.UPDATE_CATEGORY)
   .delete('/meditation/category/delete', AUTH, meditationCategories.DELETE_CATEGORY)
@@ -519,6 +520,7 @@ router
   // MEDITATION ITEMS
   .get('/meditation/items/admin', AUTH, meditationItems.GET_ADMIN)
   .get('/meditation/items', meditationItems.GET_CATEGORIES)
+  .get('/meditation/items/dowload', meditationItems.DOWNLOAD)
   .post('/meditation/item/add', AUTH, FileUpload.single("audio"), meditationItems.ADD_ITEM)
   .put('/meditation/item/edit', AUTH, FileUpload.single("audio"), meditationItems.UPDATE_ITEM)
   .delete('/meditation/item/delete', AUTH, meditationItems.DELETE_CATEGORY)

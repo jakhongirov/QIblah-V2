@@ -138,6 +138,18 @@ const itemsListByCategory = (category_id) => {
 
    return fetchALL(QUERY, category_id)
 }
+const download = () => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         meditation_item
+      ORDER BY
+         item_id DESC;
+   `;
+
+   return fetchALL(QUERY)
+}
 const addItem = (
    item_name,
    item_description,
@@ -254,6 +266,7 @@ module.exports = {
    // items
    itemsListAdmin,
    itemsListByCategory,
+   download,
    addItem,
    foundItem,
    updateItem,
