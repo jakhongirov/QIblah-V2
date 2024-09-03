@@ -131,9 +131,7 @@ const itemsListByCategory = (category_id) => {
       FROM
          meditation_item
       WHERE
-         category_id = $1
-      ORDER BY
-         (string_to_array(item_name, '.'))[1]::integer;
+         category_id = $1;
    `;
 
    return fetchALL(QUERY, category_id)
