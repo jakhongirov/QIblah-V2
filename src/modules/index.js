@@ -521,6 +521,7 @@ router
   .get('/meditation/items/admin', AUTH, meditationItems.GET_ADMIN)
   .get('/meditation/items', meditationItems.GET_CATEGORIES)
   .get('/meditation/items/dowload', meditationItems.DOWNLOAD)
+  .get('/meditation/items/add/file', AUTH, meditationItems.ADD_ITEM_FILE)
   .post('/meditation/item/add', AUTH, FileUpload.single("audio"), meditationItems.ADD_ITEM)
   .put('/meditation/item/edit', AUTH, FileUpload.single("audio"), meditationItems.UPDATE_ITEM)
   .delete('/meditation/item/delete', AUTH, meditationItems.DELETE_CATEGORY)
@@ -528,6 +529,7 @@ router
   // ADDITIONAL VOTES
   .get('/additional/votes', additionalVotes.GET)
   .get('/additional/votes/dowload', additionalVotes.DOWNLOAD)
+  .get('/additional/votes/add/file', AUTH, additionalVotes.ADD_VOTE_FILE)
   .post('/additional/vote/add', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.ADD_VOTE)
   .put('/additional/vote/edit', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.UPDATE_VOTE)
   .delete('/additional/vote/delete', AUTH, additionalVotes.DELETE_VOTE)

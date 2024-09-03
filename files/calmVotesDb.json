@@ -1,0 +1,191 @@
+[
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725276852373-train.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278324999-train.png",
+        "lang": "uz",
+        "name": "Poyezd",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277082077-ocean_waves.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278335328-ocean_waves.png",
+        "lang": "uz",
+        "name": "Okean to'lqini",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277182395-rooftop_rain.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278341947-rooftop_rain.png",
+        "lang": "uz",
+        "name": "Qattiq yomg'ir",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277360702-thunder.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278347784-thunder.png",
+        "lang": "uz",
+        "name": "Chaqmoq",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277384395-walking.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278354482-walking.png",
+        "lang": "uz",
+        "name": "Qadamlar",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277469972-fire.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278361978-fire.png",
+        "lang": "uz",
+        "name": "Olov",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277499316-wind.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278370832-wind.png",
+        "lang": "uz",
+        "name": "Shamol",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277562033-nature_birds.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278384559-nature_birds.png",
+        "lang": "uz",
+        "name": "Tabiat va qushlar",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277872439-rain.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278404068-rain.png",
+        "lang": "uz",
+        "name": "Yomg'ir",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725276852373-train.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278324999-train.png",
+        "lang": "en",
+        "name": "Train",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277082077-ocean_waves.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278335328-ocean_waves.png",
+        "lang": "en",
+        "name": "Ocean waves",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277182395-rooftop_rain.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278341947-rooftop_rain.png",
+        "lang": "en",
+        "name": "Rooftop rain ",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277360702-thunder.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278347784-thunder.png",
+        "lang": "en",
+        "name": "Thunder",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277384395-walking.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278354482-walking.png",
+        "lang": "en",
+        "name": "Steps",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277469972-fire.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278361978-fire.png",
+        "lang": "en",
+        "name": "Fire",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277499316-wind.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278370832-wind.png",
+        "lang": "en",
+        "name": "Wind",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277562033-nature_birds.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278384559-nature_birds.png",
+        "lang": "en",
+        "name": "Nature, birds",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277872439-rain.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278404068-rain.png",
+        "lang": "en",
+        "name": "Rain",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725276852373-train.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278324999-train.png",
+        "lang": "ru",
+        "name": "Поезд",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277082077-ocean_waves.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278335328-ocean_waves.png",
+        "lang": "ru",
+        "name": "Океан",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277182395-rooftop_rain.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278341947-rooftop_rain.png",
+        "lang": "ru",
+        "name": "Громкий дождь ",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277360702-thunder.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278347784-thunder.png",
+        "lang": "ru",
+        "name": "Гром",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277384395-walking.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278354482-walking.png",
+        "lang": "ru",
+        "name": "Шаги",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277469972-fire.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278361978-fire.png",
+        "lang": "ru",
+        "name": "Огонь",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277499316-wind.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278370832-wind.png",
+        "lang": "ru",
+        "name": "Ветер",
+        "suggested": "false"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277562033-nature_birds.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278384559-nature_birds.png",
+        "lang": "ru",
+        "name": "Природа, птицы",
+        "suggested": "true"
+    },
+    {
+        "audioLink": "https://srvr.qiblah.app/public/images/1725277872439-rain.mp3",
+        "iconLink": "https://srvr.qiblah.app/public/images/1725278404068-rain.png",
+        "lang": "ru",
+        "name": "Дождь",
+        "suggested": "true"
+    }
+]

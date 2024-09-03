@@ -2,6 +2,7 @@ require('dotenv').config();
 const model = require('./model')
 const path = require('path')
 const FS = require('../../lib/fs/fs')
+const fs = require('fs')
 
 module.exports = {
    GET: async (req, res) => {
@@ -54,6 +55,37 @@ module.exports = {
       } catch (error) {
          console.error('Error fetching data:', error);
          res.status(500).send('Error fetching data');
+      }
+   },
+
+   ADD_VOTE_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `calmVotesDb.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            await model.addVote(
+               item?.name,
+               item?.lang,
+               item?.suggested,
+               item?.audioLink,
+               item?.audioLink?.split('/')[item?.audioLink?.split('/')?.length - 1],
+               item?.iconLink,
+               item?.iconLink?.split('/')[item?.iconLink?.split('/')?.length - 1],
+            )
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         });
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
       }
    },
 

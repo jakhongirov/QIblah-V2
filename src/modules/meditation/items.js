@@ -152,6 +152,39 @@ module.exports = {
       }
    },
 
+   ADD_ITEM_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `calmItemsDb.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            const duration = await getMp3Duration(item?.audioLink);
+
+            await model.addItem(
+               item?.name,
+               "Ahmad Al Shalabi",
+               item?.catid,
+               item?.suggested,
+               item?.audioLink,
+               item?.audioLink?.split('/')[item?.audioLink?.split('/')?.length - 1],
+               formatDuration(duration) // Pass the duration to the model
+            );
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         });
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Internal Server Error"
+         });
+      }
+   },
+
    ADD_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;
