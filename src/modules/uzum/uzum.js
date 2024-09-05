@@ -166,7 +166,13 @@ module.exports = {
                            amount: amount
                         })
                      } else {
-
+                        return res.status(400).json({
+                           serviceId: serviceId,
+                           transId: transId,
+                           status: "FAILED",
+                           transTime: time,
+                           errorCode: "99999"
+                        })
                      }
                   } else {
                      const foundUser = await model.foundUser(params.id)
