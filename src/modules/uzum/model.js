@@ -93,6 +93,18 @@ const foundTrans = (transId) => {
 
    return fetch(QUERY, transId)
 }
+const foundTransByUser = (user_id) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         uzum
+      WHERE
+         user_id = $1
+   `;
+
+   return fetch(QUERY, user_id)
+}
 const editTrans = (id, status) => {
    const QUERY = `
       UPDATE
@@ -113,5 +125,6 @@ module.exports = {
    editUserPremium,
    addTransId,
    foundTrans,
+   foundTransByUser,
    editTrans
 }

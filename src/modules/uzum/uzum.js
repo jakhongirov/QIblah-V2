@@ -14,6 +14,14 @@ function isBase64(str) {
    }
 }
 
+const checkDateDifference = (date, last_date) => {
+   const dbDateTime = new Date(last_date);
+   const differenceInMilliseconds = Number(date) - dbDateTime;
+   const differenceInHours = differenceInMilliseconds / (1000 * 60 * 60);
+
+   return differenceInHours;
+};
+
 module.exports = {
    CHECK: async (req, res) => {
       try {
@@ -119,39 +127,81 @@ module.exports = {
                      errorCode: "10013"
                   })
                } else {
-                  const foundUser = await model.foundUser(params.id)
-                  const foundPayment = await model.foundPayment(params?.tarif);
-                  const monthToAdd = Number(foundPayment?.month);
-                  await model.addTransId(
-                     params.id,
-                     foundUser?.user_token[foundUser?.user_token?.length - 1],
-                     transId,
-                     monthToAdd,
-                     amount,
-                     params.tarif,
-                     "created"
-                  )
+                  const foundTransByUser = await model.foundTransByUser(params.id)
 
-                  return res.status(200).json({
-                     serviceId: serviceId,
-                     transId: transId,
-                     status: "CREATED",
-                     transTime: time,
-                     data: {
-                        id: {
-                           value: params?.id
+                  if (foundTransByUser) {
+                     const differenceInHours = checkDateDifference(timestamp, foundTransByUser?.transaction_create_at)
+                     console.log(differenceInHours)
+
+                     if (differenceInHours >= 1) {
+                        const foundUser = await model.foundUser(params.id)
+                        const foundPayment = await model.foundPayment(params?.tarif);
+                        const monthToAdd = Number(foundPayment?.month);
+                        await model.addTransId(
+                           params.id,
+                           foundUser?.user_token[foundUser?.user_token?.length - 1],
+                           transId,
+                           monthToAdd,
+                           amount,
+                           params.tarif,
+                           "created"
+                        )
+
+                        return res.status(200).json({
+                           serviceId: serviceId,
+                           transId: transId,
+                           status: "CREATED",
+                           transTime: time,
+                           data: {
+                              id: {
+                                 value: params?.id
+                              },
+                              tarif: {
+                                 value: params?.tarif
+                              },
+                              ilova: {
+                                 value: params?.ilova
+                              }
+                           },
+                           amount: amount
+                        })
+                     } else {
+
+                     }
+                  } else {
+                     const foundUser = await model.foundUser(params.id)
+                     const foundPayment = await model.foundPayment(params?.tarif);
+                     const monthToAdd = Number(foundPayment?.month);
+                     await model.addTransId(
+                        params.id,
+                        foundUser?.user_token[foundUser?.user_token?.length - 1],
+                        transId,
+                        monthToAdd,
+                        amount,
+                        params.tarif,
+                        "created"
+                     )
+
+                     return res.status(200).json({
+                        serviceId: serviceId,
+                        transId: transId,
+                        status: "CREATED",
+                        transTime: time,
+                        data: {
+                           id: {
+                              value: params?.id
+                           },
+                           tarif: {
+                              value: params?.tarif
+                           },
+                           ilova: {
+                              value: params?.ilova
+                           }
                         },
-                        tarif: {
-                           value: params?.tarif
-                        },
-                        ilova: {
-                           value: params?.ilova
-                        }
-                     },
-                     amount: amount
-                  })
+                        amount: amount
+                     })
+                  }
                }
-
             } else {
                return res.status(401).json({
                   status: 401
