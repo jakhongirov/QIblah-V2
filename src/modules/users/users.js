@@ -1140,6 +1140,8 @@ module.exports = {
                user_address_name
             )
 
+            console.log(updateUserAllData)
+            
             if (foundUserStat) {
                const editUserStats = await model.editUserStats(
                   user_id,
