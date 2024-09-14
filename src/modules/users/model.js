@@ -654,8 +654,14 @@ const updateUserAllData = (
          user_region = $5,
          user_location = $6,
          user_app_lang = $7,
-         user_phone_model = array_append(user_phone_model, $8),
-         user_phone_lang = array_append(user_phone_lang, $9),
+         user_phone_model = CASE 
+                              WHEN $8 = ANY(user_phone_model) THEN user_phone_model
+                              ELSE array_append(user_phone_model, $8)
+                           END,
+         user_phone_lang = CASE 
+                              WHEN $9 = ANY(user_phone_lang) THEN user_phone_lang
+                              ELSE array_append(user_phone_lang, $9)
+                           END,
          user_os = array_append(user_os, $10),
          user_os_version = array_append(user_os_version, $11),
          user_comment = array_append(user_comment, $12),

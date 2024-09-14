@@ -39,6 +39,16 @@ CREATE TABLE users (
    user_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+-- SELECT user_id, user_phone_lang, ARRAY(SELECT DISTINCT UNNEST(user_phone_lang)) AS cleaned_app_lang
+-- FROM users
+-- WHERE array_length(user_phone_lang, 1) > 1
+--   AND user_phone_lang != (SELECT ARRAY(SELECT DISTINCT UNNEST(user_phone_lang))) Limit 10;
+
+-- UPDATE users
+-- SET user_phone_lang = array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',')
+-- WHERE array_length(string_to_array(user_phone_lang, ','), 1) > 1
+--   AND user_phone_lang != array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',');
+
 CREATE TABLE users_stats (
    id bigserial PRiMARY KEY,
    user_id int REFERENCES users(user_id) ON DELETE CASCADE,
