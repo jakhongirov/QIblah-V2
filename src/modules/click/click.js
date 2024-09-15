@@ -20,22 +20,24 @@ module.exports = {
          }
 
          if (error_note === 'Success') {
-            let rate = {}
-            const foundPayment = await model.foundPayment(param3);
-            const foundUser = await model.foundUser(param2)
+            if (merchant_trans_id == "Qiblah") {
+               let rate = {}
+               const foundPayment = await model.foundPayment(param3);
+               const foundUser = await model.foundUser(param2)
 
-            if (foundPayment) {
-               rate = foundPayment
-            } else {
-               const hexString = param3.replace(/%/g, '');
-               const buffer = Buffer.from(hexString, 'hex');
-               const decoded = iconv.decode(buffer, 'windows-1251');
-               const foundPayment = await model.foundPayment(decoded);
-               rate = foundPayment
+               if (foundPayment) {
+                  rate = foundPayment
+               } else {
+                  const hexString = param3.replace(/%/g, '');
+                  const buffer = Buffer.from(hexString, 'hex');
+                  const decoded = iconv.decode(buffer, 'windows-1251');
+                  const foundPayment = await model.foundPayment(decoded);
+                  rate = foundPayment
+               }
+
+               const monthToAdd = Number(rate?.month);
+               await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], rate?.category_name, "prepare")
             }
-
-            const monthToAdd = Number(rate?.month);
-            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], rate?.category_name, "prepare")
          }
 
          makeCode(4)
