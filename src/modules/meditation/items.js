@@ -162,7 +162,7 @@ module.exports = {
 
             console.log(foundItemDb)
 
-            if (foundItemDb) {
+            if (!foundItemDb) {
                const audioFileName = item?.audioLink?.split("https://server.qiblah.app/public/images/")[1]; // Get the file name
                const audioPath = path.resolve(__dirname, '..', '..', '..', 'public', 'images', audioFileName); // Construct the full path
                const duration = await getMp3Duration(audioPath);
