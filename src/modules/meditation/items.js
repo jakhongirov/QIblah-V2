@@ -158,8 +158,9 @@ module.exports = {
          const file = JSON.parse(data.read())
 
          for (const item of file) {
-            const audioPath = item?.audioLink?.split("https://server.qiblah.app/")[1] 
-            const duration = await getMp3Duration(`../../../${audioPath}`);
+            // const audioPath = item?.audioLink?.split("https://server.qiblah.app/")[1]
+            const audioPath = path.resolve(__dirname, '..', '..', 'public', 'images', `${item?.audioLink?.split("https://server.qiblah.app/public/images/")}`)
+            const duration = await getMp3Duration(audioPath);
             console.log(item?.name)
 
             await model.addItem(
