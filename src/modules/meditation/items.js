@@ -158,20 +158,26 @@ module.exports = {
          const file = JSON.parse(data.read())
 
          for (const item of file) {
-            const audioFileName = item?.audioLink?.split("https://server.qiblah.app/public/images/")[1]; // Get the file name
-            const audioPath = path.resolve(__dirname, '..', '..', '..', 'public', 'images', audioFileName); // Construct the full path
-            const duration = await getMp3Duration(audioPath);
-            console.log(item?.name)
+            const foundItemDb = await model.foundItemDb(item?.name, item?.catid)
 
-            await model.addItem(
-               item?.name,
-               "Ahmad Al Shalabi",
-               item?.catid,
-               item?.suggested,
-               item?.audioLink,
-               item?.audioLink?.split('/')[item?.audioLink?.split('/')?.length - 1],
-               formatDuration(duration) // Pass the duration to the model
-            );
+            if (foundItemDb) {
+               const audioFileName = item?.audioLink?.split("https://server.qiblah.app/public/images/")[1]; // Get the file name
+               const audioPath = path.resolve(__dirname, '..', '..', '..', 'public', 'images', audioFileName); // Construct the full path
+               const duration = await getMp3Duration(audioPath);
+               console.log(item?.name)
+
+               await model.addItem(
+                  item?.name,
+                  "Ahmad Al Shalabi",
+                  item?.catid,
+                  item?.suggested,
+                  item?.audioLink,
+                  item?.audioLink?.split('/')[item?.audioLink?.split('/')?.length - 1],
+                  formatDuration(duration) // Pass the duration to the model
+               );
+            } else {
+               console.log('exist')
+            }
          }
 
          return res.status(200).json({

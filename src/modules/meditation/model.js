@@ -253,6 +253,19 @@ const deleteItem = (item_id) => {
    return fetch(QUERY, item_id)
 }
 
+const foundItemDb = (name, catid) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         meditation_item
+      WHERE
+         item_name = $1 and category_id = $2;
+   `;
+
+   return fetch(QUERY, name, catid)
+}
+
 module.exports = {
    // categories
    versionCategory,
@@ -270,5 +283,6 @@ module.exports = {
    addItem,
    foundItem,
    updateItem,
-   deleteItem
+   deleteItem,
+   foundItemDb
 }
