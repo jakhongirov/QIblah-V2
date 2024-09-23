@@ -159,6 +159,7 @@ module.exports = {
 
          for (const item of file) {
             const duration = await getMp3Duration(item?.audioLink);
+            console.log(item?.name)
 
             await model.addItem(
                item?.name,
