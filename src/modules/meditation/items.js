@@ -160,6 +160,8 @@ module.exports = {
          for (const item of file) {
             const foundItemDb = await model.foundItemDb(item?.name, item?.catid)
 
+            console.log(foundItemDb)
+
             if (foundItemDb) {
                const audioFileName = item?.audioLink?.split("https://server.qiblah.app/public/images/")[1]; // Get the file name
                const audioPath = path.resolve(__dirname, '..', '..', '..', 'public', 'images', audioFileName); // Construct the full path
