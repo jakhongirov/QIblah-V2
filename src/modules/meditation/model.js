@@ -133,7 +133,7 @@ const itemsListByCategory = (category_id) => {
       WHERE
          category_id = $1
       ORDER BY
-         item_id;
+         (string_to_array(item_name, '.'))[1]::integer;
    `;
 
    return fetchALL(QUERY, category_id)
