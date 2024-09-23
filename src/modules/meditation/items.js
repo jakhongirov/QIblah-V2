@@ -180,6 +180,8 @@ module.exports = {
             }
          }
 
+         console.log('stop')
+
          return res.status(200).json({
             status: 200,
             message: "Success"
