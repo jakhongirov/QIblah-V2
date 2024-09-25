@@ -102,7 +102,6 @@ module.exports = {
             await model.addElementFile(
                item?.id,
                item?.title,
-               item?.title,
                item?.text1,
                item?.text2,
                item?.zamSuras,
