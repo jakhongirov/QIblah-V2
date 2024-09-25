@@ -1,13 +1,24 @@
 const { fetchALL, fetch } = require('../../../lib/postgres')
 
-const duos = () => {
+const duos = (lang_id) => {
    const QUERY = `
       SELECT
          *
       FROM
-         duos
+         duos a
+      ${lang_id ? (
+         `
+            INNER JOIN
+               languages b
+            ON
+               a.lang_id = b.id
+            WHERE
+               b.name = '${lang_id}'
+            `
+      ) : ""
+      }
       ORDER BY
-         duos
+         a.id
    `;
 
    return fetchALL(QUERY)

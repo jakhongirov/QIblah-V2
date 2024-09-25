@@ -5,19 +5,38 @@ const FS = require('../../../lib/fs/fs')
 module.exports = {
    GET: async (req, res) => {
       try {
-         const duos = await model.duos()
+         const { lang_id } = req.query
 
-         if (duos?.length > 0) {
-            return res.status(200).json({
-               status: 200,
-               message: "Success",
-               data: duos
-            })
+         if (lang_id) {
+            const duos = await model.duos(lang_id)
+
+            if (duos?.length > 0) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: duos
+               })
+            } else {
+               return res.status(404).json({
+                  status: 404,
+                  message: "Not found"
+               })
+            }
          } else {
-            return res.status(404).json({
-               status: 404,
-               message: "Not found"
-            })
+            const duos = await model.duos()
+
+            if (duos?.length > 0) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: duos
+               })
+            } else {
+               return res.status(404).json({
+                  status: 404,
+                  message: "Not found"
+               })
+            }
          }
 
       } catch (error) {
