@@ -9,7 +9,7 @@ const categories = (lang_id, gender) => {
       ${lang_id && gender ? (
          `
             WHERE
-               lang_id = ${lang_id} and category_gender = ${gender}
+               lang_id = ${lang_id} and (category_gender = ${gender} or category_gender = 0) 
          `
       ) : lang_id ? (
          `
