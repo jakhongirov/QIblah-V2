@@ -65,7 +65,7 @@ module.exports = {
 
    ADD_FILE: async (req, res) => {
       try {
-         const data = new FS(path.resolve(__dirname, '..', '..', '..', '..', 'files', ``))
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', '..', 'files', `prayCategories.json`))
          const file = JSON.parse(data.read())
 
          for (const item of file) {
