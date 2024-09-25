@@ -108,15 +108,6 @@
         "zam_sura": 0
     },
     {
-        "audio": null,
-        "id": 13,
-        "langID": 0,
-        "text": "",
-        "title": "",
-        "translate": "",
-        "zam_sura": 0
-    },
-    {
         "audio": "https://srvr.qiblah.app/public/images/azan.mp3",
         "id": 14,
         "langID": 2,
@@ -222,15 +213,6 @@
         "text": "<p><strong>Аллоҳу акбар, Аллоҳу акбар,</strong><br /><strong>Аллоҳу акбар, Аллоҳу акбар.</strong></p>\n<p><strong>Ашҳаду алла илаҳа иллаллоҳ,</strong><br /><strong>Ашҳаду алла илаҳа иллаллоҳ.</strong></p>\n<p><strong>Ашҳаду анна Муҳаммадар росулуллоҳ,</strong><br /><strong>Ашҳаду анна Муҳаммадар росулуллоҳ.</strong></p>\n<p><strong>Ҳайя ъалас-солаҳ, ҳайяъ алас-солаҳ,</strong><br /><strong>Ҳайя ъалал-фалаҳ, ҳайя ъалал-фалаҳ.</strong></p>\n<p><strong>Қод қоматис-солаҳ, қод қоматис-солаҳ</strong><br /><strong>Аллоҳу акбар, Аллоҳу акбар,</strong><br /><strong>Ла илаҳа иллаллоҳ.</strong></p>",
         "title": "Иқомат такбири",
         "translate": "Иқомат такбирининг лафзлари азонникига ўхшайди, фарқи &mdash; буниси тез айтилади.",
-        "zam_sura": 0
-    },
-    {
-        "audio": null,
-        "id": 26,
-        "langID": 0,
-        "text": "",
-        "title": "",
-        "translate": "",
         "zam_sura": 0
     },
     {
@@ -342,15 +324,6 @@
         "zam_sura": 1
     },
     {
-        "audio": null,
-        "id": 39,
-        "langID": 0,
-        "text": "",
-        "title": "",
-        "translate": "",
-        "zam_sura": 0
-    },
-    {
         "audio": "https://srvr.qiblah.app/public/images/azan.mp3",
         "id": 40,
         "langID": 4,
@@ -456,15 +429,6 @@
         "text": "Rabbij-alnee muqeemas-salaati wa min zurriyyatee, rabbanaa wata qabbal duaa, rabbanagh-fir-lee wali waali dayya wa lil mu’mineena yawma yaqoomul hisaab",
         "title": "Dua",
         "translate": "O my Lord! Make my children and myself regular in Salah. O our Lord! Accept my prayer. O our Lord! Forgive me. Forgive my parents and all other Muslims on the Day of Judgement",
-        "zam_sura": 0
-    },
-    {
-        "audio": null,
-        "id": 52,
-        "langID": 0,
-        "text": "",
-        "title": "",
-        "translate": "",
         "zam_sura": 0
     }
 ]
