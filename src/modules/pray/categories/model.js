@@ -13,7 +13,7 @@ const categories = (lang_id, gender) => {
             ON
                a.lang_id = b.id
             WHERE
-               a.lang_id = ${lang_id} and ( category_gender = ${gender} or category_gender = 0 )
+               b.name = ${lang_id} and ( category_gender = ${gender} or category_gender = 0 )
          `
       ) : lang_id ? (
          `
@@ -22,7 +22,7 @@ const categories = (lang_id, gender) => {
             ON
                a.lang_id = b.id
             WHERE
-               a.lang_id = ${lang_id} 
+               b.name = ${lang_id} 
          `
       ) : ""}
       ORDER BY
