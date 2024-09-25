@@ -34,6 +34,11 @@ const uzum = require('./uzum/uzum')
 const transactions = require('./transactions/transactions')
 const payme = require('./payme/payme')
 const notification = require('./notification/notification')
+const prayLang = require('./pray/languages/languages')
+const prayCategories = require('./pray/categories/categories')
+const praySubCategories = require('./pray/subCategories/subCategories')
+const prayDuos = require('./pray/duos/duos')
+const prayElements = require('./pray/elements/elements')
 
 router
 
@@ -568,5 +573,41 @@ router
 
   // NOTIFICATION
   .post('/send/notification', AUTH, notification.SEND)
+
+  // PRAY LANG
+  .get('/pray/languages', AUTH, prayLang.GET)
+  .get('/pray/languages/add/file', AUTH, prayLang.ADD_FILE)
+  .post('/pray/language/add', AUTH, prayLang.ADD_LANG)
+  .put('/pray/language/edit', AUTH, prayLang.EDIT_LANG)
+  .delete('/pray/language/delete', AUTH, prayLang.DELETE_LANG)
+
+  // PRAY CATEGORIES
+  .get('/pray/categories', prayCategories.GET)
+  .get('/pray/categories/add/file', AUTH, prayCategories.ADD_FILE)
+  .post('/pray/category/add', AUTH, FileUpload.single("image"), prayCategories.ADD_CATEGORY)
+  .put('/pray/category/edit', AUTH, FileUpload.single("image"), prayCategories.EDIT_CATEGORY)
+  .delete('/pray/category/edit', AUTH, prayCategories.DELETE_CATEGORY)
+
+  // PRAY SUB CATEGORIES
+  .get('/pray/subcategories', praySubCategories.GET)
+  .get('/pray/subcategories/add/file', AUTH, praySubCategories.ADD_FILE)
+  .post('/pray/subcategory/add', AUTH, FileUpload.single("image"), praySubCategories.ADD_SUB_CATEGORIES)
+  .put('/pray/subcategory/edit', AUTH, FileUpload.single("image"), praySubCategories.EDIT_SUB_CATEGORIES)
+  .delete('/pray/subcategory/delete', AUTH, praySubCategories.DELETE_SUB_CATEGORIES)
+
+  // PRAY DUOS
+  .get('/pray/duos', prayDuos.GET)
+  .get('/pray/duos/add/file', prayDuos.ADD_FILE)
+  .post('/pray/duos/add', FileUpload.single("audio"), prayDuos.ADD_DUO)
+  .put('/pray/duos/edit', FileUpload.single("audio"), prayDuos.EDIT_DUO)
+  .delete('/pray/duos/delete', prayDuos.DELETE_DUO)
+
+  // PRAY ELEMENTS
+  .get('/pray/elements', prayElements.GET)
+  .get('/pray/element/:id', prayElements.GET_BY_ID)
+  .get('/pray/elements/add/file', AUTH, prayElements.ADD_FILE)
+  .post('/pray/elements/add', AUTH, FileUpload.fields([{ name: "audio" }, { name: "image" }]), prayElements.ADD_ELEMENTS)
+  .put('/pray/elements/edit', AUTH, FileUpload.fields([{ name: "audio" }, { name: "image" }]), prayElements.EDIT_ELEMENT)
+  .delete('/pray/elements/delete', AUTH, prayElements.DELETE_ELEMENT)
 
 module.exports = router

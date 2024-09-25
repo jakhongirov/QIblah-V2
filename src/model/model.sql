@@ -43,12 +43,10 @@ CREATE TABLE users (
 -- FROM users
 -- WHERE array_length(user_phone_lang, 1) > 1
 --   AND user_phone_lang != (SELECT ARRAY(SELECT DISTINCT UNNEST(user_phone_lang))) Limit 10;
-
 -- UPDATE users
 -- SET user_phone_lang = array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',')
 -- WHERE array_length(string_to_array(user_phone_lang, ','), 1) > 1
 --   AND user_phone_lang != array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',');
-
 CREATE TABLE users_stats (
    id bigserial PRiMARY KEY,
    user_id int REFERENCES users(user_id) ON DELETE CASCADE,
@@ -361,6 +359,68 @@ CREATE TABLE payment_categories (
    category_name text,
    month int,
    category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE languages (
+   id bigserial PRiMARY KEY,
+   name text,
+   lang_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE pray_categories (
+   category_id bigserial PRiMARY KEY,
+   category_name text,
+   category_description text,
+   category_text_color text,
+   category_description_color text,
+   category_background_color text,
+   category_big int DEFAULT 0,
+   category_gender int int DEFAULT 0,
+   category_order int,
+   lang_id int REFERENCES languages(id) ON DELETE CASCADE,
+   category_image_link text,
+   category_image_name text,
+   category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE sub_categories (
+   sub_category_id bigserial PRiMARY KEY,
+   sub_category_name text,
+   sub_category_image_link text,
+   sub_category_image_name text,
+   have_item int int DEFAULT 0,
+   numeric int int DEFAULT 0,
+   category_id int REFERENCES pray_categories(category_id) ON DELETE CASCADE,
+   category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE duos (
+   id bigserial PRiMARY KEY,
+   title text,
+   text text,
+   translation text,
+   audio_link text,
+   audio_name text,
+   zam_sura boolean DEFAULT false,
+   lang_id int REFERENCES languages(id) ON DELETE CASCADE,
+   create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE elements (
+   id bigserial PRiMARY KEY,
+   title text,
+   text_1 text,
+   text_2 text,
+   zam_suras int,
+   image_link text,
+   image_name text,
+   audio_link text,
+   audio_name text,
+   duo_1 int,
+   duo_2 int,
+   duo_3 int,
+   sub_category_id int REFERENCES sub_categories(sub_category_id) ON DELETE CASCADE,
+   create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
 -- old

@@ -1,0 +1,470 @@
+[
+    {
+        "audio": "https://srvr.qiblah.app/public/images/azan.mp3",
+        "id": 1,
+        "langID": 1,
+        "text": "<p>Allohu akbar!<br />Allohu akbar!<br />Allohu akbar!<br />Allohu akbar!</p>\n<p>Ashhadu alla ilaha illalloh!<br />Ashhadu alla ilaha illalloh!</p>\n<p>Ashhadu anna Muhammadar rasululloh!<br />Ashhadu anna Muhammadar rasululloh!</p>\n<p>Hayya 'alas-solah!<br />Hayya 'alas-solah!</p>\n<p>Hayya 'alal falah!<br />Hayya 'alal falah!*</p>\n<p>Allohu akbar!<br />Allohu akbar!</p>\n<p>La ilaha illalloh. </p>",
+        "title": "Azon",
+        "translate": "<p>Alloh buyukdir!<br />Alloh buyukdir!<br />Alloh buyukdir!<br />Alloh buyukdir!</p>\r\n<p>Allohdan o'zga sig'iniladigan (iloh) yo'qligiga iqrorman!<br />Allohdan o'zga sig'iniladigan (iloh) yo'qligiga iqrorman!<br />Muhammad Allohning elchisi ekaniga iqrorman!<br />Muhammad Allohning elchisi ekaniga iqrorman!</p>\r\n<p>Namozga keling, namozga keling!<br />Najotga keling, najotga keling!</p>\r\n<p>Alloh buyukdir!<br />Alloh buyukdir!</p>\r\n<p>Allohdan o'zga iloh yo'q!</p>\r\n<p><b>Azon aytib bo'lingach, uning duosi o'qiladi..</b></p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/sano.mp3",
+        "id": 2,
+        "langID": 1,
+        "text": "Subhanakallouhumma va bihamdika va tabarokasmuka va taa'la jadduka va la ilaha gʼoyruk.",
+        "title": "Sano duosi",
+        "translate": "«Allohim! Sening noming muborakdir. Shon-sharafing ulug'dir. Sendan o'zga iloh yo'qdir».",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/fotiha.mp3",
+        "id": 3,
+        "langID": 1,
+        "text": "A'uzu billahi minash shaytonir rojiym. Bismillahir rohmanir rohiym. <br>Alhamdu lillahi robbil 'alamiyn. Ar-rohmanir rohiym. <br>Maliki yavmiddiyn. Iyyaka na'budu va iyyaka nasta'iyn. <br>Ihdinas sirotol mustaqiym. Sirotollaziyna an'amta 'alayhim gʼoyril magʼzubi 'alayhim valazzolliyn. (omin)",
+        "title": "Fotiha surasi",
+        "translate": "Allohning dargohidan quvilgan shayton yomonligidan Allohning panohiga qochaman. Mehribon va rahmli Alloh nomi bilan (boshlayman). Hamd olamlar rabbi Allohgakim, (U) mehribon, rahmli va hisob-kitob kuni (Qiyomat)ning egasidir. Sengagina ibodat qilamiz va Sendangina yordam so'raymiz! Bizni shunday to'g'ri yo'lga boshlaginki, (U) Sen in'om (hidoyat) etganlarning (payg'ambarlar, siddiq va shahidlarning) yo'lidir, g'azabga uchragan (Muso qavmidan itoatsizlarining) va adashgan (Iso qavmining «Allohning farzandi bor» deydigan)larning emas!",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kavsar.mp3",
+        "id": 4,
+        "langID": 1,
+        "text": "Inna a'toynakal-kavsar. Fa solli lirobbika vanhar. Inna shania'ka huval abtar.",
+        "title": "Kavsar",
+        "translate": "«(Ey Muhammad,) darhaqiqat, Biz Sizga Kavsarni* berdik. Bas, Rabbingiz uchun namoz o'qing va (tuya) so'yib qurbonlik qiling! Albatta, g'animingizning o'zi (barcha yaxshiliklardan) mahrumdir».<br><br><strong>(Kavsar —&nbsp;</strong>jannatdagi bir ajib daryo yoki hovuzning nomi. Uning suvi asaldan totli, qor va suvdan oq. Undan ichgan kishi abadiy chanqoqlik ko'rmaydi.)",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/ixlos.mp3",
+        "id": 5,
+        "langID": 1,
+        "text": "Qul huvallohu ahad. Allohus-somad. Lam yalid. Va lam yulad va lam yakullahu kufuvan ahad.",
+        "title": "Ixlos",
+        "translate": "(Ey Muhammad,) ayting: «U — Alloh yagonadir. Alloh behojat, (lekin) hojatbarordir. U tug'magan va tug'ilmagan ham. Shuningdek, Unga teng biror Zot yo'qdir».",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/falaq.mp3",
+        "id": 6,
+        "langID": 1,
+        "text": "Qul a'uzu birobbil falaq. Min sharri ma xolaq. Va min sharri gʼosiqin iza vaqob. Va min sharrin-naffasati fil 'uqod. Va min sharri hasidin iza hasad.",
+        "title": "Falaq",
+        "translate": "«(Ey Muhammad,) ayting: “Panoh tilab iltijo qilurman tong Parvardigoriga yaratgan narsasi yovuzligidan, tugunchaga dam uruvchi ayollar yovuzligidan hamda hasadchining hasadi yovuzligidan”»",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/nos.mp3",
+        "id": 7,
+        "langID": 1,
+        "text": "Qul a'uzu birrobin-nas. Malikin-nas. Ilahin-nas. Min sharril vasvasil xonnas. Allaziy yuvasvisu fiy sudurin-nas. Minal jinnati van-nas.",
+        "title": "An-nos",
+        "translate": "«(Ey Muhammad,) ayting: “Panoh tilab iltijo qilurman odamlar Parvardigoriga, odamlar Podshohiga, odamlar Ilohiga yashirin vasvasachi (shayton) yovuzligidanki, (u) odamlarning dillariga vasvasa solur. (O'zi) jinlar va odamlardandir”».",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/attahiyat.mp3",
+        "id": 8,
+        "langID": 1,
+        "text": "Attahiyyatu lillahi vas-solavatu vattoyyibat. Assalamu 'alayka ayyuhan-nabiyyu va rohmatullohi va barokatuh. Assalamu 'alayna va 'ala ibadillahis-solihiyn. Ashhadu alla ilaha illallohu va ashhadu anna Muhammadan 'abduhu va rosuluh.",
+        "title": "Attahiyyat",
+        "translate": "Mol, badan, til bilan ado etiladigan butun ibodatlar Alloh uchundir. Ey Nabiy! Allohning rahmati va barakoti Sizga bo'lsin. Sizga va solih qullarga Allohning salomi bo'lsin. Iqrormanki, Allohdan o'zga iloh yo'q. Va yana iqrormanki, Muhammad, alayhissalom, Allohning quli va elchisidirlar.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/salavat.mp3",
+        "id": 9,
+        "langID": 1,
+        "text": "Allohumma solli 'ala Muhammadiv-va 'ala ali Muhammad. Kama sollayta 'ala Ibrohima va 'ala ali Ibrohim. Innaka hamidum-majid.<br><br>Allohumma barik 'ala Muhammadiv-va 'ala ali Muhammad. Kama barokta 'ala Ibrohima va 'ala ali Ibrohim. Innaka hamidum-majid.",
+        "title": "Salovot",
+        "translate": "Allohim, Ibrohim va uning oilasiga rahmat etganing kabi, Muhammad va ul Zotning oilasiga rahmat&nbsp;ayla, Sen hamdu maqtovga loyiq va buyuk Zotsan.<br><br>Allohim, Ibrohim va uning oilasiga barakotingni ehson etganing kabi Muhammad va ul Zotning oilasi ustiga ham barakotingni ehson ayla. Sen hamdu maqtovga loyiq va buyuk Zotsan.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/rabbana_atina.mp3",
+        "id": 10,
+        "langID": 1,
+        "text": "Robbana atina fid-dunya hasanatav-va fil axiroti hasanatav-va qina azaban-nar.",
+        "title": "Duo",
+        "translate": "«Ey Robbimiz, bizga bu dunyoda ham, oxiratda ham yaxshilikni bergin va bizni do'zax olovi azobidan saqlagin».",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/iqomat.mp3",
+        "id": 11,
+        "langID": 1,
+        "text": "<p><strong>Allohu akbar, Allohu akbar,</strong><br /><strong>Allohu akbar, Allohu akbar.</strong></p>\n<p><strong>Ashhadu alla ilaha illalloh,</strong><br /><strong>Ashhadu alla ilaha illalloh.</strong></p>\n<p><strong>Ashhadu anna Muhammadar rosululloh,</strong><br /><strong>Ashhadu anna Muhammadar rosululloh.</strong></p>\n<p><strong>Hayya 'alas-solah, hayya' alas-solah,</strong><br /><strong>Hayya 'alal-falah, hayya 'alal-falah.</strong></p>\n<p><strong>Qod qomatis-solah, qod qomatis-solah</strong><br /><strong>Allohu akbar, Allohu akbar,</strong><br /><strong>La ilaha illalloh.</strong></p>",
+        "title": "Iqomat takbiri",
+        "translate": "<p>Iqomat takbirining lafzlari azonnikiga o'xshaydi, farqi &mdash; bunisi tez aytiladi.</p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kunut.mp3",
+        "id": 12,
+        "langID": 1,
+        "text": "Allohumma inna nasta'inuka va nastag'firuk. Vanu'minu bika va natavakalu 'alayka va nusniy 'alaykal xoyr. Va nashkuruka va la nakfuruk. Va naxla'u va natruku may yafjuruk. </br><br>Allohumma iyyaka na'budu va laka nusolliy va nasjudu va ilayka nas'a va nahfidu narju rohmatak(a). Va naxsha 'azabaka. Inna 'azabaka bil kuffari mulhiq.",
+        "title": "Qunut duosi",
+        "translate": "Allohim! Biz Sendan yordam istaymiz, gunohlarimizni afu etishingni so'raymiz. Allohim! Senga imon keltiramiz, ishlarimizda Senga suyanamiz va Senga tavakkal qilamiz. Va Senga hamd aytamiz. Butun yaxshiliklar Sendandir. Bizlarga berganing shuncha ne'matlar tufayli Senga shukrona aytamiz va nonko'rlik qilmaymiz. Senga qarshi nonko'rlik qilgan gunohkorlardan ayrilamiz, ular bilan aloqani uzamiz.<br><br>Allohim! Biz yolg'iz Sengagina qullik qilamiz, namozni Sen uchungina o'qiymiz. Sengagina sajda qilamiz. Sengagina intilamiz. Ibodatni xushu'-kamtarlik bilan ado etamiz. Rahmating ko'p bo'lishini so'raymiz, azobingdan qo'rqamiz. Hech shubha yo'qki, Sening azobing kofirlargadir.",
+        "zam_sura": 0
+    },
+    {
+        "audio": null,
+        "id": 13,
+        "langID": 0,
+        "text": "",
+        "title": "",
+        "translate": "",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/azan.mp3",
+        "id": 14,
+        "langID": 2,
+        "text": "<p>Аллоҳу акбар!<br />Аллоҳу акбар!<br />Аллоҳу акбар!<br />Аллоҳу акбар!</p>\n<p>Ашҳаду алла илаҳа иллаллоҳ!<br />Ашҳаду алла илаҳа иллаллоҳ!</p>\n<p>Ашҳаду анна Муҳаммадар расулуллоҳ!<br />Ашҳаду анна Муҳаммадар расулуллоҳ!</p>\n<p>Ҳайя ъалас-солаҳ!<br />Ҳайя ъалас-солаҳ!</p>\n<p>Ҳайя ъалал фалаҳ!<br />Ҳайя ъалал фалаҳ!*</p>\n<p>Аллоҳу акбар!<br />Аллоҳу акбар!</p>\n<p>Ла илаҳа иллаллоҳ.</p>",
+        "title": "Азон",
+        "translate": "<p>Аллоҳ буюкдир!<br />Аллоҳ буюкдир!<br />Аллоҳ буюкдир!<br />Аллоҳ буюкдир!</p>\n<p>Аллоҳдан ўзга сиғиниладиган (илоҳ) йўқлигига иқрорман!<br />Аллоҳдан ўзга сиғиниладиган (илоҳ) йўқлигига иқрорман!<br />Муҳаммад Аллоҳнинг элчиси эканига иқрорман!<br />Муҳаммад Аллоҳнинг элчиси эканига иқрорман!</p>\n<p>Намозга келинг, намозга келинг!<br />Нажотга келинг, нажотга келинг!</p>\n<p>Аллоҳ буюкдир!<br />Аллоҳ буюкдир!</p>\n<p>Аллоҳдан ўзга илоҳ йўқ!</p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/sano.mp3",
+        "id": 15,
+        "langID": 2,
+        "text": "Субҳаънакаллуъуҳумма ва биҳамдика ва табаърокасмука ва таъаъла жаддука ва лаъ илаъҳа ғойрук.",
+        "title": "Сано дуоси",
+        "translate": "&laquo;Аллоҳим! Сенинг номинг муборакдир. Шон-шарафинг улуғдир. Сендан ўзга илоҳ йўқдир&raquo;.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/fotiha.mp3",
+        "id": 16,
+        "langID": 2,
+        "text": "Аъузу биллаҳи минаш шайтонир рожийм. Бисмиллаҳир роҳманир роҳийм. Алҳамду лиллаҳи роббил ъаламийн. Ар-роҳманир роҳийм. Малики явмиддийн. Ийяка наъбуду ва ийяка настаъийн. Иҳдинас сиротол мустақийм. Сиротоллазийна анъамта ъалайҳим ғойрил мағзуби ъалайҳим валаззоллийн. (омин)",
+        "title": "Фотиҳа сураси",
+        "translate": "Аллоҳнинг даргоҳидан қувилган шайтон ёмонлигидан Аллоҳнинг паноҳига қочаман. Меҳрибон ва раҳмли Аллоҳ номи билан (бошлайман). Ҳамд оламлар рабби Аллоҳгаким, (У) меҳрибон, раҳмли ва ҳисоб-китоб куни (Қиёмат)нинг эгасидир. Сенгагина ибодат қиламиз ва Сендангина ёрдам сўраймиз! Бизни шундай тўғри йўлга бошлагинки, (У) Сен ин`ом (ҳидоят) этганларнинг (пайғамбарлар, сиддиқ ва шаҳидларнинг) йўлидир, ғазабга учраган (Мусо қавмидан итоатсизларининг) ва адашган (Исо қавмининг &laquo;Аллоҳнинг фарзанди бор&raquo; дейдиган)&nbsp;ларнинг эмас!",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kavsar.mp3",
+        "id": 17,
+        "langID": 2,
+        "text": "Инна аътойнакал-кавсар. Фа солли лироббика ванҳар. Инна шаниаъка ҳувал абтар.",
+        "title": "Кавсар",
+        "translate": "&laquo;(Эй Муҳаммад,) дарҳақиқат, Биз Сизга Кавсарни* бердик. Бас, Раббингиз учун намоз ўқинг ва (туя) сўйиб қурбонлик қилинг! Албатта, ғанимингизнинг ўзи (барча яхшиликлардан) маҳрумдир&raquo;.</p>\n<p>(<strong>Кавсар</strong> &mdash;&nbsp;жаннатдаги бир ажиб дарё ёки ҳовузнинг номи. Унинг суви асалдан тотли, қор ва сувдан оқ. Ундан ичган киши абадий чанқоқлик кўрмайди.)",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/ixlos.mp3",
+        "id": 18,
+        "langID": 2,
+        "text": "Қул ҳуваллоҳу аҳад. Аллоҳус-сомад. Лам ялид. Ва лам юлад ва лам якуллаҳу куфуван аҳад.",
+        "title": "Ихлос",
+        "translate": "(Эй Муҳаммад,) айтинг: &laquo;У &mdash; Аллоҳ ягонадир. Аллоҳ беҳожат, (лекин) ҳожатбарордир. У туғмаган ва туғилмаган ҳам. Шунингдек, Унга тенг бирор зот йўқдир&raquo;.",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/falaq.mp3",
+        "id": 19,
+        "langID": 2,
+        "text": "Қул аъузу бироббил фалақ. Мин шарри ма холақ. Ва мин шарри ғосиқин иза вақоб. Ва мин шаррин-наффасати фил ъуқод. Ва мин шарри ҳасидин иза ҳасад.",
+        "title": "Фалақ",
+        "translate": "&laquo;(Эй Муҳаммад,) айтинг: &ldquo;Паноҳ тилаб илтижо қилурман тонг Парвардигорига яратган нарсаси ёвузлигидан, тугунчага дам урувчи аёллар ёвузлигидан ҳамда ҳасадчининг ҳасади ёвузлигидан&rdquo;&raquo;.",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/nos.mp3",
+        "id": 20,
+        "langID": 2,
+        "text": "Қул аъузу бирробин-нас. Маликин-нас. Илаҳин-нас. Мин шаррил васвасил хоннас. Аллазий ювасвису фий судурин-нас. Минал жиннати ван-нас.</strong>",
+        "title": "Ан-нос",
+        "translate": "&laquo;(Эй Муҳаммад,) айтинг: &ldquo;Паноҳ тилаб илтижо қилурман одамлар Парвардигорига, одамлар Подшоҳига, одамлар Илоҳига яширин васвасачи (шайтон) ёвузлигиданки, (у) одамларнинг дилларига васваса солур. (Ўзи) жинлар ва одамлардандир&rdquo;&raquo;.",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kunut.mp3",
+        "id": 21,
+        "langID": 2,
+        "text": "Аллоҳумма инна настаъинука ва настағфирук. Вануъмину бика ва натавакалу ъалайка ва нусний ъалайкал хойр. Ва нашкурука ва ла накфурук. Ва нахлаъу ва натруку май яфжурук.</strong><br /><strong>Аллоҳумма ийяка наъбуду ва лака нусоллий ва насжуду ва илайка насъа ва наҳфиду наржу роҳматак(а). Ва нахша ъазабака. Инна ъазабака бил куффари мулҳиқ.</strong>",
+        "title": "Қунут дуоси",
+        "translate": "Аллоҳим! Биз Сендан ёрдам истаймиз, гуноҳларимизни афу этишингни сўраймиз. Аллоҳим! Сенга имон келтирамиз, ишларимизда Сенга суянамиз ва Сенга таваккал қиламиз. Ва Сенга ҳамд айтамиз. Бутун яхшиликлар Сендандир. Бизларга берганинг шунча неъматлар туфайли Сенга шукрона айтамиз ва нонкўрлик қилмаймиз. Сенга қарши нонкўрлик қилган гуноҳкорлардан айриламиз, улар билан алоқани узамиз.</p>\n<p>Аллоҳим! Биз ёлғиз Сенгагина қуллик қиламиз, намозни Сен учунгина ўқиймиз. Сенгагина сажда қиламиз. Сенгагина интиламиз. Ибодатни хушуъ-камтарлик билан адо этамиз. Раҳматинг кўп бўлишини сўраймиз, азобингдан қўрқамиз. Ҳеч шубҳа йўқки, Сенинг азобинг кофирларгадир.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/attahiyat.mp3",
+        "id": 22,
+        "langID": 2,
+        "text": "Аттаҳийяту лиллаҳи вас-солавату ваттоййибат. Ассаламу ъалайка айюҳан-набийю ва роҳматуллоҳи ва барокатуҳ. Ассаламу ъалайна ва ъала ибадиллаҳис-солиҳийн. Ашҳаду алла илаҳа иллаллоҳу ва ашҳаду анна Муҳаммадан ъабдуҳу ва росулуҳ.",
+        "title": "Аттаҳийят",
+        "translate": "Мол, бадан, тил билан адо этиладиган бутун ибодатлар Аллоҳ учундир. Эй Набий! Аллоҳнинг раҳмати ва баракоти Сизга бўлсин. Сизга ва солиҳ қулларга Аллоҳнинг саломи бўлсин. Иқрорманки, Аллоҳдан ўзга илоҳ йўқ. Ва яна иқрорманки, Муҳаммад, алайҳиссалом, Аллоҳнинг қули ва элчисидирлар.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/salavat.mp3",
+        "id": 23,
+        "langID": 2,
+        "text": "Аллоҳумма солли ъала Муҳаммадив-ва ъала али Муҳаммад. Кама соллайта ъала Иброҳима ва ъала али Иброҳим. Иннака ҳамидум-мажид.</strong></p>\n<p><strong>Аллоҳумма барик ъала Муҳаммадив-ва ъала али Муҳаммад. Кама барокта ъала Иброҳима ва ъала али Иброҳим. Иннака ҳамидум-мажид.",
+        "title": "Саловот",
+        "translate": "Аллоҳим, Иброҳим ва унинг оиласига раҳмат этганинг каби, Муҳаммад ва ул Зотнинг оиласига раҳмат&nbsp;айла, Сен ҳамду мақтовга лойиқ ва буюк Зотсан.</p>\n<p>Аллоҳим, Иброҳим ва унинг оиласига баракотингни эҳсон этганинг каби Муҳаммад ва ул Зотнинг оиласи устига ҳам баракотингни эҳсон айла. Сен ҳамду мақтовга лойиқ ва буюк Зотсан.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/rabbana_atina.mp3",
+        "id": 24,
+        "langID": 2,
+        "text": "Роббана атина фид-дуня ҳасанатав-ва фил ахироти ҳасанатав-ва қина азабан-нар.",
+        "title": "Дуо",
+        "translate": "&laquo;Эй Роббимиз, бизга бу дунёда ҳам, охиратда ҳам яхшиликни бергин ва бизни дўзах олови азобидан сақлагин&raquo;.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/iqomat.mp3",
+        "id": 25,
+        "langID": 2,
+        "text": "<p><strong>Аллоҳу акбар, Аллоҳу акбар,</strong><br /><strong>Аллоҳу акбар, Аллоҳу акбар.</strong></p>\n<p><strong>Ашҳаду алла илаҳа иллаллоҳ,</strong><br /><strong>Ашҳаду алла илаҳа иллаллоҳ.</strong></p>\n<p><strong>Ашҳаду анна Муҳаммадар росулуллоҳ,</strong><br /><strong>Ашҳаду анна Муҳаммадар росулуллоҳ.</strong></p>\n<p><strong>Ҳайя ъалас-солаҳ, ҳайяъ алас-солаҳ,</strong><br /><strong>Ҳайя ъалал-фалаҳ, ҳайя ъалал-фалаҳ.</strong></p>\n<p><strong>Қод қоматис-солаҳ, қод қоматис-солаҳ</strong><br /><strong>Аллоҳу акбар, Аллоҳу акбар,</strong><br /><strong>Ла илаҳа иллаллоҳ.</strong></p>",
+        "title": "Иқомат такбири",
+        "translate": "Иқомат такбирининг лафзлари азонникига ўхшайди, фарқи &mdash; буниси тез айтилади.",
+        "zam_sura": 0
+    },
+    {
+        "audio": null,
+        "id": 26,
+        "langID": 0,
+        "text": "",
+        "title": "",
+        "translate": "",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/azan.mp3",
+        "id": 27,
+        "langID": 3,
+        "text": "<p>Аллаху Акбар, Аллаху Акбар!<br />Аллаху Акбар, Аллаху Акбар!<br><br>Ашхаду алля иляха илляллах!<br />Ашхаду алля иляха илляллах!<br><br>Ашхаду анна Мухаммада-р-расулюллах!<br />Ашхаду анна Мухаммада-р-расулюллах!<br><br>Хайя `аля-с-солях,<br />Хайя `аля-с-солях!</p><p>Хайя `аляль-фалях,<br />Хайя `аляль-фалях **</p><p>Аллаху Акбар, Аллаху Акбар!<br />Ля иляха илляллах!",
+        "title": "Азан",
+        "translate": "<p>Аллах Велик, Аллах Велик!<br />Аллах Велик, Аллах Велик!</p><p>Свидетельствую, что нет никого, достойного поклонения, кроме Аллаха!<br />Свидетельствую, что нет никого, достойного поклонения, кроме Аллаха!</p><p>Свидетельствую, что Мухаммад &ndash; Посланник Аллаха!<br />Свидетельствую, что Мухаммад &ndash; Посланник Аллаха!</p><p>Спешите к молитве,<br />Спшите к молитве!</p><p>Спешите к успеху,<br />Сешите к успеху!</p><p>Аллах Велик, Аллах Велик!<br />Нет никого, достойного поклонения, кроме Аллаха!</p><p><strong>После азана, читаются дуа.</strong></p>\r\n** В азане для времени утреннего намаза (фаджр) после «Хайя `аляль-фалях» произносится:<strong>Ас-соляту хайру мин ан-наум</strong>&laquo;Молитва лучше, чем сон!&raquo;</p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/iqomat.mp3",
+        "id": 28,
+        "langID": 3,
+        "text": "<p><b>Аллаху Акбар, Аллаху Акбар!<br />Аллаху Акбар, Аллаху Акбар!<br><br>Ашхаду алля иляха илляллах!<br />Ашхаду алля иляха илляллах!<br><br>Ашхаду анна Мухаммада-р-расулюллах!<br />Ашхаду анна Мухаммада-р-расулюллах!<br><br>Хайя `аля-солях, хайя `аляс-солях!<br />Хайя `аляль-фалях, хайя `аляль-фалях!<br><br>Код комати-с-соляту, код комати-с-солях!<br />Аллаху Акбар, Аллаху Акбар!<br />Ля иляха илляллах!</b></p>",
+        "title": "Икамат",
+        "translate": "<p>Аллах Велик, Аллах Велик!<br />Аллах Велик, Аллах Велик!</p><p>Свидетельствую, что нет никого, достойного поклонения, кроме Аллаха!<br />Свидетельствую, что нет никого, достойного поклонения, кроме Аллаха!</p><p>Свидетельствую, что Мухаммад &ndash; Посланник Аллаха!<br />Свидетельствую, что Мухаммад &ndash; Посланник Аллаха!</p><p>Спешите к молитве, спешите к молитве!<br />Спешите к успеху, спешите к успеху!</p><p>Начинается молитва, начинается молитва!<br />Аллах Велик, Аллах Велик!<br />Нет никого, достойного поклонения, кроме Аллаха!</p>\r\n<p>Икамат, в отличие от азана, желательно произносить быстро, не растягивая гласные.</p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/sano.mp3",
+        "id": 29,
+        "langID": 3,
+        "text": "Субханакаллахумма ва бихамдика ва табарокасмука ва таъала джаддука ва лаа илааха гойрук.",
+        "title": "дуа «ас-Сана»",
+        "translate": "&laquo;Слава Тебе, о Аллах, и хвала Тебе! Благословенно имя Твое, превыше всего величие Твое и нет бога, кроме Аллаха&raquo;",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/fotiha.mp3",
+        "id": 30,
+        "langID": 3,
+        "text": "Аъуузу биллахи минаш-шайтанир раджиим. Бисмиллахир Рахманир Рахиим. Алхамдулиллахи Роббил ъаламин. Ар-Рахманир Рахим. Малики йавмиддин. Иййака наъбуду ва иййака настаъин. Ихдинас сиротол мустаким. Сиротол лазина анъамта алайхим гойрил магзуби ъалайхим валаззооллиин (Аамиин)",
+        "title": "сура «аль-Фатиха»",
+        "translate": "&laquo;Хвала Аллаху &ndash; Господу миров. Милостивому, Милосердному. Властителю дня Суда. Лишь Тебе мы поклоняемся и лишь к Тебе взываем о помощи. Наставь нас прямым путем. Путем тех, которых Ты облагодетельствовал, не подпавших под гнев и не впавших в заблуждение&raquo;",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kavsar.mp3",
+        "id": 31,
+        "langID": 3,
+        "text": "Иннаа аътойнакал кавсар. Фасолли лироббика ванхар. Инна шаниака хувал абтар.",
+        "title": "Каусар",
+        "translate": "&laquo;Мы даровали тебе Изобилие (реку в Раю, которая называется аль-Каусар). Посему совершай намаз ради своего Господа и закалывай жертву. Воистину, твой ненавистник сам окажется бездетным&raquo;",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/ixlos.mp3",
+        "id": 32,
+        "langID": 3,
+        "text": "Кул хуваллаху ахад. Аллахус сомад. Лам йалид ва лам йулад. Ва лам йакуллаху куфуван ахад.",
+        "title": "Ихляс",
+        "translate": "&laquo;Скажи: &laquo;Он &ndash; Аллах, Един, Аллах &ndash; Сомад. Не родил и не был рожден, и не был Ему равным ни один!&raquo;",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/nos.mp3",
+        "id": 33,
+        "langID": 3,
+        "text": "Куль а&lsquo;уузу би раббин-наас. Мааликин-наас. Иляяхин-наас. Мин шарриль-васваасиль-ханнаас. Аллязии ювасвису фии судуурин-наас. Миналь-джиннати ван-наас.",
+        "title": "Нас",
+        "translate": "&laquo;Скажи: &laquo;Прибегаю к защите Господа людей, Царя людей, Бога людей, от зла искусителя, исчезающего, который наущает в груди людей, [который] из джинов и людей!&raquo;",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kunut.mp3",
+        "id": 34,
+        "langID": 3,
+        "text": "Аллахумма инна наста’инукя ва настагфирукя ва настахдик ва нуъмину бикя ва натубу иляйкя ва натаваккалю ‘аляйкя ва нусни ‘аляйкяль-хайра кулляху нашкурука ва ля накфурукя ва нахля’у ва натруку май яфджурук! Аллахумма Ийякя на’буду ва лякя нусалли ва насджуду ва иляйка нас’а ва нахфиду нарджу рахматакя ва нахша ‘азабакя инна ‘азабакя биль-куффари мульхик.",
+        "title": "дуа «Кунут»",
+        "translate": "О, Аллах! Поистине, мы испрашиваем помощи Твоей, прощения Твоего, веруем в Тебя и за добро всякое восхваляем Тебя! Благодарим Тебя, не будучи неблагодарными Тебе (неверующими), повинуемся и предаёмся Тебе и отрекаемся от тех, кто отверг Тебя.<br><br>О, Аллах! Лишь Тебе поклоняемся, к Тебе наши мольбы, пред Тобой мы падаем ниц. И мы усердствуем и сражаемся на Пути Твоём. И полагаемся лишь на милость Твою и да убоимся суровой кары Твоей! Несомненно, кара Твоя &ndash; она объемлет неверных!",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/attahiyat.mp3",
+        "id": 35,
+        "langID": 3,
+        "text": "Аттахийяту лиллахи вас салавату ват таййибат, ассаламу алайка аййухан набиййу ва рахматуллахи ва баракатух. Ассаламу алайна ва ала ъибадиллахис салихийн. Ашхаду аллаа илаха иллаллаху ва ашхаду анна Мухаммадан абдуху ва расулух.",
+        "title": "Ташаххуд",
+        "translate": "Приветствия, молитвы и все благие дела принадлежат только Всевышнему. Мир тебе, о Пророк, милость Божья и Его благословение. Мир нам и благочестивым рабам Всевышнего. Я свидетельствую, что нет бога, кроме Аллаха, и свидетельствую, что Мухаммад раб Его и Посланник.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/salavat.mp3",
+        "id": 36,
+        "langID": 3,
+        "text": "Аллахумма солли ала Мухаммадив ва алаа али Мухаммад, кама соллайта ала Ибрахима ва ала али Ибрахим, иннака Хамидум Маджид.</strong></p><p><strong>Аллахумма барик ала Мухаммадив ва ала али Мухаммад, кама баракта ала Ибрахима ва ала али Ибрахим, иннака Хамидум Маджид.",
+        "title": "Салават",
+        "translate": "О Аллах! Благослови Мухаммада и род его, как Ты благословил Ибрахима (Авраама) и род его.</p><p>И ниспошли благословение Мухаммаду и роду его, как Ты ниспослал благословение Ибрахиму (Аврааму) и роду его во всех мирах. Поистине, Ты Восхваляемый, Прославляемый.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/rabbana_atina.mp3",
+        "id": 37,
+        "langID": 3,
+        "text": "Раббана атина фид-дунья хасанатау ва филь-ахирати хасанатау ва кыйна газабаннар.",
+        "title": "дуа «Раббана»",
+        "translate": "О, наш Господь! Даруй нам благ в этой жизни и в предстоящей, спаси нас от мучений Ада!.",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/falaq.mp3",
+        "id": 38,
+        "langID": 3,
+        "text": "Кул аъуузу бироббил фалак. Мин шарри ма холак. Ва мин шарри госикин иза вакаб. Ва мин шаррин наффасаати фил ъукад. Ва мин шарри хасидин иза хасад.",
+        "title": "Фаляк",
+        "translate": "«Скажи: “Прибегаю к защите Господа рассвета, от зла того, что Он сотворил, и от зла темной ночи, когда она наступила, и от зла дующих на узлы, и от зла завистника, когда он завидовал!».",
+        "zam_sura": 1
+    },
+    {
+        "audio": null,
+        "id": 39,
+        "langID": 0,
+        "text": "",
+        "title": "",
+        "translate": "",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/azan.mp3",
+        "id": 40,
+        "langID": 4,
+        "text": "<p>Allahu Akbar, Allahu Akbar.<br />Allahu Akbar, Allahu Akbar.</p>\r\n<p>Ash-hadu alla ilaha illa-llah.<br />Ash-hadu alla ilaha illa-llah.</p>\r\n<p>Ash-hadu anna Muhammadar-Rasulullah.<br />Ash-hadu anna Muhammadar-Rasulullah.</p>\r\n<p>Hayya &lsquo;ala-s-Salah, hayya &lsquo;ala-s-Salah.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />Hayya &lsquo;ala-l-falah, hayya &lsquo;ala-l-falah.</p>\r\n<p>Allahu Akbar, Allahu Akbar.<br />La ilaha illa-llah</p>",
+        "title": "Athan",
+        "translate": "<p>Allah is the Greatest, Allah is the Greatest.<br />Allah is the Greatest, Allah is the Greatest.</p>\r\n<p>I bear witness that there is none worthy of worship but Allah.<br />I bear witness that there is none worthy of worship but Allah.</p>\r\n<p>I bear witness that Muhammad is the Messenger of Allah<br />I bear witness that Muhammad is the Messenger of Allah &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n<p>Hasten to the Prayer, hasten to the Prayer.<br />Hasten to real success, hasten to real success</p>\r\n<p>Allah is the Greatest, Allah is the Greatest. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br />There is none worthy of worship but Allah.</p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/iqomat.mp3",
+        "id": 41,
+        "langID": 4,
+        "text": "<p>Allahu Akbar, Allahu Akbar.<br />Allahu Akbar, Allahu Akbar.</p>\n<p>Ash-hadu alla ilaha illa-llah.<br />Ash-hadu alla ilaha illa-llah.</p>\n<p>Ash-hadu anna Muhammadar-Rasulullah.<br />Ash-hadu anna Muhammadar-Rasulullah.</p>\n<p>Hayya &lsquo;ala-s-Salah, hayya &lsquo;ala-s-Salah.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />Hayya &lsquo;ala-l-falah, hayya &lsquo;ala-l-falah.</p>\n<p>Qad qamati-s-Salah, Qad qamati-s-Salah.</p>\n<p>Allahu Akbar, Allahu Akbar.<br />La ilaha illa-llah</p>",
+        "title": "Iqamah",
+        "translate": "<p>Allah is the Greatest, Allah is the Greatest.<br />Allah is the Greatest, Allah is the Greatest.</p>\r\n<p>I bear witness that there is none worthy of worship but Allah.<br />I bear witness that there is none worthy of worship but Allah.</p>\r\n<p>I bear witness that Muhammad is the Messenger of Allah<br />I bear witness that Muhammad is the Messenger of Allah &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n<p>Hasten to the Prayer, hasten to the Prayer.<br />Hasten to real success, hasten to real success</p>\r\n<p>Prayer is ready, Prayer is ready.</p>\r\n<p>Allah is the Greatest, Allah is the Greatest.&nbsp;<br />There is none worthy of worship but Allah.</p>",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/sano.mp3",
+        "id": 42,
+        "langID": 4,
+        "text": "Subhanak-Allah humma wabi hamdika watabara-kasmuka wata aala jadduka walaa ilaha ghairuk",
+        "title": "dua Sanaa",
+        "translate": "All Glory be to You O Allah! Praise is to You; Blessed is Your Name and Exalted is Your Majesty; there is none worthy of worship except You",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/fotiha.mp3",
+        "id": 43,
+        "langID": 4,
+        "text": "Aoozu billahi minash Shaitaanir-rajeem, Bismillahir rahmanir-raheem. <p>Al-hamdu lillahi rabbil-aalameen, ar-rahma nir-raheem, maaliki yawmiddeen, iyyaaka na’budu wa iyyaaka nastaeen, ihdinas-siraatal mustaqeem, siraatallazeena anamta alaihim, ghairil maghdoobi alahim wa ladhaaleen. Ameen.",
+        "title": "Surah Fatiha",
+        "translate": "I seek protection with Allah from the cursed Shaitan, Bismillahir rahmanir-raheem. <p> All praise is due to Allah, the Lord of the Universe, the Kindest, Most Merciful, Master of the Day of Judgement. You alone we worship and from You alone we ask for help. Guide us on the straight path, the path of those who You have favoured, not the path of those who earned Your anger, nor the path of those who went astray. Ameen (So let it be O Allah)",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kavsar.mp3",
+        "id": 44,
+        "langID": 4,
+        "text": "Innaaa a'tainaa kal kauthar, Fasalli li rabbika wanhar, Inna shaani'aka huwal abtar.",
+        "title": "Kauthar",
+        "translate": "Indeed, We have granted you, [O Muhammad], al-Kawthar, So pray to your Lord and sacrifice [to Him alone], Indeed, your enemy is the one cut off.",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/ixlos.mp3",
+        "id": 45,
+        "langID": 4,
+        "text": "Qul huwal laahu ahad, Allah hus-samad, Lam yalid wa lam yoolad, Wa lam yakul-lahoo kufuwan ahad.",
+        "title": "Ikhlas",
+        "translate": "Say, “He is Allah, [who is] One, Allah, the Eternal Refuge. He neither begets nor is born, Nor is there to Him any equivalent.”",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/falaq.mp3",
+        "id": 46,
+        "langID": 4,
+        "text": "Qul a’oozu bi rabbil-falaq, Min sharri maa khalaq, Wa min sharri ghaasiqin izaa waqab, Wa min sharrin-naffaa-saati fil ‘uqad, Wa min sharri haasidin izaa hasad.",
+        "title": "Falaq",
+        "translate": "Say, “I seek refuge in the Lord of daybreak, From the evil of that which He created, And from the evil of darkness when it settles, And from the evil of the blowers in knots, And from the evil of an envier when he envies.”",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/nos.mp3",
+        "id": 47,
+        "langID": 4,
+        "text": "Qul a’oozu birabbin naas, Malikin naas, Ilaahin naas, Min sharril waswaasil khannaas. Allazee yuwaswisu fee sudoorin naas, Minal jinnati wannaas.",
+        "title": "Nas",
+        "translate": "Say, “I seek refuge in the Lord of mankind, The Sovereign of mankind. The God of mankind, From the evil of the retreating whisperer – Who whispers [evil] into the breasts of mankind – From among the jinn and mankind.”",
+        "zam_sura": 1
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/kunut.mp3",
+        "id": 48,
+        "langID": 4,
+        "text": "Allah humma inna nasta-eenoka wa nastaghfiruka wa nu'minu bika wa natawakkalu alaika wa nusni alaikal khair, wa nashkuruka wala nakfuruka wa nakhla-oo wa natruku mai yafjuruka, Allah humma iyyaka na'budu wa laka nusalli wa nasjud; wa ilaika nas aaa wa nahfizu wa narju rahma taka wa nakhshaa azaabaka; inna azaabaka bil kuffari mulhik.",
+        "title": "Dua Qunoot",
+        "translate": "O Allah! We implore You for help and beg forgiveness of You and believe in You and rely on You and extol You and we are thankful to You and are not ungrateful to You and we alienate and forsake those who disobey You. O Allah! You alone do we worship and for You do we pray and prostrate and we betake to please You and present ourselves for the service in Your cause and we hope for Your mercy and fear Your chastisement. Undoubtedly, Your torment is going to overtake infidels O Allah!",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/attahiyat.mp3",
+        "id": 49,
+        "langID": 4,
+        "text": "At-tahiyyaatu Lillaahi was-salaawaatu wat-tayyibaat. As-salaamu ‘alayka ayyuhan-Nabiyyu wa rahmatullaahi wa barakaatuhu. As-salaamu ‘alayna wa ‘ala ‘ibaad-illaah-his-saaliheen. Ash-hadu al-aa ilaaha ill-Allaah wa ash-hadu anna Muhammadan ‘abduhu wa rasooluhu",
+        "title": "Tashahhud",
+        "translate": "All compliments, prayers and pure words are due to Allaah. Peace be upon you, O Prophet, and the mercy of Allaah and His blessings. Peace be upon us and upon the righteous slaves of Allaah. I bear witness that there is no god except Allaah and I bear witness that Muhammad is His slave and Messenger",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/salavat.mp3",
+        "id": 50,
+        "langID": 4,
+        "text": "Allaahumma salli ‘ala Muhammad, wa ‘ala aali Muhammad, kama sallayta ‘ala Ibraaheem, wa ‘ala aali Ibraaheem, fil aalameen innak hameedun majeed, wa baarik ‘ala Muhammad, wa ‘ala aali Muhammad, kama baarakta ‘ala Ibraaheem, wa ‘ala aali Ibraaheem, fil aalameen innak hameedun majeed",
+        "title": "Salawat",
+        "translate": "O Allaah, send prayers upon Muhammad and upon the family of Muhammad, as You sent prayers upon Ibraaheem and the family of Ibraaheem, You are indeed Worthy of Praise, Full of Glory. O Allaah, bless Muhammad and the family of Muhammad as You blessed Ibraaheem and the family of Ibraaheem, You are indeed Worthy of Praise, Full of Glory",
+        "zam_sura": 0
+    },
+    {
+        "audio": "https://srvr.qiblah.app/public/images/rabbana_atina.mp3",
+        "id": 51,
+        "langID": 4,
+        "text": "Rabbij-alnee muqeemas-salaati wa min zurriyyatee, rabbanaa wata qabbal duaa, rabbanagh-fir-lee wali waali dayya wa lil mu’mineena yawma yaqoomul hisaab",
+        "title": "Dua",
+        "translate": "O my Lord! Make my children and myself regular in Salah. O our Lord! Accept my prayer. O our Lord! Forgive me. Forgive my parents and all other Muslims on the Day of Judgement",
+        "zam_sura": 0
+    },
+    {
+        "audio": null,
+        "id": 52,
+        "langID": 0,
+        "text": "",
+        "title": "",
+        "translate": "",
+        "zam_sura": 0
+    }
+]

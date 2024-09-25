@@ -1,0 +1,1314 @@
+[
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
+        "id": 1,
+        "isNumeric": 0,
+        "title": "Azon"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 2,
+        "isNumeric": 1,
+        "title": "Bomdod"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 3,
+        "isNumeric": 1,
+        "title": "Peshin"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 4,
+        "isNumeric": 1,
+        "title": "Asr"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 5,
+        "isNumeric": 1,
+        "title": "Shom"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/https://srvr.qiblah.app/public/images/ic_xufton.png.png",
+        "id": 6,
+        "isNumeric": 1,
+        "title": "Xufton"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 7,
+        "isNumeric": 1,
+        "title": "Vitr"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_qazonamozlar.png",
+        "id": 8,
+        "isNumeric": 0,
+        "title": "Qazo namozlari"
+    },
+    {
+        "categoryID": 29,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_ayollargaxos.png",
+        "id": 9,
+        "isNumeric": 0,
+        "title": "Ayollarga xos holatlar"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 10,
+        "isNumeric": 1,
+        "title": "Bomdod"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 11,
+        "isNumeric": 1,
+        "title": "Peshin"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 12,
+        "isNumeric": 1,
+        "title": "Asr"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 13,
+        "isNumeric": 1,
+        "title": "Shom"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 14,
+        "isNumeric": 1,
+        "title": "Xufton"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 15,
+        "isNumeric": 1,
+        "title": "Vitr"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_qazonamozlar.png",
+        "id": 16,
+        "isNumeric": 0,
+        "title": "Qazo namozlari"
+    },
+    {
+        "categoryID": 3,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 17,
+        "isNumeric": 1,
+        "title": "Tahorat olish tartibi"
+    },
+    {
+        "categoryID": 3,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 18,
+        "isNumeric": 0,
+        "title": "Tahorat nima ? "
+    },
+    {
+        "categoryID": 3,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 19,
+        "isNumeric": 0,
+        "title": "Tahoratni buzadigan hollar"
+    },
+    {
+        "categoryID": 3,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 20,
+        "isNumeric": 0,
+        "title": "G'usl"
+    },
+    {
+        "categoryID": 3,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 21,
+        "isNumeric": 0,
+        "title": "Tayammum"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 22,
+        "isNumeric": 0,
+        "title": "Namozni buzadigan hollar"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 23,
+        "isNumeric": 0,
+        "title": "Niyat/Qavma"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 24,
+        "isNumeric": 0,
+        "title": "Takbir"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 25,
+        "isNumeric": 0,
+        "title": "Qiyom"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 26,
+        "isNumeric": 0,
+        "title": "Ruku"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 27,
+        "isNumeric": 0,
+        "title": "Sajda"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 28,
+        "isNumeric": 0,
+        "title": "Jalsa/Qa'da"
+    },
+    {
+        "categoryID": 4,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 29,
+        "isNumeric": 0,
+        "title": "Salom"
+    },
+    {
+        "categoryID": 5,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 30,
+        "isNumeric": 0,
+        "title": "Taroveh namozi"
+    },
+    {
+        "categoryID": 5,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 31,
+        "isNumeric": 0,
+        "title": "Juma namozi"
+    },
+    {
+        "categoryID": 5,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 32,
+        "isNumeric": 0,
+        "title": "Hayit namozi"
+    },
+    {
+        "categoryID": 5,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 33,
+        "isNumeric": 0,
+        "title": "Musofir namozi"
+    },
+    {
+        "categoryID": 5,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 34,
+        "isNumeric": 1,
+        "title": "Janoza namozi"
+    },
+    {
+        "categoryID": 13,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_question.png",
+        "id": 35,
+        "isNumeric": 0,
+        "title": "Poklanishga oid savollar"
+    },
+    {
+        "categoryID": 13,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_question.png",
+        "id": 36,
+        "isNumeric": 0,
+        "title": "Namozga oid savollar"
+    },
+    {
+        "categoryID": 6,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 37,
+        "isNumeric": 1,
+        "title": "Olti diniy kalima"
+    },
+    {
+        "categoryID": 6,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 38,
+        "isNumeric": 0,
+        "title": "Salovotlar"
+    },
+    {
+        "categoryID": 6,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 39,
+        "isNumeric": 0,
+        "title": "Qur'oni Karimdan ba'zi duolar"
+    },
+    {
+        "categoryID": 6,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 40,
+        "isNumeric": 0,
+        "title": "Allohning 14 sifati"
+    },
+    {
+        "categoryID": 6,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 41,
+        "isNumeric": 0,
+        "title": "Qirq farz"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
+        "id": 43,
+        "isNumeric": 1,
+        "title": "Aзон"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 44,
+        "isNumeric": 1,
+        "title": "Бомдод"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 45,
+        "isNumeric": 1,
+        "title": "Пешин"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 46,
+        "isNumeric": 1,
+        "title": "Aср"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 47,
+        "isNumeric": 1,
+        "title": "Шом"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 48,
+        "isNumeric": 1,
+        "title": "Хуфтон"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 49,
+        "isNumeric": 1,
+        "title": "Витр"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_qazonamozlar.png",
+        "id": 50,
+        "isNumeric": 0,
+        "title": "Қазо намозлари"
+    },
+    {
+        "categoryID": 30,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_ayollargaxos.png",
+        "id": 51,
+        "isNumeric": 0,
+        "title": "Aёлларга хос ҳолатлар"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 52,
+        "isNumeric": 1,
+        "title": "Бомдод"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 53,
+        "isNumeric": 1,
+        "title": "Пешин"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 54,
+        "isNumeric": 1,
+        "title": "Aср"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 55,
+        "isNumeric": 1,
+        "title": "Шом"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 56,
+        "isNumeric": 1,
+        "title": "Хуфтон"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 57,
+        "isNumeric": 1,
+        "title": "Витр"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_qazonamozlar.png",
+        "id": 58,
+        "isNumeric": 0,
+        "title": "Қазо намозлари"
+    },
+    {
+        "categoryID": 9,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 59,
+        "isNumeric": 1,
+        "title": "Таҳорат олиш тартиби"
+    },
+    {
+        "categoryID": 9,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 60,
+        "isNumeric": 0,
+        "title": "Таҳорат нима ? "
+    },
+    {
+        "categoryID": 9,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 61,
+        "isNumeric": 0,
+        "title": "Таҳоратни бузадиган ҳоллар"
+    },
+    {
+        "categoryID": 9,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 62,
+        "isNumeric": 0,
+        "title": "Ғусл"
+    },
+    {
+        "categoryID": 9,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 63,
+        "isNumeric": 0,
+        "title": "Таяммум"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 64,
+        "isNumeric": 0,
+        "title": "Намозни бузадиган ҳоллар"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 65,
+        "isNumeric": 0,
+        "title": "Ният/Қавма"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 66,
+        "isNumeric": 0,
+        "title": "Такбир"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 67,
+        "isNumeric": 0,
+        "title": "Қиём"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 68,
+        "isNumeric": 0,
+        "title": "Руку"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 69,
+        "isNumeric": 0,
+        "title": "Сажда"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 70,
+        "isNumeric": 0,
+        "title": "Жалса/Қаъда"
+    },
+    {
+        "categoryID": 10,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 71,
+        "isNumeric": 0,
+        "title": "Салом"
+    },
+    {
+        "categoryID": 11,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 72,
+        "isNumeric": 0,
+        "title": "Таровеҳ намози"
+    },
+    {
+        "categoryID": 11,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 73,
+        "isNumeric": 0,
+        "title": "Жума намози"
+    },
+    {
+        "categoryID": 11,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 74,
+        "isNumeric": 0,
+        "title": "Ҳайит намози"
+    },
+    {
+        "categoryID": 11,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 75,
+        "isNumeric": 0,
+        "title": "Мусофир намози"
+    },
+    {
+        "categoryID": 11,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_team.png",
+        "id": 76,
+        "isNumeric": 1,
+        "title": "Жаноза намози"
+    },
+    {
+        "categoryID": 14,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_question.png",
+        "id": 77,
+        "isNumeric": 0,
+        "title": "Покланишга оид саволлар"
+    },
+    {
+        "categoryID": 14,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_question.png",
+        "id": 78,
+        "isNumeric": 0,
+        "title": "Намозга оид саволлар"
+    },
+    {
+        "categoryID": 12,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 79,
+        "isNumeric": 1,
+        "title": "Олти диний калима"
+    },
+    {
+        "categoryID": 12,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 80,
+        "isNumeric": 0,
+        "title": "Саловотлар"
+    },
+    {
+        "categoryID": 12,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 81,
+        "isNumeric": 0,
+        "title": "Қуръони Каримдан баъзи дуолар"
+    },
+    {
+        "categoryID": 12,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 82,
+        "isNumeric": 0,
+        "title": "Aллоҳнинг 14 сифати"
+    },
+    {
+        "categoryID": 12,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 83,
+        "isNumeric": 0,
+        "title": "Қирқ фарз"
+    },
+    {
+        "categoryID": 0,
+        "haveItems": 0,
+        "icon": null,
+        "id": 84,
+        "isNumeric": 0,
+        "title": ""
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
+        "id": 85,
+        "isNumeric": 0,
+        "title": "Азан"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 86,
+        "isNumeric": 1,
+        "title": "Фаджр намаз"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 87,
+        "isNumeric": 1,
+        "title": "Зухр намаз"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 88,
+        "isNumeric": 1,
+        "title": "Аср намаз"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 89,
+        "isNumeric": 1,
+        "title": "Магриб намаз"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 90,
+        "isNumeric": 1,
+        "title": "Иша намаз"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 91,
+        "isNumeric": 1,
+        "title": "Витр намаз"
+    },
+    {
+        "categoryID": 15,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_qazonamozlar.png",
+        "id": 92,
+        "isNumeric": 0,
+        "title": "Каза намазы"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 93,
+        "isNumeric": 1,
+        "title": "Фаджр намаз"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 94,
+        "isNumeric": 1,
+        "title": "Зухр намаз"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 95,
+        "isNumeric": 1,
+        "title": "Аср намаз"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 96,
+        "isNumeric": 1,
+        "title": "Магриб намаз"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 97,
+        "isNumeric": 1,
+        "title": "Иша намаз"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 98,
+        "isNumeric": 1,
+        "title": "Витр намаз"
+    },
+    {
+        "categoryID": 16,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_qazonamozlar.png",
+        "id": 99,
+        "isNumeric": 0,
+        "title": "Каза намазы"
+    },
+    {
+        "categoryID": 18,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 100,
+        "isNumeric": 1,
+        "title": "Порядок малое омовение (вуду)"
+    },
+    {
+        "categoryID": 18,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 101,
+        "isNumeric": 0,
+        "title": "Что такое омовение?"
+    },
+    {
+        "categoryID": 18,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 102,
+        "isNumeric": 0,
+        "title": "Когда нужно брать омовение?"
+    },
+    {
+        "categoryID": 18,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 103,
+        "isNumeric": 0,
+        "title": "Гусль (полное омовение)"
+    },
+    {
+        "categoryID": 18,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 104,
+        "isNumeric": 0,
+        "title": "Таяммум"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 105,
+        "isNumeric": 0,
+        "title": "Что нарушает намаз?"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 106,
+        "isNumeric": 0,
+        "title": "Ният/Выпрямление"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 107,
+        "isNumeric": 0,
+        "title": "Такбир (вступление в намаз)"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 108,
+        "isNumeric": 0,
+        "title": "Кыям (стояние)"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 109,
+        "isNumeric": 0,
+        "title": "Руку‘ (поясной поклон)"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 110,
+        "isNumeric": 0,
+        "title": "Саджда (земной поклон)"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 111,
+        "isNumeric": 0,
+        "title": "Джалса/Ташаххуд"
+    },
+    {
+        "categoryID": 19,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 112,
+        "isNumeric": 0,
+        "title": "Салям"
+    },
+    {
+        "categoryID": 20,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 113,
+        "isNumeric": 0,
+        "title": "Тасбих после намаза"
+    },
+    {
+        "categoryID": 20,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 114,
+        "isNumeric": 0,
+        "title": "Время намазов"
+    },
+    {
+        "categoryID": 20,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 115,
+        "isNumeric": 1,
+        "title": "Шесть калима ислама"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
+        "id": 117,
+        "isNumeric": 0,
+        "title": "About athan"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
+        "id": 120,
+        "isNumeric": 0,
+        "title": "Before you begin the prayer"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 121,
+        "isNumeric": 1,
+        "title": "Fajr (dawn)"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 122,
+        "isNumeric": 1,
+        "title": "Dhuhr (midday)"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 123,
+        "isNumeric": 1,
+        "title": "Asr (afternoon)"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 124,
+        "isNumeric": 1,
+        "title": "Maghrib (sunset)"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 125,
+        "isNumeric": 1,
+        "title": "Isha (night)"
+    },
+    {
+        "categoryID": 21,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 126,
+        "isNumeric": 1,
+        "title": "Witr"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
+        "id": 127,
+        "isNumeric": 0,
+        "title": "Before you begin the prayer"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_bomdod.png",
+        "id": 128,
+        "isNumeric": 1,
+        "title": "Fajr (dawn)"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_peshin.png",
+        "id": 129,
+        "isNumeric": 1,
+        "title": "Dhuhr (midday)"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_asr.png",
+        "id": 130,
+        "isNumeric": 1,
+        "title": "Asr (afternoon)"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_shom.png",
+        "id": 131,
+        "isNumeric": 1,
+        "title": "Maghrib (sunset)"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 132,
+        "isNumeric": 1,
+        "title": "Isha (night)"
+    },
+    {
+        "categoryID": 22,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_xufton.png",
+        "id": 133,
+        "isNumeric": 1,
+        "title": "Witr"
+    },
+    {
+        "categoryID": 23,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 134,
+        "isNumeric": 1,
+        "title": "Wudu steps"
+    },
+    {
+        "categoryID": 23,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 135,
+        "isNumeric": 0,
+        "title": "Ghusl"
+    },
+    {
+        "categoryID": 23,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 136,
+        "isNumeric": 0,
+        "title": "Tayammum"
+    },
+    {
+        "categoryID": 23,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 137,
+        "isNumeric": 0,
+        "title": "About wudu"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 138,
+        "isNumeric": 0,
+        "title": "Niyyah"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 139,
+        "isNumeric": 0,
+        "title": "Takbir"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 140,
+        "isNumeric": 0,
+        "title": "Qiyam"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 141,
+        "isNumeric": 0,
+        "title": "Rukuh"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 142,
+        "isNumeric": 0,
+        "title": "Sajdah"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 143,
+        "isNumeric": 0,
+        "title": "Jalsa"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 144,
+        "isNumeric": 0,
+        "title": "Tasleem"
+    },
+    {
+        "categoryID": 24,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_error.png",
+        "id": 145,
+        "isNumeric": 0,
+        "title": "10 Common Mistakes in Salah"
+    },
+    {
+        "categoryID": 25,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 146,
+        "isNumeric": 1,
+        "title": "Tahorat olish tartibi"
+    },
+    {
+        "categoryID": 25,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 147,
+        "isNumeric": 0,
+        "title": "Tahorat nima ? "
+    },
+    {
+        "categoryID": 25,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 148,
+        "isNumeric": 0,
+        "title": "Tahoratni buzadigan hollar"
+    },
+    {
+        "categoryID": 25,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 149,
+        "isNumeric": 0,
+        "title": "G'usl"
+    },
+    {
+        "categoryID": 25,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 150,
+        "isNumeric": 0,
+        "title": "Tayammum"
+    },
+    {
+        "categoryID": 26,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 151,
+        "isNumeric": 1,
+        "title": "Таҳорат олиш тартиби"
+    },
+    {
+        "categoryID": 26,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 152,
+        "isNumeric": 0,
+        "title": "Таҳорат нима ? "
+    },
+    {
+        "categoryID": 26,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 153,
+        "isNumeric": 0,
+        "title": "Таҳоратни бузадиган ҳоллар"
+    },
+    {
+        "categoryID": 26,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 154,
+        "isNumeric": 0,
+        "title": "Ғусл"
+    },
+    {
+        "categoryID": 26,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 155,
+        "isNumeric": 0,
+        "title": "Таяммум"
+    },
+    {
+        "categoryID": 27,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 156,
+        "isNumeric": 1,
+        "title": "Порядок малое омовение (вуду)"
+    },
+    {
+        "categoryID": 27,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 157,
+        "isNumeric": 0,
+        "title": "Что такое омовение?"
+    },
+    {
+        "categoryID": 27,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 158,
+        "isNumeric": 0,
+        "title": "Когда нужно брать омовение?"
+    },
+    {
+        "categoryID": 27,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 159,
+        "isNumeric": 0,
+        "title": "Гусль (полное омовение)"
+    },
+    {
+        "categoryID": 27,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 160,
+        "isNumeric": 0,
+        "title": "Таяммум"
+    },
+    {
+        "categoryID": 28,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 161,
+        "isNumeric": 1,
+        "title": "Wudu steps"
+    },
+    {
+        "categoryID": 28,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 162,
+        "isNumeric": 0,
+        "title": "Ghusl"
+    },
+    {
+        "categoryID": 28,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 163,
+        "isNumeric": 0,
+        "title": "Tayammum"
+    },
+    {
+        "categoryID": 28,
+        "haveItems": 0,
+        "icon": "https://srvr.qiblah.app/public/images/ic_tahorat.png",
+        "id": 164,
+        "isNumeric": 0,
+        "title": "About wudu"
+    },
+    {
+        "categoryID": 1,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 165,
+        "isNumeric": 0,
+        "title": "Namozdagi duo va suralar"
+    },
+    {
+        "categoryID": 2,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 166,
+        "isNumeric": 0,
+        "title": "Namozdagi duo va suralar"
+    },
+    {
+        "categoryID": 7,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 167,
+        "isNumeric": 0,
+        "title": "Намоздаги дуо ва суралар"
+    },
+    {
+        "categoryID": 8,
+        "haveItems": 1,
+        "icon": "https://srvr.qiblah.app/public/images/ic_addition.png",
+        "id": 168,
+        "isNumeric": 0,
+        "title": "Намоздаги дуо ва суралар"
+    }
+]
