@@ -656,14 +656,6 @@
         "title": "Қирқ фарз"
     },
     {
-        "categoryID": 0,
-        "haveItems": 0,
-        "icon": null,
-        "id": 84,
-        "isNumeric": 0,
-        "title": ""
-    },
-    {
         "categoryID": 15,
         "haveItems": 1,
         "icon": "https://srvr.qiblah.app/public/images/ic_azan.png",
