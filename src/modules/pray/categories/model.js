@@ -9,12 +9,12 @@ const categories = (lang_id, gender) => {
       ${lang_id && gender ? (
          `
             WHERE
-               lang_id = ${lang} and category_gender = ${gender}
+               lang_id = ${lang_id} and category_gender = ${gender}
          `
       ) : lang_id ? (
          `
             WHERE
-               lang_id = ${lang} 
+               lang_id = ${lang_id} 
          `
       ) : ""}
       ORDER BY
