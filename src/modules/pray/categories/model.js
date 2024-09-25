@@ -5,16 +5,24 @@ const categories = (lang_id, gender) => {
       SELECT
          *
       FROM
-         pray_categories
+         pray_categories a
       ${lang_id && gender ? (
          `
+            INNER JOIN
+               languages b
+            ON
+               a.lang_id = b.id
             WHERE
-               lang_id = ${lang_id} and (category_gender = ${gender} or category_gender = 0) 
+               a.lang_id = ${lang_id} and ( category_gender = ${gender} or category_gender = 0 )
          `
       ) : lang_id ? (
          `
+            INNER JOIN
+               languages b
+            ON
+               a.lang_id = b.id
             WHERE
-               lang_id = ${lang_id} 
+               a.lang_id = ${lang_id} 
          `
       ) : ""}
       ORDER BY
