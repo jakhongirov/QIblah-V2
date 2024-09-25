@@ -19,7 +19,7 @@ const addLangFile = (id, name) => {
          ) VALUES (
             $1,
             $2
-         ) RERTuRNING *;
+         ) RETURNING *;
    `;
 
    return fetch(QUERY, id, name)
@@ -31,7 +31,7 @@ const addLang = (name) => {
             name
          ) VALUES (
             $1 
-         ) RERTuRNING *;
+         ) RETURNING *;
    `;
 
    return fetch(QUERY, name)
