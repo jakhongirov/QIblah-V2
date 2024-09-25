@@ -64,7 +64,7 @@ const addCategoryFile = (
             $9,
             $10,
             $11,
-            $12,
+            $12
          ) RETURNING *;
    `;
 
