@@ -375,7 +375,7 @@ CREATE TABLE pray_categories (
    category_description_color text,
    category_background_color text,
    category_big int DEFAULT 0,
-   category_gender int int DEFAULT 0,
+   category_gender int DEFAULT 0,
    category_order int,
    lang_id int REFERENCES languages(id) ON DELETE CASCADE,
    category_image_link text,
@@ -388,8 +388,8 @@ CREATE TABLE sub_categories (
    sub_category_name text,
    sub_category_image_link text,
    sub_category_image_name text,
-   have_item int int DEFAULT 0,
-   numeric int int DEFAULT 0,
+   have_item int DEFAULT 0,
+   numeric int DEFAULT 0,
    category_id int REFERENCES pray_categories(category_id) ON DELETE CASCADE,
    category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
