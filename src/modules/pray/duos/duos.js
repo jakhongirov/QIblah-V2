@@ -43,6 +43,7 @@ module.exports = {
                item?.text,
                item?.translate,
                item?.langID,
+               item?.zam_sura,
                item?.audio ? item?.audio : '',
                item?.audio ? item?.audio?.split('https://srvr.qiblah.app/public/images/')[1] : '',
             )
