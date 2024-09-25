@@ -18,7 +18,7 @@ const addLangFile = (id, name) => {
             name
          ) VALUES (
             $1,
-            $2,
+            $2
          ) RERTuRNING *;
    `;
 
