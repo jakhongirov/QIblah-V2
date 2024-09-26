@@ -3,7 +3,15 @@ const { fetchALL, fetch } = require('../../../lib/postgres')
 const duos = (lang_id) => {
    const QUERY = `
       SELECT
-         *
+         a.id,
+         title,
+         text,
+         translation,
+         audio_link,
+         audio_name,
+         zam_sura,
+         lang_id,
+         create_at
       FROM
          duos a
       ${lang_id ? (
