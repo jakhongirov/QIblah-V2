@@ -428,7 +428,7 @@ module.exports = {
 
          // const foundUser = await model.foundUserByToken(user_token?.trim());
 
-         if (filter) {
+         if (filter?.length > 0) {
             const foundUser = await model.foundUserByToken(user_token?.trim());
             console.log('Found user by token:', foundUser, user_token);
             const token = await new JWT({ id: foundUser?.user_id }).sign();
@@ -439,7 +439,6 @@ module.exports = {
                token: token
             });
          } else {
-
             jsonData.push(user_token?.trim())
             console.log(jsonData)
             data.write(jsonData)
