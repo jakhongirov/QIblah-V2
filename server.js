@@ -567,11 +567,11 @@ const options = {
    apis: ["./src/modules/index.js"],
 };
 
-const apiLimiter = rateLimit({
-   windowMs: 1 * 1000, // 1 minutes
-   max: 10, // limit each IP to 50 requests per windowMs
-   message: 'Too many requests from this IP, please try again later.'
-});
+// const apiLimiter = rateLimit({
+//    windowMs: 1 * 1000, // 1 minutes
+//    max: 10, // limit each IP to 50 requests per windowMs
+//    message: 'Too many requests from this IP, please try again later.'
+// });
 
 const specs = swaggerJsDoc(options);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs)); ``
@@ -581,8 +581,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static(path.resolve(__dirname, 'public')))
 app.use('/files', express.static(path.resolve(__dirname, 'files')))
 app.use("/api/v1", router);
-app.use("/api/v1/user/register/temporaryuser", apiLimiter);
-app.use("/api/v1/user/token/:token", apiLimiter);
+// app.use("/api/v1/user/register/temporaryuser", apiLimiter);
+// app.use("/api/v1/user/token/:token", apiLimiter);
 
 const io = socket.initializeSocket(server);
 
