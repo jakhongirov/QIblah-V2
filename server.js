@@ -568,8 +568,8 @@ const options = {
 };
 
 const apiLimiter = rateLimit({
-   windowMs: 60 * 1000, // 1 minutes
-   max: 100, // limit each IP to 50 requests per windowMs
+   windowMs: 1 * 1000, // 1 minutes
+   max: 10, // limit each IP to 50 requests per windowMs
    message: 'Too many requests from this IP, please try again later.'
 });
 
