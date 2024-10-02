@@ -441,6 +441,7 @@ module.exports = {
          } else {
 
             jsonData.push(user_token?.trim())
+            console.log(jsonData)
             data.write(jsonData)
 
             const createTemporaryUser = await model.createTemporaryUser(
