@@ -4,6 +4,7 @@ const JWT = require('../../lib/jwt')
 const bcryptjs = require('bcryptjs')
 const path = require('path')
 const FS = require('../../lib/fs/fs')
+const fs = require('fs')
 
 function getCurrentTimeFormatted() {
    const now = new Date();
@@ -421,11 +422,15 @@ module.exports = {
             location_status,
             user_address_name
          } = req.body;
+         const data = fs.readFileSync('./token.json', 'utf8');
+         const jsonData = JSON.parse(data);
+         const filter = jsonData?.filter(e => e == user_token?.trim())
 
-         const foundUser = await model.foundUserByToken(user_token?.trim());
-         console.log('Found user by token:', foundUser, user_token);
+         // const foundUser = await model.foundUserByToken(user_token?.trim());
 
-         if (foundUser) {
+         if (filter) {
+            const foundUser = await model.foundUserByToken(user_token?.trim());
+            console.log('Found user by token:', foundUser, user_token);
             const token = await new JWT({ id: foundUser.user_id }).sign();
             return res.status(200).json({
                status: 200,
@@ -434,6 +439,18 @@ module.exports = {
                token: token
             });
          } else {
+
+            jsonData.push(user_token?.trim())
+            const updatedData = JSON.stringify(jsonData, null, 2);
+
+            fs.writeFile('./token.json', updatedData, 'utf8', (err) => {
+               if (err) {
+                  console.error('Error writing file:', err);
+                  return;
+               }
+               console.log('File successfully updated!');
+            });
+
             const createTemporaryUser = await model.createTemporaryUser(
                user_name,
                user_gender,
