@@ -422,8 +422,8 @@ module.exports = {
             location_status,
             user_address_name
          } = req.body;
-         const data = fs.readFileSync('./token.json', 'utf8');
-         const jsonData = JSON.parse(data);
+         const data = new FS(path.resolve(__dirname, `./token.json`))
+         const jsonData = JSON.parse(data.read())
          const filter = jsonData?.filter(e => e == user_token?.trim())
 
          // const foundUser = await model.foundUserByToken(user_token?.trim());
@@ -441,15 +441,7 @@ module.exports = {
          } else {
 
             jsonData.push(user_token?.trim())
-            const updatedData = JSON.stringify(jsonData, null, 2);
-
-            fs.writeFile('./token.json', updatedData, 'utf8', (err) => {
-               if (err) {
-                  console.error('Error writing file:', err);
-                  return;
-               }
-               console.log('File successfully updated!');
-            });
+            data.write(jsonData)
 
             const createTemporaryUser = await model.createTemporaryUser(
                user_name,
