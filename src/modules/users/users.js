@@ -239,7 +239,7 @@ module.exports = {
 
             if (foundUserByToken) {
 
-               console.log("Get by token", user_token);
+               console.log("Get by token", token);
 
                if (user_enter === "false") {
                   console.log('Not add', user_enter)
