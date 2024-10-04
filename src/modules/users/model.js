@@ -149,7 +149,6 @@ const checkUserById = (id) => {
    return fetch(QUERY, id)
 }
 const foundUserByToken = async (user_token) => {
-   console.log("query", user_token);
    const QUERY = `
      SELECT
        *

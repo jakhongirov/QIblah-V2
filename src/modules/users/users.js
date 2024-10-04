@@ -239,7 +239,7 @@ module.exports = {
 
             if (foundUserByToken) {
 
-               console.log(user_enter)
+               console.log("Get by token", user_token);
 
                if (user_enter === "false") {
                   console.log('Not add', user_enter)
@@ -425,6 +425,7 @@ module.exports = {
          const data = new FS(path.resolve(__dirname, `./token.json`))
          const jsonData = JSON.parse(data.read())
          const filter = jsonData?.filter(e => e == user_token?.trim())
+         console.log('CREATE USER')
 
          // const foundUser = await model.foundUserByToken(user_token?.trim());
 
@@ -440,7 +441,6 @@ module.exports = {
             });
          } else {
             jsonData.push(user_token?.trim())
-            console.log(jsonData)
             data.write(jsonData)
 
             const createTemporaryUser = await model.createTemporaryUser(
