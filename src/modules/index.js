@@ -380,7 +380,7 @@ router
   .get('/user/token/:token', users.GET_TOKEN)
   .post('/user/search', users.GET_SEARCH)
   .post('/user/register', users.REGISTER_USER)
-  .post('/user/register/temporaryuser', users.TEMPORARY_USER)
+  // .post('/user/register/temporaryuser', users.TEMPORARY_USER)
   .post('/user/login/:contact', users.LOGIN_USER)
   .put('/user/edit/avatar/:user_id', AUTH, FileUpload.single("photo"), users.EDIT_USER_AVATAR)
   .put('/user/edit/contact', AUTH, users.EDIT_USER_CONTACT)
