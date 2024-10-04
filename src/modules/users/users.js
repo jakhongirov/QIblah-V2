@@ -425,7 +425,7 @@ module.exports = {
          const data = new FS(path.resolve(__dirname, `./token.json`))
          const jsonData = JSON.parse(data.read())
          const filter = jsonData?.filter(e => e == user_token?.trim())
-         // console.log('CREATE USER')
+         console.log('CREATE USER')
 
          // const foundUser = await model.foundUserByToken(user_token?.trim());
 
