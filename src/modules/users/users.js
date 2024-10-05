@@ -438,6 +438,10 @@ module.exports = {
                message: "Success"
             });
          } else {
+            if (jsonData?.length >= 500) {
+               jsonData.splice(-5);
+            }
+
             jsonData.push(user_token?.trim())
             data.write(jsonData)
 
