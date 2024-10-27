@@ -438,7 +438,7 @@ module.exports = {
                message: "Success"
             });
          } else {
-            if (jsonData?.length >= 500) {
+            if (jsonData?.length >= 100) {
                jsonData.splice(-5);
             }
 
