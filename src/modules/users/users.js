@@ -401,7 +401,6 @@ module.exports = {
       }
    },
 
-
    TEMPORARY_USER: async (req, res) => {
       try {
          const {
@@ -422,29 +421,19 @@ module.exports = {
             location_status,
             user_address_name
          } = req.body;
-         const data = new FS(path.resolve(__dirname, `./token.json`))
-         const jsonData = JSON.parse(data.read())
-         const filter = jsonData?.filter(e => e == user_token?.trim())
-         console.log('CREATE USER')
 
-         // const foundUser = await model.foundUserByToken(user_token?.trim());
+         const foundUser = await model.foundUserByToken(user_token?.trim());
+         console.log('Found user by token:', foundUser, user_token);
 
-         if (filter?.length > 0) {
-            // const foundUser = await model.foundUserByToken(user_token?.trim());
-            // console.log('Found user by token:', foundUser, user_token);
-            // const token = await new JWT({ id: foundUser?.user_id }).sign();
+         if (foundUser) {
+            const token = await new JWT({ id: foundUser.user_id }).sign();
             return res.status(200).json({
                status: 200,
-               message: "Success"
+               message: "Success",
+               data: foundUser,
+               token: token
             });
          } else {
-            if (jsonData?.length >= 100) {
-               jsonData.splice(-5);
-            }
-
-            jsonData.push(user_token?.trim())
-            data.write(jsonData)
-
             const createTemporaryUser = await model.createTemporaryUser(
                user_name,
                user_gender,
