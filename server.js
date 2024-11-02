@@ -522,7 +522,8 @@ const handleLanguageSelection = async (chatId, language) => {
                   )
 
                   if (addToken) {
-                     const deleteUser = await model.deleteUser(user[chatId].user_id)
+                     console.log(user[chatId]?.user_id)
+                     const deleteUser = await model.deleteUser(user[chatId]?.user_id)
                      console.log("delete", deleteUser)
                      await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                      bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
