@@ -47,6 +47,7 @@ CREATE TABLE users (
 -- SET user_phone_lang = array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',')
 -- WHERE array_length(string_to_array(user_phone_lang, ','), 1) > 1
 --   AND user_phone_lang != array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',');
+
 CREATE TABLE users_stats (
    id bigserial PRiMARY KEY,
    user_id int REFERENCES users(user_id) ON DELETE CASCADE,

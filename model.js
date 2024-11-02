@@ -83,7 +83,7 @@ const deleteUser = (id) => {
       DELETE FROM
          users
       WHERE
-         user_id = $1 CASCADE
+         user_id = $1
       RETURNING *;
    `;
 
