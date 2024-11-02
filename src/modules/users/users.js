@@ -30,7 +30,10 @@ function getCurrentTimeFormatted() {
 module.exports = {
    GET_ADMIN: async (req, res) => {
       try {
-         const { limit, page } = req.query
+         const {
+            limit,
+            page
+         } = req.query
 
          if (limit && page) {
             const getAdminUsers = await model.getAdminUsers(limit, page)
@@ -112,7 +115,10 @@ module.exports = {
 
    GET_PREMIUM_USERS: async (req, res) => {
       try {
-         const { limit, page } = req.query
+         const {
+            limit,
+            page
+         } = req.query
 
          if (limit && page) {
             const getUserPremiumList = await model.getUserPremiumList(limit, page)
@@ -148,7 +154,9 @@ module.exports = {
 
    GET_ID_ADMIN: async (req, res) => {
       try {
-         const { id } = req.params
+         const {
+            id
+         } = req.params
 
          if (id) {
             const foundUser = await model.checkUserById(id)
@@ -184,8 +192,12 @@ module.exports = {
 
    GET_ID: async (req, res) => {
       try {
-         const { id } = req.params
-         const { user_enter } = req.query
+         const {
+            id
+         } = req.params
+         const {
+            user_enter
+         } = req.query
 
          if (id) {
             const foundUser = await model.checkUserById(id)
@@ -231,8 +243,12 @@ module.exports = {
 
    GET_TOKEN: async (req, res) => {
       try {
-         const { token } = req.params
-         const { user_enter } = req.query
+         const {
+            token
+         } = req.params
+         const {
+            user_enter
+         } = req.query
 
          if (token) {
             const foundUserByToken = await model.foundUserByToken(token)
@@ -282,7 +298,11 @@ module.exports = {
 
    GET_SEARCH: async (req, res) => {
       try {
-         const { phone_number, user_name, user_gender } = req.body
+         const {
+            phone_number,
+            user_name,
+            user_gender
+         } = req.body
 
          if (phone_number || user_name || user_gender) {
             const userSearch = await model.userSearch(phone_number, user_name, user_gender)
@@ -378,7 +398,9 @@ module.exports = {
             );
 
             if (registerUser) {
-               const token = await new JWT({ id: registerUser?.user_id }).sign();
+               const token = await new JWT({
+                  id: registerUser?.user_id
+               }).sign();
                return res.status(201).json({
                   status: 201,
                   message: "Success",
@@ -426,7 +448,9 @@ module.exports = {
          console.log('Found user by token:', foundUser, user_token);
 
          if (foundUser) {
-            const token = await new JWT({ id: foundUser.user_id }).sign();
+            const token = await new JWT({
+               id: foundUser.user_id
+            }).sign();
             return res.status(200).json({
                status: 200,
                message: "Success",
@@ -455,7 +479,9 @@ module.exports = {
 
             if (createTemporaryUser) {
                console.log("created", createTemporaryUser)
-               const token = await new JWT({ id: createTemporaryUser.user_id }).sign();
+               const token = await new JWT({
+                  id: createTemporaryUser.user_id
+               }).sign();
                return res.status(200).json({
                   status: 200,
                   message: "Success",
@@ -480,7 +506,9 @@ module.exports = {
 
    LOGIN_USER: async (req, res) => {
       try {
-         const { contact } = req.params
+         const {
+            contact
+         } = req.params
 
          if (contact == 'email') {
             const {
@@ -512,7 +540,9 @@ module.exports = {
                         foundUserByToken?.tracking
                      )
 
-                     const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
+                     const token = await new JWT({
+                        id: checkUserEmail?.user_id
+                     }).sign()
                      await model.deleteUser(foundUserByToken?.user_id)
                      return res.status(200).json({
                         status: 200,
@@ -569,7 +599,9 @@ module.exports = {
                         foundUserByToken?.user_location_status,
                         foundUserByToken?.tracking
                      )
-                     const token = await new JWT({ id: checkUserPhoneNumber?.user_id }).sign()
+                     const token = await new JWT({
+                        id: checkUserPhoneNumber?.user_id
+                     }).sign()
                      await model.deleteUser(foundUserByToken?.user_id)
                      return res.status(200).json({
                         status: 200,
@@ -623,7 +655,9 @@ module.exports = {
                      foundUserByToken?.user_location_status,
                      foundUserByToken?.tracking
                   )
-                  const token = await new JWT({ id: checkUserMethod?.user_id }).sign()
+                  const token = await new JWT({
+                     id: checkUserMethod?.user_id
+                  }).sign()
                   await model.deleteUser(foundUserByToken?.user_id)
                   return res.status(200).json({
                      status: 200,
@@ -656,7 +690,9 @@ module.exports = {
 
    EDIT_USER_AVATAR: async (req, res) => {
       try {
-         const { user_id } = req.params
+         const {
+            user_id
+         } = req.params
          const uploadPhoto = req.file;
          const checkUser = await model.checkUserById(user_id)
 
@@ -830,7 +866,12 @@ module.exports = {
 
    EDIT_USER_NAME: async (req, res) => {
       try {
-         const { user_id, user_name, user_gender, user_phone_number } = req.body
+         const {
+            user_id,
+            user_name,
+            user_gender,
+            user_phone_number
+         } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
@@ -967,7 +1008,10 @@ module.exports = {
 
    EDIT_USER_COMMENT: async (req, res) => {
       try {
-         const { user_id, user_comment } = req.body
+         const {
+            user_id,
+            user_comment
+         } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
@@ -1004,7 +1048,12 @@ module.exports = {
 
    EDIT_USER_PREMIUM: async (req, res) => {
       try {
-         const { user_id, user_premium, expires_at, payment_type } = req.body
+         const {
+            user_id,
+            user_premium,
+            expires_at,
+            payment_type
+         } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
@@ -1060,7 +1109,10 @@ module.exports = {
 
    CHANGE_LANG: async (req, res) => {
       try {
-         const { user_id, lang } = req.body
+         const {
+            user_id,
+            lang
+         } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
@@ -1365,6 +1417,7 @@ module.exports = {
             user_notification_id
          } = req.body
          const foundUserByToken = await model.foundUserByToken(user_token)
+         console.log("BASIC FOUND", foundUserByToken)
 
          if (foundUserByToken) {
             const edituserBasic = await model.edituserBasic(
@@ -1376,6 +1429,8 @@ module.exports = {
             )
 
             if (edituserBasic) {
+               console.log("BASIC EDIT", edituserBasic)
+
                const currentTime = getCurrentTimeFormatted();
                await model.addTracking(edituserBasic[0].user_id, currentTime);
                return res.status(200).json({
@@ -1408,7 +1463,9 @@ module.exports = {
 
    DELETE_USER: async (req, res) => {
       try {
-         const { user_id } = req.body
+         const {
+            user_id
+         } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
@@ -1450,13 +1507,15 @@ module.exports = {
 
    DELETE_USER_ADMIN: async (req, res) => {
       try {
-         const { user_id } = req.body;
+         const {
+            user_id
+         } = req.body;
 
          const deletionPromises = user_id.map(async (id) => {
             const checkUser = await model.checkUserById(id);
             if (checkUser?.user_image_name) {
                const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${checkUser?.user_image_name}`))
-               deleteOldAvatar.delete()// Delete old avatar image
+               deleteOldAvatar.delete() // Delete old avatar image
             }
             return model.deleteUser(id);
          });
