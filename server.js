@@ -6,7 +6,9 @@ const path = require('path')
 const fs = require('fs');
 const app = express();
 const server = http.createServer(app);
-const { PORT } = require("./src/config");
+const {
+   PORT
+} = require("./src/config");
 const swaggerUI = require("swagger-ui-express");
 const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
@@ -33,7 +35,9 @@ if (!fs.existsSync(imagesFolderPath)) {
    console.log('Images folder already exists within the public folder.');
 }
 
-const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+const bot = new TelegramBot(process.env.BOT_TOKEN, {
+   polling: true
+});
 const user = {};
 
 bot.on('message', async (msg) => {
@@ -49,8 +53,7 @@ bot.on('message', async (msg) => {
       bot.sendMessage(chatId, content, {
          reply_markup: {
             keyboard: [
-               [
-                  {
+               [{
                      text: "O\'zbekcha"
                   },
                   {
@@ -86,7 +89,13 @@ const handleStartCommand = async (msg, chatId, text, username) => {
          bot.sendMessage(chatId, content, {
             reply_markup: {
                inline_keyboard: [
-                  [{ text: 'O\'zbekcha', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
+                  [{
+                     text: 'O\'zbekcha',
+                     callback_data: 'uz'
+                  }, {
+                     text: 'Русский',
+                     callback_data: 'ru'
+                  }]
                ]
             }
          });
@@ -96,7 +105,11 @@ const handleStartCommand = async (msg, chatId, text, username) => {
          bot.sendMessage(chatId, content, {
             reply_markup: {
                keyboard: [
-                  [{ text: "O\'zbekcha" }, { text: "Русский" }]
+                  [{
+                     text: "O\'zbekcha"
+                  }, {
+                     text: "Русский"
+                  }]
                ],
                resize_keyboard: true
             }
@@ -114,21 +127,35 @@ bot.on("message", async (msg) => {
    if (text === "O'zbekcha") {
       bot.sendMessage(chatId, 'Iltimos, kerakli menyuni tanlang:', {
          reply_markup: {
-            keyboard: [[{ text: "Murojaat qilish" }, { text: "Parolni tiklash" }]],
+            keyboard: [
+               [{
+                  text: "Murojaat qilish"
+               }, {
+                  text: "Parolni tiklash"
+               }]
+            ],
             resize_keyboard: true
          }
       });
    } else if (text === 'Русский') {
       bot.sendMessage(chatId, 'Пожалуйста, выберите необходимое меню:', {
          reply_markup: {
-            keyboard: [[{ text: "Задавать вопрос" }, { text: "Восстановление пароля" }]],
+            keyboard: [
+               [{
+                  text: "Задавать вопрос"
+               }, {
+                  text: "Восстановление пароля"
+               }]
+            ],
             resize_keyboard: true
          }
       });
    } else if (text === 'Murojaat qilish' || text === 'Задавать вопрос') {
       const languagePrompt = text === 'Murojaat qilish' ? 'Marhamat, murojaatingizni yozing:' : 'Пожалуйста, напишите ваш запрос:';
       bot.sendMessage(chatId, languagePrompt, {
-         reply_markup: { force_reply: true }
+         reply_markup: {
+            force_reply: true
+         }
       }).then((payload) => {
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
             bot.removeReplyListener(replyListenerId);
@@ -144,7 +171,9 @@ bot.on("message", async (msg) => {
                const caption = msg.caption ? msg.caption : '';
                content = text === 'Murojaat qilish' ? `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}` : `Фото отправлено:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nПодпись: ${caption}`;
                await model.addMessage(msg.chat.id, msg.date);
-               await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
+               await bot.sendPhoto(process.env.CHAT_ID, fileId, {
+                  caption: content
+               });
             } else if (msg.sticker) {
                const fileId = msg.sticker.file_id;
                content = text === 'Murojaat qilish' ? `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Стикер отправлен:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
@@ -154,7 +183,13 @@ bot.on("message", async (msg) => {
 
             bot.sendMessage(chatId, text === 'Murojaat qilish' ? "Tashakkur, tez orada sizga javob qaytaramiz!" : "Спасибо, мы скоро свяжемся с вами!", {
                reply_markup: {
-                  keyboard: [[{ text: text == 'Murojaat qilish' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Murojaat qilish' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                  keyboard: [
+                     [{
+                        text: text == 'Murojaat qilish' ? "Murojaat qilish" : "Задавать вопрос"
+                     }, {
+                        text: text == 'Murojaat qilish' ? "Parolni tiklash" : "Восстановление пароля"
+                     }]
+                  ],
                   resize_keyboard: true
                }
             });
@@ -165,7 +200,12 @@ bot.on("message", async (msg) => {
       const buttonText = text === 'Parolni tiklash' ? 'Kontaktni yuborish' : 'Отправить контакт';
       bot.sendMessage(chatId, languagePrompt, {
          reply_markup: {
-            keyboard: [[{ text: buttonText, request_contact: true }]],
+            keyboard: [
+               [{
+                  text: buttonText,
+                  request_contact: true
+               }]
+            ],
             resize_keyboard: true,
             one_time_keyboard: true
          }
@@ -177,7 +217,12 @@ bot.on("message", async (msg) => {
                if (msg.contact.user_id !== msg.from.id) {
                   return bot.sendMessage(msg.chat.id, "Kontakt noto'g'ri", {
                      reply_markup: {
-                        keyboard: [[{ text: buttonText, request_contact: true }]],
+                        keyboard: [
+                           [{
+                              text: buttonText,
+                              request_contact: true
+                           }]
+                        ],
                         resize_keyboard: true,
                         one_time_keyboard: true
                      }
@@ -192,7 +237,9 @@ bot.on("message", async (msg) => {
                if (checkUser) {
                   const languagePrompt = text === 'Parolni tiklash' ? 'Yangi parolingizni yozing' : 'Введите новый пароль';
                   bot.sendMessage(msg.chat.id, languagePrompt, {
-                     reply_markup: { force_reply: true }
+                     reply_markup: {
+                        force_reply: true
+                     }
                   }).then(payload => {
                      const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async msg => {
                         bot.removeListener(replyListenerId);
@@ -204,7 +251,13 @@ bot.on("message", async (msg) => {
                               const content = text === 'Parolni tiklash' ? `${checkUser?.user_name}, parolingiz muvaffaqiyatli o'zgartirildi.` : `${checkUser?.user_name}, Ваш пароль был успешно изменен.`
                               bot.sendMessage(msg.chat.id, content, {
                                  reply_markup: {
-                                    keyboard: [[{ text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                                    keyboard: [
+                                       [{
+                                          text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос"
+                                       }, {
+                                          text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля"
+                                       }]
+                                    ],
                                     resize_keyboard: true
                                  }
                               })
@@ -218,7 +271,13 @@ bot.on("message", async (msg) => {
                   const content = text === 'Parolni tiklash' ? `Foydalanuvchi topilmadi` : "Пользователь не найден"
                   bot.sendMessage(msg.chat.id, content, {
                      reply_markup: {
-                        keyboard: [[{ text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                        keyboard: [
+                           [{
+                              text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос"
+                           }, {
+                              text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля"
+                           }]
+                        ],
                         resize_keyboard: true
                      }
                   })
@@ -241,7 +300,9 @@ bot.on("message", async (msg) => {
          const caption = msg.caption ? msg.caption : '';
          content = `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}`
          await model.addMessage(msg.chat.id, msg.date);
-         await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
+         await bot.sendPhoto(process.env.CHAT_ID, fileId, {
+            caption: content
+         });
       } else if (msg.sticker) {
          const fileId = msg.sticker.file_id;
          content = `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`
@@ -266,7 +327,12 @@ const handleLanguageSelection = async (chatId, language) => {
 
    bot.sendMessage(chatId, languageText, {
       reply_markup: {
-         keyboard: [[{ text: buttonText, request_contact: true }]],
+         keyboard: [
+            [{
+               text: buttonText,
+               request_contact: true
+            }]
+         ],
          resize_keyboard: true,
          one_time_keyboard: true
       }
@@ -313,7 +379,13 @@ const handleLanguageSelection = async (chatId, language) => {
                         await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
-                              keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                              keyboard: [
+                                 [{
+                                    text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос"
+                                 }, {
+                                    text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля"
+                                 }]
+                              ],
                               resize_keyboard: true
                            }
                         });
@@ -343,7 +415,13 @@ const handleLanguageSelection = async (chatId, language) => {
                         await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
-                              keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                              keyboard: [
+                                 [{
+                                    text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос"
+                                 }, {
+                                    text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля"
+                                 }]
+                              ],
                               resize_keyboard: true
                            }
                         });
@@ -380,7 +458,13 @@ const handleLanguageSelection = async (chatId, language) => {
                         await model.addUserComment(addToken.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
-                              keyboard: [[{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                              keyboard: [
+                                 [{
+                                    text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос"
+                                 }, {
+                                    text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля"
+                                 }]
+                              ],
                               resize_keyboard: true
                            }
                         });
@@ -409,7 +493,11 @@ const handleLanguageSelection = async (chatId, language) => {
                         bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                            reply_markup: {
                               keyboard: [
-                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]
+                                 [{
+                                    text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос"
+                                 }, {
+                                    text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля"
+                                 }]
                               ],
                               resize_keyboard: true
                            }
@@ -440,7 +528,11 @@ const handleLanguageSelection = async (chatId, language) => {
                      bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                         reply_markup: {
                            keyboard: [
-                              [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]
+                              [{
+                                 text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос"
+                              }, {
+                                 text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля"
+                              }]
                            ],
                            resize_keyboard: true
                         }
@@ -470,7 +562,11 @@ const handleLanguageSelection = async (chatId, language) => {
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
                      reply_markup: {
                         keyboard: [
-                           [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }, { text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля" }]
+                           [{
+                              text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос"
+                           }, {
+                              text: language === 'uz' ? "Parolni tiklash" : "Восстановление пароля"
+                           }]
                         ],
                         resize_keyboard: true
                      }
@@ -506,7 +602,9 @@ bot.on('message', async (msg) => {
          const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
          const caption = msg.caption ? msg.caption : '';
          content = `${caption}`
-         await bot.sendPhoto(foundMsg?.chat_id, fileId, { caption: content }).catch((error) => {
+         await bot.sendPhoto(foundMsg?.chat_id, fileId, {
+            caption: content
+         }).catch((error) => {
             if (error.response && error.response.statusCode === 403) {
                bot.sendMessage(process.env.CHAT_ID, `This user blocked bot`)
             } else {
@@ -558,11 +656,9 @@ const options = {
          version: "1.0.0",
          description: "by Diyor Jaxongirov",
       },
-      servers: [
-         {
-            url: "https://srvr.qiblah.app/api/v1",
-         },
-      ],
+      servers: [{
+         url: "https://srvr.qiblah.app/api/v1",
+      }, ],
    },
    apis: ["./src/modules/index.js"],
 };
@@ -574,10 +670,15 @@ const apiLimiter = rateLimit({
 });
 
 const specs = swaggerJsDoc(options);
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs)); ``
-app.use(cors({ origin: "*" }));
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
+``
+app.use(cors({
+   origin: "*"
+}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+   extended: true
+}));
 app.use('/public', express.static(path.resolve(__dirname, 'public')))
 app.use('/files', express.static(path.resolve(__dirname, 'files')))
 app.use("/api/v1/user/register/temporaryuser", apiLimiter);

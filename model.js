@@ -1,4 +1,6 @@
-const { fetch } = require('./src/lib/postgres')
+const {
+   fetch
+} = require('./src/lib/postgres')
 
 const foundUser = (token) => {
    const QUERY = `
@@ -94,13 +96,13 @@ const updatedUserPhone = (id, phone_number, tracking) => {
       SET
          user_phone_number = $2,
          user_signin_method = 'withTelegram',
-         tracking = array_append(tracking, $3)
+         tracking = tracking || $3
       WHERE
          user_id = $1
       RETURNING *;
-   `
+   `;
 
-   return fetch(QUERY, id, phone_number, tracking)
+   return fetch(QUERY, id, phone_number, tracking);
 }
 const updatedUserPassword = (user_id, pass_hash) => {
    const QUERY = `
