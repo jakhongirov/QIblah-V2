@@ -151,7 +151,7 @@ const addUserComment = (id, text) => {
          user_comment = array_append(user_comment, $2)
       WHERE
          user_id = $1
-      RETURNIG *;
+      RETURNING *;
    `;
 
    return fetch(QUERY, id, text)
