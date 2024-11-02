@@ -89,20 +89,19 @@ const deleteUser = (id) => {
 
    return fetch(QUERY, id)
 }
-const updatedUserPhone = (id, phone_number, tracking) => {
+const updatedUserPhone = (id, phone_number) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_phone_number = $2,
-         user_signin_method = 'withTelegram',
-         tracking = tracking || $3
+         user_signin_method = 'withTelegram'
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, id, phone_number, tracking);
+   return fetch(QUERY, id, phone_number);
 }
 const updatedUserPassword = (user_id, pass_hash) => {
    const QUERY = `

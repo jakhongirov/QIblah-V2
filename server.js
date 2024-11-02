@@ -557,7 +557,7 @@ const handleLanguageSelection = async (chatId, language) => {
                //    bot.off('contact', contactHandler);
                // }
             } else {
-               const updatedUserPhone = await model.updatedUserPhone(user[chatId]?.user_id, phoneNumber, user[chatId]?.tracking);
+               const updatedUserPhone = await model.updatedUserPhone(user[chatId]?.user_id, phoneNumber);
                console.log(updatedUserPhone)
                if (updatedUserPhone) {
                   await model.addUserComment(user[chatId]?.user_id, `chat_id: ${msg.chat.id} ${msg.chat.username ? `, username: ${msg.chat.id}` : ""}`)
