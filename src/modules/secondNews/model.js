@@ -181,6 +181,10 @@ const editNews = (
    imgUrl,
    imgName
 ) => {
+
+   const userIdArrayLiteral = Array.isArray(user_id) ? `{${user_id.join(',')}}` : `{${user_id}}`;
+   const countryCodeArrayLiteral = Array.isArray(country_code) ? `{${country_code.join(',')}}` : `{${country_code}}`;
+
    const QUERY = `
       UPDATE
          second_news
@@ -211,8 +215,8 @@ const editNews = (
       news_button_text,
       news_link,
       news_lang,
-      user_id,
-      country_code,
+      userIdArrayLiteral,
+      countryCodeArrayLiteral,
       os,
       gender,
       news_order,
