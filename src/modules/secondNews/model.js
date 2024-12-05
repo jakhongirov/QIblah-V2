@@ -111,6 +111,7 @@ const addNews = (
    imgUrl,
    imgName
 ) => {
+
    const userIdArrayLiteral = Array.isArray(user_id) ? `{${user_id.join(',')}}` : `{${user_id}}`;
    const countryCodeArrayLiteral = Array.isArray(country_code) ? `{${country_code.join(',')}}` : `{${country_code}}`;
 
