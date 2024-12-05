@@ -111,9 +111,8 @@ const addNews = (
    imgUrl,
    imgName
 ) => {
-
-   const stringifiedUserId = JSON.stringify(user_id);
-   const stringifiedCountryCode = JSON.stringify(country_code);
+   const userIdArrayLiteral = `{${user_id.join(',')}}`; 
+   const countryCodeArrayLiteral = `{${country_code.join(',')}}`;
 
    const QUERY = `
       INSERT INTO
@@ -155,8 +154,8 @@ const addNews = (
       news_button_text,
       news_link,
       news_lang,
-      stringifiedUserId,
-      stringifiedCountryCode,
+      userIdArrayLiteral, 
+      countryCodeArrayLiteral,
       os,
       gender,
       news_order,
