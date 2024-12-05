@@ -62,7 +62,7 @@ module.exports = {
                   message: "Success",
                   data: newsList?.map(e => {
                      if (e.payment_type === true) {
-                        e.news_description = e.news_description.replace(/%*user_id*%/g, foundUser?.user_id);
+                        e.news_description = e.news_description.replace(/%user_id%/g, foundUser?.user_id);
                      }
                      return e;
                   })
@@ -106,7 +106,7 @@ module.exports = {
                   message: "Success",
                   data: {
                      ...foundNews,
-                     news_description: foundNews?.news_description.replace(/%*user_id*%/g, foundUser?.user_id) // Modify the news_description
+                     news_description: foundNews?.news_description.replace(/%user_id%/g, foundUser?.user_id) // Modify the news_description
                   }
                });
             } else {
