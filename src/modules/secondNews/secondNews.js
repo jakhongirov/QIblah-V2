@@ -46,7 +46,7 @@ module.exports = {
 
          if (limit && page) {
             const foundUser = await model.foundUser(user_id)
-            let newsList = await model.newsList(
+            const newsList = await model.newsList(
                limit,
                page,
                lang,
@@ -57,13 +57,13 @@ module.exports = {
             )
 
             if (newsList?.length > 0) {
-               newsList = newsList?.filter(
-                  e => e.payment_type == true ? e.news_description.replace(/%*user_id*%/g, foundUser?.user_id) : ''
-               )
+
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: newsList
+                  data: newsList?.forEach(
+                     e => e.payment_type == true ? e.news_description.replace(/%*user_id*%/g, foundUser?.user_id) : ''
+                  )
                })
             } else {
                return res.status(404).json({
