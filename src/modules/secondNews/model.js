@@ -51,12 +51,12 @@ const newsList = (
       FROM
             second_news
       WHERE
-            news_active = true
-            ${lang ? `AND LOWER(news_lang) = LOWER($1)` : ""}
-            AND ($2 = user_id OR 'all' = ANY(user_id))
-            AND (LOWER($3) = LOWER(country_code) OR 'all' = LOWER(country_code))
-            AND ($4 = ANY(os) OR os = 'all')
-            AND (LOWER(gender) = LOWER($5) OR gender = 'all')
+         news_active = true
+         ${lang ? `and news_lang = '${lang}'` : ""}
+         and (user_id IN ('${user_id}') or user_id IN ('all'))
+         and (country_code IN ('${user_country_code}') or country_code IN ('all'))
+         and (${user_os} IN (os) or os = 'all')
+         and (gender = '${user_gender}' or gender = 'all')
       ORDER BY
             news_order
       LIMIT $6
@@ -64,14 +64,7 @@ const newsList = (
    `;
 
    return fetchALL(
-      QUERY,
-      lang || null,
-      user_id,
-      user_country_code.toLowerCase(),
-      user_os,
-      user_gender.toLowerCase(),
-      limit,
-      (page - 1) * limit
+      QUERY
    );
 };
 const foundNews = (id) => {
