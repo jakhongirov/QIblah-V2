@@ -111,6 +111,10 @@ const addNews = (
    imgUrl,
    imgName
 ) => {
+
+   const stringifiedUserId = JSON.stringify(user_id);
+   const stringifiedCountryCode = JSON.stringify(country_code);
+
    const QUERY = `
       INSERT INTO
          second_news (
@@ -151,16 +155,16 @@ const addNews = (
       news_button_text,
       news_link,
       news_lang,
-      user_id,
-      country_code,
+      stringifiedUserId,
+      stringifiedCountryCode,
       os,
       gender,
       news_order,
       payment_type,
       imgUrl,
       imgName
-   )
-}
+   );
+};
 const editNews = (
    news_id,
    news_title,
