@@ -232,6 +232,13 @@ CREATE TABLE news (
    news_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE users_news (
+   id bigserial PRiMARY KEY,
+   user_id int REFERENCES users(user_id) ON DELETE CASCADE,
+   news_id int REFERENCES news(news_id) ON DELETE CASCADE,
+   create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE second_news (
    news_id bigserial PRiMARY KEY,
    news_title text,
@@ -243,14 +250,20 @@ CREATE TABLE second_news (
    news_image_name text,
    news_like int DEFAULT 0,
    news_views int DEFAULT 0,
+   user_id text [],
+   country_code text [],
+   os text,
+   gender text,
+   order int,
+   payment_type boolean DEFAULT false,
    news_active boolean DEFAULT true,
    news_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE users_news (
+CREATE TABLE users_second_news (
    id bigserial PRiMARY KEY,
    user_id int REFERENCES users(user_id) ON DELETE CASCADE,
-   news_id int REFERENCES news(news_id) ON DELETE CASCADE,
+   news_id int REFERENCES second_news(news_id) ON DELETE CASCADE,
    create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

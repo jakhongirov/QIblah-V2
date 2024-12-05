@@ -21,6 +21,7 @@ const audios = require('./audios/audios')
 const zikrs = require('./zikr/zikr')
 const publicZikrs = require('./publicZikr/publicZikr')
 const news = require('./news/news')
+const secondNews = require('./secondNews/secondNews')
 const tapes = require('./tapes/tapes')
 const versions = require('./versions/versions')
 const meditationCategories = require('./meditation/categories')
@@ -495,6 +496,17 @@ router
   .put('/news/view', news.EDIT_VIEW_COUNT)
   .put('/news/edit/status', AUTH, news.EDIT_STATUS)
   .delete('/news/delete', AUTH, news.DELETE_NEWS)
+
+  // SECOND NEWS API
+  .get('/second-news/admin/list', AUTH, secondNews.GET_ADMIN)
+  .get('/second-news/list', secondNews.GET)
+  .get('/second-news/:id', secondNews.GET_ID)
+  .post('/second-news/add', AUTH, FileUpload.single("photo"), secondNews.ADD_NEWS)
+  .put('/second-news/edit', AUTH, FileUpload.single("photo"), secondNews.EDIT_NEWS)
+  .put('/second-news/like', secondNews.EDIT_LIKE_COUNT)
+  .put('/second-news/view', secondNews.EDIT_VIEW_COUNT)
+  .put('/second-news/edit/status', AUTH, secondNews.EDIT_STATUS)
+  .delete('/second-news/delete', AUTH, secondNews.DELETE_NEWS)
 
   // TAPES API
   .get('/tapes/list', tapes.GET)
