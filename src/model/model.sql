@@ -47,7 +47,6 @@ CREATE TABLE users (
 -- SET user_phone_lang = array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',')
 -- WHERE array_length(string_to_array(user_phone_lang, ','), 1) > 1
 --   AND user_phone_lang != array_to_string(ARRAY(SELECT DISTINCT UNNEST(string_to_array(user_phone_lang, ','))), ',');
-
 CREATE TABLE users_stats (
    id bigserial PRiMARY KEY,
    user_id int REFERENCES users(user_id) ON DELETE CASCADE,
@@ -108,7 +107,7 @@ CREATE TABLE audios (
    audio_link text,
    audio_name text,
    author_id int REFERENCES authors(author_id) ON DELETE CASCADE,
-   audio_time json [],
+   audio_time text [],
    sura_id int REFERENCES quran(sura_id) ON DELETE CASCADE,
    audio_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
@@ -219,6 +218,21 @@ CREATE TABLE price_list (
 );
 
 CREATE TABLE news (
+   news_id bigserial PRiMARY KEY,
+   news_title text,
+   news_description text,
+   news_button_text text,
+   news_link text,
+   news_lang text,
+   news_image_link text,
+   news_image_name text,
+   news_like int DEFAULT 0,
+   news_views int DEFAULT 0,
+   news_active boolean DEFAULT true,
+   news_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE second_news (
    news_id bigserial PRiMARY KEY,
    news_title text,
    news_description text,
