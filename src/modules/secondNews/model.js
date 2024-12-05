@@ -52,19 +52,26 @@ const newsList = (
          second_news
       WHERE
          news_active = true
-         ${lang ? `AND news_lang = '${lang}'` : ""}
-         AND ('${user_id}' = ANY(user_id) OR 'all' = ANY(user_id))
-         AND ('${user_country_code}' = ANY(country_code) OR 'all' = ANY(country_code))
-         AND ('${user_os}' = ANY(string_to_array(os, ',')) OR os = 'all')
-         AND (gender = '${user_gender}' OR gender = 'all')
+         ${lang ? `AND news_lang = $1` : ""}
+         AND ($2 = ANY(user_id) OR 'all' = ANY(user_id))
+         AND ($3 = ANY(country_code) OR 'all' = ANY(country_code))
+         AND ($4 = ANY(string_to_array(os, ',')) OR os = 'all')
+         AND (gender = $5 OR gender = 'all')
       ORDER BY
          news_order
-      LIMIT ${limit}
-      OFFSET ${Number((page - 1) * limit)};
+      LIMIT $6
+      OFFSET $7;
    `;
 
    return fetchALL(
-      QUERY
+      QUERY,
+      lang || null,
+      user_id,
+      user_country_code,
+      user_os,
+      user_gender,
+      limit,
+      (page - 1) * limit
    );
 };
 const foundNews = (id) => {
