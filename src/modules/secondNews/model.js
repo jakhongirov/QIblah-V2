@@ -37,28 +37,28 @@ const newsList = (
 ) => {
    const QUERY = `
       SELECT
-         news_id,
-         news_title,
-         news_description,
-         news_button_text,
-         news_link,
-         news_lang,
-         news_image_link,
-         news_image_name,
-         news_like,
-         news_views,
-         news_create_at
+            news_id,
+            news_title,
+            news_description,
+            news_button_text,
+            news_link,
+            news_lang,
+            news_image_link,
+            news_image_name,
+            news_like,
+            news_views,
+            news_create_at
       FROM
-         second_news
+            second_news
       WHERE
-         news_active = true
-         ${lang ? `AND news_lang = $1` : ""}
-         AND ($2 = ANY(user_id) OR 'all' = ANY(user_id))
-         AND ($3 = ANY(country_code) OR 'all' = ANY(country_code))
-         AND ($4 = ANY(os) OR os = 'all')
-         AND (gender = $5 OR gender = 'all')
+            news_active = true
+            ${lang ? `AND LOWER(news_lang) = LOWER($1)` : ""}
+            AND ($2 = user_id OR 'all' = ANY(user_id))
+            AND (LOWER($3) = LOWER(country_code) OR 'all' = LOWER(country_code))
+            AND ($4 = ANY(os) OR os = 'all')
+            AND (LOWER(gender) = LOWER($5) OR gender = 'all')
       ORDER BY
-         news_order
+            news_order
       LIMIT $6
       OFFSET $7
    `;
@@ -67,9 +67,9 @@ const newsList = (
       QUERY,
       lang || null,
       user_id,
-      user_country_code,
+      user_country_code.toLowerCase(),
       user_os,
-      user_gender,
+      user_gender.toLowerCase(),
       limit,
       (page - 1) * limit
    );
