@@ -52,11 +52,11 @@ const newsList = (
          second_news
       WHERE
          news_active = true
-         ${lang ? `AND LOWER(news_lang) = LOWER($1)` : ""}
+         ${lang ? `AND news_lang = $1` : ""}
          AND ($2 = ANY(user_id) OR 'all' = ANY(user_id))
-         AND LOWER($3) = ANY(country_code)
-         AND LOWER($4) = ANY(os)
-         AND (LOWER(gender) = LOWER($5) OR gender = 'all')
+         AND ($3 = ANY(country_code) OR 'all' = ANY(country_code))
+         AND ($4 = ANY(os) OR os = 'all')
+         AND (gender = $5 OR gender = 'all')
       ORDER BY
          news_order
       LIMIT $6
