@@ -37,30 +37,30 @@ const newsList = (
 ) => {
    const QUERY = `
       SELECT
-            news_id,
-            news_title,
-            news_description,
-            news_button_text,
-            news_link,
-            news_lang,
-            news_image_link,
-            news_image_name,
-            news_like,
-            news_views,
-            news_create_at
+         news_id,
+         news_title,
+         news_description,
+         news_button_text,
+         news_link,
+         news_lang,
+         news_image_link,
+         news_image_name,
+         news_like,
+         news_views,
+         news_create_at
       FROM
-            second_news
+         second_news
       WHERE
          news_active = true
-         ${lang ? `and news_lang = '${lang}'` : ""}
-         and (user_id IN ('${user_id}') or user_id IN ('all'))
-         and (country_code IN ('${user_country_code}') or country_code IN ('all'))
-         and (${user_os} IN (os) or os = 'all')
-         and (gender = '${user_gender}' or gender = 'all')
+         ${lang ? `AND news_lang = '${lang}'` : ""}
+         AND ('${user_id}' = ANY(user_id) OR 'all' = ANY(user_id))
+         AND ('${user_country_code}' = ANY(country_code) OR 'all' = ANY(country_code))
+         AND ('${user_os}' = ANY(string_to_array(os, ',')) OR os = 'all')
+         AND (gender = '${user_gender}' OR gender = 'all')
       ORDER BY
-            news_order
-      LIMIT $6
-      OFFSET $7
+         news_order
+      LIMIT ${limit}
+      OFFSET ${Number((page - 1) * limit)};
    `;
 
    return fetchALL(
