@@ -54,8 +54,8 @@ const newsList = (
          news_active = true
          ${lang ? `AND LOWER(news_lang) = LOWER($1)` : ""}
          AND ($2 = ANY(user_id) OR 'all' = ANY(user_id))
-         AND LOWER($3) = ANY(ARRAY(SELECT LOWER(elem) FROM UNNEST(country_code) AS elem))
-         AND LOWER($4) = ANY(ARRAY(SELECT LOWER(elem) FROM UNNEST(os) AS elem))
+         AND LOWER($3) = ANY(country_code)
+         AND LOWER($4) = ANY(os)
          AND (LOWER(gender) = LOWER($5) OR gender = 'all')
       ORDER BY
          news_order
