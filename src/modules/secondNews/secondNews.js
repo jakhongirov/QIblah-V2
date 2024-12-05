@@ -145,8 +145,8 @@ module.exports = {
             payment_type
          } = req.body
 
-         const imgUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const imgName = uploadPhoto?.filename;
+         const imgUrl = uploadPhoto ? `${process.env.BACKEND_URL}/${uploadPhoto?.filename}` : null;
+         const imgName = uploadPhoto ? uploadPhoto?.filename : null;
 
          const addNews = await model.addNews(
             news_title,
