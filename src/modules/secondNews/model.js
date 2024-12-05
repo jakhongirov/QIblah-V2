@@ -55,7 +55,7 @@ const newsList = (
          ${lang ? `AND news_lang = $1` : ""}
          AND ($2 = ANY(user_id) OR 'all' = ANY(user_id))
          AND ($3 = ANY(country_code) OR 'all' = ANY(country_code))
-         AND ($4 = ANY(string_to_array(os, ',')) OR os = 'all')
+         AND (os = ANY($4) OR os = 'all')
          AND (gender = $5 OR gender = 'all')
       ORDER BY
          news_order
