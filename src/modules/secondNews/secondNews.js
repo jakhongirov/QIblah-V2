@@ -141,7 +141,7 @@ module.exports = {
             country_code,
             os,
             gender,
-            order,
+            news_order,
             payment_type
          } = req.body
 
@@ -158,7 +158,7 @@ module.exports = {
             country_code,
             os,
             gender,
-            order,
+            news_order,
             payment_type,
             imgUrl,
             imgName
@@ -200,7 +200,7 @@ module.exports = {
             country_code,
             os,
             gender,
-            order,
+            news_order,
             payment_type
          } = req.body
          const foundNews = await model.foundNews(news_id)
@@ -232,7 +232,7 @@ module.exports = {
                country_code,
                os,
                gender,
-               order,
+               news_order,
                payment_type,
                imgUrl,
                imgName

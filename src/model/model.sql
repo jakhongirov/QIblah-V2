@@ -254,7 +254,7 @@ CREATE TABLE second_news (
    country_code text [],
    os text,
    gender text,
-   order int,
+   news_order int,
    payment_type boolean DEFAULT false,
    news_active boolean DEFAULT true,
    news_create_at timestamptz DEFAULT CURRENT_TIMESTAMP

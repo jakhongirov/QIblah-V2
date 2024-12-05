@@ -58,7 +58,7 @@ const newsList = (
          AND (LOWER($4) = ANY(LOWER(os)) OR os = 'all')
          AND (LOWER(gender) = LOWER($5) OR gender = 'all')
       ORDER BY
-         order
+         news_order
       LIMIT $6
       OFFSET $7
    `;
@@ -106,7 +106,7 @@ const addNews = (
    country_code,
    os,
    gender,
-   order,
+   news_order,
    payment_type,
    imgUrl,
    imgName
@@ -123,7 +123,7 @@ const addNews = (
             country_code,
             os,
             gender,
-            order,
+            news_order,
             payment_type,
             news_image_link,
             news_image_name
@@ -155,7 +155,7 @@ const addNews = (
       country_code,
       os,
       gender,
-      order,
+      news_order,
       payment_type,
       imgUrl,
       imgName
@@ -172,7 +172,7 @@ const editNews = (
    country_code,
    os,
    gender,
-   order,
+   news_order,
    payment_type,
    imgUrl,
    imgName
@@ -190,7 +190,7 @@ const editNews = (
          country_code = $8,
          os = $9,
          gender = $10,
-         order = $11,
+         news_order = $11,
          payment_type = $12,
          news_image_link = $13,
          news_image_name = $14
@@ -211,7 +211,7 @@ const editNews = (
       country_code,
       os,
       gender,
-      order,
+      news_order,
       payment_type,
       imgUrl,
       imgName
