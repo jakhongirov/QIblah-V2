@@ -180,7 +180,7 @@ const paymnetTrackingCount = (count) => {
       FROM
          users
       WHERE
-         array_length(payment_tracking, 1) <= $1;
+         array_length(payment_tracking, 1) = $1;
    `;
 
    return fetch(QUERY, count)
@@ -192,7 +192,7 @@ const paymnetTrackingList = (count, limit, page) => {
       FROM
          users
       WHERE
-         array_length(payment_tracking, 1) <= $1
+         array_length(payment_tracking, 1) = $1
       ORDER BY
          array_length(payment_tracking, 1) DESC
       LIMIT ${limit}
