@@ -296,6 +296,31 @@ module.exports = {
       }
    },
 
+   GET_PAYMENT_TRACKING: async (req, res) => {
+      try {
+         const { count, limit, page } = req.query
+
+         const paymnetTrackingCount = await model.paymnetTrackingCount(count)
+         const paymnetTrackingList = await model.paymnetTrackingList(count, limit, page)
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success",
+            data: {
+               count: paymnetTrackingCount?.count,
+               users: paymnetTrackingList
+            }
+         })
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    GET_SEARCH: async (req, res) => {
       try {
          const {

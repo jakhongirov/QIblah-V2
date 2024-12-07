@@ -173,6 +173,34 @@ const addTracking = (user_id, currentTime) => {
 
    return fetch(QUERY, user_id, currentTime)
 }
+const paymnetTrackingCount = (count) => {
+   const QUERY = `
+      SELECT
+         count(*)
+      FROM
+         users
+      WHERE
+         array_length(payment_tracking, 1) <= $1;
+   `;
+
+   return fetch(QUERY, count)
+}
+const paymnetTrackingList = (count, limit, page) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users
+      WHERE
+         array_length(payment_tracking, 1) <= $1
+      ORDER BY
+         array_length(payment_tracking, 1) DESC
+      LIMIT ${limit}
+      OFFSET ${Number((page - 1) * limit)};
+   `;
+
+   return fetchALL(QUERY, count)
+}
 const userSearch = (phone_number, user_name, user_gender) => {
    const QUERY = `
       SELECT
@@ -1039,6 +1067,8 @@ module.exports = {
    checkUserById,
    foundUserByToken,
    addTracking,
+   paymnetTrackingCount,
+   paymnetTrackingList,
    userSearch,
    checkUserEmail,
    checkUserPhoneNumber,
