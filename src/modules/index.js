@@ -379,7 +379,7 @@ router
   .get('/user/:id', users.GET_ID)
   .get('/user/admin/:id', users.GET_ID_ADMIN)
   .get('/user/token/:token', users.GET_TOKEN)
-  .get('/user/payment-tracking', users.GET_PAYMENT_TRACKING)
+  .get('/user/payment/tracking', users.GET_PAYMENT_TRACKING)
   .post('/user/search', users.GET_SEARCH)
   .post('/user/register', users.REGISTER_USER)
   .post('/user/register/temporaryuser', users.TEMPORARY_USER)
