@@ -81,7 +81,7 @@ const addPayment = (name, price) => {
          ) VALUES (
             $1, 
             $2 
-         ) RETURNIG *;
+         ) RETURNING *;
    `;
 
    return fetch(QUERY, name, price)
