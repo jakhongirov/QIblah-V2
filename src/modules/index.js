@@ -30,6 +30,7 @@ const additionalVotes = require('./votes/votes')
 const mapKey = require('./map/map')
 const click = require('./click/click')
 const paymentCategories = require('./payment/payment')
+const paymentPrice = require('./payment/paymentPrice')
 const paymentCheck = require('./payment/check')
 const uzum = require('./uzum/uzum')
 const transactions = require('./transactions/transactions')
@@ -567,6 +568,12 @@ router
   .post('/payment/category/add', AUTH, paymentCategories.POST)
   .put('/payment/category/edit', AUTH, paymentCategories.PUT)
   .delete('/payment/category/delete', AUTH, paymentCategories.DELETE)
+
+  //PAYMENT PRICE
+  .get('/payment/prices', paymentPrice.GET)
+  .post('/payment/price/add', AUTH, paymentPrice.POST)
+  .put('/payment/price/edit', AUTH, paymentPrice.PUT)
+  .delete('/payment/price/delete', AUTH, paymentPrice.DELETE)
 
   // PAYMENT CHECK
   .get('/payment/check/:user_id', paymentCheck.GET)

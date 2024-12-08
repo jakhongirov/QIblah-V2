@@ -389,6 +389,13 @@ CREATE TABLE payment_categories (
    category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE payment (
+   id bigserial PRiMARY key,
+   name text,
+   price NUMERIC(10, 2),
+   create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE languages (
    id bigserial PRiMARY KEY,
    name text,

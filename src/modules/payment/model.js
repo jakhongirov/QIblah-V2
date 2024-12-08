@@ -61,6 +61,59 @@ const deleteCategory = (id) => {
    return fetch(QUERY, id)
 }
 
+// PAYMENT PRICE
+const payment = () => {
+   const QUERY = `
+      SELECT
+         *
+      FROM  
+         payment
+   `;
+
+   return fetchALL(QUERY)
+}
+const addPayment = (name, price) => {
+   const QUERY = `
+      INSERT INTO
+         payment (
+            name,
+            price   
+         ) VALUES (
+            $1, 
+            $2 
+         ) RETURNIG *;
+   `;
+
+   return fetch(QUERY, name, price)
+}
+const editPayment = (
+   id,
+   price
+) => {
+   const QUERY = `
+      UPDATE
+         payment
+      SET
+         price = $2
+      WHERE
+         id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, id, price)
+}
+const deletePayment = (id) => {
+   const QUERY = `
+      DELETE FROM
+         payment
+      WHERE
+         id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, id)
+}
+
 // CHECK
 const foundUser = (user_id) => {
    const QUERY = `
@@ -80,5 +133,9 @@ module.exports = {
    addCategory,
    updateCategory,
    deleteCategory,
+   payment,
+   addPayment,
+   editPayment,
+   deletePayment,
    foundUser
 }
