@@ -68,6 +68,8 @@ const payment = () => {
          *
       FROM  
          payment
+      ORDER BY
+         id
    `;
 
    return fetchALL(QUERY)
