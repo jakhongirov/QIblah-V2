@@ -61,7 +61,7 @@ module.exports = {
                   status: 200,
                   message: "Success",
                   data: newsList?.map(e => {
-                        e.news_description = e.news_description.replace(/%user_id%/g, foundUser?.user_id);
+                        e.news_description = e.news_description.replace('%user_id%', foundUser?.user_id);
                      return e;
                   })
                });
