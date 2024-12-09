@@ -104,7 +104,7 @@ module.exports = {
                   message: "Success",
                   data: {
                      ...foundNews,
-                     news_description: foundNews?.news_description.replace(/%user_id%/g, foundUser?.user_id) // Modify the news_description
+                     news_description: foundNews?.news_description.replace('%user_id%', foundUser?.user_id) // Modify the news_description
                   }
                });
             } else {
