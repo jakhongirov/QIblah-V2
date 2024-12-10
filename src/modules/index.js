@@ -633,7 +633,7 @@ router
 
   // Photos
   .get('/photos/list', AUTH, photos.GET)
-  .post('/photo/add', AUTH, FileUpload.single("audio"), photos.ADD_PHOTO)
+  .post('/photo/add', AUTH, FileUpload.single("photo"), photos.ADD_PHOTO)
   .delete('/photo/delete', AUTH, photos.DELETE_PHOTO)
 
 module.exports = router
