@@ -45,6 +45,7 @@ const newsList = (
          news_lang,
          news_image_link,
          news_image_name,
+         payment_type as main_news,
          news_like,
          news_views,
          news_create_at
