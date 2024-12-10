@@ -6,7 +6,7 @@ const photos = (limit, page) => {
          *
       FROM
          photos
-      ORDER
+      ORDER BY
          id DESC
       LIMIT ${limit}
       OFFSET ${Number((page - 1) * limit)}
