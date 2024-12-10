@@ -267,6 +267,13 @@ CREATE TABLE users_second_news (
    create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE photos (
+   id bigserial PRiMARY KEY,
+   image_link text,
+   image_name text,
+   create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE tapes (
    tape_id bigserial PRiMARY KEY,
    tape_date text,

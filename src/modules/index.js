@@ -41,6 +41,7 @@ const prayCategories = require('./pray/categories/categories')
 const praySubCategories = require('./pray/subCategories/subCategories')
 const prayDuos = require('./pray/duos/duos')
 const prayElements = require('./pray/elements/elements')
+const photos = require('./photos/photos')
 
 router
 
@@ -629,5 +630,10 @@ router
   .post('/pray/elements/add', AUTH, FileUpload.fields([{ name: "audio" }, { name: "image" }]), prayElements.ADD_ELEMENTS)
   .put('/pray/elements/edit', AUTH, FileUpload.fields([{ name: "audio" }, { name: "image" }]), prayElements.EDIT_ELEMENT)
   .delete('/pray/elements/delete', AUTH, prayElements.DELETE_ELEMENT)
+
+  // Photos
+  .get('/photos/list', AUTH, photos.GET)
+  .post('/photo/add', AUTH, photos.ADD_PHOTO)
+  .delete('/photo/delete', AUTH, photos.DELETE_PHOTO)
 
 module.exports = router
