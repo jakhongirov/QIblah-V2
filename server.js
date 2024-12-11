@@ -46,7 +46,6 @@ bot.on('message', async (msg) => {
    const username = msg.from.first_name;
 
    if (text?.startsWith('/start') && text?.split(' ').length > 1) {
-      // await handleStartCommand(msg, chatId, text, username);
       bot.sendMessage(chatId, `Telegram orqali ro'yxatdan o'tish vaqtincha ishlamayapti. Iltimos, Qiblah ilovasiga qaytib, Telefon raqam orqali ro'yxatdan o'tishga urinib ko'ring.`)
    } else if (text == '/start') {
       const content = `Assalomu alaykum, ${username}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${username}, пожалуйста выберите язык бота:`;

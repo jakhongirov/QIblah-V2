@@ -57,13 +57,15 @@ module.exports = {
             )
 
             if (newsList?.length > 0) {
+               const news = await newsList?.map(e => {
+                  e.news_description = e.news_description.replace("%user_id%", user_id);
+                  return e;
+               })
+               
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: newsList?.map(e => {
-                        e.news_description = e.news_description.replace('%user_id%', foundUser?.user_id);
-                     return e;
-                  })
+                  data: news
                });
             } else {
                return res.status(404).json({
@@ -104,7 +106,7 @@ module.exports = {
                   message: "Success",
                   data: {
                      ...foundNews,
-                     news_description: foundNews?.news_description.replace('%user_id%', foundUser?.user_id) // Modify the news_description
+                     news_description: foundNews?.news_description.replace("%user_id%", user_id) // Modify the news_description
                   }
                });
             } else {

@@ -36,6 +36,8 @@ CREATE TABLE users (
    payment_type text,
    payment_tracking json [],
    tracking text [],
+   chat_id bigint,
+   bot_step text,
    user_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -251,7 +253,7 @@ CREATE TABLE second_news (
    news_like int DEFAULT 0,
    news_views int DEFAULT 0,
    user_id text [],
-   country_code text [],
+   r text [],
    os text,
    gender text,
    news_order int,
