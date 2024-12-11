@@ -60,7 +60,7 @@ module.exports = {
                const updatedNews = newsList?.map(e => {
                   return {
                      ...e,
-                     news_description: String(e.news_description || "").replace("%user_id%", user_id),
+                     news_description: String(e.news_description).replace("%user_id%", foundUser?.user_id),
                   };
                });
 
