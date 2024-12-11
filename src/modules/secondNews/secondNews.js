@@ -57,15 +57,21 @@ module.exports = {
             )
 
             if (newsList?.length > 0) {
-               const news = await newsList?.map(e => {
-                  e.news_description = e.news_description.replace("%user_id%", user_id);
-                  return e;
-               })
-               
+               const updatedNews = newsList?.map(e => {
+                  // Ensure e.news_description exists and is a string
+                  if (typeof e.news_description === "string") {
+                     return {
+                        ...e,
+                        news_description: e.news_description.replace("%user_id%", user_id),
+                     };
+                  }
+                  return e; // Return the original object if no replacement was made
+               });
+
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: news
+                  data: updatedNews
                });
             } else {
                return res.status(404).json({
