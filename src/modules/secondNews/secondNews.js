@@ -58,9 +58,13 @@ module.exports = {
 
             if (newsList?.length > 0) {
                const updatedNews = newsList?.map(e => {
+                  console.log("Before:", e.news_description);
+                  const userId = foundUser?.user_id || "";
+                  const updatedDescription = String(e.news_description || "").replace("%user_id%", userId);
+                  console.log("After:", updatedDescription);
                   return {
                      ...e,
-                     news_description: String(e.news_description).replace("%user_id%", foundUser?.user_id),
+                     news_description: updatedDescription,
                   };
                });
 
