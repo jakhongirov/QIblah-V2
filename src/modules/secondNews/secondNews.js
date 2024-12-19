@@ -11,7 +11,7 @@ module.exports = {
          if (limit && page) {
             const newsAdminList = await model.newsAdminList(limit, page)
 
-            if (newsAdminList) {
+            if (newsAdminList?.length > 0) {
                return res.status(200).json({
                   status: 200,
                   message: "Success",

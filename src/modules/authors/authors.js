@@ -35,8 +35,8 @@ module.exports = {
          const uploadPhoto = req.file;
          const { author_name, photo_link } = req.body
 
-         const imgUrl = photo_link ? photo_link : `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const imgName = photo_link ? null : uploadPhoto?.filename;
+         const imgUrl = photo_link ? photo_link : uploadPhoto ? `${process.env.BACKEND_URL}/${uploadPhoto?.filename}` : null;
+         const imgName = photo_link ? null : uploadPhoto ? uploadPhoto?.filename : null;
 
          const addAuthor = await model.addAuthor(author_name, imgUrl, imgName)
 
