@@ -85,6 +85,30 @@ module.exports = {
       }
    },
 
+   ADD_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `surahs.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            await model.addAudio(
+               item?.author_id,
+               item?.sura_id,
+               item?.audio_time,
+               item?.audio_link,
+               item?.audio_link?.split('/')[item?.audio_link?.split('/').length - 1]
+            )
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    ADD_AUDIO: async (req, res) => {
       try {
          const uploadPhoto = req.file;

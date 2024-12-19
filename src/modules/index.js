@@ -485,6 +485,7 @@ router
   // AUDIOS API
   .get('/audios/list', audios.GET)
   .get('/audio/:sura_id', audios.GET_SURA_ID)
+  .get('/audio/add/file', AUTH, audios.ADD_FILE)
   .post('/audio/add', AUTH, FileUpload.single("audio"), audios.ADD_AUDIO)
   .put('/audio/edit', AUTH, FileUpload.single("audio"), audios.UPDATE_AUDIO)
   .delete('/audio/delete', AUTH, audios.DELETE_AUDIO)
