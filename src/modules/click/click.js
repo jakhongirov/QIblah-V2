@@ -137,7 +137,9 @@ module.exports = {
                   { parse_mode: "HTML" }
                );
             } else if (merchant_trans_id == "Lifeplanneruz") {
-               secondBot.sendMessage(param2, "https://docs.google.com/spreadsheets/d/16cwgMTQf6UjiPdpYxZLwns1j5k2OGj_UjJLs9dg3gvI/edit?usp=sharing")
+               axios.get(`http://localhost:5000/${param2}`).then(response => {
+                  console.log('Response Data:', response.data);
+               })
             } else {
                const url = 'http://185.217.131.150:777/api/v1/invoice'; // The API endpoint
                const data = {
