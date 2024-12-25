@@ -1,5 +1,5 @@
 const model = require('./model')
-const bot = require('../../lib/bot')
+const { bot } = require('../../lib/bot')
 
 // let stringToEncode = "uzum:bank";
 

@@ -136,6 +136,8 @@ module.exports = {
                   `<strong>Click:</strong>\n\nUser token:${foundUser?.user_token[foundUser?.user_token?.length - 1]}\nUser id: ${foundTrans?.user_id}\nTarif: ${foundPayment?.category_name}\nAmount: ${foundTrans?.amount}\nDate: ${finalFormat}`,
                   { parse_mode: "HTML" }
                );
+            } else if (merchant_trans_id == "Lifeplanneruz") {
+               secondBot.sendMessage(param2, "https://docs.google.com/spreadsheets/d/16cwgMTQf6UjiPdpYxZLwns1j5k2OGj_UjJLs9dg3gvI/edit?usp=sharing")
             } else {
                const url = 'http://185.217.131.150:777/api/v1/invoice'; // The API endpoint
                const data = {
