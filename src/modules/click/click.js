@@ -137,7 +137,7 @@ module.exports = {
                   { parse_mode: "HTML" }
                );
             } else if (merchant_trans_id == "Lifeplanneruz") {
-               axios.get(`http://localhost:5000/${param2}`).then(response => {
+               axios.get(`http://localhost:5000/${param2}/${param3}`).then(response => {
                   console.log('Response Data:', response.data);
                })
             } else {
