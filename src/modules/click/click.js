@@ -1,6 +1,6 @@
 const model = require('./model')
 const iconv = require('iconv-lite');
-const bot = require('../../lib/bot')
+const { bot } = require('../../lib/bot')
 const axios = require("axios")
 
 module.exports = {
