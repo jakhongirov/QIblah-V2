@@ -1,6 +1,4 @@
-const {
-   fetch
-} = require('./src/lib/postgres')
+const { fetch } = require('./src/lib/postgres')
 
 const foundUser = (token) => {
    const QUERY = `
@@ -137,7 +135,7 @@ const foundMsg = (date) => {
       FROM
          messages
       WHERE
-         message_dete = $1;
+         message_dete BETWEEN $1 - 2 AND $1;
    `;
 
    return fetch(QUERY, date)
@@ -150,22 +148,48 @@ const addUserComment = (id, text) => {
          user_comment = array_append(user_comment, $2)
       WHERE
          user_id = $1
-      RETURNING *;
+      RETURNIG *;
    `;
 
    return fetch(QUERY, id, text)
 }
-const foundUserByChatId = (chat_id) => {
+const foundUserChatId = (chatId) => {
    const QUERY = `
       SELECT
          *
       FROM
          users
       WHERE
-         $1 = ANY(user_comment);
+         chat_id = $1;
    `;
 
-   return fetch(QUERY, chat_id)
+   return fetch(QUERY, chatId)
+}
+const editStep = (chat_id, step) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         bot_step = $2
+      WHERE
+         chat_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, chat_id, step)
+}
+const addChatId = (user_id, chatId) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         chat_id = $2
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id, chatId)
 }
 
 module.exports = {
@@ -178,5 +202,7 @@ module.exports = {
    addMessage,
    foundMsg,
    addUserComment,
-   foundUserByChatId
+   foundUserChatId,
+   editStep,
+   addChatId
 }
