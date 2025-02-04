@@ -14,11 +14,11 @@ module.exports = {
                   status: 200,
                   message: "Success",
                   data: {
-                     click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}`,
                      uzum: `https://www.uzumbank.uz/open-service?serviceId=498617211&ilova=Qiblah&id=${foundUser?.user_id}`,
                      payme: `https://checkout.paycom.uz/m=6697d19280d270b331826481;ac.user_id=${foundUser?.user_id};ac.ilova=Qiblah;`
                   }
                })
+               // click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}`,
             } else {
                return res.status(200).json({
                   status: 200,
