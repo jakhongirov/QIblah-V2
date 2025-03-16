@@ -52,6 +52,7 @@ module.exports = {
                const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${param2}/${param3}/${amount}`);
 
                if (response.status == 200) {
+                  makeCode(4)
                   return res.status(200).json({
                      merchant_prepare_id: code,
                      merchant_trans_id: merchant_trans_id,
