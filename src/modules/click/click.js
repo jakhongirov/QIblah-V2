@@ -49,7 +49,7 @@ module.exports = {
                })
 
             } else if (merchant_trans_id == 'Xisobchi_AI') {
-               const response = await axios.get(`https://xisobchiai.admob.uz/payment/check/${param2}/${param3}/${amount}`);
+               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${param2}/${param3}/${amount}`);
 
                if (response.status == 200) {
                   return res.status(200).json({
@@ -160,7 +160,7 @@ module.exports = {
                   console.log('Response Data:', response.data);
                })
             } else if (merchant_trans_id == 'Xisobchi_AI') {
-               const response = await axios.get(`https://xisobchiai.admob.uz/payment/success/${param2}/${param3}`);
+               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${param2}/${param3}`);
                console.log('Response Data:', response.data);
             } else {
                const url = 'http://185.217.131.150:777/api/v1/invoice'; // The API endpoint
