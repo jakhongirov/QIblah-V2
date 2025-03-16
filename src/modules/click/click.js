@@ -37,18 +37,37 @@ module.exports = {
 
                const monthToAdd = Number(rate?.month);
                await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note, foundUser?.user_token[Number(foundUser?.user_token?.length - 1)], rate?.category_name, "prepare")
+
+               makeCode(4)
+
+               return res.status(200).json({
+                  merchant_prepare_id: code,
+                  merchant_trans_id: merchant_trans_id,
+                  click_trans_id: click_trans_id,
+                  error: error,
+                  error_note: error_note
+               })
+
+            } else if (merchant_trans_id == 'Xisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai.admob.uz/payment/check/${param2}/${param3}/${amount}`);
+
+               if (response.status = 200) {
+                  return res.status(200).json({
+                     merchant_prepare_id: code,
+                     merchant_trans_id: merchant_trans_id,
+                     click_trans_id: click_trans_id,
+                     error: error,
+                     error_note: error_note
+                  })
+               } else {
+                  return res.status(400).json({
+                     status: 400,
+                     message: response.data.message
+                  })
+               }
             }
          }
 
-         makeCode(4)
-
-         return res.status(200).json({
-            merchant_prepare_id: code,
-            merchant_trans_id: merchant_trans_id,
-            click_trans_id: click_trans_id,
-            error: error,
-            error_note: error_note
-         })
 
       } catch (error) {
          console.log(error)
@@ -140,6 +159,9 @@ module.exports = {
                axios.get(`http://localhost:5000/${param2}/${param3}`).then(response => {
                   console.log('Response Data:', response.data);
                })
+            } else if (merchant_trans_id == 'Xisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai.admob.uz/payment/success/${param2}/${param3}`);
+               console.log('Response Data:', response.data);
             } else {
                const url = 'http://185.217.131.150:777/api/v1/invoice'; // The API endpoint
                const data = {
