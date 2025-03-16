@@ -51,7 +51,7 @@ module.exports = {
             } else if (merchant_trans_id == 'Xisobchi_AI') {
                const response = await axios.get(`https://xisobchiai.admob.uz/payment/check/${param2}/${param3}/${amount}`);
 
-               if (response.status = 200) {
+               if (response.status == 200) {
                   return res.status(200).json({
                      merchant_prepare_id: code,
                      merchant_trans_id: merchant_trans_id,
