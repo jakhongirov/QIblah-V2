@@ -372,6 +372,7 @@ CREATE TABLE uzum (
    expires_month int,
    amount int,
    tarif text,
+   ilova text,
    status text,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );

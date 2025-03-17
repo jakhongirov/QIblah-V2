@@ -47,7 +47,8 @@ const addTransId = (
    monthToAdd,
    amount,
    tarif,
-   status
+   status,
+   ilova
 ) => {
    const QUERY = `
       INSERT INTO
@@ -58,7 +59,8 @@ const addTransId = (
             expires_month,
             amount,
             tarif,
-            status
+            status,
+            ilova
          ) VALUES (
             $1,
             $2,
@@ -66,7 +68,8 @@ const addTransId = (
             $4,
             $5,
             $6,
-            $7
+            $7,
+            $8
          ) RETURNING *;
    `;
 
@@ -78,7 +81,8 @@ const addTransId = (
       monthToAdd,
       amount,
       tarif,
-      status
+      status,
+      ilova
    )
 }
 const foundTrans = (transId) => {

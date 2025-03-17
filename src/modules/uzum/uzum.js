@@ -1,5 +1,6 @@
 const model = require('./model')
 const { bot } = require('../../lib/bot')
+const axios = require("axios")
 
 // let stringToEncode = "uzum:bank";
 
@@ -137,6 +138,52 @@ module.exports = {
                         const foundUser = await model.foundUser(params.id)
                         const foundPayment = await model.foundPayment(params?.tarif);
                         const monthToAdd = Number(foundPayment?.month);
+
+                        if (params.ilova == 'Xisobchi_AI') {
+                           const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${amount}`);
+
+                           if (response.status == 200) {
+                              await model.addTransId(
+                                 params.id,
+                                 'XisobchiAi',
+                                 transId,
+                                 monthToAdd,
+                                 amount,
+                                 params.tarif,
+                                 "created",
+                                 params.ilova
+                              )
+
+                              return res.status(200).json({
+                                 serviceId: serviceId,
+                                 transId: transId,
+                                 status: "CREATED",
+                                 transTime: time,
+                                 data: {
+                                    id: {
+                                       value: params?.id
+                                    },
+                                    tarif: {
+                                       value: params?.tarif
+                                    },
+                                    ilova: {
+                                       value: params?.ilova
+                                    }
+                                 },
+                                 amount: amount
+                              })
+
+                           } else {
+                              return res.status(400).json({
+                                 serviceId: serviceId,
+                                 transId: transId,
+                                 status: "FAILED",
+                                 transTime: time,
+                                 errorCode: "99999"
+                              })
+                           }
+                        }
+
                         await model.addTransId(
                            params.id,
                            foundUser?.user_token[foundUser?.user_token?.length - 1],
@@ -144,7 +191,8 @@ module.exports = {
                            monthToAdd,
                            amount,
                            params.tarif,
-                           "created"
+                           "created",
+                           params.ilova
                         )
 
                         return res.status(200).json({
@@ -178,6 +226,52 @@ module.exports = {
                      const foundUser = await model.foundUser(params.id)
                      const foundPayment = await model.foundPayment(params?.tarif);
                      const monthToAdd = Number(foundPayment?.month);
+
+                     if (params.ilova == 'Xisobchi_AI') {
+                        const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${amount}`);
+
+                        if (response.status == 200) {
+                           await model.addTransId(
+                              params.id,
+                              'XisobchiAi',
+                              transId,
+                              monthToAdd,
+                              amount,
+                              params.tarif,
+                              "created",
+                              params.ilova
+                           )
+
+                           return res.status(200).json({
+                              serviceId: serviceId,
+                              transId: transId,
+                              status: "CREATED",
+                              transTime: time,
+                              data: {
+                                 id: {
+                                    value: params?.id
+                                 },
+                                 tarif: {
+                                    value: params?.tarif
+                                 },
+                                 ilova: {
+                                    value: params?.ilova
+                                 }
+                              },
+                              amount: amount
+                           })
+
+                        } else {
+                           return res.status(400).json({
+                              serviceId: serviceId,
+                              transId: transId,
+                              status: "FAILED",
+                              transTime: time,
+                              errorCode: "99999"
+                           })
+                        }
+                     }
+
                      await model.addTransId(
                         params.id,
                         foundUser?.user_token[foundUser?.user_token?.length - 1],
@@ -185,7 +279,8 @@ module.exports = {
                         monthToAdd,
                         amount,
                         params.tarif,
-                        "created"
+                        "created",
+                        params.ilova
                      )
 
                      return res.status(200).json({
@@ -261,6 +356,27 @@ module.exports = {
                   })
                } else {
                   const foundTrans = await model.foundTrans(transId)
+
+                  if (foundTrans?.ilova == 'Xisobchi_AI') {
+                     const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${params.id}/${params?.tarif}`);
+
+                     if (response.status == 200) {
+                        bot.sendMessage(634041736,
+                           `<strong>Uzum:</strong>\n\nIlova:${param.ilova}\nUser id: ${foundTrans?.user_id}\nTarif: ${foundPayment?.category_name}\nAmount: ${foundTrans?.amount}\nDate: ${finalFormat}`,
+                           { parse_mode: "HTML" }
+                        );
+
+                        return res.status(200).json({
+                           serviceId: serviceId,
+                           transId: transId,
+                           status: "CONFIRMED",
+                           confirmTime: time,
+                        })
+
+                     }
+                  }
+
+                  // const foundTrans = await model.foundTrans(transId)
                   const foundPayment = await model.foundPayment(foundTrans?.tarif);
                   const today = new Date();
                   const expiresDate = new Date(today);
