@@ -136,9 +136,11 @@ module.exports = {
 
                      if (differenceInHours >= 1) {
 
+                        console.log(params.ilova)
                         if (params.ilova == 'Xisobchi_AI') {
+                           console.log(Math.floor(Number(amount) / 100))
                            const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${Math.floor(Number(amount) / 100)}`);
-
+                           console.log(response.data)
                            if (response.status == 200) {
                               await model.addTransId(
                                  params.id,
