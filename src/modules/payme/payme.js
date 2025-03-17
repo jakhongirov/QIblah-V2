@@ -1,6 +1,6 @@
 require('dotenv').config();
 const model = require('./model')
-const {bot} = require('../../lib/bot')
+const { bot } = require('../../lib/bot')
 
 module.exports = {
    PAYMENT: async (req, res) => {
@@ -11,6 +11,8 @@ module.exports = {
             console.log("CheckPerformTransaction", req.body)
             const foundUser = await model.foundUser(params?.account?.user_id)
             const foundPayment = await model.foundPayment(params?.account?.tarif)
+
+            console.log(params?.account?.ilova)
 
             if (foundPayment && foundUser) {
                return res.status(200).json({
