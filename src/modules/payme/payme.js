@@ -293,7 +293,7 @@ module.exports = {
 
                if (response.status == 200) {
                   bot.sendMessage(634041736,
-                     `<strong>PayMe:</strong>\n\nIlova: ${params.account.ilova}\nUser id: ${transaction?.user_id}\nTarif: ${foundPayment?.category_name}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
+                     `<strong>PayMe:</strong>\n\nIlova: ${params.account.ilova}\nUser id: ${transaction?.user_id}\nTarif: ${params.account.tarif}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
                      { parse_mode: "HTML" }
                   );
 

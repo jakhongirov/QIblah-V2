@@ -358,11 +358,11 @@ module.exports = {
                   const foundTrans = await model.foundTrans(transId)
 
                   if (foundTrans?.ilova == 'Xisobchi_AI') {
-                     const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${params.id}/${params?.tarif}`);
+                     const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${foundTrans.user_id}/${foundTrans?.tarif}`);
 
                      if (response.status == 200) {
                         bot.sendMessage(634041736,
-                           `<strong>Uzum:</strong>\n\nIlova:${param.ilova}\nUser id: ${foundTrans?.user_id}\nTarif: ${foundPayment?.category_name}\nAmount: ${foundTrans?.amount}\nDate: ${finalFormat}`,
+                           `<strong>Uzum:</strong>\n\nIlova:${foundTrans.ilova}\nUser id: ${foundTrans?.user_id}\nTarif: ${foundTrans?.tarif}\nAmount: ${foundTrans?.amount}\nDate: ${finalFormat}`,
                            { parse_mode: "HTML" }
                         );
 
