@@ -57,7 +57,8 @@ const addTransaction = (
    amount,
    id,
    time,
-   user_token
+   user_token,
+   ilova
 ) => {
    const QUERY = `
       INSERT INTO
@@ -68,7 +69,8 @@ const addTransaction = (
             amount,
             transaction,
             create_time,
-            user_token
+            user_token,
+            ilova
          ) VALUES (
             $1,
             $2,
@@ -76,7 +78,8 @@ const addTransaction = (
             $4,
             $5,
             $6,
-            $7
+            $7,
+            $8
          ) RETURNING *;
    `;
 
@@ -88,7 +91,8 @@ const addTransaction = (
       amount,
       id,
       time,
-      user_token
+      user_token,
+      ilova
    )
 };
 const updateTransactionPerform = (

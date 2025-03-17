@@ -99,7 +99,8 @@ module.exports = {
                      amount,
                      params.id,
                      params?.time,
-                     'xisobchiAi'
+                     'xisobchiAi',
+                     params?.account?.ilova,
                   );
 
                   console.log(newTransaction)
@@ -184,7 +185,8 @@ module.exports = {
                   amount,
                   params.id,
                   params?.time,
-                  foundUser?.user_token[foundUser?.user_token?.length - 1]
+                  foundUser?.user_token[foundUser?.user_token?.length - 1],
+                  params?.account?.ilova,
                );
 
                console.log(newTransaction)
@@ -288,12 +290,12 @@ module.exports = {
             );
 
 
-            if (params.account.ilova == 'Xisobchi_AI') {
-               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${params.account.user_id}/${params.account.tarif}`);
+            if (transaction.ilova == 'Xisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.tarif}`);
 
                if (response.status == 200) {
                   bot.sendMessage(634041736,
-                     `<strong>PayMe:</strong>\n\nIlova: ${params.account.ilova}\nUser id: ${transaction?.user_id}\nTarif: ${params.account.tarif}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
+                     `<strong>PayMe:</strong>\n\nIlova: ${transaction.ilova}\nUser id: ${transaction?.user_id}\nTarif: ${transaction.tarif}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
                      { parse_mode: "HTML" }
                   );
 
