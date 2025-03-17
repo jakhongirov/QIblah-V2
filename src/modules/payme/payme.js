@@ -1,6 +1,7 @@
 require('dotenv').config();
 const model = require('./model')
 const { bot } = require('../../lib/bot')
+const axios = require('axios')
 
 module.exports = {
    PAYMENT: async (req, res) => {
@@ -12,7 +13,17 @@ module.exports = {
             const foundUser = await model.foundUser(params?.account?.user_id)
             const foundPayment = await model.foundPayment(params?.account?.tarif)
 
-            console.log(params?.account?.ilova)
+            let { amount } = params;
+            amount = Math.floor(amount / 100);
+
+            if (params.account.ilova == 'Xisobchi_AI') {
+               return res.status(200).json({
+                  result: {
+                     allow: true
+                  }
+               })
+            }
+
 
             if (foundPayment && foundUser) {
                return res.status(200).json({
@@ -39,6 +50,86 @@ module.exports = {
 
             let { amount } = params;
             amount = Math.floor(amount / 100);
+
+            if (params.account.ilova == 'Xisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.account.user_id}/${params.account.tarif}/${amount}`);
+
+               if (response.status == 200) {
+                  const transaction = await model.foundTransaction(params.id);
+                  if (transaction) {
+                     if (transaction.state !== 1) {
+                        return res.json({
+                           error: {
+                              name: "CantDoOperation",
+                              code: -31008,
+                              message: {
+                                 uz: "Biz operatsiyani bajara olmaymiz",
+                                 ru: "Мы не можем сделать операцию",
+                                 en: "We can't do operation",
+                              }
+                           },
+                           id: id
+                        });
+                     }
+
+                     const currentTime = Date.now();
+                     const expirationTime = (currentTime - transaction.create_time) / 60000 < 12; // 12m
+                     if (!expirationTime) {
+                        await model.updateTransaction(params.id, -1, 4,);
+                        return res.json({
+                           error: {
+                              name: "CantDoOperation",
+                              code: -31008,
+                              message: {
+                                 uz: "Biz operatsiyani bajara olmaymiz",
+                                 ru: "Мы не можем сделать операцию",
+                                 en: "We can't do operation",
+                              },
+                           },
+                           id: id
+                        });
+                     }
+
+                  }
+
+                  const newTransaction = await model.addTransaction(
+                     params?.account?.user_id,
+                     params?.account?.tarif,
+                     1,
+                     amount,
+                     params.id,
+                     params?.time,
+                     'xisobchiAi'
+                  );
+
+                  console.log(newTransaction)
+
+                  return res.json({
+                     result: {
+                        transaction: newTransaction.id,
+                        state: 1,
+                        create_time: Number(newTransaction.create_time),
+                        receivers: null
+                     }
+                  })
+
+
+               } else {
+                  return res.json({
+                     error: {
+                        name: "CantDoOperation",
+                        code: -31008,
+                        message: {
+                           uz: "Biz operatsiyani bajara olmaymiz",
+                           ru: "Мы не можем сделать операцию",
+                           en: "We can't do operation",
+                        }
+                     },
+                     id: id
+                  });
+               }
+            }
+
 
             const transaction = await model.foundTransaction(params.id);
             const foundUser = await model.foundUser(params?.account?.user_id)
@@ -195,6 +286,27 @@ module.exports = {
                2,
                currentTime,
             );
+
+
+            if (params.account.ilova == 'Xisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${params.account.user_id}/${params.account.tarif}`);
+
+               if (response.status == 200) {
+                  bot.sendMessage(634041736,
+                     `<strong>PayMe:</strong>\n\nIlova: ${params.account.ilova}\nUser id: ${transaction?.user_id}\nTarif: ${foundPayment?.category_name}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
+                     { parse_mode: "HTML" }
+                  );
+
+                  return res.json({
+                     result: {
+                        perform_time: Number(currentTime),
+                        transaction: transaction.id,
+                        state: 2,
+                     }
+                  })
+               }
+
+            }
 
             const foundPayment = await model.foundPayment(transaction?.payment)
             const today = new Date();
