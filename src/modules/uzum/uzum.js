@@ -135,12 +135,9 @@ module.exports = {
                      console.log(differenceInHours)
 
                      if (differenceInHours >= 1) {
-                        const foundUser = await model.foundUser(params.id)
-                        const foundPayment = await model.foundPayment(params?.tarif);
-                        const monthToAdd = Number(foundPayment?.month);
 
                         if (params.ilova == 'Xisobchi_AI') {
-                           const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${Number(amount) / 100}`);
+                           const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${Math.floor(Number(amount) / 100)}`);
 
                            if (response.status == 200) {
                               await model.addTransId(
@@ -184,6 +181,10 @@ module.exports = {
                            }
                         }
 
+                        const foundUser = await model.foundUser(params.id)
+                        const foundPayment = await model.foundPayment(params?.tarif);
+                        const monthToAdd = Number(foundPayment?.month);
+
                         await model.addTransId(
                            params.id,
                            foundUser?.user_token[foundUser?.user_token?.length - 1],
@@ -223,9 +224,6 @@ module.exports = {
                         })
                      }
                   } else {
-                     const foundUser = await model.foundUser(params.id)
-                     const foundPayment = await model.foundPayment(params?.tarif);
-                     const monthToAdd = Number(foundPayment?.month);
 
                      if (params.ilova == 'Xisobchi_AI') {
                         const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${Number(amount) / 100}`);
@@ -271,6 +269,10 @@ module.exports = {
                            })
                         }
                      }
+
+                     const foundUser = await model.foundUser(params.id)
+                     const foundPayment = await model.foundPayment(params?.tarif);
+                     const monthToAdd = Number(foundPayment?.month);
 
                      await model.addTransId(
                         params.id,
