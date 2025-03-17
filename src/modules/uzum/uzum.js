@@ -134,7 +134,7 @@ module.exports = {
                      const differenceInHours = checkDateDifference(timestamp, foundTransByUser?.transaction_create_at)
                      console.log(differenceInHours)
 
-                     if (differenceInHours >= 1) {
+                     if (Math.floor(differenceInHours) >= 1) {
 
                         console.log(params.ilova)
                         if (params.ilova == 'Xisobchi_AI') {
