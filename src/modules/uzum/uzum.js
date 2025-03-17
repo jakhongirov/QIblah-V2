@@ -226,7 +226,7 @@ module.exports = {
                   } else {
 
                      if (params.ilova == 'Xisobchi_AI') {
-                        const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${Number(amount) / 100}`);
+                        const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/check/${params.id}/${params?.tarif}/${Math.floor(Number(amount) / 100)}`);
 
                         if (response.status == 200) {
                            await model.addTransId(
