@@ -291,7 +291,7 @@ module.exports = {
 
 
             if (transaction.ilova == 'Xisobchi_AI') {
-               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.tarif}`);
+               const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}`);
 
                if (response.status == 200) {
                   bot.sendMessage(634041736,

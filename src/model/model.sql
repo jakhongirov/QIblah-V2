@@ -389,7 +389,7 @@ CREATE TABLE payme (
    cancel_time bigint DEFAULT 0,
    transaction text,
    reason int,
-   tarif text,
+   ilova text,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
