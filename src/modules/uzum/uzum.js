@@ -363,6 +363,7 @@ module.exports = {
                   })
                } else {
                   const foundTrans = await model.foundTrans(transId)
+                  console.log(foundTrans)
 
                   if (foundTrans?.ilova == 'Xisobchi_AI') {
                      const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${foundTrans.user_id}/${foundTrans?.tarif}`);
