@@ -24,6 +24,22 @@ module.exports = {
                })
             }
 
+            if (params.account.ilova == 'Hisobchi_AI') {
+               return res.status(200).json({
+                  result: {
+                     allow: true
+                  }
+               })
+            }
+
+            if (params.account.ilova == 'TopKadr') {
+               return res.status(200).json({
+                  result: {
+                     allow: true
+                  }
+               })
+            }
+
 
             if (foundPayment && foundUser) {
                return res.status(200).json({
@@ -90,6 +106,13 @@ module.exports = {
                         });
                      }
 
+                     return res.json({
+                        result: {
+                           create_time: Number(transaction.create_time),
+                           transaction: transaction.id,
+                           state: 1,
+                        }
+                     });
                   }
 
                   const newTransaction = await model.addTransaction(
@@ -128,6 +151,156 @@ module.exports = {
                      },
                      id: id
                   });
+               }
+            }
+
+            if (params.account.ilova == 'Hisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai2.admob.uz/api/v1/payment/check/${params.account.user_id}/${params.account.tarif}/${amount}`);
+
+               if (response.status == 200) {
+                  const transaction = await model.foundTransaction(params.id);
+                  if (transaction) {
+                     if (transaction.state !== 1) {
+                        return res.json({
+                           error: {
+                              name: "CantDoOperation",
+                              code: -31008,
+                              message: {
+                                 uz: "Biz operatsiyani bajara olmaymiz",
+                                 ru: "Мы не можем сделать операцию",
+                                 en: "We can't do operation",
+                              }
+                           },
+                           id: id
+                        });
+                     }
+
+                     const currentTime = Date.now();
+                     const expirationTime = (currentTime - transaction.create_time) / 60000 < 12; // 12m
+                     if (!expirationTime) {
+                        await model.updateTransaction(params.id, -1, 4,);
+                        return res.json({
+                           error: {
+                              name: "CantDoOperation",
+                              code: -31008,
+                              message: {
+                                 uz: "Biz operatsiyani bajara olmaymiz",
+                                 ru: "Мы не можем сделать операцию",
+                                 en: "We can't do operation",
+                              },
+                           },
+                           id: id
+                        });
+                     }
+
+                     return res.json({
+                        result: {
+                           create_time: Number(transaction.create_time),
+                           transaction: transaction.id,
+                           state: 1,
+                        }
+                     });
+                  }
+
+                  const newTransaction = await model.addTransaction(
+                     params?.account?.user_id,
+                     params?.account?.tarif,
+                     1,
+                     amount,
+                     params.id,
+                     params?.time,
+                     'hisobchiAi',
+                     params?.account?.ilova,
+                  );
+
+                  console.log(newTransaction)
+
+                  return res.json({
+                     result: {
+                        transaction: newTransaction.id,
+                        state: 1,
+                        create_time: Number(newTransaction.create_time),
+                        receivers: null
+                     }
+                  })
+
+
+               } else {
+                  return res.json({
+                     error: {
+                        name: "CantDoOperation",
+                        code: -31008,
+                        message: {
+                           uz: "Biz operatsiyani bajara olmaymiz",
+                           ru: "Мы не можем сделать операцию",
+                           en: "We can't do operation",
+                        }
+                     },
+                     id: id
+                  });
+               }
+            }
+
+            if (params.account.ilova == 'TopKadr') {
+               const response = await axios.get(``);
+
+               if (response.status === 200) {
+                  const transaction = await model.foundTransaction(params.id);
+                  if (transaction) {
+                     if (transaction.state !== 1) {
+                        return res.json({
+                           error: {
+                              name: "CantDoOperation",
+                              code: -31008,
+                              message: {
+                                 uz: "Biz operatsiyani bajara olmaymiz",
+                                 ru: "Мы не можем сделать операцию",
+                                 en: "We can't do operation",
+                              }
+                           },
+                           id: id
+                        });
+                     }
+
+                     const currentTime = Date.now();
+                     const expirationTime = (currentTime - transaction.create_time) / 60000 < 12; // 12m
+                     if (!expirationTime) {
+                        await model.updateTransaction(params.id, -1, 4,);
+                        return res.json({
+                           error: {
+                              name: "CantDoOperation",
+                              code: -31008,
+                              message: {
+                                 uz: "Biz operatsiyani bajara olmaymiz",
+                                 ru: "Мы не можем сделать операцию",
+                                 en: "We can't do operation",
+                              },
+                           },
+                           id: id
+                        });
+                     }
+
+                     return res.json({
+                        result: {
+                           create_time: Number(transaction.create_time),
+                           transaction: transaction.id,
+                           state: 1,
+                        }
+                     });
+                  }
+
+                  const newTransaction = await model.addTransaction(
+                     params?.account?.user_id,
+                     params?.account?.tarif,
+                     1,
+                     amount,
+                     params.id,
+                     params?.time,
+                     'xisobchiAi',
+                     params?.account?.ilova,
+                  );
+
+
                }
             }
 
@@ -292,6 +465,26 @@ module.exports = {
 
             if (transaction.ilova == 'Xisobchi_AI') {
                const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}`);
+
+               if (response.status == 200) {
+                  bot.sendMessage(634041736,
+                     `<strong>PayMe:</strong>\n\nIlova: ${transaction.ilova}\nUser id: ${transaction?.user_id}\nTarif: ${transaction.tarif}\nAmount: ${transaction?.amount}\nDate: ${finalFormat}`,
+                     { parse_mode: "HTML" }
+                  );
+
+                  return res.json({
+                     result: {
+                        perform_time: Number(currentTime),
+                        transaction: transaction.id,
+                        state: 2,
+                     }
+                  })
+               }
+
+            }
+
+            if (transaction.ilova == 'Hisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai2.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}/Payme/${transaction.transaction}/${transaction?.amount}`);
 
                if (response.status == 200) {
                   bot.sendMessage(634041736,
