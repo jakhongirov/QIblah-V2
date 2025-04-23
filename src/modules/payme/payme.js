@@ -24,6 +24,14 @@ module.exports = {
                })
             }
 
+            if (params.account.ilova == 'Femmy') {
+               return res.status(200).json({
+                  result: {
+                     allow: true
+                  }
+               })
+            }
+
             if (params.account.ilova == 'Hisobchi_AI') {
                return res.status(200).json({
                   result: {
