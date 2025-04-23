@@ -84,6 +84,24 @@ module.exports = {
                      message: response.data.message
                   })
                }
+            } else if (merchant_trans_id == 'Femmy') {
+               const response = await axios.get(`https://srvr.femmy.uz/api/v1/payment/check/${param2}/${param3}/${amount}`);
+
+               if (response.status == 200) {
+                  makeCode(4)
+                  return res.status(200).json({
+                     merchant_prepare_id: code,
+                     merchant_trans_id: merchant_trans_id,
+                     click_trans_id: click_trans_id,
+                     error: error,
+                     error_note: error_note
+                  })
+               } else {
+                  return res.status(400).json({
+                     status: 400,
+                     message: response.data.message
+                  })
+               }
             }
          }
 
@@ -181,8 +199,11 @@ module.exports = {
             } else if (merchant_trans_id == 'Hisobchi_AI') {
                const response = await axios.get(`https://xisobchiai2.admob.uz/api/v1/payment/success/${param2}/${param3}/Click/${click_trans_id}/${amount}`);
                console.log('Response Data:', response.data);
-            } if (merchant_trans_id == 'Xisobchi_AI') {
+            } else if (merchant_trans_id == 'Xisobchi_AI') {
                const response = await axios.get(`https://xisobchiai.admob.uz/api/v1/payment/success/${param2}/${param3}`);
+               console.log('Response Data:', response.data);
+            } else if (merchant_trans_id == 'Femmy') {
+               const response = await axios.get(`https://srvr.femmy.uz/api/v1/payment/success/${param2}/${param3}`);
                console.log('Response Data:', response.data);
             } else {
                const url = 'http://185.217.131.150:777/api/v1/invoice'; // The API endpoint

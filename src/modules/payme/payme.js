@@ -578,8 +578,8 @@ module.exports = {
 
             }
 
-            if (transaction.ilova == 'Hisobchi_AI') {
-               const response = await axios.get(`https://xisobchiai2.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}/Payme/${transaction.transaction}/${transaction?.amount}`);
+            if (transaction.ilova == 'Femmy') {
+               const response = await axios.get(`https://srvr.femmy.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}`);
 
                if (response.status == 200) {
                   bot.sendMessage(634041736,
@@ -598,8 +598,8 @@ module.exports = {
 
             }
 
-            if (transaction.ilova == 'Femmy') {
-               const response = await axios.get(`https://srvr.femmy.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}/Payme/${transaction.transaction}/${transaction?.amount}`);
+            if (transaction.ilova == 'Hisobchi_AI') {
+               const response = await axios.get(`https://xisobchiai2.admob.uz/api/v1/payment/success/${transaction.user_id}/${transaction.payment}/Payme/${transaction.transaction}/${transaction?.amount}`);
 
                if (response.status == 200) {
                   bot.sendMessage(634041736,
